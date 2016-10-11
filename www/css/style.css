@@ -113,3 +113,14 @@
   background-color:transparent;
   border:none;
 }
+.checkbox input:checked:before, .checkbox input:checked + .checkbox-icon:before {
+  background: #8ac9ca !important;
+  border-color: #8ac9ca !important;
+}
+.checkbox input:before, .checkbox-icon:before {
+  background: #5dafb8 !important;
+  border-color: #5dafb8 !important;
+}
+.list-check-or-radio {
+  font-size:12px;background:transparent;border:none;color:#fff;
+}
