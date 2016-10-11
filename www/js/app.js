@@ -32,16 +32,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'chart.js'])
     controller: 'AppCtrl'
   })
 
-  .state('perfil-investimento', {
-    url: '/perfil-investimento',
-    templateUrl: 'templates/perfil-investimento.html',
-    controller: 'AppCtrl'
-  })
-
   .state('login', {
     url: '/login',
     templateUrl: 'templates/login.html',
     controller: 'loginCtrl'
+  })
+  .state('pergunta-1', {
+    url: '/perguntas-perfil-1',
+    templateUrl: 'templates/perguntas/pergunta-1-dados.html',
+    controller: 'AppCtrl'
+  })
+
+  .state('pergunta-2', {
+    url: '/perguntas-perfil-2',
+    templateUrl: 'templates/perguntas/pergunta-2-endereco.html',
+    controller: 'AppCtrl'
   })
 
   .state('app.search', {
@@ -51,7 +56,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'chart.js'])
         templateUrl: 'templates/search.html'
       }
     }
-  })  
+  })
 
   .state('app.tudo-tab', {
     url: '/all',
@@ -117,5 +122,5 @@ angular.module('starter', ['ionic', 'starter.controllers', 'chart.js'])
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/perguntas-perfil-1');
 });

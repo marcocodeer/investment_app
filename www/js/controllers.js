@@ -42,7 +42,11 @@ angular.module('starter.controllers', [])
         [28, 48, 40, 19, 86, 27, 90]
     ];
 
-    
+    $scope.doQuestion = function (){
+      $state.go('pergunta-2');
+    };
+
+
 
   // Open the login modal
   $scope.login = function() {
