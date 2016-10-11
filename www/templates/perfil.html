@@ -1,0 +1,43 @@
+
+<ion-view view-title="PERFIL DE INVESTIMENTO" style="background: url(img/perfil-investimento-bg.png) no-repeat center;background-size:cover;">
+
+  <ion-slide-box>
+    <ion-slide>
+
+      <canvas id="line" class="chart chart-line" data="data" labels="labels" legend="true" series="series" options=""></canvas>
+     <div class = "row" style="text-align:center;">
+
+       <div class = "col inputs-values">
+         <div><span>Idade</span></div>
+         <div class="input-age"><span>42</span></div>
+      </div>    
+      <div class = "col inputs-values">
+         <div><span>Valor Projetado</span></div>
+         <div class="input-value-project"><span><span style="color: #7fcfd2;">R$</span> 3.111</span></div>
+      </div>    
+      <div class = "col inputs-values">
+         <div><span>Mensal</span></div>
+         <div class="input-mensal"><span><span style="color: #7fcfd2;">R$</span> 10</span></div>
+      </div>
+
+    </div>
+
+     <h5 class="title-investidor">Para investidores com capital de investimento</h5>
+   </ion-slide>
+   <ion-slide>
+    <div class="box blue">
+      <h1>BLUE</h1>
+      <button ng-click="previous()">Previous slide!</button>
+    </div>
+  </ion-slide>
+
+  </ion-slide-box>
+  <div style="text-align:center;margin:15px;"> 
+    <button  class="button button-block btn-cadastro">
+      <i class="icon ion-ios-checkmark-empty" style="font-size:30px;"></i>
+    &nbsp;
+    ESCOLHER ESTE PERFIL
+  </button>
+</div>
+
+</ion-view>

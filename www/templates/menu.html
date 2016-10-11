@@ -1,0 +1,136 @@
+<style media="screen">
+  .inputs-values > div > span {
+    font-size:13px;color:#fff;
+  }
+  .input-age {
+    padding:2px;margin-left:15px;border-radius: 14px;width: 50px;height: 28px;background-color:rgb(93, 175, 185);
+  }  
+  .inputs-values .input-age > span{
+    font-size:20px;color:#fff;
+  }
+  .input-value-project {
+    padding:2px;border-radius: 14px;width:120px;height: 28px;background-color:rgb(93, 175, 185);
+  } 
+  .inputs-values .input-value-project > span {
+    font-size:20px;color:#fff;
+  }
+  .input-mensal {
+    padding:2px;border-radius: 14px;width:80px;height: 28px;background-color:rgb(93, 175, 185);
+  }
+  .inputs-values .input-mensal > span{
+    font-size:20px;color:#fff;
+  }
+  .title-investidor {
+    color:#fff;text-align:center;font-size:13px !important;
+  }
+  .bar-stable{
+    background-color: #568dc3 !important;
+  }
+  .bar .title {
+    display: block !important;
+    position: relative !important;
+    top: -4px !important;
+    right: 0 !important;
+    left: 0 !important;
+  }
+  .bar.bar-stable .title {
+    color: #fff !important;
+  }
+  .bar-stable .button.button-icon {
+    color: #fff !important;
+  }
+  .slider-pager .slider-pager-page {
+    color:#fff !important;
+  }
+  .slider-slide {
+    height:85vh;
+    width:100%;
+  }
+  .btn-perfil {
+    color:#fff;
+    background-color: rgb(96, 199, 80) !important;
+    font-size:11px;
+    height: 45px;
+    width: 100%;
+    border:none;
+    font-weight: 600;
+  }   
+  .btn-ellipse {
+    color:#fff;
+    font-size:30px;
+    font-weight: 300;
+    height: 50px;
+    width: 50px;
+    border:none;
+    border-radius:50%;
+    border: 1px solid #fff;
+    background-color: transparent;
+  }   
+  .btn-cadastro {
+    color:#fff;
+    background-color: rgb(96, 199, 80) !important;
+    font-size:11px;
+    height: 45px;
+    width: 100%;
+    border:none;
+    font-weight: 600;
+  }  
+  .btn-saldo {
+    color:#fff;
+    background-color: rgb(96, 199, 80);
+    width: 125px;
+    height: 35px;
+    border:none;
+  }
+  .tabs {
+    top:50% !important;
+    color: #ffff;
+    background-color: transparent !important;
+    background-size: none !important;
+  }
+  .tab-item .icon {
+    display:none !important;
+  }
+  .tabs-icon-top > .tabs .tab-item, .tabs-icon-top.tabs .tab-item, .tabs-icon-bottom > .tabs .tab-item, .tabs-icon-bottom.tabs .tab-item {
+    font-size:11px !important;
+  }
+  .tabs-dark > .tabs, .tabs.tabs-dark {
+    background-image: none;
+  }
+</style>
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content >
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button >
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left" >
+    <ion-header-bar class="bar-stable">
+      <h1 class="title">Opções</h1>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+        <ion-item menu-close ng-click="login()">
+          Login
+        </ion-item>
+        <ion-item menu-close href="#/app/perfil">
+          Perfil de investimento
+        </ion-item>
+        <ion-item menu-close href="#/app/movimentar-saldo">
+          Movimentar saldo
+        </ion-item>
+        <ion-item menu-close href="#/app/ver-saldo">
+          Ver saldo
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
