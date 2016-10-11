@@ -15,23 +15,34 @@
 
   </div>
   <div class="input-container" style="margin-left:20px;">
+    <div class="row">
+      <div class="col-60">
+        <label class="item" style="background-color:transparent;border:none;">
+          <input type="text" class="input-style" placeholder="CEP">
+        </label>
+      </div>
+      <div class="col-40">
+        <label class="item" style="background-color:transparent;border:none;">
+          <input type="text" class="input-style" placeholder="UF">
+        </label>
+      </div>
+
+    </div>
+
     <label class="item">
-      <input type="text" class="input-style" placeholder="Nome">
+      <input type="text" class="input-style" placeholder="Cidade">
     </label>
     <label class="item">
-      <input type="text" class="input-style" placeholder="Telefone">
+      <input type="text" class="input-style" placeholder="Endereço">
     </label>
     <label class="item">
-      <input type="text" class="input-style" placeholder="E-mail">
-    </label>
-    <label class="item">
-      <input type="text" class="input-style" placeholder="CPF">
+      <input type="text" class="input-style" placeholder="Complemento">
     </label>
   </div>
 
 
   <div style="text-align:center;margin:15px;">
-    <button  class="button button-positive button-block btn-cadastro">
+    <button  ng-click="doQuestion3()" class="button button-positive button-block btn-cadastro">
       <i class="icon ion-ios-checkmark-empty" style="font-size:30px;"></i>
     &nbsp;
     Continuar (Passo 2 de 14)

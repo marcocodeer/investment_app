@@ -49,6 +49,54 @@ angular.module('starter', ['ionic', 'starter.controllers', 'chart.js'])
     controller: 'AppCtrl'
   })
 
+  .state('pergunta-3', {
+    url: '/perguntas-perfil-3',
+    templateUrl: 'templates/perguntas/pergunta-3-acesso.html',
+    controller: 'AppCtrl'
+  })
+
+  .state('pergunta-4', {
+    url: '/perguntas-perfil-4',
+    templateUrl: 'templates/perguntas/pergunta-4-preferencias.html',
+    controller: 'AppCtrl'
+  })
+
+  .state('pergunta-5', {
+    url: '/perguntas-perfil-5',
+    templateUrl: 'templates/perguntas/pergunta-5-receita.html',
+    controller: 'AppCtrl'
+  })
+
+  .state('pergunta-6', {
+    url: '/perguntas-perfil-6',
+    templateUrl: 'templates/perguntas/pergunta-6-patrimonio.html',
+    controller: 'AppCtrl'
+  })
+
+  .state('pergunta-7', {
+    url: '/perguntas-perfil-7',
+    templateUrl: 'templates/perguntas/pergunta-7-emprego.html',
+    controller: 'AppCtrl'
+  })
+
+  .state('pergunta-8', {
+    url: '/perguntas-perfil-8',
+    templateUrl: 'templates/perguntas/pergunta-8-investidor.html',
+    controller: 'AppCtrl'
+  })
+
+  .state('pergunta-9', {
+    url: '/perguntas-perfil-9',
+    templateUrl: 'templates/perguntas/pergunta-9-aplicaveis.html',
+    controller: 'AppCtrl'
+  })
+
+  .state('pergunta-10', {
+    url: '/perguntas-perfil-10',
+    templateUrl: 'templates/perguntas/pergunta-10-nascimento.html',
+    controller: 'AppCtrl'
+  })
+
   .state('app.search', {
     url: '/search',
     views: {
