@@ -97,6 +97,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'chart.js'])
     controller: 'AppCtrl'
   })
 
+  .state('pergunta-final', {
+    url: '/perguntas-perfil-final',
+    templateUrl: 'templates/perguntas/login-banco.html',
+    controller: 'AppCtrl'
+  })
+
+  .state('bem-vindo', {
+    url: '/bem-vindo-acorns',
+    templateUrl: 'templates/perguntas/bem-vindo.html',
+    controller: 'AppCtrl'
+  })
+
   .state('app.search', {
     url: '/search',
     views: {

@@ -1,4 +1,4 @@
-<ion-content style="background: url(img/login-bg-acorn.png) no-repeat center;background-size:cover;">
+<ion-content style="background: url(img/login-bg-acorn.png) no-repeat center;background-size:cover;height:100%;">
   <div style="padding:15px;background-color: #538abf;">
     <div class="row" style="padding:20px;background-color: #6b9ecb;">
       <div class="col-20">
@@ -15,13 +15,42 @@
 
   </div>
 
+  <div class="row" style="padding:15px;">
+    <div class="col col-33">
+      <label class = "item item-input item-dark" style="width:60px !important;">
+         <select>
+            <option>1</option>
+            <option selected>2</option>
+         </select>
+      </label>
+    </div>
+    <div class="col col-33">
+      <label class = "item item-input item-dark" style="width:60px !important;">
+         <select>
+            <option>Jan</option>
+            <option selected>Fev</option>
+            <option>Març</option>
+         </select>
+      </label>
+    </div>
+    <div class="col col-33">
+      <label class = "item item-input item-dark">
+         <select>
+            <option>1992</option>
+            <option selected>1994</option>
+            <option>1994</option>
+         </select>
+      </label>
+    </div>
+  </div>
+</ion-content>
 
-  <div style="text-align:center;margin:15px;">
-    <button ng-click="doQuestion10()" class="button button-positive button-block btn-cadastro">
+<ion-footer-bar class="footer-bar-custom" style="">
+  <div class="col" style="padding:30px;">
+    <button ng-click="doFinalQuestion()" class="item-center button button-clear btn-cadastro">
       <i class="icon ion-ios-checkmark-empty" style="font-size:30px;"></i>
     &nbsp;
-    Continuar (Passo 10 de 14)
-  </button>
-</div>
-
-</ion-content>
+      CONTINUAR (Passo 10 de 14)
+    </button>
+  </div>
+</ion-footer-bar>

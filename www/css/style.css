@@ -1,4 +1,10 @@
-/* Empty. Add your own CSS if you like */
+/*
+Acorns App
+Main css
+Authors : Adriano Fonseca front-end developer
+Cleiton Schonardie UI/UX and front-end developer
+
+*/
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: rgb(255, 255, 255) !important;
 }
@@ -78,6 +84,15 @@
   border:none;
   font-weight: 600;
 }
+.btn-finalizar {
+  color:#fff;
+  background-color: #339295 !important;
+  font-size:11px;
+  height: 45px;
+  width: 100%;
+  border:none;
+  font-weight: 600;
+}
 .btn-saldo {
   color:#fff;
   background-color: rgb(96, 199, 80);
@@ -124,3 +139,79 @@
 .list-check-or-radio {
   font-size:12px;background:transparent;border:none;color:#fff;
 }
+.item.item-dark {
+  border-color: transparent;
+  background-color: transparent;
+  color: #fff;
+  border-bottom:1px solid #95c7d5;
+}
+label, input, button, select, textarea {
+  color: #fff !important;
+  font-size:20px;
+  font-weight: 300;
+}
+/**
+* ion-footer-bar custom styles
+*/
+.bar .button.button-clear, .bar button.button-clear {
+  font-size:11px !important;
+  font-weight: 600;
+}
+.footer-bar-custom {
+  background: transparent;
+  color: #F6F7F0;
+  height: 90px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  z-index: 5;
+}
+.footer-bar-custom-last {
+  background: transparent;
+  color: #F6F7F0;
+  height: 135px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  z-index: 5;
+}
+
+.footer-bar-custom .item-left,
+.footer-bar-custom .item-center,
+.footer-bar-custom .item-right {
+  position: absolute;
+  width:90%;
+  padding-left:20px;
+
+}
+.footer-bar-custom-last .item-left,
+.footer-bar-custom-last .item-center,
+.footer-bar-custom-last .item-right {
+  position: absolute;
+  width:90%;
+  padding-left:20px;
+
+}
+
+.footer-bar-custom .item-left { left: 10px }
+
+.footer-bar-custom .item-center {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%)
+}
+
+.footer-bar-custom .item-right { right: 10px }
+.footer-bar-custom-last .item-left { left: 10px }
+
+.footer-bar-custom-last .item-center {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%)
+}
+
+.footer-bar-custom-last .item-right { right: 10px }

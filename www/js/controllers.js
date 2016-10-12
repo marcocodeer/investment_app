@@ -69,6 +69,12 @@ angular.module('starter.controllers', [])
     $scope.doQuestion10 = function (){
       $state.go('pergunta-10');
     };
+    $scope.doFinalQuestion = function (){
+      $state.go('pergunta-final');
+    };
+    $scope.doWelcome = function (){
+      $state.go('bem-vindo');
+    };
 
 
 
