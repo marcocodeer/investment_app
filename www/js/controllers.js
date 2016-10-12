@@ -69,6 +69,15 @@ angular.module('starter.controllers', [])
     $scope.doQuestion10 = function (){
       $state.go('pergunta-10');
     };
+    $scope.doQuestion11 = function (){
+      $state.go('pergunta-11');
+    };
+    $scope.doQuestion12 = function (){
+      $state.go('pergunta-12');
+    };
+    $scope.doQuestion13 = function (){
+      $state.go('pergunta-13');
+    };
     $scope.doFinalQuestion = function (){
       $state.go('pergunta-final');
     };
