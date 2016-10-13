@@ -146,11 +146,43 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   })
 
-  .state('app.tudo-tab', {
-    url: '/all',
+  .state('app.configuracoes', {
+    url: '/conf',
     views: {
       'menuContent': {
-        templateUrl: 'templates/tudo-tab.html'
+        templateUrl: 'templates/configuracoes/configuracoes.html'
+      }
+    }
+  })
+  .state('app.arredondamentos', {
+    url: '/conf/arredondamentos',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/configuracoes/arredondamento-cartoes/arredondamento.html'
+      }
+    }
+  })
+  .state('app.adicionar-conta', {
+    url: '/conf/adicionar-conta',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/configuracoes/arredondamento-cartoes/adicionar-conta.html'
+      }
+    }
+  })
+  .state('app.preferencias', {
+    url: '/conf/preferencias-do-sistema',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/configuracoes/preferencias-do-sistema/preferencias.html'
+      }
+    }
+  })
+  .state('app.conta-bancaria', {
+    url: '/conf/conta-bancaria',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/configuracoes/conta-bancaria/conta-bancaria.html'
       }
     }
   })

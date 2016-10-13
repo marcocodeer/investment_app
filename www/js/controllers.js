@@ -15,6 +15,8 @@ angular.module('starter.controllers', [])
   });
 
   $scope.uf = 'UF';
+  $scope.bandeiras = 'Bandeiras';
+  $scope.banco = 'Banco';
 
   $scope.mudaUF = function(uf){
 
@@ -24,11 +26,21 @@ angular.module('starter.controllers', [])
 
   };
 
+  $scope.mudaBandeira = function(bandeira){
+    $scope.bandeiras = bandeira;
+    $scope.popover.hide();
+  };
+
+  $scope.mudaConta = function(conta){
+    $scope.banco = conta;
+    $scope.popover.hide();
+  };
+
   // Form data for the login modal
   $scope.loginData = {};
   console.log("Perfil ctrl");
   // Create the login modal that we will use later
-  $ionicModal.fromTemplateUrl('templates/login.html', {
+  $ionicModal.fromTemplateUrl('templates/login/login.html', {
     scope: $scope
   }).then(function(modal) {
     $scope.modal = modal;
@@ -99,6 +111,20 @@ angular.module('starter.controllers', [])
     $scope.doWelcome = function (){
       $state.go('bem-vindo');
     };
+
+    $scope.doArredondamento = function (){
+      $state.go('app.arredondamentos');
+    };
+    $scope.adicionarConta = function (){
+      $state.go('app.adicionar-conta');
+    };
+    $scope.adicionarPreferencia = function (){
+      $state.go('app.preferencias');
+    };
+    $scope.adicionarContaBancaria = function (){
+      $state.go('app.conta-bancaria');
+    };
+
 
 
 
