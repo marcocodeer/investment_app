@@ -1,0 +1,45 @@
+<style media="screen">
+  .item-floating-label {
+    border: 0;
+  }
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: rgb(255, 255, 255) !important;
+  }
+  .login-container {
+    position:relative;
+    margin-top:10vh;
+    margin-left:20px;
+  }
+</style>
+
+  <ion-content style="background: url(img/login-bg-acorn.png) no-repeat center;background-size:cover;">
+    <div style="background-color: #629cce;height:100px;"></div>
+    <div class="column">
+      <div class="" style="text-align:center;margin-top:-33px;">
+        <img src="img/logo-bg.png" alt="">
+        <h2 style="color: #fff;font-weight:300;">LOGO<span style="font-weight:400;">MARCA</span></h2>
+      </div>
+
+
+      <section class="login-container">
+        <label class="item item-input item-floating-label">
+          <span class="input-label"></span>
+          <input type="text" placeholder="E-mail" class="input-style">
+        </label>
+        <label class="item item-input item-floating-label" style="margin-top:40px;">
+          <span class="input-label"></span>
+          <input type="text" placeholder="Senha" class="input-style">
+        </label>
+
+        <div style="margin-top: 10px;float:right;">
+          <a href="#/app/perfil" style="padding-right:60px;font-size:18px;color: rgb(255, 255, 255);text-decoration: none">Entrar</a>
+        </div>
+
+      <div class="col" style="margin-top: 50px;margin-left:10px;">
+        <a ng-click="resetPass()" style="font-size:13px;color: rgb(255, 255, 255);text-decoration: none">Esqueceu sua senha?</a><br>
+        <a href="#/app/perfil" style="font-size:13px;color: rgb(255, 255, 255);text-decoration: none">Cadastre-se</a>
+      </div>
+        </section>
+
+    </div>
+  </ion-content>

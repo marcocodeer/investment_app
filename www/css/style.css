@@ -3,11 +3,17 @@ Acorns App
 Main css
 Authors : Adriano Fonseca front-end developer
 Cleiton Schonardie UI/UX and front-end developer
-
 */
+
+
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: rgb(255, 255, 255) !important;
 }
+
+/**
+* LOGIN
+*/
+
 .inputs-values > div > span {
   font-size:13px;color:#fff;
 }
@@ -115,7 +121,10 @@ Cleiton Schonardie UI/UX and front-end developer
 .tabs-dark > .tabs, .tabs.tabs-dark {
   background-image: none;
 }
-/** Perguntas CSS **/
+
+/**
+* PERGUNTAS
+*/
 .input-style {
   border-bottom: 1px solid #95c7d5 !important;
   background-color:transparent !important;
@@ -123,6 +132,13 @@ Cleiton Schonardie UI/UX and front-end developer
   color:#fff !important;
   font-weight: 300 !important;
   width:240px !important;
+}
+#popover-style-add-conta {
+  width:240px;text-align:left;
+  font-size:20px !important;
+  color:#fff !important;
+  font-weight: 300 !important;
+  margin-left:-5px;
 }
 .input-container > .item{
   background-color:transparent;
@@ -150,6 +166,16 @@ label, input, button, select, textarea {
   font-size:20px;
   font-weight: 300;
 }
+.item-floating-label {
+  border: 0;
+}
+
+.login-container {
+  position:relative;
+  margin-top:10vh;
+  margin-left:20px;
+}
+
 /**
 * ion-footer-bar custom styles
 */
@@ -216,6 +242,7 @@ label, input, button, select, textarea {
 
 .footer-bar-custom-last .item-right { right: 10px }
 
+
 .box-grafico{
   padding:20px;
 }
@@ -268,6 +295,44 @@ label, input, button, select, textarea {
   text-align:center;
 }
 .head-box > div.column {
-  text-align:center;
+  text-align: center;
   margin-top: 15px;
+}
+.button-icon {
+  border-bottom: 1px solid #95c7d5;
+  padding-top:5px;
+}
+.login-container {
+  position:relative;
+  margin-top:10vh;
+  margin-left:20px;
+}
+
+/** CONFIGURAÇÕES **/
+#item-principal {
+  background-color: transparent;
+  color: #fff;
+  height:auto;
+  border:none;
+  padding:20px;
+}
+#item-circle-grey {
+  width:28px;
+  height:29px;
+  background-color: #5cb1b5;
+  border-radius:50%;
+}
+#item-icon-grey {
+  font-size:20px;
+  color:#fff;
+  position:relative;
+  left:11px;
+  top:3px;
+}
+#item-color {
+  font-size:15px;
+  padding-left:20px;
+  padding-top:2px;
+  color:#fff;
+
 }

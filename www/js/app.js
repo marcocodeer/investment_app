@@ -34,7 +34,17 @@ angular.module('starter', ['ionic','chart.js' ,'chart.js' , 'starter.controllers
 
   .state('login', {
     url: '/login',
-    templateUrl: 'templates/login.html',
+    templateUrl: 'templates/login/login.html',
+    controller: 'loginCtrl'
+  })
+  .state('resetar-senha', {
+    url: '/login/resetar-senha',
+    templateUrl: 'templates/login/resetar-senha.html',
+    controller: 'loginCtrl'
+  })
+  .state('sucesso-senha', {
+    url: '/login/sucesso-resetar-senha',
+    templateUrl: 'templates/login/sucesso-resetar-senha.html',
     controller: 'loginCtrl'
   })
   .state('pergunta-1', {
@@ -136,11 +146,43 @@ angular.module('starter', ['ionic','chart.js' ,'chart.js' , 'starter.controllers
     }
   })
 
-  .state('app.tudo-tab', {
-    url: '/all',
+  .state('app.configuracoes', {
+    url: '/conf',
     views: {
       'menuContent': {
-        templateUrl: 'templates/tudo-tab.html'
+        templateUrl: 'templates/configuracoes/configuracoes.html'
+      }
+    }
+  })
+  .state('app.arredondamentos', {
+    url: '/conf/arredondamentos',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/configuracoes/arredondamento-cartoes/arredondamento.html'
+      }
+    }
+  })
+  .state('app.adicionar-conta', {
+    url: '/conf/adicionar-conta',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/configuracoes/arredondamento-cartoes/adicionar-conta.html'
+      }
+    }
+  })
+  .state('app.preferencias', {
+    url: '/conf/preferencias-do-sistema',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/configuracoes/preferencias-do-sistema/preferencias.html'
+      }
+    }
+  })
+  .state('app.conta-bancaria', {
+    url: '/conf/conta-bancaria',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/configuracoes/conta-bancaria/conta-bancaria.html'
       }
     }
   })
