@@ -8,6 +8,85 @@ angular.module('starter.controllers', [])
   // listen for the $ionicView.enter event:
   //$scope.$on('$ionicView.enter', function(e) {
   //});
+  $scope.idade = 42;
+
+  $scope.valor = 3111;
+
+  $scope.mensal = 10;
+
+  $scope.perfilGrafico = function () {
+    var databarSleep = {
+      labels: ['34', '36', '38', '40', '42', '44', '46', '48', '50'],
+      datasets: [
+        {
+          label: "My First dataset",
+          fill: false,
+          pointRadius: 0,
+          lineTension: 0.1,
+          borderColor: "#fff",
+          borderWidth: 0.8,
+          strokeColor: "#fff",
+          data: [0,0.8,1.5,2.3,3.3,4.5,6.3,9,12],
+        }
+      ]
+    };
+
+    var options = {
+      scaleOverride: true,
+      scaleSteps: 3,
+      scaleStepWidth: 10,
+      scaleStartValue: 0,
+      scales: {
+              yAxes: [{
+                gridLines: {color:"#4EA5B4",zeroLineColor:"#4EA5B4"},
+                ticks: {
+                  max: 12,
+                  min: 0,
+                  fontColor : "#9CCDD4",
+                  fontSize: 10,
+                  stepSize:3,
+                  callback: function(value, index, values) {
+                    if(parseInt(value) > 1000){
+                      return 'R$ ' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "," + ' mil');
+                    } else {
+                      return 'R$ ' + value + ' mil';
+                    }
+                  }
+                }
+              }],
+              xAxes: [{
+                gridLines: {color:"#4EA5B4",zeroLineColor:"#4EA5B4"},
+                ticks: {
+                  max: 50,
+                  min: 34,
+                  stepSize:2,
+                  fontColor : "#9CCDD4",
+                  fontSize: 10
+
+                },
+
+              }]
+            }
+
+    };
+
+    var chartsleep = document.getElementById("chartbarsleep").getContext("2d");
+
+
+    var chartsleepObj = new Chart(chartsleep, {
+      type: 'line',
+      scaleFontColor: "#fff",
+      scaleLineColor: 'rgba(0, 0, 0, 0)',
+      scaleLabel : "<%= ' R$ ' + value + ' mil '  %>",
+      showTooltips : false,
+      data: databarSleep,
+      options: options
+    });
+  }
+
+
+
+
   $ionicPopover.fromTemplateUrl('templates/popover.html', {
     scope: $scope,
   }).then(function(popover) {
