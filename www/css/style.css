@@ -215,3 +215,13 @@ label, input, button, select, textarea {
 }
 
 .footer-bar-custom-last .item-right { right: 10px }
+
+.button-icon {
+  border-bottom: 1px solid #95c7d5;
+  padding-top:5px;
+}
+.login-container {
+  position:relative;
+  margin-top:10vh;
+  margin-left:20px;
+}

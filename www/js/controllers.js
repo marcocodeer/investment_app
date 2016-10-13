@@ -137,4 +137,13 @@ angular.module('starter.controllers', [])
 })
 
 .controller('loginCtrl', function($scope, $ionicModal, $timeout, $state) {
+    $scope.resetPass = function(){
+      $state.go('resetar-senha');
+    };
+    $scope.SendSucessPass = function(){
+      $state.go('sucesso-senha');
+    };
+    $scope.login = function(){
+      $state.go('login');
+    };
 });

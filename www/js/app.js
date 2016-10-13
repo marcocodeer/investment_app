@@ -34,7 +34,17 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 
   .state('login', {
     url: '/login',
-    templateUrl: 'templates/login.html',
+    templateUrl: 'templates/login/login.html',
+    controller: 'loginCtrl'
+  })
+  .state('resetar-senha', {
+    url: '/login/resetar-senha',
+    templateUrl: 'templates/login/resetar-senha.html',
+    controller: 'loginCtrl'
+  })
+  .state('sucesso-senha', {
+    url: '/login/sucesso-resetar-senha',
+    templateUrl: 'templates/login/sucesso-resetar-senha.html',
     controller: 'loginCtrl'
   })
   .state('pergunta-1', {
