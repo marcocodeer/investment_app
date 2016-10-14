@@ -1,9 +1,6 @@
 
 <ion-view view-title="PERFIL DE INVESTIMENTO" style="background: url(img/perfil-investimento-bg.png) no-repeat center;background-size:cover;">
 
-  <ion-slide-box>
-    <ion-slide>
-
       <div class="head-box" >
 
         <div class="column perfil"  >
@@ -12,16 +9,51 @@
 
           <p class="perfil-tit"  >
             <img ng-src="img/bt-arrow-left.png" alt="" />
-            Moderado/Agressivo
+            {{perfil.nome}}
             <img ng-src="img/bt-arrow-right.png" alt="" />
           </p>
           <p class="perfil-desc"  >
-            Para investidores com capital de investimento
+            {{perfil.desc}}
           </p>
 
         </div>
 
       </div>
+
+  <ion-slide-box>
+    <ion-slide>
+
+      <div class="column pie">
+
+        <canvas id="chartpieperfil" width="270" height="100" class="barchart" ng-init="perfilGraficoPie()"></canvas>
+
+        <div class="acoes">
+          <div>
+            <span class="verde"><b></b> {{perfil.acoes.grandesCias}}% </span>Ações de Grandes Companias
+          </div>
+          <div>
+            <span class="musgo"><b></b> {{perfil.acoes.pequenasCias}}% </span>Ações de Pequenas Companias
+          </div>
+          <div>
+            <span class="violeta"><b></b> {{perfil.acoes.emergente}}% </span>Ações de Mercado Emergente
+          </div>
+          <div>
+            <span class="azul"><b></b> {{perfil.acoes.imobilario}}% </span>Ações de Mercado Imobiliário
+          </div>
+          <div>
+            <span class="laranja"><b></b> {{perfil.acoes.corp}}% </span>Dívidas Corporativas
+          </div>
+          <div>
+            <span class="vermelho"><b></b> {{perfil.acoes.gov}}%  </span>Dívidas Públicas
+          </div>
+        </div>
+
+      </div>
+
+    </ion-slide>
+    <ion-slide>
+
+
       <div class="column box-grafico"  >
 
         <div class="row">
@@ -45,21 +77,18 @@
 
         <div class="row">
 
-          <canvas id="chartbarsleep" width="270" height="100" class="barchart" ng-init="perfilGrafico()"></canvas>
+          <canvas id="chartlineperfil" width="270" height="100" class="barchart" ng-init="perfilGrafico()"></canvas>
 
         </div>
+
+        <p class="obs">*Desempenho passado não é garantia de retorno futuro</p>
 
       </div>
 
    </ion-slide>
-   <ion-slide>
-    <div class="box blue">
-      <h1>BLUE</h1>
-      <button ng-click="previous()">Previous slide!</button>
-    </div>
-  </ion-slide>
 
   </ion-slide-box>
+
   <div style="text-align:center;margin:15px;">
     <button  class="button button-block btn-cadastro">
       <i class="icon ion-ios-checkmark-empty" style="font-size:30px;"></i>

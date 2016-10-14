@@ -8,11 +8,13 @@ angular.module('starter.controllers', [])
   // listen for the $ionicView.enter event:
   //$scope.$on('$ionicView.enter', function(e) {
   //});
+
   $scope.idade = 42;
 
   $scope.valor = 3111;
 
   $scope.mensal = 10;
+
 
   $scope.perfilGrafico = function () {
     var databarSleep = {
@@ -70,8 +72,7 @@ angular.module('starter.controllers', [])
 
     };
 
-    var chartsleep = document.getElementById("chartbarsleep").getContext("2d");
-
+    var chartsleep = document.getElementById("chartlineperfil").getContext("2d");
 
     var chartsleepObj = new Chart(chartsleep, {
       type: 'line',
@@ -82,7 +83,7 @@ angular.module('starter.controllers', [])
       data: databarSleep,
       options: options
     });
-  }
+  };
 
   $scope.homeGrafico = function () {
     var databarSleep = {
@@ -131,7 +132,6 @@ angular.module('starter.controllers', [])
       options: options
     });
   }
-
 
 
   $ionicPopover.fromTemplateUrl('templates/popover.html', {
@@ -251,9 +251,6 @@ angular.module('starter.controllers', [])
       $state.go('app.conta-bancaria');
     };
 
-
-
-
   // Open the login modal
   $scope.login = function() {
     $state.go('login');
@@ -273,21 +270,6 @@ angular.module('starter.controllers', [])
     }, 1000);
   };
 })
-
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-  { title: 'Reggae', id: 1 },
-  { title: 'Chill', id: 2 },
-  { title: 'Dubstep', id: 3 },
-  { title: 'Indie', id: 4 },
-  { title: 'Rap', id: 5 },
-  { title: 'Cowbell', id: 6 }
-  ];
-})
-
-.controller('PlaylistCtrl', function($scope, $stateParams) {
-})
-
 .controller('loginCtrl', function($scope, $ionicModal, $timeout, $state) {
     $scope.resetPass = function(){
       $state.go('resetar-senha');
@@ -298,4 +280,63 @@ angular.module('starter.controllers', [])
     $scope.login = function(){
       $state.go('login');
     };
+})
+.controller('perfilCtrl', function($scope, $state) {
+
+  $scope.perfis = [
+    {
+      'nome' : 'Moderado/Agressivo',
+      'nivel' : 1,
+      'desc' : 'Para investidores com capital de investimento',
+      'select' : false,
+      'acoes' :  [
+        {
+          'label' : 'Ações de Grandes Companias',
+          'value' : 16,
+          'pequenasCias' : 19,
+          'emergente' : 10,
+          'imobilario' : 16,
+          'corp' : 33,
+          'gov' : 6
+        }
+      ]
+
+
+    }
+  ];
+
+  $scope.perfil = $scope.perfis[0];
+
+  $scope.perfilGraficoPie = function () {
+
+    var options = {};
+
+    var data = {
+      labels: [
+        "Ações de Grandes Companias",
+        "Ações de Pequenas Companias",
+        "Ações de Mercado Emergente",
+        "Ações de Mercado Imobiliário",
+        "Dívidas Corporativas",
+        "Dívidas Públicas"
+      ],
+      datasets: [
+        {
+          data: [16,19,10,16,33,6],
+          borderWidth: 0,
+          backgroundColor: ["#73FF73","#A3D900","#B973FF","#26C9FF","#FFBF00","#FF5C26"],
+          hoverBackgroundColor: ["#73FF73","#A3D900","#B973FF","#26C9FF","#FFBF00","#FF5C26"]
+        }]
+    };
+
+    var chartpie = document.getElementById("chartpieperfil").getContext("2d");
+
+    var chartpieObj = new Chart(chartpie,{
+      type: 'pie',
+      data: data,
+      options: options
+    });
+
+  };
+
 });
