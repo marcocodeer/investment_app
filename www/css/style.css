@@ -252,30 +252,43 @@ label, input, button, select, textarea {
 .box-grafico .item {
   background: transparent;
   border: 0px;
+  text-align: center;
+  padding: 0 15px 20px 0;
+}
+.box-grafico .item:last-child {
+  padding: 0 0px 20px 0;
 }
 .box-grafico label span {
   font-size:11px ;
+
 }
 .box-grafico label input {
-  font-size:19px ;
+  font-size:17px ;
   border:0px;
-  background:#49A0B5;
-  -webkit-border-radius:50px;
-  -moz-border-radius:50px;
-  border-radius:50px;
+  background-color: rgba(255, 255, 255, 0.11) !important;
+  -webkit-border-radius:15px;
+  -moz-border-radius:15px;
+  border-radius:15px;
+  border-bottom: 0px !important;
+  width: 100% !important;
+  text-align: center;
 }
 .head-box {
   background: transparent url(../img/header-box.png);
   padding:15px;
 }
-.head-box > div:first-child {
-  padding:20px;
-  background-color: #6b9ecb;
-}
-.head-box > div .col-20 img {
+.head-box h1{
   text-align:center;
-  margin-top: 21%;
+  margin-top:30px;
+  font-size:15px;
+  color:#fff;
+  font-weight:100;
 }
+.head-box > div:first-child {
+  padding: 20px 20px 20px 0;
+  background: #6b9ecb url(../img/mini-logo.png) no-repeat 15px center;
+}
+
 .head-box > div > div.col-80 > p {
   line-height: 14px;
   color:#fff;
@@ -287,6 +300,14 @@ label, input, button, select, textarea {
   font-size:25px;
   margin-bottom: 7px;
   margin-top: 7px;
+}
+.head-box .perfil-tit img:first-child {
+  float: left;
+  margin-top: 4px;
+}
+.head-box .perfil-tit img:last-child {
+  float: right;
+  margin-top: 4px;
 }
 .head-box .perfil-desc {
   color:#fff;

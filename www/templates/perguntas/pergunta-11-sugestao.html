@@ -2,10 +2,9 @@
   <div class="head-box" >
     <div class="row"  >
       <div class="col-20">
-        <img src="img/mini-logo.png" alt="" />
       </div>
       <div class="col-80">
-        <p>Com base nas suas respostas, esta é a nossa sugestão de perfil de investimento.Se não tem certeza sobre o perfil, você pode mudá-lo a qualquer momento.</p>
+        <p>Com base nas suas respostas, esta é a nossa sugestão de perfil de investimento. Se não tem certeza sobre o perfil, você pode mudá-lo a qualquer momento.</p>
       </div>
 
     </div>
@@ -15,7 +14,9 @@
       <img ng-src="img/perfil-bg.png" alt="" />
 
       <p class="perfil-tit"  >
+        <img ng-src="img/bt-arrow-left.png" alt="" />
         Moderado/Agressivo
+        <img ng-src="img/bt-arrow-right.png" alt="" />
       </p>
       <p class="perfil-desc"  >
         Para investidores com capital de investimento
@@ -28,17 +29,17 @@
 
     <div class="row">
 
-      <label class="item">
+      <label class="item col-20">
         <span>Idade</span>
         <input type="text" class="input-style" ng-model="idade">
       </label>
 
-      <label class="item">
+      <label class="item col-50">
         <span>Valor Projetado</span>
-        <input type="text" class="input-style"  ng-model="valor |  currency : 'R$ ' ">
+        <input type="text" class="input-style"  ng-model="valor |  currency : 'R$ '  ">
       </label>
 
-      <label class="item">
+      <label class="item col-30">
         <span>Mensal</span>
         <input type="text" class="input-style"  ng-model="mensal |  currency : 'R$ '">
       </label>
