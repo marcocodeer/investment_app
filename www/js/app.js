@@ -110,7 +110,7 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
   .state('pergunta-11', {
     url: '/perguntas-perfil-11',
     templateUrl: 'templates/perguntas/pergunta-11-sugestao.html',
-    controller: 'AppCtrl'
+    controller: 'perfilCtrl'
   })
 
   .state('pergunta-12', {

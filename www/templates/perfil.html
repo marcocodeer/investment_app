@@ -5,12 +5,12 @@
 
         <div class="column perfil"  >
 
-          <img ng-src="img/perfil-bg.png" alt="" />
+          <img ng-src="{{'img/perfil-bg' + perfil.nivel + '.png'}}" alt="" />
 
           <p class="perfil-tit"  >
-            <img ng-src="img/bt-arrow-left.png" alt="" />
+            <img ng-src="img/bt-arrow-left.png" alt=""  ng-click="anteriorPerfil()"/>
             {{perfil.nome}}
-            <img ng-src="img/bt-arrow-right.png" alt="" />
+            <img ng-src="img/bt-arrow-right.png" alt="" ng-click="proximoPerfil()"/>
           </p>
           <p class="perfil-desc"  >
             {{perfil.desc}}
@@ -28,23 +28,8 @@
         <canvas id="chartpieperfil" width="270" height="100" class="barchart" ng-init="perfilGraficoPie()"></canvas>
 
         <div class="acoes">
-          <div>
-            <span class="verde"><b></b> {{perfil.acoes.grandesCias}}% </span>Ações de Grandes Companias
-          </div>
-          <div>
-            <span class="musgo"><b></b> {{perfil.acoes.pequenasCias}}% </span>Ações de Pequenas Companias
-          </div>
-          <div>
-            <span class="violeta"><b></b> {{perfil.acoes.emergente}}% </span>Ações de Mercado Emergente
-          </div>
-          <div>
-            <span class="azul"><b></b> {{perfil.acoes.imobilario}}% </span>Ações de Mercado Imobiliário
-          </div>
-          <div>
-            <span class="laranja"><b></b> {{perfil.acoes.corp}}% </span>Dívidas Corporativas
-          </div>
-          <div>
-            <span class="vermelho"><b></b> {{perfil.acoes.gov}}%  </span>Dívidas Públicas
+          <div ng-repeat="acao in perfil.acoes">
+            <span class="verde"><b ng-style="{'background-color':acao.cor}"></b> {{acao.value}}% </span>{{acao.label}}
           </div>
         </div>
 

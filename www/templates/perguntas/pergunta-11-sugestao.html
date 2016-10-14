@@ -1,5 +1,7 @@
 <ion-content style="background: url(img/login-bg-acorn.png) no-repeat center;background-size:cover;height:100%;">
+
   <div class="head-box" >
+
     <div class="row"  >
       <div class="col-20">
       </div>
@@ -9,22 +11,24 @@
 
     </div>
 
-    <div class="column"  >
+    <div class="column perfil"  >
 
-      <img ng-src="img/perfil-bg.png" alt="" />
+      <img ng-src="{{'img/perfil-bg' + perfil.nivel + '.png'}}" alt="" />
 
       <p class="perfil-tit"  >
-        <img ng-src="img/bt-arrow-left.png" alt="" />
-        Moderado/Agressivo
-        <img ng-src="img/bt-arrow-right.png" alt="" />
+        <img ng-src="img/bt-arrow-left.png" alt=""  ng-click="anteriorPerfil()"/>
+        {{perfil.nome}}
+        <img ng-src="img/bt-arrow-right.png" alt="" ng-click="proximoPerfil()"/>
       </p>
       <p class="perfil-desc"  >
-        Para investidores com capital de investimento
+        {{perfil.desc}}
       </p>
 
     </div>
 
   </div>
+
+  
   <div class="column box-grafico"  >
 
     <div class="row">

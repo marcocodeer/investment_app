@@ -9,81 +9,7 @@ angular.module('starter.controllers', [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
-  $scope.idade = 42;
 
-  $scope.valor = 3111;
-
-  $scope.mensal = 10;
-
-
-  $scope.perfilGrafico = function () {
-    var databarSleep = {
-      labels: ['34', '36', '38', '40', '42', '44', '46', '48', '50'],
-      datasets: [
-        {
-          label: "My First dataset",
-          fill: false,
-          pointRadius: 0,
-          lineTension: 0.1,
-          borderColor: "#fff",
-          borderWidth: 0.8,
-          strokeColor: "#fff",
-          data: [0,0.8,1.5,2.3,3.3,4.5,6.3,9,12],
-        }
-      ]
-    };
-
-    var options = {
-      scaleOverride: true,
-      scaleSteps: 3,
-      scaleStepWidth: 10,
-      scaleStartValue: 0,
-      scales: {
-              yAxes: [{
-                gridLines: {color:"#4EA5B4",zeroLineColor:"#4EA5B4"},
-                ticks: {
-                  max: 12,
-                  min: 0,
-                  fontColor : "#9CCDD4",
-                  fontSize: 10,
-                  stepSize:3,
-                  callback: function(value, index, values) {
-                    if(parseInt(value) > 1000){
-                      return 'R$ ' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "," + ' mil');
-                    } else {
-                      return 'R$ ' + value + ' mil';
-                    }
-                  }
-                }
-              }],
-              xAxes: [{
-                gridLines: {color:"#4EA5B4",zeroLineColor:"#4EA5B4"},
-                ticks: {
-                  max: 50,
-                  min: 34,
-                  stepSize:2,
-                  fontColor : "#9CCDD4",
-                  fontSize: 10
-
-                },
-
-              }]
-            }
-
-    };
-
-    var chartsleep = document.getElementById("chartlineperfil").getContext("2d");
-
-    var chartsleepObj = new Chart(chartsleep, {
-      type: 'line',
-      scaleFontColor: "#fff",
-      scaleLineColor: 'rgba(0, 0, 0, 0)',
-      scaleLabel : "<%= ' R$ ' + value + ' mil '  %>",
-      showTooltips : false,
-      data: databarSleep,
-      options: options
-    });
-  };
 
   $scope.homeGrafico = function () {
     var databarSleep = {
@@ -285,47 +211,331 @@ angular.module('starter.controllers', [])
 
   $scope.perfis = [
     {
-      'nome' : 'Moderado/Agressivo',
+      'nome' : 'Conservador',
       'nivel' : 1,
       'desc' : 'Para investidores com capital de investimento',
       'select' : false,
       'acoes' :  [
         {
-          'label' : 'Ações de Grandes Companias',
-          'value' : 16,
-          'pequenasCias' : 19,
-          'emergente' : 10,
-          'imobilario' : 16,
-          'corp' : 33,
-          'gov' : 6
+          'label': 'Ações de Grandes Companias',
+          'cor': '#73FF73',
+          'value': 16
+        },
+        {
+          'label': 'Ações de Pequenas Companias',
+          'cor': '#A3D900',
+          'value': 19
+        },
+        {
+          'label': 'Ações de Mercado Emergente',
+          'cor': '#B973FF',
+          'value': 10
+        },
+        {
+          'label': 'Ações de Mercado Imobiliário',
+          'cor': '#26C9FF',
+          'value': 16
+        },
+        {
+          'label': 'Dívidas Corporativas',
+          'cor': '#FFBF00',
+          'value': 33
+        },
+        {
+          'label': 'Dívidas Públicas',
+          'cor': '#FF5C26',
+          'value': 6
         }
       ]
 
+    },
+    {
+      'nome' : 'Conservador/Moderado',
+      'nivel' : 2,
+      'desc' : 'Para investidores com capital de investimento',
+      'select' : false,
+      'acoes' :  [
+        {
+          'label': 'Ações de Grandes Companias',
+          'cor': '#73FF73',
+          'value': 14
+        },
+        {
+          'label': 'Ações de Pequenas Companias',
+          'cor': '#A3D900',
+          'value': 15
+        },
+        {
+          'label': 'Ações de Mercado Emergente',
+          'cor': '#B973FF',
+          'value': 8
+        },
+        {
+          'label': 'Ações de Mercado Imobiliário',
+          'cor': '#26C9FF',
+          'value': 14
+        },
+        {
+          'label': 'Dívidas Corporativas',
+          'cor': '#FFBF00',
+          'value': 23
+        },
+        {
+          'label': 'Dívidas Públicas',
+          'cor': '#FF5C26',
+          'value': 26
+        }
+      ]
+
+    },
+    {
+      'nome' : 'Moderado',
+      'nivel' : 3,
+      'desc' : 'Para investidores com capital de investimento',
+      'select' : false,
+      'acoes' :  [
+        {
+          'label': 'Ações de Grandes Companias',
+          'cor': '#73FF73',
+          'value': 16
+        },
+        {
+          'label': 'Ações de Pequenas Companias',
+          'cor': '#A3D900',
+          'value': 19
+        },
+        {
+          'label': 'Ações de Mercado Emergente',
+          'cor': '#B973FF',
+          'value': 10
+        },
+        {
+          'label': 'Ações de Mercado Imobiliário',
+          'cor': '#26C9FF',
+          'value': 16
+        },
+        {
+          'label': 'Dívidas Corporativas',
+          'cor': '#FFBF00',
+          'value': 20
+        },
+        {
+          'label': 'Dívidas Públicas',
+          'cor': '#FF5C26',
+          'value': 19
+        }
+      ]
+
+    },
+    {
+      'nome' : 'Moderado/Agressivo',
+      'nivel' : 4,
+      'desc' : 'Para investidores com capital de investimento',
+      'select' : false,
+      'acoes' :  [
+        {
+          'label': 'Ações de Grandes Companias',
+          'cor': '#73FF73',
+          'value': 13
+        },
+        {
+          'label': 'Ações de Pequenas Companias',
+          'cor': '#A3D900',
+          'value': 25
+        },
+        {
+          'label': 'Ações de Mercado Emergente',
+          'cor': '#B973FF',
+          'value': 14
+        },
+        {
+          'label': 'Ações de Mercado Imobiliário',
+          'cor': '#26C9FF',
+          'value': 22
+        },
+        {
+          'label': 'Dívidas Corporativas',
+          'cor': '#FFBF00',
+          'value': 13
+        },
+        {
+          'label': 'Dívidas Públicas',
+          'cor': '#FF5C26',
+          'value': 13
+        }
+      ]
+
+    },
+    {
+      'nome' : 'Agressivo',
+      'nivel' : 5,
+      'desc' : 'Para investidores com capital de investimento',
+      'select' : false,
+      'acoes' :  [
+        {
+          'label': 'Ações de Grandes Companias',
+          'cor': '#73FF73',
+          'value': 14
+        },
+        {
+          'label': 'Ações de Pequenas Companias',
+          'cor': '#A3D900',
+          'value': 25
+        },
+        {
+          'label': 'Ações de Mercado Emergente',
+          'cor': '#B973FF',
+          'value': 20
+        },
+        {
+          'label': 'Ações de Mercado Imobiliário',
+          'cor': '#26C9FF',
+          'value': 30
+        },
+        {
+          'label': 'Dívidas Corporativas',
+          'cor': '#FFBF00',
+          'value': 6
+        },
+        {
+          'label': 'Dívidas Públicas',
+          'cor': '#FF5C26',
+          'value': 5
+        }
+      ]
 
     }
   ];
 
   $scope.perfil = $scope.perfis[0];
 
-  $scope.perfilGraficoPie = function () {
+  $scope.perfilIndex = 0;
 
-    var options = {};
+  $scope.idade = 42;
 
-    var data = {
-      labels: [
-        "Ações de Grandes Companias",
-        "Ações de Pequenas Companias",
-        "Ações de Mercado Emergente",
-        "Ações de Mercado Imobiliário",
-        "Dívidas Corporativas",
-        "Dívidas Públicas"
-      ],
+  $scope.valor = 3111;
+
+  $scope.mensal = 10;
+
+  $scope.proximoPerfil = function () {
+
+    if($scope.perfilIndex == $scope.perfis.length -1){
+      $scope.perfilIndex = 0;
+    }else {
+      $scope.perfilIndex++;
+    }
+    $scope.perfil = $scope.perfis[$scope.perfilIndex];
+
+    $scope.perfilGraficoPie();
+
+  };
+
+  $scope.anteriorPerfil = function () {
+
+    if($scope.perfilIndex == 0){
+      $scope.perfilIndex = $scope.perfis.length - 1;
+    }else {
+      $scope.perfilIndex--;
+    }
+    $scope.perfil = $scope.perfis[$scope.perfilIndex];
+
+    $scope.perfilGraficoPie();
+
+  };
+
+  $scope.perfilGrafico = function () {
+    var databarSleep = {
+      labels: ['34', '36', '38', '40', '42', '44', '46', '48', '50'],
       datasets: [
         {
-          data: [16,19,10,16,33,6],
+          label: "My First dataset",
+          fill: false,
+          pointRadius: 0,
+          lineTension: 0.1,
+          borderColor: "#fff",
+          borderWidth: 0.8,
+          strokeColor: "#fff",
+          data: [0,0.8,1.5,2.3,3.3,4.5,6.3,9,12],
+        }
+      ]
+    };
+
+    var options = {
+      scaleOverride: true,
+      scaleSteps: 3,
+      scaleStepWidth: 10,
+      scaleStartValue: 0,
+      scales: {
+        yAxes: [{
+          gridLines: {color:"#4EA5B4",zeroLineColor:"#4EA5B4"},
+          ticks: {
+            max: 12,
+            min: 0,
+            fontColor : "#9CCDD4",
+            fontSize: 10,
+            stepSize:3,
+            callback: function(value, index, values) {
+              if(parseInt(value) > 1000){
+                return 'R$ ' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "," + ' mil');
+              } else {
+                return 'R$ ' + value + ' mil';
+              }
+            }
+          }
+        }],
+        xAxes: [{
+          gridLines: {color:"#4EA5B4",zeroLineColor:"#4EA5B4"},
+          ticks: {
+            max: 50,
+            min: 34,
+            stepSize:2,
+            fontColor : "#9CCDD4",
+            fontSize: 10
+
+          },
+
+        }]
+      }
+
+    };
+
+    var chartsleep = document.getElementById("chartlineperfil").getContext("2d");
+
+    var chartsleepObj = new Chart(chartsleep, {
+      type: 'line',
+      scaleFontColor: "#fff",
+      scaleLineColor: 'rgba(0, 0, 0, 0)',
+      scaleLabel : "<%= ' R$ ' + value + ' mil '  %>",
+      showTooltips : false,
+      data: databarSleep,
+      options: options
+    });
+  };
+
+  $scope.perfilGraficoPie = function () {
+
+    var options = {},
+        obj = {},
+        acoes = $scope.perfil.acoes,
+        labels = [],
+        values = [],
+        colors = [];
+
+    angular.forEach (acoes, function(obj){
+      labels.push(obj.label);
+      values.push(obj.value);
+      colors.push(obj.cor);
+
+    });
+
+    var data = {
+      labels: labels,
+      datasets: [
+        {
+          data: values,
           borderWidth: 0,
-          backgroundColor: ["#73FF73","#A3D900","#B973FF","#26C9FF","#FFBF00","#FF5C26"],
-          hoverBackgroundColor: ["#73FF73","#A3D900","#B973FF","#26C9FF","#FFBF00","#FF5C26"]
+          backgroundColor: colors,
+          hoverBackgroundColor: colors
         }]
     };
 

@@ -296,7 +296,7 @@ label, input, button, select, textarea {
 }
 .head-box .perfil-tit {
   color:#fff;
-  font-size:25px;
+  font-size:24px;
   margin-bottom: 7px;
   margin-top: 7px;
 }
@@ -473,21 +473,4 @@ label, input, button, select, textarea {
   display: inline-block;
   float: left;
 }
-.acoes > div > span.verde b {
-  background: #73FF73;
-}
-.acoes > div > span.musgo b {
-  background: #A3D900;
-}
-.acoes > div > span.violeta b {
-  background: #B973FF;
-}
-.acoes > div > span.azul b {
-  background: #26C9FF;
-}
-.acoes > div > span.laranja b {
-  background: #FFBF00;
-}
-.acoes > div > span.vermelho b {
-  background: #FF5C26;
-}
+
