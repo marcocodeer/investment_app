@@ -4,25 +4,53 @@
   <ion-slide-box>
     <ion-slide>
 
-      <canvas id="line" class="chart chart-line" data="data" labels="labels" legend="true" series="series" options=""></canvas>
-     <div class = "row" style="text-align:center;">
+      <div class="head-box" >
 
-       <div class = "col inputs-values">
-         <div><span>Idade</span></div>
-         <div class="input-age"><span>42</span></div>
-      </div>    
-      <div class = "col inputs-values">
-         <div><span>Valor Projetado</span></div>
-         <div class="input-value-project"><span><span style="color: #7fcfd2;">R$</span> 3.111</span></div>
-      </div>    
-      <div class = "col inputs-values">
-         <div><span>Mensal</span></div>
-         <div class="input-mensal"><span><span style="color: #7fcfd2;">R$</span> 10</span></div>
+        <div class="column perfil"  >
+
+          <img ng-src="img/perfil-bg.png" alt="" />
+
+          <p class="perfil-tit"  >
+            <img ng-src="img/bt-arrow-left.png" alt="" />
+            Moderado/Agressivo
+            <img ng-src="img/bt-arrow-right.png" alt="" />
+          </p>
+          <p class="perfil-desc"  >
+            Para investidores com capital de investimento
+          </p>
+
+        </div>
+
+      </div>
+      <div class="column box-grafico"  >
+
+        <div class="row">
+
+          <label class="item col-20">
+            <span>Idade</span>
+            <input type="text" class="input-style" ng-model="idade">
+          </label>
+
+          <label class="item col-50">
+            <span>Valor Projetado</span>
+            <input type="text" class="input-style"  ng-model="valor |  currency : 'R$ '  ">
+          </label>
+
+          <label class="item col-30">
+            <span>Mensal</span>
+            <input type="text" class="input-style"  ng-model="mensal |  currency : 'R$ '">
+          </label>
+
+        </div>
+
+        <div class="row">
+
+          <canvas id="chartbarsleep" width="270" height="100" class="barchart" ng-init="perfilGrafico()"></canvas>
+
+        </div>
+
       </div>
 
-    </div>
-
-     <h5 class="title-investidor">Para investidores com capital de investimento</h5>
    </ion-slide>
    <ion-slide>
     <div class="box blue">
@@ -32,7 +60,7 @@
   </ion-slide>
 
   </ion-slide-box>
-  <div style="text-align:center;margin:15px;"> 
+  <div style="text-align:center;margin:15px;">
     <button  class="button button-block btn-cadastro">
       <i class="icon ion-ios-checkmark-empty" style="font-size:30px;"></i>
     &nbsp;
