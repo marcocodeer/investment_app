@@ -357,3 +357,75 @@ label, input, button, select, textarea {
   color:#fff;
 
 }
+.head-box .home-desc {
+  color:#fff;
+  font-size:15px;
+  margin-bottom: 15px;
+  text-align:center;
+}
+.head-box .home-title {
+  color:#fff;
+  font-size:50px;
+  margin-bottom: 20px;
+  text-align:center;
+  font-weight:100;
+}
+.head-box .home-title small {
+  color:#B1D2DF;
+  font-size:30px;
+}
+.head-box .home-title span{
+  font-size:20px;
+}
+.head-box .home-sub-lable {
+  color:#fff;
+  font-size:11px;
+  margin-bottom: 1px;
+  text-align:center;
+}
+.head-box .home-sub-value {
+  color:#fff;
+  font-size:19px;
+  margin-bottom: 1px;
+  text-align:center;
+}
+.head-box .home-sub-value small{
+  color:#B1D2DF;
+  font-size:15px;
+}
+.head-box .home-sub-value span{
+  font-size:15px;
+
+}
+.head-box.home {
+  height: 240px;
+  font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+
+}
+
+.head-box.home > div{
+  background:transparent;
+  background-image: none;
+}
+.barchart.home{
+  width: 105% !important;
+  height: 100% !important;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+.chartbox{
+  padding: 0;
+  height: 289px;
+}
+.chartbox p{
+  font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+  font-size:11px;
+  position: absolute;
+  bottom: 3px;
+  left: 15px;
+  right: 15px;
+  color: white;
+}
+.chartbox p span{
+  float: right;
+}

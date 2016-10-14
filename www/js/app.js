@@ -213,6 +213,15 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
         }
       }
     })
+    .state('app.home', {
+      url: '/home',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/home.html',
+          controller: 'AppCtrl'
+        }
+      }
+    })
     .state('app.movimentar-saldo', {
       url: '/movimentar-saldo',
       views: {

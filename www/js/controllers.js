@@ -84,6 +84,53 @@ angular.module('starter.controllers', [])
     });
   }
 
+  $scope.homeGrafico = function () {
+    var databarSleep = {
+      labels: ['34', '36', '38', '40', '42', '44', '46', '48', '50'],
+      datasets: [
+        {
+          label: "My First dataset",
+          fill: true,
+          backgroundColor: "#60C750",
+          pointRadius: 0,
+          lineTension: 1,
+          borderColor: "#fff",
+          borderWidth: 2,
+          strokeColor: "#fff",
+          data: [0,4,3,5,4,6,5,9,10]
+        }
+      ]
+    };
+
+    var options = {
+      scaleOverride: true,
+      scaleSteps: 3,
+      scaleStepWidth: 10,
+      scaleStartValue: 0,
+      scales: {
+        yAxes: [{
+          display: false
+        }],
+        xAxes: [{
+          display: false
+        }]
+      }
+
+    };
+
+    var chartsleep = document.getElementById("charthome").getContext("2d");
+
+
+    var chartsleepObj = new Chart(chartsleep, {
+      type: 'line',
+      scaleFontColor: "#fff",
+      scaleLineColor: 'rgba(0, 0, 0, 0)',
+      scaleLabel : "<%= ' R$ ' + value + ' mil '  %>",
+      showTooltips : false,
+      data: databarSleep,
+      options: options
+    });
+  }
 
 
 
