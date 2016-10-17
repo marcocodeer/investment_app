@@ -110,7 +110,7 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
   .state('pergunta-11', {
     url: '/perguntas-perfil-11',
     templateUrl: 'templates/perguntas/pergunta-11-sugestao.html',
-    controller: 'AppCtrl'
+    controller: 'perfilCtrl'
   })
 
   .state('pergunta-12', {
@@ -137,14 +137,7 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
     controller: 'AppCtrl'
   })
 
-  .state('app.search', {
-    url: '/search',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/search.html'
-      }
-    }
-  })
+
 
   .state('app.configuracoes', {
     url: '/conf',
@@ -271,7 +264,7 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
       views: {
         'menuContent': {
           templateUrl: 'templates/perfil.html',
-          controller: 'AppCtrl'
+          controller: 'perfilCtrl'
         }
       }
     })
@@ -301,17 +294,7 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
           controller: 'AppCtrl'
         }
       }
-    })
-
-  .state('app.single', {
-    url: '/playlists/:playlistId',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
-      }
-    }
-  });
+    }) ;
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/perguntas-perfil-1');
+  $urlRouterProvider.otherwise('/login');
 });

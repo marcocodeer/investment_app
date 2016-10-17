@@ -1,38 +1,80 @@
 
 <ion-view view-title="PERFIL DE INVESTIMENTO" style="background: url(img/perfil-investimento-bg.png) no-repeat center;background-size:cover;">
 
+      <div class="head-box" >
+
+        <div class="column perfil"  >
+
+          <img ng-src="{{'img/perfil-bg' + perfil.nivel + '.png'}}" alt="" />
+
+          <p class="perfil-tit"  >
+            <img ng-src="img/bt-arrow-left.png" alt=""  ng-click="anteriorPerfil()"/>
+            {{perfil.nome}}
+            <img ng-src="img/bt-arrow-right.png" alt="" ng-click="proximoPerfil()"/>
+          </p>
+          <p class="perfil-desc"  >
+            {{perfil.desc}}
+          </p>
+
+        </div>
+
+      </div>
+
   <ion-slide-box>
     <ion-slide>
 
-      <canvas id="line" class="chart chart-line" data="data" labels="labels" legend="true" series="series" options=""></canvas>
-     <div class = "row" style="text-align:center;">
+      <div class="column pie">
 
-       <div class = "col inputs-values">
-         <div><span>Idade</span></div>
-         <div class="input-age"><span>42</span></div>
-      </div>    
-      <div class = "col inputs-values">
-         <div><span>Valor Projetado</span></div>
-         <div class="input-value-project"><span><span style="color: #7fcfd2;">R$</span> 3.111</span></div>
-      </div>    
-      <div class = "col inputs-values">
-         <div><span>Mensal</span></div>
-         <div class="input-mensal"><span><span style="color: #7fcfd2;">R$</span> 10</span></div>
+        <canvas id="chartpieperfil" width="270" height="100" class="barchart" ng-init="perfilGraficoPie()"></canvas>
+
+        <div class="acoes">
+          <div ng-repeat="acao in perfil.acoes">
+            <span class="verde"><b ng-style="{'background-color':acao.cor}"></b> {{acao.value}}% </span>{{acao.label}}
+          </div>
+        </div>
+
       </div>
 
-    </div>
+    </ion-slide>
+    <ion-slide>
 
-     <h5 class="title-investidor">Para investidores com capital de investimento</h5>
+
+      <div class="column box-grafico"  >
+
+        <div class="row">
+
+          <label class="item col-20">
+            <span>Idade</span>
+            <input type="text" class="input-style" ng-model="idade">
+          </label>
+
+          <label class="item col-50">
+            <span>Valor Projetado</span>
+            <input type="text" class="input-style"  ng-model="valor |  currency : 'R$ '  ">
+          </label>
+
+          <label class="item col-30">
+            <span>Mensal</span>
+            <input type="text" class="input-style"  ng-model="mensal |  currency : 'R$ '">
+          </label>
+
+        </div>
+
+        <div class="row">
+
+          <canvas id="chartlineperfil" width="270" height="100" class="barchart" ng-init="perfilGrafico()"></canvas>
+
+        </div>
+
+        <p class="obs">*Desempenho passado não é garantia de retorno futuro</p>
+
+      </div>
+
    </ion-slide>
-   <ion-slide>
-    <div class="box blue">
-      <h1>BLUE</h1>
-      <button ng-click="previous()">Previous slide!</button>
-    </div>
-  </ion-slide>
 
   </ion-slide-box>
-  <div style="text-align:center;margin:15px;"> 
+
+  <div style="text-align:center;margin:15px;">
     <button  class="button button-block btn-cadastro">
       <i class="icon ion-ios-checkmark-empty" style="font-size:30px;"></i>
     &nbsp;
