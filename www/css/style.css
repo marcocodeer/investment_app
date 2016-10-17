@@ -61,6 +61,10 @@ Cleiton Schonardie UI/UX and front-end developer
   height:85vh;
   width:100%;
 }
+#slide-seguranca .slider-slide {
+  height:60vh;
+  width:100%;
+}
 .btn-perfil {
   color:#fff;
   background-color: rgb(96, 199, 80) !important;
@@ -109,6 +113,7 @@ Cleiton Schonardie UI/UX and front-end developer
 .tabs {
   top:50% !important;
   color: #ffff;
+  width:100% !important;
   background-color: transparent !important;
   background-size: none !important;
 }
@@ -120,6 +125,26 @@ Cleiton Schonardie UI/UX and front-end developer
 }
 .tabs-dark > .tabs, .tabs.tabs-dark {
   background-image: none;
+}
+.pane, .view {
+  background-color: transparent !important;
+}
+#tabs-usuario .tabs {
+  top:8% !important;
+  width: 100% !important;
+  height:30px !important;
+  background-color: #639ece !important;
+}
+.tabs-positive > .tabs, .tabs.tabs-positive {
+background-image: none !important;
+color: #fff;
+}
+.tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
+  border-bottom: 1px solid #fff !important;
+  height:20px;
+}
+.tabs-icon-top > .tabs .tab-item, .tabs-icon-top.tabs .tab-item, .tabs-icon-bottom > .tabs .tab-item, .tabs-icon-bottom.tabs .tab-item {
+  margin-top:8px;
 }
 
 /**
@@ -141,6 +166,15 @@ Cleiton Schonardie UI/UX and front-end developer
   margin-left:-5px;
 }
 .input-container > .item{
+  background-color:transparent;
+  border:none;
+}
+.input-container > span {
+  margin-left:17px;
+  color:#fff;
+  font-size:11px;
+}
+.input-container > div > .item{
   background-color:transparent;
   border:none;
 }
@@ -337,6 +371,14 @@ label, input, button, select, textarea {
   border:none;
   padding:20px;
 }
+#item-faq {
+  background-color: transparent;
+  color: #fff;
+  height:auto;
+  border:none;
+  padding:20px;
+  margin-top:-20px;
+}
 #item-circle-grey {
   width:28px;
   height:29px;
@@ -355,8 +397,8 @@ label, input, button, select, textarea {
   padding-left:20px;
   padding-top:2px;
   color:#fff;
-
 }
+
 .head-box .home-desc {
   color:#fff;
   font-size:15px;

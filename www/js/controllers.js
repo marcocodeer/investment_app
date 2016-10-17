@@ -250,6 +250,15 @@ angular.module('starter.controllers', [])
     $scope.adicionarContaBancaria = function (){
       $state.go('app.conta-bancaria');
     };
+    $scope.adicionarNotificacoes = function (){
+      $state.go('app.notificacoes');
+    };
+    $scope.adicionarDadosUsuario = function (){
+      $state.go('app.dados-usuario');
+    };
+    $scope.segurancaConfig = function (){
+      $state.go('app.seguranca');
+    };
 
 
 

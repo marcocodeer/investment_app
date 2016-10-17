@@ -154,6 +154,7 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
       }
     }
   })
+
   .state('app.arredondamentos', {
     url: '/conf/arredondamentos',
     views: {
@@ -178,11 +179,71 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
       }
     }
   })
+
   .state('app.conta-bancaria', {
     url: '/conf/conta-bancaria',
     views: {
       'menuContent': {
         templateUrl: 'templates/configuracoes/conta-bancaria/conta-bancaria.html'
+      }
+    }
+  })
+
+  .state('app.notificacoes', {
+    url: '/conf/notificacoes',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/configuracoes/notificações/notificacoes.html'
+      }
+    }
+  })
+
+  .state('app.dados-usuario', {
+    url: '/conf/dados-perfil',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/configuracoes/dados-usuario/dados-usuario.html'
+      }
+    }
+  })
+
+  .state('app.seguranca', {
+    url: '/conf/seguranca',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/configuracoes/segurança/seguranca.html'
+      }
+    }
+  })
+  .state('app.ajuda', {
+    url: '/ajuda',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/ajuda/ajuda-main.html'
+      }
+    }
+  })
+  .state('app.faq', {
+    url: '/ajuda/faq',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/ajuda/faq/faq.html'
+      }
+    }
+  })
+  .state('app.suporte', {
+    url: '/ajuda/suporte',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/ajuda/suporte/suporte.html'
+      }
+    }
+  })
+  .state('app.ajuda-seguranca', {
+    url: '/ajuda/seguranca',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/ajuda/seguranca/ajuda-seguranca.html'
       }
     }
   })
@@ -195,6 +256,7 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
         }
       }
     })
+
     .state('app.playlists', {
       url: '/playlists',
       views: {

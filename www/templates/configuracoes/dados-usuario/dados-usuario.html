@@ -1,0 +1,94 @@
+<ion-view view-title="DADOS DO ÚSUARIO" style="background: url(img/login-bg-acorn.png) no-repeat center;background-size:cover;height:100%;overflow: scroll;">
+
+  <ion-tabs class="tabs-positive tabs-icon-top" id="tabs-usuario" >
+
+    <ion-tab title="Pessoal" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline">
+      <!-- Tab 1 content -->
+      <div style="margin-top:100px;">
+
+          <div class="input-container" style="padding:10px;">
+
+            <label class="item">
+              <input type="text" class="input-style" placeholder="Nome" style="margin-top: -15px;">
+            </label>
+            <label class="item">
+              <input type="text" class="input-style" placeholder="Telefone" style="margin-top: -15px;">
+            </label>
+            <label class="item">
+              <input type="text" class="input-style" placeholder="E-mail" style="margin-top: -15px;">
+            </label>
+            <label class="item">
+              <input type="text" class="input-style" placeholder="CPF" style="margin-top: -15px;">
+            </label>
+            <div class="row" style="margin-left:-5px;margin-top: -15px;">
+              <label class="item">
+                <input type="text" class="input-style" placeholder="CEP" style="width:155px !important;">
+              </label>
+              <label class="item">
+                <input type="text" class="input-style" placeholder="UF" style="width:50px !important;">
+              </label>
+            </div>
+            <label class="item">
+              <input type="text" class="input-style" placeholder="Cidade" style="margin-top: -15px;">
+            </label>
+            <label class="item">
+              <input type="text" class="input-style" placeholder="Endereço" style="margin-top: -15px;">
+            </label>
+            <label class="item">
+              <input type="text" class="input-style" placeholder="Complemento" style="margin-top: -15px;">
+            </label>
+
+
+              <button ng-click="doQuestion3()" class="item-center button button-clear btn-cadastro" style="margin-top:30px;">
+                <i class="icon ion-ios-checkmark-empty" style="font-size:30px;"></i>
+              &nbsp;
+                SALVAR
+              </button>
+
+          </div>
+      </div>
+
+    </ion-tab>
+
+    <ion-tab title="Financeiro" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
+      <!-- Tab 2 content -->
+      <div style="margin-top:100px;">
+
+          <div class="input-container" style="padding:10px;">
+            <span>Qual é seu estado empregaticio?</span>
+            <label class="item">
+              <input type="text" class="input-style" placeholder="Estudante" style="font-size:20px;margin-top:-15px;">
+            </label>
+            <span>Quanto vale os seus bens?</span>
+            <label class="item">
+              <input type="text" class="input-style" placeholder="Menos de R$10 mil" style="font-size:20px;margin-top:-15px;">
+            </label>
+            <span>Quanto tempo você pretende investir?</span>
+            <label class="item">
+              <input type="text" class="input-style" placeholder="Menos de 5 anos" style="font-size:20px;margin-top:-15px;">
+            </label>
+            <span>Qual é o seu principal motivo para investir?</span>
+            <label class="item">
+              <input type="text" class="input-style" placeholder="Geral" style="font-size:20px;margin-top:-15px;">
+            </label>
+            <span>Quanto você ganha por ano?</span>
+            <label class="item">
+              <input type="text" class="input-style" placeholder="Menos de R$25 mil" style="font-size:20px;margin-top:-15px;">
+            </label>
+
+
+              <button ng-click="doQuestion3()" class="item-center button button-clear btn-cadastro" style="margin-top:30px;">
+                <i class="icon ion-ios-checkmark-empty" style="font-size:30px;"></i>
+              &nbsp;
+                SALVAR
+              </button>
+
+          </div>
+      </div>
+
+
+    </ion-tab>
+
+  </ion-tabs>
+
+  </ion-view>
