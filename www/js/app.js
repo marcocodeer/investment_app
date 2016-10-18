@@ -240,6 +240,46 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
       }
     }
   })
+  .state('app.legal', {
+    url: '/legal',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/legal/legal-main.html'
+      }
+    }
+  })
+  .state('app.contrato', {
+    url: '/legal/contrato',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/legal/contrato/contrato.html'
+      }
+    }
+  })
+  .state('app.divulgacao', {
+    url: '/legal/divulgacao',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/legal/divulgacao/divulgacao.html'
+      }
+    }
+  })
+  .state('app.politicas', {
+    url: '/legal/politicas',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/legal/politicas/politicas.html'
+      }
+    }
+  })
+  .state('app.termos', {
+    url: '/legal/termos',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/legal/termos/termos.html'
+      }
+    }
+  })
 
   .state('app.browse', {
       url: '/browse',

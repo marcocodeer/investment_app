@@ -62,7 +62,7 @@ Cleiton Schonardie UI/UX and front-end developer
   width:100%;
 }
 #slide-seguranca .slider-slide {
-  height:60vh;
+  height:65vh;
   width:100%;
 }
 .btn-perfil {
@@ -389,7 +389,7 @@ label, input, button, select, textarea {
   color:#fff;
   position:relative;
   left:11px;
-  top:3px;
+  top:5px;
 }
 #item-color {
   font-size:15px;
@@ -515,4 +515,82 @@ label, input, button, select, textarea {
   display: inline-block;
   float: left;
 }
+.seg-title {
+  font-size:20px;
+  color:#FFF;
+  margin-top:60px;
+}
+.seg-desc {
+  font-size:15px;
+  color:#FFF;
+  padding:30px;
+  margin-top:-30px;
+}
+.img-ajuda-seguranca {
+  padding-top:30px;
+}
+.footer-ajuda {
+  padding:25px;
+  background-color:#3c9bae;
+}
+.footer-ajuda > p {
+  text-align:center;
+  font-size:15px;
+  color:#fff;
+  margin-top:25px;
+}
+.contrato-content {
+  padding:30px;
+}
+.contrato-content > p {
+  color: rgba(255, 255, 255, 0.541);
+  font-size:13px;
+  padding-top:15px;
+}
+.contrato-content > p + p{
+ color: rgb(255, 255, 255);
+  font-size:12px;
+}
+.topo-menu-altura {
+  padding-top:15px;
+}
+.menu-box {
+  padding:40px;
+  margin-left:20px;
+  background-color:#d6d6d6;
+}
+.link-menu-style {
+  color: #000;
+  font-size:13px;
+  text-decoration: none;
+}
+.menu-principal {
+  background: url(../img/bg-menu.png) no-repeat;
+  background-size:cover;
 
+}
+.menu-principal > div > img {
+  position:relative;left:21px;
+}
+.menu-principal > div > span {
+  position:absolute;left:102px;font-size:9px;color:#fff
+}
+.menu-principal-perfil {
+  text-align:center;
+  margin-top:-110px;
+}
+.menu-principal-perfil > p{
+  margin:2px;
+}
+.menu-principal-perfil > p > span {
+  font-size:50px;text-align:center;color:#fff;font-weight:300;
+}
+.menu-principal-perfil > p > span + span {
+  font-size:20px;text-align:center;color:#fff;
+}
+#perfil-respondido {
+  font-size:15px !important;text-align:center;color:#fff;font-weight: 400;
+}
+#perfil-email {
+  font-size:13px;text-align:center;color:#fff;font-weight: 400;
+}
