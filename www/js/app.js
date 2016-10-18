@@ -317,6 +317,15 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
         }
       }
     })
+    .state('app.home2', {
+      url: '/home-sem-investimento',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/home-sem-investimento.html',
+          controller: 'AppCtrl'
+        }
+      }
+    })
     .state('app.movimentar-saldo', {
       url: '/movimentar-saldo',
       views: {

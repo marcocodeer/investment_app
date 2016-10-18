@@ -65,6 +65,10 @@ Cleiton Schonardie UI/UX and front-end developer
   height:65vh;
   width:100%;
 }
+#slide-home .slider-slide {
+  height:88vh;
+  width:100%;
+}
 .btn-perfil {
   color:#fff;
   background-color: rgb(96, 199, 80) !important;
@@ -526,6 +530,12 @@ label, input, button, select, textarea {
   padding:30px;
   margin-top:-30px;
 }
+.home-desc {
+  font-size:15px;
+  color:#FFF;
+  padding:30px;
+  margin-top:-20px;
+}
 .img-ajuda-seguranca {
   padding-top:30px;
 }
@@ -583,14 +593,46 @@ label, input, button, select, textarea {
   margin:2px;
 }
 .menu-principal-perfil > p > span {
-  font-size:50px;text-align:center;color:#fff;font-weight:300;
+  font-size:50px;
+  text-align:center;
+  color:#fff;
+  font-weight:300;
 }
 .menu-principal-perfil > p > span + span {
-  font-size:20px;text-align:center;color:#fff;
+  font-size:20px;
+  text-align:center;
+  color:#fff;
 }
 #perfil-respondido {
-  font-size:15px !important;text-align:center;color:#fff;font-weight: 400;
+  font-size:15px !important;
+  text-align:center;
+  color:#fff;
+  font-weight: 400;
 }
 #perfil-email {
-  font-size:13px;text-align:center;color:#fff;font-weight: 400;
+  font-size:13px;
+  text-align:center;
+  color:#fff;
+  font-weight: 400;
+}
+.btn-home {
+  padding:30px;
+  margin-top:-40px;
+}
+.home-principal-div {
+  text-align:center;
+  background:url('../img/bg-div-home.png') no-repeat;
+  width:auto;
+  background-size: cover;
+  height: 115px;
+}
+.home-icons {
+  position:absolute;
+  top:40px;
+  left:80%;
+}
+.home-titlex {
+  font-size:15px;
+  color:#fff;
+  padding-top:70px;
 }
