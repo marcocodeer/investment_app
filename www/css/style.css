@@ -149,9 +149,16 @@ Cleiton Schonardie UI/UX and front-end developer
 }
 .pane, .view {
   background-color: transparent !important;
+  overflow: inherit;
 }
 #tabs-usuario .tabs {
   top:8% !important;
+  width: 100% !important;
+  height:30px !important;
+  background-color: #639ece !important;
+}
+#tabs-historico .tabs {
+  top:20% !important;
   width: 100% !important;
   height:30px !important;
   background-color: #639ece !important;
@@ -296,7 +303,9 @@ label, input, button, select, textarea {
 }
 
 .footer-bar-custom-last .item-right { right: 10px }
-
+.footer-security {
+  padding:30px;position:absolute;top:400px !important;
+}
 
 .box-grafico{
   padding:20px;

@@ -147,6 +147,15 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
       }
     }
   })
+  .state('app.historico', {
+    url: '/historico',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/historico/historico.html',
+        controller: 'AppCtrl'
+      }
+    }
+  })
 
   .state('app.arredondamentos', {
     url: '/conf/arredondamentos',

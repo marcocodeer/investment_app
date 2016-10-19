@@ -1,0 +1,120 @@
+
+<ion-view view-title="HISTÓRICO" style="background: url(img/perfil-investimento-bg.png) no-repeat center;background-size:cover;">
+  <div class="row home-icons" >
+  <a ng-click="openPopover($event)"><img src="img/icon-ajuda-azul.png" alt="" style="margin-left:30px !important;"/></a>
+  </div>
+
+  <div style="margin-top:60px;padding:15px !important;">
+    <label class="item item-input" style="border-radius: 14px;background-color: #71adcc;border:none;width: 288px;
+  height: 28px;">
+
+      <input type="text" placeholder="Pesquise aqui..." data-ng-model="searchForce">
+        <i class="icon ion-ios-search" style="color:#fff;margin-right:30px;"></i>
+    </label>
+  </div>
+
+  <ion-tabs class="tabs-positive tabs-icon-top" id="tabs-historico">
+
+    <ion-tab title="Este mês" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline">
+      <!-- Tab 1 content -->
+      <div style="margin-top:145px;">
+
+        <div class="list">
+
+          <div class="row item" style="background-color: transparent !important;color: #fff;height:auto;border:none;padding:20px;">
+            <div class="col-80">
+              <h3 style="font-weight:300;color:#fff;"><span style="font-size:30px;color: #60c750;">+</span>&nbsp; <span style="color: #8cc5cc;">R$</span>&nbsp; <span style="font-size:30px;">0</span>,36</h3>
+              <h3 style="font-weight:300;color:#fff;font-size:12px;"><span style="color: #8cc5cc">14/07/2016</span> R$4,46 Starbucks</h3>
+            </div>
+          </div>      <div class="row item" style="background-color: transparent !important;color: #fff;height:auto;border:none;padding:20px;">
+            <div class="col-80">
+              <h3 style="font-weight:300;color:#fff;"><span style="font-size:30px;color: #60c750;">+</span>&nbsp; <span style="color: #8cc5cc;">R$</span>&nbsp; <span style="font-size:30px;">0</span>,68</h3>
+              <h3 style="font-weight:300;color:#fff;font-size:12px;"><span style="color: #8cc5cc">14/07/2016</span> R$55,32 Mercado Extra</h3>
+            </div>
+          </div>
+
+        </div>
+    </ion-tab>
+
+    <ion-tab title="Este ano" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
+      <!-- Tab 2 content -->
+      <div style="margin-top:100px;">
+
+
+      </div>
+
+
+    </ion-tab>
+    <ion-tab title="Tudo" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
+      <!-- Tab 2 content -->
+      <div style="margin-top:100px;">
+
+
+      </div>
+
+
+    </ion-tab>
+
+
+  </ion-tabs>
+
+  <script id="templates/popover.html" type="text/ng-template">
+    <ion-popover-view class="popover-style">
+      <div class="arrow-popover">
+      </div>
+        <ion-slide-box id="slide-popover" class="popover-slide-box" style="">
+
+          <ion-slide>
+
+            <div style="text-align:center;margin-top:-20px;">
+
+              <p class="seg-title">Seus investimentos</p>
+              <img src="img/popover-pic8.png" class="" style="padding-top:20px;"/>
+              <p class="seg-desc" style="margin-top:-80px;">A tela de saldo mostra todas as compras e arredondamentos das suas contas conectadas.</p>
+            </div>
+
+              <div class="col btn-home" style="margin-top:15px;">
+                <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
+
+                  ENTENDI
+                </button>
+              </div>
+
+         </ion-slide>
+          <ion-slide>
+            <div style="text-align:center;margin-top:-20px;">
+              <p class="seg-title">Conecte uma conta de arredondamento</p>
+              <img src="img/popover-pic2.png" class="" style="padding-top:20px;"/>
+              <p class="seg-desc">Para acumular trocados para investimentos, conecte seus cartões de crédito e débito.</p>
+            </div>
+
+              <div class="col btn-home" style="margin-top:30px;">
+                <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
+
+                  CONECTAR CONTA
+                </button>
+              </div>
+
+         </ion-slide>
+          <ion-slide>
+            <div style="text-align:center;margin-top:-20px;">
+              <p class="seg-title">Como funciona o arredondamento</p>
+              <img src="img/popover-pic3.png" class="" style="padding-top:20px;"/>
+              <p class="seg-desc">Quando você faz uma compra usando uma conta conectada, o troco do arredondamento é investido automaticamente.</p>
+            </div>
+
+              <div class="col btn-home" style="margin-top:5px;">
+                <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
+
+                  VEJA COMO FUNCIONA
+                </button>
+              </div>
+
+         </ion-slide>
+
+    </ion-popover-view>
+  </script>
+
+
+
+</ion-view>
