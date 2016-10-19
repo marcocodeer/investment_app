@@ -215,6 +215,102 @@ angular.module('starter.controllers', [])
     }, 1000);
   };
 })
+  .controller('peformanceCtrl', function($scope, $ionicModal, $timeout, $state, $ionicSlideBoxDelegate, $ionicPopover) {
+    $scope.Periodo = 1;
+    $scope.Unidade = 1;
+    $scope.acoes =  [
+          {
+            'label': 'Ações de Grandes Companias',
+            'cor': '#73FF73',
+            'value': 16
+          },
+          {
+            'label': 'Ações de Pequenas Companias',
+            'cor': '#A3D900',
+            'value': 19
+          },
+          {
+            'label': 'Ações de Mercado Emergente',
+            'cor': '#B973FF',
+            'value': 10
+          },
+          {
+            'label': 'Ações de Mercado Imobiliário',
+            'cor': '#26C9FF',
+            'value': 16
+          },
+          {
+            'label': 'Dívidas Corporativas',
+            'cor': '#FFBF00',
+            'value': 33
+          },
+          {
+            'label': 'Dívidas Públicas',
+            'cor': '#FF5C26',
+            'value': 6
+          }
+        ];
+    $scope.selecionaPeriodo = function(value){
+      $scope.Periodo = value;
+    };
+
+    $scope.selecionaUnidade = function(value){
+      $scope.Unidade = value;
+    };
+    $scope.performanceGrafico = function (id) {
+      var databarSleep = {
+        labels: ['34', '36', '38', '40', '42', '44', '46', '48', '50'],
+        datasets: [
+          {
+            label: "My First dataset",
+            fill: true,
+            backgroundColor: "#60C750",
+            pointRadius: 0,
+            lineTension: 1,
+            borderColor: "#fff",
+            borderWidth: 2,
+            strokeColor: "#fff",
+            data: [0,4,3,5,4,6,5,9,10]
+          }
+        ]
+      };
+
+      var options = {
+        scaleOverride: true,
+        scaleSteps: 3,
+        scaleStepWidth: 10,
+        scaleStartValue: 0,
+        scales: {
+          yAxes: [{
+            display: false
+          }],
+          xAxes: [{
+            display: false
+          }]
+        }
+
+      };
+
+      var chartsleep = document.getElementById(id).getContext("2d");
+
+      var chartsleepObj = new Chart(chartsleep, {
+        type: 'line',
+        scaleFontColor: "#fff",
+        scaleLineColor: 'rgba(0, 0, 0, 0)',
+        scaleLabel : "<%= ' R$ ' + value + ' mil '  %>",
+        showTooltips : false,
+        data: databarSleep,
+        options: options
+      });
+    };
+    $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
+    $scope.series = ['Series A', 'Series B'];
+    $scope.data = [
+      [65, 59, 80, 81, 56, 55, 40],
+      [28, 48, 40, 19, 86, 27, 90]
+    ];
+
+  })
 .controller('loginCtrl', function($scope, $ionicModal, $timeout, $state) {
     $scope.resetPass = function(){
       $state.go('resetar-senha');

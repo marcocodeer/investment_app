@@ -317,6 +317,15 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
         }
       }
     })
+    .state('app.performance', {
+      url: '/performance',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/performance.html',
+          controller: 'peformanceCtrl'
+        }
+      }
+    })
     .state('app.movimentar-saldo', {
       url: '/movimentar-saldo',
       views: {

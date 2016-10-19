@@ -1,0 +1,83 @@
+<ion-view view-title="PERFORMANCE" style="background: url(img/perfil-investimento-bg.png) no-repeat center;background-size:cover;" class="performancepage">
+
+  <ion-content style="background: url(img/login-bg-acorn.png) no-repeat center;background-size:cover;height:100%;">
+    <div class="head-box home" style="height: 200px;" >
+
+      <div class="column"  >
+
+        <p class="home-desc" style="margin-bottom: -15px;padding-top: 0;" >
+          SALDO INVESTIDO
+        </p>
+
+        <p class="home-title"  >
+          <small>R$ </small>1.891<span>,98</span>
+        </p>
+
+        <p class="home-sub-lable"  >
+          Mudança no Valor (1mês)
+        </p>
+        <p class="home-sub-value"  >
+          <small>+ R$ </small>0,11<small>(+0.15%)</small>
+        </p>
+
+
+      </div>
+
+    </div>
+
+    <ion-slide-box>
+      <ion-slide>
+        <div class="column chartbox">
+
+          <canvas id="chartperformance1" width="320" height="220" class="barchart home" ng-init="performanceGrafico('chartperformance1')"></canvas>
+
+          <div class="row periodo">
+            <div ng-click="selecionaPeriodo(1)" ng-class="Periodo === 1 ? 'periodoactive' : '' ">
+              DIA
+            </div>
+            <div ng-click="selecionaPeriodo(2)" ng-class="Periodo === 2 ? 'periodoactive' : ''">
+              MÊS
+            </div>
+            <div ng-click="selecionaPeriodo(3)" ng-class="Periodo === 3 ? 'periodoactive' : ''">
+              ½ANO
+            </div>
+            <div ng-click="selecionaPeriodo(4)" ng-class="Periodo === 4 ? 'periodoactive' : ''">
+              ANO
+            </div>
+            <div ng-click="selecionaPeriodo(5)" ng-class="Periodo === 5 ? 'periodoactive' : ''">
+              TUDO
+            </div>
+          </div>
+
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="column chartbox">
+
+          <canvas id="chartperformance2" width="320" height="70" style="height: 70px !important;" class="barchart home" ng-init="performanceGrafico('chartperformance2')"></canvas>
+          <div class="acoes">
+            <div ng-repeat="acao in acoes">
+              <span> {{acao.value}}% </span>{{acao.label}}
+            </div>
+          </div>
+          <div class="row periodo unidade">
+            <div ng-click="selecionaUnidade(1)" ng-class="Unidade === 1 ? 'periodoactive' : '' ">
+              R$
+            </div>
+            <div ng-click="selecionaUnidade(2)" ng-class="Unidade === 2 ? 'periodoactive' : ''">
+              %
+            </div>
+            <div ng-click="selecionaUnidade(3)" ng-class="Unidade === 3 ? 'periodoactive' : ''">
+              AÇÕES
+            </div>
+          </div>
+
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+
+
+
+
+  </ion-content>
+</ion-view>
