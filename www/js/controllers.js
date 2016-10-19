@@ -59,11 +59,16 @@ angular.module('starter.controllers', [])
   }
 
 
-  $ionicPopover.fromTemplateUrl('templates/popover.html', {
+  $ionicPopover.fromTemplateUrl('popover.html', {
     scope: $scope,
   }).then(function(popover) {
     $scope.popover = popover;
   });
+
+  $scope.openPopover = function($event) {
+    $scope.popover.show($event);
+    console.log('xs');
+  };
 
   $scope.uf = 'UF';
   $scope.bandeiras = 'Bandeiras';

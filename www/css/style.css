@@ -69,6 +69,13 @@ Cleiton Schonardie UI/UX and front-end developer
   height:88vh;
   width:100%;
 }
+#slide-popover .slider-slide {
+  height:10vh;
+  width:100%;
+}
+#slide-popover .slider-pager {
+  margin-bottom:40px;
+}
 .btn-perfil {
   color:#fff;
   background-color: rgb(96, 199, 80) !important;
@@ -97,6 +104,16 @@ Cleiton Schonardie UI/UX and front-end developer
   width: 100%;
   border:none;
   font-weight: 600;
+}
+.btn-popover {
+  color:#fff;
+  background-color: #9dc5dd !important;
+  font-size:11px;
+  height: 45px;
+  width: 100%;
+  border:none;
+  font-weight: 600;
+  margin-top: -20px;
 }
 .btn-finalizar {
   color:#fff;
@@ -635,4 +652,25 @@ label, input, button, select, textarea {
   font-size:15px;
   color:#fff;
   padding-top:70px;
+}
+.platform-ios .popover {
+  border-radius:0px !important;
+}
+.platform-ios .popover-arrow {
+  color-color: #91bed9;
+  display:block;
+  left:248px !important;
+  background: url('../img/popover-arrow.png') no-repeat;
+  box-shadow: 4.95px 4.95px 4px 0px rgba(0, 0, 0, 0.21);
+}
+.popover-style {
+  background-color: rgb(145, 190, 217);
+  width:273px;
+  height:400px;
+  top: 76px !important;
+  left: 20px !important;
+  box-shadow: 4.95px 4.95px 4px 0px rgba(0, 0, 0, 0.21) !important;
+}
+.popover-slide-box {
+  height:385px;
 }

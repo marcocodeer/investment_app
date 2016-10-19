@@ -1,4 +1,4 @@
-<ion-content style="background: url(img/login-bg-acorn.png) no-repeat center;background-size:cover;height:100%;">
+<ion-view style="background: url(img/login-bg-acorn.png) no-repeat center;background-size:cover;height:100%;">
   <div class="head-box" >
     <div class="row">
       <div class="col-20">
@@ -21,7 +21,7 @@
         </label>
       </div>
       <div class="col-40" style="margin-left:30px;">
-        <button class="button button-icon" ng-click="popover.show($event)" >
+        <button class="button button-icon" ng-click="openPopover($event)" >
           {{uf}}
         </button>
 
@@ -52,3 +52,28 @@
   </div>
 </ion-footer-bar>
 
+<script id="popover.html" type="text/ng-template">
+  <ion-popover-view style="background-color: rgb(145, 190, 217);box-shadow: 4.95px 4.95px 4px 0px rgba(0, 0, 0, 0.21);width:273px;height:400px;">
+
+      <ion-slide-box id="slide-popover" style="height:350px;">
+        <ion-slide>
+          <div style="text-align:center;margin-top:-50px;">
+            <p class="seg-title">O seu saldo</p>
+            <img src="img/popover-pic1.png" class=""/>
+            <p class="seg-desc" style="margin-top:-80px;">A tela de saldo mostra todas as compras e arredondamentos das suas contas conectadas.</p>
+          </div>
+
+            <div class="col btn-home">
+              <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
+
+                ENTENDI
+              </button>
+            </div>
+
+       </ion-slide>
+       <ion-slide>
+       </ion-slide>
+
+  </ion-popover-view>
+</script>
+</ion-view>

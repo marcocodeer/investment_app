@@ -1,4 +1,7 @@
-<ion-view view-title="MOVIMENTAR SALDO" style="background: url(img/perfil-investimento-bg.png) no-repeat center;background-size:cover;">
+<ion-view view-title="SAQUE/DEPÓSITO" style="background: url(img/perfil-investimento-bg.png) no-repeat center;background-size:cover;">
+  <div class="row home-icons" >
+  <a ng-click="openPopover($event)"> <img src="img/icon-ajuda-azul.png" alt="" style="margin-left:30px !important;"/></a>
+  </div>
 <div style="margin:15px;">
  <div class="row" style="margin-top:60px;">
   <span style="font-size:16px;color:#79aad0;padding-top:20px;">INVESTIDO &nbsp;R$ &nbsp;&nbsp;</span><span style=""><h3 style="font-weight: 300;color:#fff;font-size:37px;">1.325,14</h3></span>
@@ -33,22 +36,59 @@
 
 
 
-<div class="row" style="text-align:center;margin-top:20px;"> 
+<div class="row" style="text-align:center;margin-top:20px;">
   <div class="col col-50">
     <button class="button button-positive btn-perfil">
     <i class="icon ion-ios-arrow-down" style="font-weight:300;"></i>
     &nbsp;Sacar
-  </button> 
+  </button>
 </div>
 <div class="col col-50">
   <button class="button button-positive btn-perfil">
    <i class="icon ion-ios-arrow-up" style="font-weight:300;"></i>
   &nbsp;Depositar
-</button></div>     
+</button></div>
 </div>
 
+<script id="popover.html" type="text/ng-template">
+  <ion-popover-view class="popover-style" style="height:410px !important;">
+    <div class="arrow-popover">
+    </div>
+      <ion-slide-box id="slide-popover" class="popover-slide-box" style="">
 
+        <ion-slide>
 
+          <div style="text-align:center;margin-top:-30px;">
 
+            <p class="seg-title">Transferindo crédito</p>
+            <img src="img/popover-pic3.png" class="" style="padding-top:20px;"/>
+            <p class="seg-desc" style="margin-top:-40px;">Deposite ou saque dinheiro a qualquer momento. Investimentos são concluidos entre 1 e 3 dias úteis, como precisamos vender suas ações, retiradas levam de 5 a 7 dias úteis para serem realizadas.</p>
+          </div>
 
+            <div class="col btn-home" style="margin-top:-15px;">
+              <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
+
+                VEJA COMO FUNCIONA
+              </button>
+            </div>
+
+       </ion-slide>
+        <ion-slide>
+          <div style="text-align:center;margin-top:-20px;">
+            <p class="seg-title">Investimentos programados</p>
+            <img src="img/popover-slide-pic7.png" class="" style="padding-top:20px;"/>
+            <p class="seg-desc">Programar investimentos recorrentes é uma ótima forma de acelerar o crescimento de sua renda.</p>
+          </div>
+
+            <div class="col btn-home" style="margin-top:45px;">
+              <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
+
+                PROGRAME UM INVESTIMENTO
+              </button>
+            </div>
+
+       </ion-slide>
+
+  </ion-popover-view>
+</script>
 </ion-view>
