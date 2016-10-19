@@ -3,7 +3,7 @@
     <div class="col-100" style="margin-left:30px;margin-top:50px;">
         <label class="item item-input item-floating-label">
           <span class="input-label"></span>
-          <button class="button button-icon" ng-click="popover.show($event)" id="popover-style-add-conta">
+          <button class="button button-icon" ng-click="openPopover($event)" id="popover-style-add-conta">
             {{ bandeiras }}
           </button>
         </label>
@@ -27,7 +27,7 @@
       </button>
     </div>
   </ion-footer-bar>
-  <script id="templates/popover.html" type="text/ng-template">
+  <script id="popover.html" type="text/ng-template">
     <ion-popover-view>
       <ion-content>
         <div class="list" style="padding:20px;">
@@ -37,6 +37,7 @@
         </div>
       </ion-content>
     </ion-popover-view>
+  </script>
 
 
   </ion-view>

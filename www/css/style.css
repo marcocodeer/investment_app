@@ -69,6 +69,13 @@ Cleiton Schonardie UI/UX and front-end developer
   height:88vh;
   width:100%;
 }
+#slide-popover .slider-slide {
+  height:10vh;
+  width:100%;
+}
+#slide-popover .slider-pager {
+  margin-bottom:40px;
+}
 .btn-perfil {
   color:#fff;
   background-color: rgb(96, 199, 80) !important;
@@ -98,6 +105,16 @@ Cleiton Schonardie UI/UX and front-end developer
   width: 100%;
   border:none;
   font-weight: 600;
+}
+.btn-popover {
+  color:#fff;
+  background-color: #9dc5dd !important;
+  font-size:11px;
+  height: 45px;
+  width: 100%;
+  border:none;
+  font-weight: 600;
+  margin-top: -20px;
 }
 .btn-finalizar {
   color:#fff;
@@ -133,9 +150,16 @@ Cleiton Schonardie UI/UX and front-end developer
 }
 .pane, .view {
   background-color: transparent !important;
+  overflow: inherit;
 }
 #tabs-usuario .tabs {
   top:8% !important;
+  width: 100% !important;
+  height:30px !important;
+  background-color: #639ece !important;
+}
+#tabs-historico .tabs {
+  top:20% !important;
   width: 100% !important;
   height:30px !important;
   background-color: #639ece !important;
@@ -280,7 +304,9 @@ label, input, button, select, textarea {
 }
 
 .footer-bar-custom-last .item-right { right: 10px }
-
+.footer-security {
+  padding:30px;position:absolute;top:400px !important;
+}
 
 .box-grafico{
   padding:20px;
@@ -584,7 +610,10 @@ label, input, button, select, textarea {
   position:relative;left:21px;
 }
 .menu-principal > div > span {
-  position:absolute;left:102px;font-size:9px;color:#fff
+  position:absolute;
+  left:102px;
+  font-size:9px;
+  color:#fff;
 }
 .menu-principal-perfil {
   text-align:center;
@@ -637,6 +666,7 @@ label, input, button, select, textarea {
   color:#fff;
   padding-top:70px;
 }
+
 .periodo div{
   background: #7aaed2;
   color: white;
@@ -664,4 +694,26 @@ label, input, button, select, textarea {
 }
 .head-box.programado {
   margin-bottom: 16px;
+}
+.platform-ios .popover {
+  border-radius:0px !important;
+}
+.platform-ios .popover-arrow {
+  color-color: #91bed9;
+  display:block;
+  left:248px !important;
+  background: url('../img/popover-arrow.png') no-repeat;
+  box-shadow: 4.95px 4.95px 4px 0px rgba(0, 0, 0, 0.21);
+}
+.popover-style {
+  background-color: rgb(145, 190, 217);
+  width:273px;
+  height:400px;
+  top: 76px !important;
+  left: 20px !important;
+  box-shadow: 4.95px 4.95px 4px 0px rgba(0, 0, 0, 0.21) !important;
+}
+.popover-slide-box {
+  height:385px;
+
 }
