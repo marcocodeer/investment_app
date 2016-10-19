@@ -166,6 +166,12 @@ angular.module('starter.controllers', [])
     $scope.doArredondamento = function (){
       $state.go('app.arredondamentos');
     };
+    $scope.doPerfis = function (){
+      $state.go('app.perfil');
+    };
+    $scope.doProgramados = function (){
+      $state.go('app.investimento-programado');
+    };
     $scope.adicionarConta = function (){
       $state.go('app.adicionar-conta');
     };
@@ -215,6 +221,110 @@ angular.module('starter.controllers', [])
       $state.go('login');
     };
 })
+  .controller('programadoCtrl', function($scope, $ionicModal, $timeout, $state) {
+
+    $scope.Periodo = 1;
+
+    $scope.Valor = '0,00';
+
+    $scope.Cursor = 0;
+
+    $scope.selecionaPeriodo = function(value){
+      $scope.Periodo = value;
+    };
+
+    $scope.delTeclado = function(value){
+
+      var vlr = $scope.Valor.toString();
+
+      vlr = vlr.replace(',','');
+
+      if($scope.Cursor === 0){
+
+      } else if($scope.Cursor === 1){
+
+        vlr = '000';
+
+        $scope.Cursor--;
+
+      }  else if($scope.Cursor === 2){
+
+        vlr =  '0'+ vlr.substring(0, vlr.length - 1);
+
+        $scope.Cursor--;
+
+      } else if($scope.Cursor === 3){
+
+        vlr = '0'+ vlr.substring(0, vlr.length - 1);
+
+        $scope.Cursor--;
+
+      }else {
+
+        vlr = vlr.substring(0, vlr.length - 1);
+
+        $scope.Cursor--;
+
+      }
+
+      $scope.Valor = vlr.substring(0, vlr.length - 2)+',' + vlr.substring(vlr.length - 2, vlr.length);
+
+
+
+
+    };
+
+    $scope.clicaTeclado = function(value){
+
+      var vlr = $scope.Valor.toString();
+
+      vlr = vlr.replace(',','');
+
+      vlr = $scope.formataDecimal(value,vlr);
+
+      $scope.Cursor++;
+
+      $scope.Valor = vlr.substring(0, vlr.length - 2)+',' + vlr.substring(vlr.length - 2, vlr.length);
+
+    };
+
+    $scope.formataDecimal = function(value,vlr){
+
+      if($scope.Cursor === 0){
+
+        vlr = '00'+ value;
+
+      } else if($scope.Cursor === 1){
+
+        vlr = '0' + vlr.substring(vlr.length-1, vlr.length) + value;
+
+      } else if($scope.Cursor === 2){
+
+        vlr =  vlr.substring(vlr.length-2, vlr.length) + value;
+
+      } else if($scope.Cursor === 3){
+
+        vlr = vlr.substring(vlr.length-3, vlr.length) + value;
+
+      } else {
+
+        vlr += '' + value;
+
+      }
+
+      return vlr;
+
+    };
+
+    $scope.limpaTeclado = function(){
+
+      $scope.Valor = '0,00';
+
+      $scope.Cursor = 0;
+
+    };
+
+  })
 .controller('perfilCtrl', function($scope, $state) {
 
   $scope.perfis = [
@@ -556,5 +666,7 @@ angular.module('starter.controllers', [])
     });
 
   };
+
+
 
 });

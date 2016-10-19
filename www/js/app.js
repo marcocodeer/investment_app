@@ -280,27 +280,8 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
       }
     }
   })
-
-  .state('app.browse', {
-      url: '/browse',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/browse.html'
-        }
-      }
-    })
-
-    .state('app.playlists', {
-      url: '/playlists',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    })
     .state('app.perfil', {
-      url: '/perfil',
+      url: '/config/perfil',
       views: {
         'menuContent': {
           templateUrl: 'templates/perfil.html',
@@ -343,7 +324,16 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
           controller: 'AppCtrl'
         }
       }
-    }) ;
+    })
+    .state('app.investimento-programado', {
+      url: '/conf/investimento-programado',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/configuracoes/investimento-programado/investimento-programado.html',
+          controller: 'programadoCtrl'
+        }
+      }
+    });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');
 });

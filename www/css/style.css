@@ -77,6 +77,7 @@ Cleiton Schonardie UI/UX and front-end developer
   width: 100%;
   border:none;
   font-weight: 600;
+  border-radius: 0;
 }
 .btn-ellipse {
   color:#fff;
@@ -372,7 +373,7 @@ label, input, button, select, textarea {
   color: #fff;
   height:auto;
   border:none;
-  padding:20px;
+  padding:20px 20px 0;
 }
 #item-faq {
   background-color: transparent;
@@ -635,4 +636,32 @@ label, input, button, select, textarea {
   font-size:15px;
   color:#fff;
   padding-top:70px;
+}
+.periodo div{
+  background: #7aaed2;
+  color: white;
+  padding: 10px 20px;
+  margin-right: 1px;
+  width: 33%;
+  font-size: 11px;
+  text-align: center;
+}
+.periodoactive {
+  background: #60C750 !important;
+}
+.periodo div:last-child{
+  margin-right: 0px;
+}
+.periodo{
+  padding: 0px;
+}
+.head-box.programado > div:nth-child(1){
+  background-color: #7aaed2;
+  background-image: none;
+  padding: 10px 10px 2px;
+  margin-top: 45px;
+  margin-bottom: 15px;
+}
+.head-box.programado {
+  margin-bottom: 16px;
 }
