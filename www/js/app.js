@@ -213,7 +213,8 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
     url: '/conf/seguranca',
     views: {
       'menuContent': {
-        templateUrl: 'templates/configuracoes/segurança/seguranca.html'
+        templateUrl: 'templates/configuracoes/segurança/seguranca.html',
+        controller: 'dadosCtrl'
       }
     }
   })
@@ -321,7 +322,7 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
       views: {
         'menuContent': {
           templateUrl: 'templates/movimentar-saldo.html',
-          controller: 'AppCtrl'
+          controller: 'saqueCtrl'
         }
       }
     })

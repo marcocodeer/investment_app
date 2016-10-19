@@ -59,7 +59,7 @@ angular.module('starter.controllers', [])
   }
 
 
-  $ionicPopover.fromTemplateUrl('popover.html', {
+  $ionicPopover.fromTemplateUrl('templates/popover.html', {
     scope: $scope,
   }).then(function(popover) {
     $scope.popover = popover;
@@ -326,6 +326,152 @@ angular.module('starter.controllers', [])
       $scope.Valor = '0,00';
 
       $scope.Cursor = 0;
+
+    };
+
+  })
+  .controller('saqueCtrl', function($scope, $ionicModal, $timeout, $state) {
+
+    $scope.Valor = '0,00';
+
+    $scope.Cursor = 0;
+
+    $scope.delTeclado = function(value){
+
+      var vlr = $scope.Valor.toString();
+
+      vlr = vlr.replace(',','');
+
+      if($scope.Cursor === 0){
+
+      } else if($scope.Cursor === 1){
+
+        vlr = '000';
+
+        $scope.Cursor--;
+
+      }  else if($scope.Cursor === 2){
+
+        vlr =  '0'+ vlr.substring(0, vlr.length - 1);
+
+        $scope.Cursor--;
+
+      } else if($scope.Cursor === 3){
+
+        vlr = '0'+ vlr.substring(0, vlr.length - 1);
+
+        $scope.Cursor--;
+
+      }else {
+
+        vlr = vlr.substring(0, vlr.length - 1);
+
+        $scope.Cursor--;
+
+      }
+
+      $scope.Valor = vlr.substring(0, vlr.length - 2)+',' + vlr.substring(vlr.length - 2, vlr.length);
+
+    };
+
+    $scope.clicaTeclado = function(value){
+
+      var vlr = $scope.Valor.toString();
+
+      vlr = vlr.replace(',','');
+
+      vlr = $scope.formataDecimal(value,vlr);
+
+      $scope.Cursor++;
+
+      $scope.Valor = vlr.substring(0, vlr.length - 2)+',' + vlr.substring(vlr.length - 2, vlr.length);
+
+    };
+
+    $scope.formataDecimal = function(value,vlr){
+
+      if($scope.Cursor === 0){
+
+        vlr = '00'+ value;
+
+      } else if($scope.Cursor === 1){
+
+        vlr = '0' + vlr.substring(vlr.length-1, vlr.length) + value;
+
+      } else if($scope.Cursor === 2){
+
+        vlr =  vlr.substring(vlr.length-2, vlr.length) + value;
+
+      } else if($scope.Cursor === 3){
+
+        vlr = vlr.substring(vlr.length-3, vlr.length) + value;
+
+      } else {
+
+        vlr += '' + value;
+
+      }
+
+      return vlr;
+
+    };
+
+    $scope.limpaTeclado = function(){
+
+      $scope.Valor = '0,00';
+
+      $scope.Cursor = 0;
+
+    };
+
+  })
+  .controller('dadosCtrl', function($scope, $ionicModal, $timeout, $state) {
+
+    $scope.Valor = '';
+
+    $scope.Pin = '0%';
+
+    $scope.Cursor = 0;
+
+    $scope.delTeclado = function(value){
+
+      var vlr = $scope.Valor;
+
+      if(vlr.length > 0){
+
+        vlr = vlr.substring(0, vlr.length - 1);
+
+      }
+
+      $scope.Valor = vlr;
+
+      $scope.atualizaPin();
+
+    };
+
+    $scope.atualizaPin = function(){
+
+      $scope.Pin = ($scope.Valor.length * 25) + '%';
+
+    };
+
+    $scope.clicaTeclado = function(value){
+
+      if($scope.Valor.length < 4){
+
+        $scope.Valor += value;
+
+      }
+
+      $scope.atualizaPin();
+
+    };
+
+    $scope.limpaTeclado = function(){
+
+      $scope.Valor = '';
+
+      $scope.atualizaPin();
 
     };
 

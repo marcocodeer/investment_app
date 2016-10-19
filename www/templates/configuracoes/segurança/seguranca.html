@@ -61,25 +61,27 @@
     </ion-tab>
     <ion-tab title="Pin" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
 
-      <div class = "row" style="text-align:center;margin-top:150px;">
-        <div class="col"><button class="button btn-ellipse">1</button></div>
-        <div class="col"><button class="button btn-ellipse">2</button></div>
-        <div class="col"><button class="button btn-ellipse">3</button></div>
+      <div id="pin" ><div ng-style="{ 'width' : Pin}"></div></div>
+
+      <div class = "row" style="text-align:center;">
+        <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(1)">1</button></div>
+        <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(2)">2</button></div>
+        <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(3)">3</button></div>
       </div>
       <div class = "row" style="text-align:center;">
-        <div class="col"><button class="button btn-ellipse">4</button></div>
-        <div class="col"><button class="button btn-ellipse">5</button></div>
-        <div class="col"><button class="button btn-ellipse">6</button></div>
+        <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(4)">4</button></div>
+        <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(5)">5</button></div>
+        <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(6)">6</button></div>
       </div>
       <div class = "row" style="text-align:center;">
-        <div class="col"><button class="button btn-ellipse">7</button></div>
-        <div class="col"><button class="button btn-ellipse">8</button></div>
-        <div class="col"><button class="button btn-ellipse">9</button></div>
+        <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(7)">7</button></div>
+        <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(8)">8</button></div>
+        <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(9)">9</button></div>
       </div>
       <div class = "row" style="text-align:center;">
-        <div class="col"><button class="button btn-ellipse">,</button></div>
-        <div class="col"><button class="button btn-ellipse">0</button></div>
-        <div class="col"><button class="button btn-ellipse">></button></div>
+        <div class="col"><button class="button btn-ellipse" ng-click="limpaTeclado()"><span class="tecladospan">C</span></button></div>
+        <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(0)">0</button></div>
+        <div class="col"><button class="button btn-ellipse" ng-click="delTeclado()"><span class="tecladospan"><</span></button></div>
       </div>
 
       <div class="col footer-security">

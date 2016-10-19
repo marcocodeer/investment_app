@@ -6,31 +6,31 @@
  <div class="row" style="margin-top:60px;">
   <span style="font-size:16px;color:#79aad0;padding-top:20px;">INVESTIDO &nbsp;R$ &nbsp;&nbsp;</span><span style=""><h3 style="font-weight: 300;color:#fff;font-size:37px;">1.325,14</h3></span>
 </div>
-<div class="row" style="background-color: #7aaed2;padding:10px;">
-  <span style="font-size:16px;color:#b9d5e7;text-align:right;">VALOR A <br>MOVIMENTAR</span> <span style="font-size:18px;color:#fff;padding-left:10px;"><h3 style="font-weight: 300;color: #fff;"><span style="font-size:25px;">R$</span> <span style="font-size:40px;">2</span>,98</h3></span>
+<div class="row" style="background-color: #7aaed2;padding:10px 10px 0;">
+  <span style="font-size:16px;color: #dee9f0;text-align: right;font-weight: 100;padding-top: 4px;padding-left: 4px;">VALOR A<br>MOVIMENTAR</span> <span style="font-size:18px;color:#fff;padding-left:10px;"><h3 style="font-weight: 300;color: #fff;"><span style="font-size:25px;">R$</span> <span style="font-size:40px;" >{{Valor}}</span></h3></span>
 </div>
 </div>
 
-<div class = "row" style="text-align:center;">
-  <div class="col"><button class="button btn-ellipse">1</button></div>
-  <div class="col"><button class="button btn-ellipse">2</button></div>
-  <div class="col"><button class="button btn-ellipse">3</button></div>
-</div>
-<div class = "row" style="text-align:center;">
-  <div class="col"><button class="button btn-ellipse">4</button></div>
-  <div class="col"><button class="button btn-ellipse">5</button></div>
-  <div class="col"><button class="button btn-ellipse">6</button></div>
-</div>
-<div class = "row" style="text-align:center;">
-  <div class="col"><button class="button btn-ellipse">7</button></div>
-  <div class="col"><button class="button btn-ellipse">8</button></div>
-  <div class="col"><button class="button btn-ellipse">9</button></div>
-</div>
-<div class = "row" style="text-align:center;">
-  <div class="col"><button class="button btn-ellipse">,</button></div>
-  <div class="col"><button class="button btn-ellipse">0</button></div>
-  <div class="col"><button class="button btn-ellipse">></button></div>
-</div>
+  <div class = "row" style="text-align:center;">
+    <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(1)">1</button></div>
+    <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(2)">2</button></div>
+    <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(3)">3</button></div>
+  </div>
+  <div class = "row" style="text-align:center;">
+    <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(4)">4</button></div>
+    <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(5)">5</button></div>
+    <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(6)">6</button></div>
+  </div>
+  <div class = "row" style="text-align:center;">
+    <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(7)">7</button></div>
+    <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(8)">8</button></div>
+    <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(9)">9</button></div>
+  </div>
+  <div class = "row" style="text-align:center;">
+    <div class="col"><button class="button btn-ellipse" ng-click="limpaTeclado()"><span class="tecladospan">C</span></button></div>
+    <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(0)">0</button></div>
+    <div class="col"><button class="button btn-ellipse" ng-click="delTeclado()"><span class="tecladospan"><</span></button></div>
+  </div>
 
 
 
