@@ -9,6 +9,13 @@ angular.module('starter.controllers', [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
+  $scope.slideHasChanged = function($index){
+  //alert('slideHasChanged $index=' + $index);
+  if($index === 6){
+    console.log("OI SEXTO SLIDE");
+  }
+};
+
   $scope.estado = $state.current.name;
   $scope.homeGrafico = function () {
     var databarSleep = {

@@ -31,6 +31,11 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
     templateUrl: 'templates/menu.html',
     controller: 'AppCtrl'
   })
+  .state('tour-app', {
+    url: '/app-tour',
+        templateUrl: 'templates/app-tour.html',
+        controller: 'AppCtrl'
+  })
 
   .state('login', {
     url: '/login',
