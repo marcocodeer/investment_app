@@ -5,7 +5,7 @@
 </style>
 <ion-popover-view  class="popover-style">
   <!-- TOUR SALDO -->
-  <div ng-show="Tour == 1" id="tour-saldo">
+  <div ng-show="estado == 'app.ver-saldo'" id="tour-saldo">
     <div class="arrow-popover">
     </div>
     <ion-slide-box id="slide-popover" class="popover-slide-box" style="">
@@ -60,7 +60,7 @@
     </ion-slide-box>
   </div>
   <!-- TOUR MOVIMENTAR SALDO -->
-  <div ng-show="Tour == 2">
+  <div ng-show="estado == 'app.movimentar-saldo'">
     <div class="arrow-popover">
     </div>
     <ion-slide-box id="slide-popover" class="popover-slide-box" style="">
@@ -99,7 +99,7 @@
       </ion-slide>
     </div>
     <!-- TOUR HISTORICO -->
-    <div ng-show="Tour == 3">
+    <div ng-show="estado == 'app.historico'">
       <div class="arrow-popover">
       </div>
         <ion-slide-box id="slide-popover" class="popover-slide-box" style="">
@@ -197,6 +197,31 @@
 
          </ion-slide>
 
+    </div>
+    <!-- TOUR PERFIL SEM INFO -->
+    <div ng-show="estado == 'app.perfil-sem-info'">
+      <div class="arrow-popover">
+      </div>
+        <ion-slide-box id="slide-popover" class="popover-slide-box" style="">
+
+          <ion-slide>
+
+            <div style="text-align:center;margin-top:-20px;">
+
+              <p class="seg-title">Seus investimentos</p>
+              <img src="img/popover-pic8.png" style="padding-top:10px;"/>
+              <p class="seg-desc" style="margin-top:-40px;line-height:">Esta é a quantia de dinheiro que você investiu, menos o valor sacado.</p>
+            </div>
+
+              <div class="col btn-home" style="margin-top:10px;">
+                <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
+
+                  ENTENDI
+                </button>
+              </div>
+
+         </ion-slide>
+       </ion-slide-box>
     </div>
 
   </ion-popover-view>

@@ -299,6 +299,15 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
         }
       }
     })
+    .state('app.perfil-sem-info', {
+      url: '/config/perfil-vazio',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/perfil-vazio.html',
+          controller: 'perfilCtrl'
+        }
+      }
+    })
     .state('app.home', {
       url: '/home',
       views: {
