@@ -361,7 +361,7 @@ label, input, button, select, textarea {
   color:#fff;
   font-size:12px;
   margin-bottom: 1px;
-  font-weight: 100;
+  font-weight: 400;
 }
 .head-box .perfil-tit {
   color:#fff;
@@ -566,14 +566,14 @@ label, input, button, select, textarea {
   color:#FFF;
   padding:30px;
   margin-top:-30px;
-  font-weight: 100;
+  font-weight: 400;
 }
 .home-desc {
   font-size:15px;
   color:#FFF;
   padding:30px;
   margin-top:-20px;
-  font-weight: 100;
+  font-weight: 400;
 }
 .img-ajuda-seguranca {
   padding-top:30px;
@@ -587,7 +587,7 @@ label, input, button, select, textarea {
   font-size:15px;
   color:#fff;
   margin-top:25px;
-  font-weight: 100;
+  font-weight: 400;
 }
 .contrato-content {
   padding:30px;
@@ -719,20 +719,23 @@ label, input, button, select, textarea {
 .platform-ios .popover {
   border-radius:0px !important;
 }
-.platform-ios .popover-arrow {
+/*.platform-ios .popover-arrow {
   color-color: #91bed9;
   display:block;
-  left:248px !important;
   background: url('../img/popover-arrow.png') no-repeat;
   box-shadow: 4.95px 4.95px 4px 0px rgba(0, 0, 0, 0.21);
+}*/
+.popover-arrow {
+  display:none !important;
 }
 .popover-style {
   background-color: rgb(145, 190, 217);
   width:273px;
   height:400px;
-  top: 76px !important;
-  left: 20px !important;
+  top:45px !important;
+  margin-left:-20px !important;
   box-shadow: 4.95px 4.95px 4px 0px rgba(0, 0, 0, 0.21) !important;
+  z-index: 0 !important;
 }
 .popover-slide-box {
   height:385px;
@@ -823,7 +826,7 @@ body > ion-nav-view > ion-side-menus > ion-side-menu-content > ion-nav-bar > div
   font-size:30px;
 }
 .list.estendida .row.item h2{
-  font-weight:300;
+  font-weight:400;
   color:#fff;
   font-size:12px;
 }

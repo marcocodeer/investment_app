@@ -4,10 +4,12 @@
   }
 </style>
 <ion-popover-view  class="popover-style">
+  <div style="z-index: 1;margin-top:-23px;">
+      <img src="img/popover-arrow.png" alt="" style="position:absolute;left:91%;display:block;"/>
+  </div>
   <!-- TOUR SALDO -->
   <div ng-show="estado == 'app.ver-saldo'" id="tour-saldo">
-    <div class="arrow-popover">
-    </div>
+
     <ion-slide-box id="slide-popover" class="popover-slide-box" style="">
 
       <ion-slide>
@@ -61,8 +63,7 @@
   </div>
   <!-- TOUR MOVIMENTAR SALDO -->
   <div ng-show="estado == 'app.movimentar-saldo'">
-    <div class="arrow-popover">
-    </div>
+
     <ion-slide-box id="slide-popover" class="popover-slide-box" style="">
 
       <ion-slide>
@@ -89,7 +90,7 @@
           <p class="seg-desc">Programar investimentos recorrentes é uma ótima forma de acelerar o crescimento de sua renda.</p>
         </div>
 
-        <div class="col btn-home" style="margin-top:45px;">
+        <div class="col btn-home" style="margin-top:5px;">
           <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
 
             PROGRAME UM INVESTIMENTO
@@ -100,8 +101,7 @@
     </div>
     <!-- TOUR HISTORICO -->
     <div ng-show="estado == 'app.historico'">
-      <div class="arrow-popover">
-      </div>
+
         <ion-slide-box id="slide-popover" class="popover-slide-box" style="">
 
           <ion-slide>
@@ -200,8 +200,7 @@
     </div>
     <!-- TOUR PERFIL SEM INFO -->
     <div ng-show="estado == 'app.perfil-sem-info'">
-      <div class="arrow-popover">
-      </div>
+
         <ion-slide-box id="slide-popover" class="popover-slide-box" style="">
 
           <ion-slide>
