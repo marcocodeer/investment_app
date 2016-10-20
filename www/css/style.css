@@ -39,7 +39,9 @@ Cleiton Schonardie UI/UX and front-end developer
   color:#fff;text-align:center;font-size:13px !important;
 }
 .bar-stable{
-  background-color: #568dc3 !important;
+  /*background-color: #568dc3 !important;*/
+  background-color: transparent !important;
+  background-image: none !important;
 }
 .bar .title {
   display: block !important;
@@ -338,7 +340,7 @@ label, input, button, select, textarea {
   width: 100% !important;
   text-align: center;
 }
-.head-box {
+.head-box, .head-bg {
   background: transparent url(../img/header-box.png);
   padding:15px;
 }
@@ -663,10 +665,16 @@ label, input, button, select, textarea {
   height: 115px;
 }
 .home-icons {
-  position:absolute;
-  top:40px;
-  left:80%;
+  position: absolute;
+  top: 7px;
+  left: 79%;
+  z-index: 999;
 }
+.home-icons a{
+  position: absolute;
+  z-index: 999;
+}
+
 .home-titlex {
   font-size:15px;
   color:#fff;
@@ -766,4 +774,10 @@ label, input, button, select, textarea {
 }
 .performancepage .chartbox {
   height: 100% !important;
+}
+body > ion-nav-view > ion-side-menus > ion-side-menu-content > ion-nav-bar > div:nth-child(3) > ion-header-bar {
+  background: transparent;
+}
+.saldo .tabs-dark > .tabs {
+  background-image: none;
 }

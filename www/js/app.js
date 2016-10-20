@@ -340,7 +340,7 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
       views: {
         'menuContent': {
           templateUrl: 'templates/ver-saldo.html',
-          controller: 'AppCtrl'
+          controller: 'saldoCtrl'
         }
       }
     })
