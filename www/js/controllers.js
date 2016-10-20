@@ -248,6 +248,7 @@ angular.module('starter.controllers', [])
     }, 1000);
   };
 })
+
   .controller('peformanceCtrl', function($scope, $ionicModal, $timeout, $state, $ionicSlideBoxDelegate, $ionicPopover) {
     $scope.Periodo = 1;
     $scope.Unidade = 1;
@@ -346,54 +347,110 @@ angular.module('starter.controllers', [])
   })
 
   .controller('saldoCtrl', function($scope, $ionicModal, $timeout, $state, $ionicSlideBoxDelegate, $ionicPopover) {
-    $scope.Periodo = 1;
-    $scope.Unidade = $state.current.name;
+    $scope.Valor = 1;
+    $scope.Meta = '5,00';
     $scope.Saldo =  [
       {
+        'id': 1,
         'label': 'R$ 4,64 Starbucks',
         'date': '14/07/2016',
-        'signal': 1,
+        'signal': '+',
         'status': 0,
         'value': '0,36'
       },
       {
+        'id': 2,
         'label': 'R$ 4,64 Starbucks',
         'date': '14/07/2016',
-        'signal': 1,
+        'signal': '+',
         'status': 0,
         'value': '0,36'
       },
       {
+        'id': 3,
         'label': 'R$ 4,64 Starbucks',
         'date': '14/07/2016',
-        'signal': 0,
+        'signal': '-',
         'status': 0,
         'value': '0,36'
       },
       {
+        'id': 4,
         'label': 'R$ 4,64 Starbucks',
         'date': '14/07/2016',
-        'signal': 1,
+        'signal': '+',
         'status': 1,
         'value': '0,36'
       },
       {
+        'id': 5,
         'label': 'R$ 4,64 Starbucks',
         'date': '14/07/2016',
-        'signal': 0,
+        'signal': '-',
         'status': 1,
         'value': '0,36'
       },
       {
+        'id': 6,
         'label': 'R$ 4,64 Starbucks',
         'date': '14/07/2016',
-        'signal': 1,
+        'signal': '+',
         'status': 1,
         'value': '0,36'
       },
     ];
-    $scope.selecionaPeriodo = function(value){
-      $scope.Periodo = value;
+    $scope.aprovarInvestimento = function(id){
+      console.log(id);
+      $scope.Saldo[id].status = 1;
+    };
+
+
+  })
+
+  .controller('creditoCtrl', function($scope, $ionicModal, $timeout, $state, $ionicSlideBoxDelegate, $ionicPopover) {
+    $scope.Valor = 1;
+    $scope.Meta = '5,00';
+    $scope.Saldo =  [
+      {
+        'id': 1,
+        'nome': 'Antonio Cezar',
+        'fone': '(11) 99855-6658',
+        'foto': 'img/avatar1.png'
+      },
+      {
+        'id': 2,
+        'nome': 'Debora Silva',
+        'fone': '(11) 99855-6658',
+        'foto': 'img/avatar2.png'
+      },
+      {
+        'id': 3,
+        'nome': 'Lucia Ka',
+        'fone': '(11) 99855-6658',
+        'foto': 'img/avatar3.png'
+      },
+      {
+        'id': 4,
+        'nome': 'R$ 4,64 Starbucks',
+        'fone': '(11) 99855-6658',
+        'foto': 'img/avatar1.png'
+      },
+      {
+        'id': 5,
+        'nome': 'R$ 4,64 Starbucks',
+        'fone': '(11) 99855-6658',
+        'foto': 'img/avatar2.png'
+      },
+      {
+        'id': 6,
+        'nome': 'R$ 4,64 Starbucks',
+        'fone': '(11) 99855-6658',
+        'foto': 'img/avatar3.png'
+      }
+    ];
+    $scope.aprovarInvestimento = function(id){
+      console.log(id);
+      $scope.Saldo[id].status = 1;
     };
 
 
