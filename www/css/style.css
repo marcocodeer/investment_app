@@ -779,5 +779,57 @@ body > ion-nav-view > ion-side-menus > ion-side-menu-content > ion-nav-bar > div
   background: transparent;
 }
 .saldo .tabs-dark > .tabs {
-  background-image: none;
+  top: 267px !important;
+}
+.list {
+  background-color: #6BB9BB !important;
+}
+.list .row.item{
+  margin-bottom: 6px;
+  background-color: #3e99b1 !important;
+  color: #fff;
+  height:auto;
+  border:none;
+  padding:8px 20px 14px;
+}
+.list .row.item:last-child{
+  margin-bottom: 0px;
+}
+.list .row.item h3{
+  font-weight:300;
+  color:#fff;
+}
+.list .row.item h3:first-child > span:nth-child(1){
+   font-size:30px;
+   color: #93f983;
+ }
+.list .row.item h3:first-child > span.negativo{
+  color: #f7a591;
+}
+.list .row.item h3:first-child > span:nth-child(2){
+  color: #8cc5cc;
+}
+.list .row.item h3:first-child > span:nth-child(3){
+  font-size:30px;
+}
+.list .row.item h2{
+  font-weight:300;
+  color:#fff;
+  font-size:12px;
+}
+.list .row.item.concluido{
+  background-color: #5CB0B6 !important;
+}
+.list .row.item .col-20 > div {
+  margin-top: 7px;
+  width:46px;
+  height:46px;
+  background-color: #5cb1b5;
+  border-radius:50%;
+  float: right;
+}
+.list .row.item .col-20 > div img {
+  position:relative;
+  left:16px;
+  top:14px
 }

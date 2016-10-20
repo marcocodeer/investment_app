@@ -20,29 +20,164 @@
     </div>
 
       <ion-tabs class="tabs-dark tabs-icon-top" id="tabsController-tabs1">
+
         <ion-tab title="Tudo" icon="No Icon" id="tabsController-tab1">
 
-          <div class="list" style="margin-top:40px;">
+          <ion-content scroll="true" style="bottom: 0;top: 297px;overflow: hidden;">
 
-            <div class="row item" style="background-color: #3e99b1 !important;color: #fff;height:auto;border:none;padding:20px;" ng-repeat="item in Saldo">
-              <div class="col-80">
-                <h3 style="font-weight:300;color:#fff;"><span style="font-size:30px;color: #60c750;">{{item.signal}}</span>&nbsp; <span style="color: #8cc5cc;">R$</span>&nbsp; <span style="font-size:30px;">{{item.value}}</span></h3>
-                <h3 style="font-weight:300;color:#fff;font-size:12px;"><span style="color: #8cc5cc">{{item.date}}</span> {{item.label}}</h3>
+            <div class="list" >
+
+              <div class="row item"  ng-repeat="item in Saldo" ng-class="item.status === 1 ? 'concluido' : '' ">
+
+                <div class="col-80">
+
+                  <h3>
+
+                    <span ng-class="item.signal === '-' ? 'negativo' : '' ">{{item.signal}}</span>
+
+                    &nbsp; <span>R$</span>
+
+                    &nbsp; <span>{{item.value}}</span>
+
+                  </h3>
+
+                  <h2>
+
+                    <span style="color: #8cc5cc">{{item.date}}</span> {{item.label}}
+
+                  </h2>
+
+                </div>
+
+                <div class="col-20">
+
+                  <div ng-hide="item.status === 1" ng-click="aprovarInvestimento($index)">
+
+                    <img src="img/bt-plus.png" alt="">
+
+                  </div>
+
+                  <div ng-show="item.status === 1">
+
+                    <img src="img/bt-check.png" alt="">
+
+                  </div>
+
+                </div>
+
               </div>
-             <a href=""><div class="col-20">
-                <div style="width:46px;height:46px;background-color: #5cb1b5;border-radius:50%;"><img src="img/arrow.png" alt="" style="position:relative;left:20px;top:13px"></div>
-              </div></a>
+
             </div>
 
-          </div>
+          </ion-content>
+
 
         </ion-tab>
+
         <ion-tab title="Aprovados" icon="No Icon" id="tabsController-tab5">
-            <ion-nav-view name="tab5"></ion-nav-view>
+
+          <ion-content scroll="true" style="bottom: 0;top: 297px;overflow: hidden;">
+
+              <div class="list" >
+
+                <div class="row item"  ng-repeat="item in Saldo" ng-if="item.status === 1" ng-class="item.status === 1 ? 'concluido' : '' ">
+
+                  <div class="col-80">
+
+                    <h3>
+
+                      <span ng-class="item.signal === '-' ? 'negativo' : '' ">{{item.signal}}</span>
+
+                      &nbsp; <span>R$</span>
+
+                      &nbsp; <span>{{item.value}}</span>
+
+                    </h3>
+
+                    <h2>
+
+                      <span style="color: #8cc5cc">{{item.date}}</span> {{item.label}}
+
+                    </h2>
+
+                  </div>
+
+                  <div class="col-20">
+
+                    <div ng-hide="item.status === 1" ng-click="aprovarInvestimento($index)">
+
+                      <img src="img/bt-plus.png" alt="">
+
+                    </div>
+
+                    <div ng-show="item.status === 1">
+
+                      <img src="img/bt-check.png" alt="">
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </ion-content>
+
         </ion-tab>
+
         <ion-tab title="Pendentes" icon="No Icon" id="tabsController-tab2">
-            <ion-nav-view name="tab2"></ion-nav-view>
+
+          <ion-content scroll="true" style="bottom: 0;top: 297px;overflow: hidden;">
+
+              <div class="list" >
+
+                <div class="row item"  ng-repeat="item in Saldo" ng-if="item.status === 0" ng-class="item.status === 1 ? 'concluido' : '' ">
+
+                  <div class="col-80">
+
+                    <h3>
+
+                      <span ng-class="item.signal === '-' ? 'negativo' : '' ">{{item.signal}}</span>
+
+                      &nbsp; <span>R$</span>
+
+                      &nbsp; <span>{{item.value}}</span>
+
+                    </h3>
+
+                    <h2>
+
+                      <span style="color: #8cc5cc">{{item.date}}</span> {{item.label}}
+
+                    </h2>
+
+                  </div>
+
+                  <div class="col-20">
+
+                    <div ng-hide="item.status === 1" ng-click="aprovarInvestimento($index)">
+
+                      <img src="img/bt-plus.png" alt="">
+
+                    </div>
+
+                    <div ng-show="item.status === 1">
+
+                      <img src="img/bt-check.png" alt="">
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </ion-content>
+
         </ion-tab>
+
     </ion-tabs>
 
 
