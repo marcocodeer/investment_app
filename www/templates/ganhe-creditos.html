@@ -15,22 +15,79 @@
 
     </div>
 
-          <ion-content scroll="true" style="bottom: 0;top: 265px;overflow: hidden;">
+          <ion-content scroll="true" class="formulario" style="bottom: 0;top: 265px;overflow: hidden;" ng-show="Formulario === 1">
 
-            <div class="list" >
+            <div class="list" style="    background: #3e99b1 !important;">
 
-              <div class="row item"  ng-repeat="item in Saldo" style="padding: 13px 20px 14px 12px;">
+              <div class="row item"  style="padding: 13px 20px 14px 12px;margin-bottom: 0px;">
 
-                <img ng-src="{{'../' + item.foto}}" style="width: 45px;height: 45px;"/>
+                <img ng-src="{{'../' + Contato.foto}}" style="width: 45px;height: 45px;"/>
 
                 <div class="col-60" style="padding-left: 10px;">
 
 
-                  <h3><span style="color: #fff;font-size: 20px">{{item.nome}}</span></h3>
+                  <h3><span style="color: #fff;font-size: 20px">{{Contato.nome}}</span></h3>
 
                   <h2>
 
-                    <span style="color: #8cc5cc">{{item.fone}}</span>
+                    <span style="color: #8cc5cc">{{Contato.fone}}</span>
+
+                  </h2>
+
+                </div>
+
+              </div>
+
+              <div style="background: #3e99b1; text-align: center; padding: 20px;">
+
+                <textarea>Minha dica pra investir uns trocados http://www.logomarca.com.br</textarea>
+
+                <button class="button button-positive btn-perfil"  ng-click="recomendarEnviar()">
+                  <i class="icon ion-ios-arrow-down" style="font-weight:300;"></i>
+                  &nbsp;ENVIAR
+                </button>
+
+              </div>
+
+            </div>
+
+          </ion-content>
+
+          <ion-content scroll="true" class="formulario" style="bottom: 0;top: 265px;overflow: hidden;" ng-show="Formulario === 2">
+
+            <div class="list" style="    background: #3e99b1 !important;">
+
+              <div style="background: #3e99b1; text-align: center; padding: 20px;">
+
+                <p>Sua recomendação foi enviada com sucesso. Você receberá os créditos após seu amigo realizar um investimento.</p>
+
+                <button class="button button-positive btn-perfil" ng-click="recomendarEnviado()">
+                  <i class="icon ion-ios-arrow-down" style="font-weight:300;"></i>
+                  &nbsp;VOLTAR
+                </button>
+
+              </div>
+
+            </div>
+
+          </ion-content>
+
+          <ion-content scroll="true" style="bottom: 0;top: 265px;overflow: hidden;" ng-show="Formulario === 0">
+
+            <div class="list" >
+
+              <div class="row item"  ng-repeat="contato in Contatos" style="padding: 13px 20px 14px 12px;">
+
+                <img ng-src="{{'../' + contato.foto}}" style="width: 45px;height: 45px;"/>
+
+                <div class="col-60" style="padding-left: 10px;">
+
+
+                  <h3><span style="color: #fff;font-size: 20px">{{contato.nome}}</span></h3>
+
+                  <h2>
+
+                    <span style="color: #8cc5cc">{{contato.fone}}</span>
 
                   </h2>
 
@@ -38,7 +95,7 @@
 
                 <div class="col-20">
 
-                  <div  ng-click="aprovarInvestimento($index)" style="margin-top: 0px;">
+                  <div  ng-click="recomendarAmigo($index)" style="margin-top: 0px;">
 
                     <img src="img/bt-plus.png" alt="">
 

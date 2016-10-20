@@ -833,3 +833,22 @@ body > ion-nav-view > ion-side-menus > ion-side-menu-content > ion-nav-bar > div
   left:16px;
   top:14px
 }
+.saldo textarea {
+  background: transparent;
+  margin: 0 auto 20px;
+  padding: 15px;
+  width: 100%;
+  border: 1px solid white;
+  font-size: 15px;
+  height: 87px;
+}
+.formulario .scroll {
+  height: 100%;
+  background: #3e99b1;
+}
+.formulario p {
+  color: white;
+  font-size: 15px;
+  font-weight: 100;
+  margin: 20% auto;
+}
