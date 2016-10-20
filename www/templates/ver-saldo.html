@@ -23,9 +23,9 @@
 
         <ion-tab title="Tudo" icon="No Icon" id="tabsController-tab1">
 
-          <ion-content scroll="true" style="bottom: 0;top: 297px;overflow: hidden;">
+          <ion-content scroll="true" style="bottom: 0;top: 297px !important;overflow: hidden;">
 
-            <div class="list" >
+            <div class="list estendida" >
 
               <div class="row item"  ng-repeat="item in Saldo" ng-class="item.status === 1 ? 'concluido' : '' ">
 
@@ -76,9 +76,9 @@
 
         <ion-tab title="Aprovados" icon="No Icon" id="tabsController-tab5">
 
-          <ion-content scroll="true" style="bottom: 0;top: 297px;overflow: hidden;">
+          <ion-content scroll="true" style="bottom: 0;top: 297px !important;overflow: hidden;">
 
-              <div class="list" >
+              <div class="list estendida" >
 
                 <div class="row item"  ng-repeat="item in Saldo" ng-if="item.status === 1" ng-class="item.status === 1 ? 'concluido' : '' ">
 
@@ -128,9 +128,9 @@
 
         <ion-tab title="Pendentes" icon="No Icon" id="tabsController-tab2">
 
-          <ion-content scroll="true" style="bottom: 0;top: 297px;overflow: hidden;">
+          <ion-content scroll="true" style="bottom: 0;top: 297px !important;overflow: hidden;">
 
-              <div class="list" >
+              <div class="list estendida" >
 
                 <div class="row item"  ng-repeat="item in Saldo" ng-if="item.status === 0" ng-class="item.status === 1 ? 'concluido' : '' ">
 

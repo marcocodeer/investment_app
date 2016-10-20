@@ -1,57 +1,128 @@
+<ion-view view-title="HISTÓRICO" style="background: url(img/perfil-investimento-bg.png) no-repeat center;background-size:cover;" class="historico">
 
-<ion-view view-title="HISTÓRICO" style="background: url(img/perfil-investimento-bg.png) no-repeat center;background-size:cover;">
-
-  <div style="margin-top:60px;padding:15px !important;">
+  <div style="margin-top:35px;padding:15px !important;">
     <label class="item item-input" style="border-radius: 14px;background-color: #71adcc;border:none;width: 288px;
   height: 28px;">
 
-      <input type="text" placeholder="Pesquise aqui..." data-ng-model="searchForce">
-        <i class="icon ion-ios-search" style="color:#fff;margin-right:30px;"></i>
+      <input type="text" placeholder="Pesquise aqui..." data-ng-model="searchForce" style="padding-top: 0px; margin-bottom: 3px;">
+        <i class="icon ion-ios-search" style="color:#fff;margin-right: 11px;    margin-bottom: 2px;"></i>
     </label>
   </div>
 
-  <ion-tabs class="tabs-positive tabs-icon-top" id="tabs-historico">
+  <ion-tabs class="tabs-dark tabs-icon-top" >
 
-    <ion-tab title="Este mês" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline">
-      <!-- Tab 1 content -->
-      <div style="margin-top:145px;">
+    <ion-tab title="Este Mês" icon="No Icon" id="tabsController-tab1">
 
-        <div class="list">
+      <ion-content scroll="true" style="bottom: 0;top: 116px !important;overflow: hidden;">
 
-          <div class="row item" style="background-color: transparent !important;color: #fff;height:auto;border:none;padding:20px;">
+        <div class="list estendida" >
+
+          <div class="row item"  ng-repeat="item in Saldo" ng-class="item.status === 1 ? 'concluido' : '' ">
+
             <div class="col-80">
-              <h3 style="font-weight:300;color:#fff;"><span style="font-size:30px;color: #60c750;">+</span>&nbsp; <span style="color: #8cc5cc;">R$</span>&nbsp; <span style="font-size:30px;">0</span>,36</h3>
-              <h3 style="font-weight:300;color:#fff;font-size:12px;"><span style="color: #8cc5cc">14/07/2016</span> R$4,46 Starbucks</h3>
+
+              <h3>
+
+                <span ng-class="item.signal === '-' ? 'negativo' : '' ">{{item.signal}}</span>
+
+                &nbsp; <span>R$</span>
+
+                &nbsp; <span>{{item.value}}</span>
+
+              </h3>
+
+              <h2>
+
+                <span style="color: #8cc5cc">{{item.date}}</span> {{item.label}}
+
+              </h2>
+
             </div>
-          </div>      <div class="row item" style="background-color: transparent !important;color: #fff;height:auto;border:none;padding:20px;">
-            <div class="col-80">
-              <h3 style="font-weight:300;color:#fff;"><span style="font-size:30px;color: #60c750;">+</span>&nbsp; <span style="color: #8cc5cc;">R$</span>&nbsp; <span style="font-size:30px;">0</span>,68</h3>
-              <h3 style="font-weight:300;color:#fff;font-size:12px;"><span style="color: #8cc5cc">14/07/2016</span> R$55,32 Mercado Extra</h3>
-            </div>
+
+
+
           </div>
 
         </div>
-    </ion-tab>
 
-    <ion-tab title="Este ano" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
-      <!-- Tab 2 content -->
-      <div style="margin-top:100px;">
-
-
-      </div>
-
-
-    </ion-tab>
-    <ion-tab title="Tudo" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
-      <!-- Tab 2 content -->
-      <div style="margin-top:100px;">
-
-
-      </div>
+      </ion-content>
 
 
     </ion-tab>
 
+    <ion-tab title="Este Ano" icon="No Icon" id="tabsController-tab5">
+
+      <ion-content scroll="true" style="bottom: 0;top: 116px !important;overflow: hidden;">
+
+        <div class="list estendida" >
+
+          <div class="row item"  ng-repeat="item in Saldo" ng-if="item.status === 1" ng-class="item.status === 1 ? 'concluido' : '' ">
+
+            <div class="col-80">
+
+              <h3>
+
+                <span ng-class="item.signal === '-' ? 'negativo' : '' ">{{item.signal}}</span>
+
+                &nbsp; <span>R$</span>
+
+                &nbsp; <span>{{item.value}}</span>
+
+              </h3>
+
+              <h2>
+
+                <span style="color: #8cc5cc">{{item.date}}</span> {{item.label}}
+
+              </h2>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </ion-content>
+
+    </ion-tab>
+
+    <ion-tab title="Tudo" icon="No Icon" id="tabsController-tab2">
+
+      <ion-content scroll="true" style="bottom: 0;top: 116px !important;overflow: hidden;">
+
+        <div class="list estendida" >
+
+          <div class="row item"  ng-repeat="item in Saldo" ng-if="item.status === 0" ng-class="item.status === 1 ? 'concluido' : '' ">
+
+            <div class="col-80">
+
+              <h3>
+
+                <span ng-class="item.signal === '-' ? 'negativo' : '' ">{{item.signal}}</span>
+
+                &nbsp; <span>R$</span>
+
+                &nbsp; <span>{{item.value}}</span>
+
+              </h3>
+
+              <h2>
+
+                <span style="color: #8cc5cc">{{item.date}}</span> {{item.label}}
+
+              </h2>
+
+            </div>
+
+
+
+          </div>
+
+        </div>
+
+      </ion-content>
+
+    </ion-tab>
 
   </ion-tabs>
 

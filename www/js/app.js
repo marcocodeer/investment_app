@@ -157,7 +157,7 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
     views: {
       'menuContent': {
         templateUrl: 'templates/historico/historico.html',
-        controller: 'AppCtrl'
+        controller: 'saldoCtrl'
       }
     }
   })

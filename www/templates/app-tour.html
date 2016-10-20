@@ -1,5 +1,5 @@
 
-<ion-view style="background: url(img/login-bg-acorn.png) no-repeat center;background-size:cover;">
+<ion-view style="background: url(img/login-bg-acorn.png) no-repeat center;background-size:cover;" class="app-tour">
   <ion-content>
 
     <ion-slide-box id="slide-home" on-slide-changed="slideHasChanged($index)">
@@ -61,19 +61,19 @@
     </ion-slide>
      <ion-slide>
 
-       <div style="text-align:center;">
+       <div style="text-align:center;" class="column">
          <p class="seg-title">Taxas simplificadas</p>
-         <p class="home-desc" style="padding:40px;">Sem comissões sobre as transações. Sem taxas ocultas.</p>
-           <img src="img/tour-app-pic5.png" class="img-ajuda-seguranca"/>
+         <p class="home-desc" style="padding:40px 40px 10px;">Sem comissões sobre as transações. Sem taxas ocultas.</p>
+           <img src="img/tour-app-pic5.png" class="img-ajuda-seguranca" ng-click="login()" style="padding-top: 0; margin-left: 16px; position: absolute; right: 9%;"/>
        </div>
 
     </ion-slide>
 
 
     </ion-slide-box>
+    <div class="col" id="footer-apresentacao" style="text-align:center;">
+      <a href="#"><p style="font-size:11px;color:#fff;cursor:pointer;">Pular apresentação</p></a>
+    </div>
 
-      <div class="col" id="footer-apresentacao" style="text-align:center;">
-        <a href="#"><p style="font-size:11px;color:#fff;cursor:pointer;">Pular apresentação</p></a>
-      </div>
   </ion-content>
 </ion-view>

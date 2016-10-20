@@ -15,9 +15,9 @@
 
     </div>
 
-          <ion-content scroll="true" class="formulario" style="bottom: 0;top: 265px;overflow: hidden;" ng-show="Formulario === 1">
+          <ion-content scroll="true" class="formulario" style="bottom: 0;top: 265px !important;overflow: hidden;" ng-show="Formulario === 1">
 
-            <div class="list" style="    background: #3e99b1 !important;">
+            <div class="list estendida" style="    background: #3e99b1 !important;">
 
               <div class="row item"  style="padding: 13px 20px 14px 12px;margin-bottom: 0px;">
 
@@ -43,7 +43,7 @@
                 <textarea>Minha dica pra investir uns trocados http://www.logomarca.com.br</textarea>
 
                 <button class="button button-positive btn-perfil"  ng-click="recomendarEnviar()">
-                  <i class="icon ion-ios-arrow-down" style="font-weight:300;"></i>
+                  <i class="icon ion-ios-arrow-right" style="font-weight:300;"></i>
                   &nbsp;ENVIAR
                 </button>
 
@@ -53,16 +53,16 @@
 
           </ion-content>
 
-          <ion-content scroll="true" class="formulario" style="bottom: 0;top: 265px;overflow: hidden;" ng-show="Formulario === 2">
+          <ion-content scroll="true" class="formulario" style="bottom: 0;top: 265px !important;overflow: hidden;" ng-show="Formulario === 2">
 
-            <div class="list" style="    background: #3e99b1 !important;">
+            <div class="list estendida" style="    background: #3e99b1 !important;">
 
               <div style="background: #3e99b1; text-align: center; padding: 20px;">
 
                 <p>Sua recomendação foi enviada com sucesso. Você receberá os créditos após seu amigo realizar um investimento.</p>
 
                 <button class="button button-positive btn-perfil" ng-click="recomendarEnviado()">
-                  <i class="icon ion-ios-arrow-down" style="font-weight:300;"></i>
+                  <i class="icon ion-ios-arrow-left" style="font-weight:300;"></i>
                   &nbsp;VOLTAR
                 </button>
 
@@ -72,9 +72,9 @@
 
           </ion-content>
 
-          <ion-content scroll="true" style="bottom: 0;top: 265px;overflow: hidden;" ng-show="Formulario === 0">
+          <ion-content scroll="true" style="bottom: 0;top: 265px !important;overflow: hidden;" ng-show="Formulario === 0">
 
-            <div class="list" >
+            <div class="list estendida" >
 
               <div class="row item"  ng-repeat="contato in Contatos" style="padding: 13px 20px 14px 12px;">
 
