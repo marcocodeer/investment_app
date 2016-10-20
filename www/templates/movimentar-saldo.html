@@ -1,6 +1,6 @@
 <ion-view view-title="SAQUE/DEPÓSITO" style="background: url(img/perfil-investimento-bg.png) no-repeat center;background-size:cover;">
   <div class="row home-icons" >
-  <a ng-click="openPopover($event)"> <img src="img/icon-ajuda-azul.png" alt="" style="margin-left:30px !important;"/></a>
+  <a ng-click="openPopover($event, 2)"> <img src="img/icon-ajuda-azul.png" alt="" style="margin-left:30px !important;"/></a>
   </div>
 <div style="margin:15px;">
  <div class="row" style="margin-top:60px;">
@@ -49,46 +49,3 @@
   &nbsp;Depositar
 </button></div>
 </div>
-
-<script id="popover.html" type="text/ng-template">
-  <ion-popover-view class="popover-style" style="height:410px !important;">
-    <div class="arrow-popover">
-    </div>
-      <ion-slide-box id="slide-popover" class="popover-slide-box" style="">
-
-        <ion-slide>
-
-          <div style="text-align:center;margin-top:-30px;">
-
-            <p class="seg-title">Transferindo crédito</p>
-            <img src="img/popover-pic3.png" class="" style="padding-top:20px;"/>
-            <p class="seg-desc" style="margin-top:-40px;">Deposite ou saque dinheiro a qualquer momento. Investimentos são concluidos entre 1 e 3 dias úteis, como precisamos vender suas ações, retiradas levam de 5 a 7 dias úteis para serem realizadas.</p>
-          </div>
-
-            <div class="col btn-home" style="margin-top:-15px;">
-              <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
-
-                VEJA COMO FUNCIONA
-              </button>
-            </div>
-
-       </ion-slide>
-        <ion-slide>
-          <div style="text-align:center;margin-top:-20px;">
-            <p class="seg-title">Investimentos programados</p>
-            <img src="img/popover-slide-pic7.png" class="" style="padding-top:20px;"/>
-            <p class="seg-desc">Programar investimentos recorrentes é uma ótima forma de acelerar o crescimento de sua renda.</p>
-          </div>
-
-            <div class="col btn-home" style="margin-top:45px;">
-              <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
-
-                PROGRAME UM INVESTIMENTO
-              </button>
-            </div>
-
-       </ion-slide>
-
-  </ion-popover-view>
-</script>
-</ion-view>

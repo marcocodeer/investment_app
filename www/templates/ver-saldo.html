@@ -1,7 +1,7 @@
 
 <ion-view view-title="SALDO" style="background: url(img/perfil-investimento-bg.png) no-repeat center;background-size:cover;">
   <div class="row home-icons" >
-  <a ng-click="openPopover($event)"> <img src="img/icon-ajuda-azul.png" alt="" style="margin-left:30px !important;"/></a>
+  <a ng-click="openPopover($event, 1)"> <img src="img/icon-ajuda-azul.png" alt="" style="margin-left:30px !important;"/></a>
   </div>
     <div style="margin-left:15px;margin-right:15px;">
        <div class="row" style="margin-top:60px;">
@@ -57,61 +57,6 @@
         </ion-tab>
     </ion-tabs>
 
-    <script id="popover.html" type="text/ng-template">
-      <ion-popover-view class="popover-style">
-        <div class="arrow-popover">
-        </div>
-          <ion-slide-box id="slide-popover" class="popover-slide-box" style="">
 
-            <ion-slide>
-
-              <div style="text-align:center;margin-top:-20px;">
-
-                <p class="seg-title">O seu saldo</p>
-                <img src="img/popover-pic1.png" class="" style="padding-top:20px;"/>
-                <p class="seg-desc" style="margin-top:-80px;">A tela de saldo mostra todas as compras e arredondamentos das suas contas conectadas.</p>
-              </div>
-
-                <div class="col btn-home" style="margin-top:15px;">
-                  <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
-
-                    ENTENDI
-                  </button>
-                </div>
-
-           </ion-slide>
-            <ion-slide>
-              <div style="text-align:center;margin-top:-20px;">
-                <p class="seg-title">Conecte uma conta de arredondamento</p>
-                <img src="img/popover-pic2.png" class="" style="padding-top:20px;"/>
-                <p class="seg-desc">Para acumular trocados para investimentos, conecte seus cartões de crédito e débito.</p>
-              </div>
-
-                <div class="col btn-home" style="margin-top:30px;">
-                  <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
-
-                    CONECTAR CONTA
-                  </button>
-                </div>
-
-           </ion-slide>
-            <ion-slide>
-              <div style="text-align:center;margin-top:-20px;">
-                <p class="seg-title">Como funciona o arredondamento</p>
-                <img src="img/popover-pic3.png" class="" style="padding-top:20px;"/>
-                <p class="seg-desc">Quando você faz uma compra usando uma conta conectada, o troco do arredondamento é investido automaticamente.</p>
-              </div>
-
-                <div class="col btn-home" style="margin-top:5px;">
-                  <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
-
-                    VEJA COMO FUNCIONA
-                  </button>
-                </div>
-
-           </ion-slide>
-
-      </ion-popover-view>
-    </script>
 
 </ion-view>
