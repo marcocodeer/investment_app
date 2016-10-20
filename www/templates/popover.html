@@ -1,5 +1,202 @@
-<ion-popover-view style="background-color: #91bed9;box-shadow: 4.95px 4.95px 4px 0px rgba(0, 0, 0, 0.21);width:273px;">
-  <ion-content>
+<style media="screen">
+  p {
+    margin: 0 0 0px;
+  }
+</style>
+<ion-popover-view  class="popover-style">
+  <!-- TOUR SALDO -->
+  <div ng-show="Tour == 1" id="tour-saldo">
+    <div class="arrow-popover">
+    </div>
+    <ion-slide-box id="slide-popover" class="popover-slide-box" style="">
 
-  </ion-content>
-</ion-popover-view>
+      <ion-slide>
+
+        <div style="text-align:center;margin-top:-20px;">
+
+          <p class="seg-title">O seu saldo</p>
+          <img src="img/popover-pic1.png" class="" style="padding-top:20px;"/>
+          <p class="seg-desc" style="margin-top:-80px;">A tela de saldo mostra todas as compras e arredondamentos das suas contas conectadas.</p>
+        </div>
+
+        <div class="col btn-home" style="margin-top:15px;">
+          <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
+
+            ENTENDI
+          </button>
+        </div>
+
+      </ion-slide>
+      <ion-slide>
+        <div style="text-align:center;margin-top:-20px;">
+          <p class="seg-title">Conecte uma conta de arredondamento</p>
+          <img src="img/popover-pic2.png" class="" style="padding-top:20px;"/>
+          <p class="seg-desc">Para acumular trocados para investimentos, conecte seus cartões de crédito e débito.</p>
+        </div>
+
+        <div class="col btn-home" style="margin-top:30px;">
+          <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
+
+            CONECTAR CONTA
+          </button>
+        </div>
+
+      </ion-slide>
+      <ion-slide>
+        <div style="text-align:center;margin-top:-20px;">
+          <p class="seg-title">Como funciona o arredondamento</p>
+          <img src="img/popover-pic3.png" class="" style="padding-top:20px;"/>
+          <p class="seg-desc">Quando você faz uma compra usando uma conta conectada, o troco do arredondamento é investido automaticamente.</p>
+        </div>
+
+        <div class="col btn-home" style="margin-top:5px;">
+          <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
+
+            VEJA COMO FUNCIONA
+          </button>
+        </div>
+
+      </ion-slide>
+    </ion-slide-box>
+  </div>
+  <!-- TOUR MOVIMENTAR SALDO -->
+  <div ng-show="Tour == 2">
+    <div class="arrow-popover">
+    </div>
+    <ion-slide-box id="slide-popover" class="popover-slide-box" style="">
+
+      <ion-slide>
+
+        <div style="text-align:center;margin-top:-30px;">
+
+          <p class="seg-title">Transferindo crédito</p>
+          <img src="img/popover-pic3.png" class="" style="padding-top:20px;"/>
+          <p class="seg-desc" style="margin-top:-40px;">Deposite ou saque dinheiro a qualquer momento. Investimentos são concluidos entre 1 e 3 dias úteis, como precisamos vender suas ações, retiradas levam de 5 a 7 dias úteis para serem realizadas.</p>
+        </div>
+
+        <div class="col btn-home" style="margin-top:-15px;">
+          <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
+
+            VEJA COMO FUNCIONA
+          </button>
+        </div>
+
+      </ion-slide>
+      <ion-slide>
+        <div style="text-align:center;margin-top:-20px;">
+          <p class="seg-title">Investimentos programados</p>
+          <img src="img/popover-slide-pic7.png" class="" style="padding-top:20px;"/>
+          <p class="seg-desc">Programar investimentos recorrentes é uma ótima forma de acelerar o crescimento de sua renda.</p>
+        </div>
+
+        <div class="col btn-home" style="margin-top:45px;">
+          <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
+
+            PROGRAME UM INVESTIMENTO
+          </button>
+        </div>
+
+      </ion-slide>
+    </div>
+    <!-- TOUR HISTORICO -->
+    <div ng-show="Tour == 3">
+      <div class="arrow-popover">
+      </div>
+        <ion-slide-box id="slide-popover" class="popover-slide-box" style="">
+
+          <ion-slide>
+
+            <div style="text-align:center;margin-top:-20px;">
+
+              <p class="seg-title">Seus investimentos</p>
+              <img src="img/popover-pic8.png" style="padding-top:10px;"/>
+              <p class="seg-desc" style="margin-top:-40px;line-height:">Esta é a quantia de dinheiro que você investiu, menos o valor sacado.</p>
+            </div>
+
+              <div class="col btn-home" style="margin-top:10px;">
+                <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
+
+                  ENTENDI
+                </button>
+              </div>
+
+         </ion-slide>
+          <ion-slide>
+            <div style="text-align:center;margin-top:-20px;">
+              <p class="seg-title">Dividendos</p>
+              <img src="img/popover-pic9.png" style="padding-top:10px;"/>
+              <p class="seg-desc">São uma porção dos lucros da empresa paga pra você que possue ações. Nós reinventamos automaticamente seus dividendos, para que continuem gerando ganhos para você.</p>
+            </div>
+
+              <div class="col btn-home" style="margin-top: 5px;">
+                <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
+
+                  ENTENDI
+                </button>
+              </div>
+
+         </ion-slide>
+          <ion-slide>
+            <div style="text-align:center;margin-top:-20px;">
+              <p class="seg-title">Lucro/perda</p>
+              <img src="img/popover-pic10.png" class="" style="padding-top:20px;"/>
+              <p class="seg-desc" style="padding:25px !important;">Você pode visualizar a performance de seus investimentos através dos sinais dos lucro e perda. O número que você vê é igual ao lucro(ou perda), menos dividendos, menos nossa pequena taxa.</p>
+            </div>
+
+              <div class="col btn-home" style="margin-top:5px;">
+                <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
+
+                  VER PERFORMANCE DETALHADA
+                </button>
+              </div>
+
+         </ion-slide>
+          <ion-slide>
+            <div style="text-align:center;margin-top:-20px;">
+              <p class="seg-title">Transferindo crédito</p>
+              <img src="img/popover-pic3.png" class="" style="padding-top:20px;"/>
+              <p class="seg-desc" style="padding:20px !important;">Deposite ou saque dinheiro a qualquer momento. Investimentos são concluidos entre 1 e 3 dias úteis, como precisamos vender suas ações, retiradas levam de 5 a 7 dias úteis para serem realizadas.</p>
+            </div>
+
+              <div class="col btn-home" style="margin-top:15px;">
+                <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
+
+                  VEJA COMO FUNCIONA
+                </button>
+              </div>
+
+         </ion-slide>
+          <ion-slide>
+            <div style="text-align:center;margin-top:-20px;">
+              <p class="seg-title">Cancelando um <br>investimento</p>
+              <img src="img/popover-slide11.png" class="" style="padding-top:40px;"/>
+              <p class="seg-desc" style="padding:20px !important;">Quando você vê uma transação pendente com este ícone, você pode deslizar o item para a esquerda com o dedo e clicar em cancelar.</p>
+            </div>
+
+              <div class="col btn-home" style="margin-top:15px;">
+                <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
+
+                ENTENDI
+                </button>
+              </div>
+
+         </ion-slide>
+          <ion-slide>
+            <div style="text-align:center;margin-top:-20px;">
+              <p class="seg-title">Declarações e <br>confirmações</p>
+              <img src="img/popover-pic12.png" class="" style="padding-top:20px;"/>
+              <p class="seg-desc" style="padding:20px !important;">Encontre declarações detalhadas de contas e confirmações de transições em logomarca.com.br/declaracoes.</p>
+            </div>
+
+              <div class="col btn-home" style="margin-top:15px;">
+                <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
+
+                VISITA AGORA
+                </button>
+              </div>
+
+         </ion-slide>
+
+    </div>
+
+  </ion-popover-view>

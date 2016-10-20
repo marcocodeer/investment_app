@@ -65,9 +65,11 @@ angular.module('starter.controllers', [])
     $scope.popover = popover;
   });
 
-  $scope.openPopover = function($event) {
+  $scope.Tour = '';
+
+  $scope.openPopover = function($event, tour) {
+    $scope.Tour = tour;
     $scope.popover.show($event);
-    console.log('xs');
   };
 
   $scope.uf = 'UF';
