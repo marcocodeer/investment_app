@@ -400,6 +400,55 @@ angular.module('starter.controllers', [])
 
   })
 
+  .controller('creditoCtrl', function($scope, $ionicModal, $timeout, $state, $ionicSlideBoxDelegate, $ionicPopover) {
+    $scope.Valor = 1;
+    $scope.Meta = '5,00';
+    $scope.Saldo =  [
+      {
+        'id': 1,
+        'nome': 'Antonio Cezar',
+        'fone': '(11) 99855-6658',
+        'foto': 'img/avatar1.png'
+      },
+      {
+        'id': 2,
+        'nome': 'Debora Silva',
+        'fone': '(11) 99855-6658',
+        'foto': 'img/avatar2.png'
+      },
+      {
+        'id': 3,
+        'nome': 'Lucia Ka',
+        'fone': '(11) 99855-6658',
+        'foto': 'img/avatar3.png'
+      },
+      {
+        'id': 4,
+        'nome': 'R$ 4,64 Starbucks',
+        'fone': '(11) 99855-6658',
+        'foto': 'img/avatar1.png'
+      },
+      {
+        'id': 5,
+        'nome': 'R$ 4,64 Starbucks',
+        'fone': '(11) 99855-6658',
+        'foto': 'img/avatar2.png'
+      },
+      {
+        'id': 6,
+        'nome': 'R$ 4,64 Starbucks',
+        'fone': '(11) 99855-6658',
+        'foto': 'img/avatar3.png'
+      }
+    ];
+    $scope.aprovarInvestimento = function(id){
+      console.log(id);
+      $scope.Saldo[id].status = 1;
+    };
+
+
+  })
+
   .controller('loginCtrl', function($scope, $ionicModal, $timeout, $state) {
       $scope.resetPass = function(){
         $state.go('resetar-senha');

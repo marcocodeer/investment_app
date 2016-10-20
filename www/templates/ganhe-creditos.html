@@ -1,0 +1,57 @@
+<ion-view view-title="GANHE CRÉDITOS" class="saldo" style="background: url(img/perfil-investimento-bg.png) no-repeat center;background-size:cover;">
+
+    <div class="head-bg" style="height: 265px;padding: 60px 0 0 20px;">
+
+        <div class="row">
+
+          <span style="font-size:16px;color:#fff;text-align: right;margin-top: 38px;margin-right: 11px;line-height: 25px;">
+            INDIQUE PARA SEUS AMIGOS E
+            <b style="font-size: 26px;font-weight: 400;">GANHE CRÉDITOS</b>
+          </span>
+
+          <img src="img/bg-creditos.png" alt="">
+
+        </div>
+
+    </div>
+
+          <ion-content scroll="true" style="bottom: 0;top: 265px;overflow: hidden;">
+
+            <div class="list" >
+
+              <div class="row item"  ng-repeat="item in Saldo" style="padding: 13px 20px 14px 12px;">
+
+                <img ng-src="{{'../' + item.foto}}" style="width: 45px;height: 45px;"/>
+
+                <div class="col-60" style="padding-left: 10px;">
+
+
+                  <h3><span style="color: #fff;font-size: 20px">{{item.nome}}</span></h3>
+
+                  <h2>
+
+                    <span style="color: #8cc5cc">{{item.fone}}</span>
+
+                  </h2>
+
+                </div>
+
+                <div class="col-20">
+
+                  <div  ng-click="aprovarInvestimento($index)" style="margin-top: 0px;">
+
+                    <img src="img/bt-plus.png" alt="">
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </ion-content>
+
+
+
+</ion-view>

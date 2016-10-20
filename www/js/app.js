@@ -353,6 +353,15 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
         }
       }
     })
+    .state('app.ganhe-creditos', {
+      url: '/ganhe-creditos',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/ganhe-creditos.html',
+          controller: 'creditoCtrl'
+        }
+      }
+    })
     .state('app.investimento-programado', {
       url: '/conf/investimento-programado',
       views: {
