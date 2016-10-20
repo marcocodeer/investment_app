@@ -12,7 +12,20 @@ angular.module('starter.controllers', [])
   $scope.slideHasChanged = function($index){
   //alert('slideHasChanged $index=' + $index);
   if($index === 6){
-    console.log("OI SEXTO SLIDE");
+    var myClasses = document.querySelectorAll('.slider-pager'),i = 0,l = myClasses.length;
+
+    for (i; i < l; i++) {
+      myClasses[i].style.display = 'none';
+    }
+
+    document.getElementById('footer-apresentacao').style.display = 'none';
+  }
+  else {
+    var myClasses = document.querySelectorAll('.slider-pager'),i = 0,l = myClasses.length;
+
+    for (i; i < l; i++) {
+      myClasses[i].style.display = 'block';
+    }
   }
 };
 
