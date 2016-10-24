@@ -151,119 +151,97 @@ angular.module('starter.controllers', [])
     $scope.doQuestion = function (){
 
       $state.go('pergunta-2');
-      $state.reload();
     };
     $scope.doQuestion3 = function (){
 
       $state.go('pergunta-3');
-      $state.reload();
     };
     $scope.doQuestion4 = function (){
 
       $state.go('pergunta-4');
-      $state.reload();
     };
     $scope.doQuestion5 = function (){
 
       $state.go('pergunta-5');
-      $state.reload();
     };
     $scope.doQuestion6 = function (){
 
       $state.go('pergunta-6');
-      $state.reload();
     };
     $scope.doQuestion7 = function (){
 
       $state.go('pergunta-7');
-      $state.reload();
     };
     $scope.doQuestion8 = function (){
 
       $state.go('pergunta-8');
-      $state.reload();
     };
     $scope.doQuestion9 = function (){
 
       $state.go('pergunta-9');
-      $state.reload();
     };
     $scope.doQuestion10 = function (){
 
       $state.go('pergunta-10');
-      $state.reload();
     };
     $scope.doQuestion11 = function (){
 
       $state.go('pergunta-11');
-      $state.reload();
     };
     $scope.doQuestion12 = function (){
 
       $state.go('pergunta-12');
-      $state.reload();
     };
     $scope.doQuestion13 = function (){
 
       $state.go('pergunta-13');
-      $state.reload();
     };
     $scope.doFinalQuestion = function (){
 
       $state.go('pergunta-final');
-      $state.reload();
     };
     $scope.doWelcome = function (){
 
       $state.go('bem-vindo');
-      $state.reload();
     };
 
     $scope.doArredondamento = function (){
 
       $state.go('app.arredondamentos');
-      $state.reload();
     };
     $scope.doPerfis = function (){
 
       $state.go('app.perfil');
-      $state.reload();
     };
     $scope.doProgramados = function (){
 
       $state.go('app.investimento-programado');
-      $state.reload();
     };
     $scope.adicionarConta = function (){
 
       $state.go('app.adicionar-conta');
-      $state.reload();
     };
     $scope.adicionarPreferencia = function (){
 
       $state.go('app.preferencias');
-      $state.reload();
     };
     $scope.adicionarContaBancaria = function (){
 
       $state.go('app.conta-bancaria');
-      $state.reload();
     };
     $scope.adicionarNotificacoes = function (){
       $state.go('app.notificacoes');
-      $state.reload();
+
     };
     $scope.adicionarDadosUsuario = function (){
 
       $state.go('app.dados-usuario');
-      $state.reload();
     };
     $scope.segurancaConfig = function (){
 
       $state.go('app.seguranca');
-      $state.reload();
     };
-    
+
 
   // Open the login modal
   $scope.login = function() {
