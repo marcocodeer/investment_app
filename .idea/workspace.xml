@@ -2,31 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="abf79467-d9c0-4e5e-babe-39a91215c999" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/www/templates/perfil.html" afterPath="$PROJECT_DIR$/www/templates/configuracoes/perfil/perfil.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/style.css" afterPath="$PROJECT_DIR$/www/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/app.js" afterPath="$PROJECT_DIR$/www/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers.js" afterPath="$PROJECT_DIR$/www/js/controllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/ajuda/seguranca/ajuda-seguranca.html" afterPath="$PROJECT_DIR$/www/templates/ajuda/seguranca/ajuda-seguranca.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/home.html" afterPath="$PROJECT_DIR$/www/templates/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/login/login.html" afterPath="$PROJECT_DIR$/www/templates/login/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/menu.html" afterPath="$PROJECT_DIR$/www/templates/menu.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/performance.html" afterPath="$PROJECT_DIR$/www/templates/performance.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/perguntas/bem-vindo.html" afterPath="$PROJECT_DIR$/www/templates/perguntas/bem-vindo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/perguntas/login-banco.html" afterPath="$PROJECT_DIR$/www/templates/perguntas/login-banco.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/perguntas/pergunta-1-dados.html" afterPath="$PROJECT_DIR$/www/templates/perguntas/pergunta-1-dados.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/perguntas/pergunta-10-nascimento.html" afterPath="$PROJECT_DIR$/www/templates/perguntas/pergunta-10-nascimento.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/perguntas/pergunta-11-sugestao.html" afterPath="$PROJECT_DIR$/www/templates/perguntas/pergunta-11-sugestao.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/perguntas/pergunta-12-investir.html" afterPath="$PROJECT_DIR$/www/templates/perguntas/pergunta-12-investir.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/perguntas/pergunta-13-banco.html" afterPath="$PROJECT_DIR$/www/templates/perguntas/pergunta-13-banco.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/perguntas/pergunta-2-endereco.html" afterPath="$PROJECT_DIR$/www/templates/perguntas/pergunta-2-endereco.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/perguntas/pergunta-3-acesso.html" afterPath="$PROJECT_DIR$/www/templates/perguntas/pergunta-3-acesso.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/perguntas/pergunta-4-preferencias.html" afterPath="$PROJECT_DIR$/www/templates/perguntas/pergunta-4-preferencias.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/perguntas/pergunta-5-receita.html" afterPath="$PROJECT_DIR$/www/templates/perguntas/pergunta-5-receita.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/perguntas/pergunta-6-patrimonio.html" afterPath="$PROJECT_DIR$/www/templates/perguntas/pergunta-6-patrimonio.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/perguntas/pergunta-7-emprego.html" afterPath="$PROJECT_DIR$/www/templates/perguntas/pergunta-7-emprego.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/perguntas/pergunta-8-investidor.html" afterPath="$PROJECT_DIR$/www/templates/perguntas/pergunta-8-investidor.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/perguntas/pergunta-9-aplicaveis.html" afterPath="$PROJECT_DIR$/www/templates/perguntas/pergunta-9-aplicaveis.html" />
     </list>
     <ignored path="investment_app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,7 +43,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="controllers.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="241">
@@ -86,6 +62,19 @@
                 <element signature="e#16429#24749#0" expanded="false" />
                 <element signature="e#16452#21265#0" expanded="false" />
                 <element signature="e#16626#17402#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pergunta-10-nascimento.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/templates/perguntas/pergunta-10-nascimento.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="217">
+              <caret line="19" column="174" selection-start-line="19" selection-start-column="174" selection-end-line="19" selection-end-column="174" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#ion-content#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#ion-content#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -131,7 +120,6 @@
         <option value="$PROJECT_DIR$/www/templates/perguntas/pergunta-7-emprego.html" />
         <option value="$PROJECT_DIR$/www/templates/perguntas/pergunta-8-investidor.html" />
         <option value="$PROJECT_DIR$/www/templates/perguntas/pergunta-9-aplicaveis.html" />
-        <option value="$PROJECT_DIR$/www/templates/perguntas/pergunta-10-nascimento.html" />
         <option value="$PROJECT_DIR$/www/templates/perguntas/pergunta-12-investir.html" />
         <option value="$PROJECT_DIR$/www/templates/perguntas/pergunta-13-banco.html" />
         <option value="$PROJECT_DIR$/www/templates/perguntas/login-banco.html" />
@@ -142,6 +130,7 @@
         <option value="$PROJECT_DIR$/www/css/style.css" />
         <option value="$PROJECT_DIR$/www/templates/performance.html" />
         <option value="$PROJECT_DIR$/www/js/controllers.js" />
+        <option value="$PROJECT_DIR$/www/templates/perguntas/pergunta-10-nascimento.html" />
       </list>
     </option>
   </component>
@@ -236,6 +225,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="investment_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="investment_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="perguntas" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -334,12 +345,12 @@
       <workItem from="1476962276867" duration="21737000" />
       <workItem from="1477059314799" duration="657000" />
       <workItem from="1477308412654" duration="2821000" />
-      <workItem from="1477320221573" duration="11465000" />
+      <workItem from="1477320221573" duration="13361000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105702000" />
+    <option name="totallyTimeSpent" value="107598000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -727,14 +738,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/perguntas/pergunta-10-nascimento.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="49" column="37" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/perguntas/pergunta-12-investir.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -833,6 +836,17 @@
             <element signature="e#16429#24749#0" expanded="false" />
             <element signature="e#16452#21265#0" expanded="false" />
             <element signature="e#16626#17402#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/perguntas/pergunta-10-nascimento.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="19" column="174" selection-start-line="19" selection-start-column="174" selection-end-line="19" selection-end-column="174" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#ion-content#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#ion-content#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
