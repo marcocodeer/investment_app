@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="abf79467-d9c0-4e5e-babe-39a91215c999" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/perguntas/pergunta-10-nascimento.html" afterPath="$PROJECT_DIR$/www/templates/perguntas/pergunta-10-nascimento.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/style.css" afterPath="$PROJECT_DIR$/www/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers.js" afterPath="$PROJECT_DIR$/www/js/controllers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/historico/historico.html" afterPath="$PROJECT_DIR$/www/templates/historico/historico.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/movimentar-saldo.html" afterPath="$PROJECT_DIR$/www/templates/movimentar-saldo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/ver-saldo.html" afterPath="$PROJECT_DIR$/www/templates/ver-saldo.html" />
     </list>
     <ignored path="investment_app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,12 +38,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="785" column="12" selection-start-line="785" selection-start-column="12" selection-end-line="785" selection-end-column="12" />
+            <state relative-caret-position="242">
+              <caret line="914" column="29" selection-start-line="914" selection-start-column="29" selection-end-line="914" selection-end-column="29" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ver-saldo.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/templates/ver-saldo.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="149" selection-start-line="0" selection-start-column="149" selection-end-line="0" selection-end-column="149" />
+              <folding>
+                <element signature="n#style#0;n#ion-content#0;n#ion-tab#0;n#ion-tabs#0;n#ion-view#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="historico.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/templates/historico/historico.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="128" selection-start-line="0" selection-start-column="128" selection-end-line="0" selection-end-column="146" />
+              <folding>
+                <element signature="n#style#0;n#ion-content#0;n#ion-tab#0;n#ion-tabs#0;n#ion-view#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -46,35 +75,21 @@
       <file leaf-file-name="controllers.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="323" column="27" selection-start-line="323" selection-start-column="27" selection-end-line="323" selection-end-column="27" />
+            <state relative-caret-position="-7">
+              <caret line="454" column="16" selection-start-line="454" selection-start-column="16" selection-end-line="454" selection-end-column="16" />
               <folding>
                 <element signature="e#155#3403#0" expanded="false" />
                 <element signature="e#3519#6365#0" expanded="false" />
                 <element signature="e#6281#6359#0" expanded="false" />
                 <element signature="e#6557#7333#0" expanded="false" />
-                <element signature="e#9025#10241#0" expanded="false" />
-                <element signature="e#10360#11723#0" expanded="false" />
-                <element signature="e#11801#12045#0" expanded="false" />
-                <element signature="e#12128#13899#0" expanded="false" />
-                <element signature="e#13977#15635#0" expanded="false" />
-                <element signature="e#15713#16373#0" expanded="false" />
-                <element signature="e#16429#24749#0" expanded="false" />
-                <element signature="e#16452#21265#0" expanded="false" />
-                <element signature="e#16626#17402#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pergunta-10-nascimento.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/www/templates/perguntas/pergunta-10-nascimento.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="19" column="174" selection-start-line="19" selection-start-column="174" selection-end-line="19" selection-end-column="174" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#ion-content#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#ion-content#0;n#!!top" expanded="true" />
+                <element signature="e#11211#12574#0" expanded="false" />
+                <element signature="e#12652#12896#0" expanded="false" />
+                <element signature="e#12979#14750#0" expanded="false" />
+                <element signature="e#14828#16486#0" expanded="false" />
+                <element signature="e#16564#17224#0" expanded="false" />
+                <element signature="e#17280#25600#0" expanded="false" />
+                <element signature="e#17303#22116#0" expanded="false" />
+                <element signature="e#17477#18253#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -94,12 +109,9 @@
         <option value="$PROJECT_DIR$/www/templates/perguntas/angular-locale_pt-br.js" />
         <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/templates/perfil.html" />
-        <option value="$PROJECT_DIR$/www/templates/movimentar-saldo.html" />
         <option value="$PROJECT_DIR$/www/templates/configuracoes/investimento-programado/investimento-programado.html" />
         <option value="$PROJECT_DIR$/www/templates/app-tour.html" />
         <option value="$PROJECT_DIR$/www/templates/ganhe-creditos.html" />
-        <option value="$PROJECT_DIR$/www/templates/historico/historico.html" />
-        <option value="$PROJECT_DIR$/www/templates/ver-saldo.html" />
         <option value="$PROJECT_DIR$/www/templates/configuracoes/dados-usuario/dados-usuario.html" />
         <option value="$PROJECT_DIR$/www/templates/configuracoes/segurança/seguranca.html" />
         <option value="$PROJECT_DIR$/www/templates/configuracoes/arredondamento-cartoes/arredondamento.html" />
@@ -127,10 +139,13 @@
         <option value="$PROJECT_DIR$/www/templates/perguntas/bem-vindo.html" />
         <option value="$PROJECT_DIR$/www/js/app.js" />
         <option value="$PROJECT_DIR$/www/templates/home.html" />
-        <option value="$PROJECT_DIR$/www/css/style.css" />
         <option value="$PROJECT_DIR$/www/templates/performance.html" />
-        <option value="$PROJECT_DIR$/www/js/controllers.js" />
         <option value="$PROJECT_DIR$/www/templates/perguntas/pergunta-10-nascimento.html" />
+        <option value="$PROJECT_DIR$/www/js/controllers.js" />
+        <option value="$PROJECT_DIR$/www/templates/historico/historico.html" />
+        <option value="$PROJECT_DIR$/www/templates/movimentar-saldo.html" />
+        <option value="$PROJECT_DIR$/www/templates/ver-saldo.html" />
+        <option value="$PROJECT_DIR$/www/css/style.css" />
       </list>
     </option>
   </component>
@@ -246,7 +261,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="perguntas" />
+              <option name="myItemId" value="historico" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -345,12 +360,12 @@
       <workItem from="1476962276867" duration="21737000" />
       <workItem from="1477059314799" duration="657000" />
       <workItem from="1477308412654" duration="2821000" />
-      <workItem from="1477320221573" duration="13361000" />
+      <workItem from="1477320221573" duration="15558000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107598000" />
+    <option name="totallyTimeSpent" value="109795000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -496,27 +511,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="254">
           <caret line="66" column="152" selection-start-line="66" selection-start-column="152" selection-end-line="66" selection-end-column="152" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/movimentar-saldo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="43" column="11" selection-start-line="40" selection-start-column="4" selection-end-line="43" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/historico/historico.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="15" column="71" selection-start-line="15" selection-start-column="71" selection-end-line="15" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/ver-saldo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="132" column="40" selection-start-line="132" selection-start-column="40" selection-end-line="132" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -800,14 +794,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="785" column="12" selection-start-line="785" selection-start-column="12" selection-end-line="785" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/performance.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -818,36 +804,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="323" column="27" selection-start-line="323" selection-start-column="27" selection-end-line="323" selection-end-column="27" />
-          <folding>
-            <element signature="e#155#3403#0" expanded="false" />
-            <element signature="e#3519#6365#0" expanded="false" />
-            <element signature="e#6281#6359#0" expanded="false" />
-            <element signature="e#6557#7333#0" expanded="false" />
-            <element signature="e#9025#10241#0" expanded="false" />
-            <element signature="e#10360#11723#0" expanded="false" />
-            <element signature="e#11801#12045#0" expanded="false" />
-            <element signature="e#12128#13899#0" expanded="false" />
-            <element signature="e#13977#15635#0" expanded="false" />
-            <element signature="e#15713#16373#0" expanded="false" />
-            <element signature="e#16429#24749#0" expanded="false" />
-            <element signature="e#16452#21265#0" expanded="false" />
-            <element signature="e#16626#17402#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/perguntas/pergunta-10-nascimento.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
           <caret line="19" column="174" selection-start-line="19" selection-start-column="174" selection-end-line="19" selection-end-column="174" />
           <folding>
-            <element signature="n#style#0;n#div#1;n#ion-content#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#ion-content#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#ion-content#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#ion-content#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="454" column="16" selection-start-line="454" selection-start-column="16" selection-end-line="454" selection-end-column="16" />
+          <folding>
+            <element signature="e#155#3403#0" expanded="false" />
+            <element signature="e#3519#6365#0" expanded="false" />
+            <element signature="e#6281#6359#0" expanded="false" />
+            <element signature="e#6557#7333#0" expanded="false" />
+            <element signature="e#11211#12574#0" expanded="false" />
+            <element signature="e#12652#12896#0" expanded="false" />
+            <element signature="e#12979#14750#0" expanded="false" />
+            <element signature="e#14828#16486#0" expanded="false" />
+            <element signature="e#16564#17224#0" expanded="false" />
+            <element signature="e#17280#25600#0" expanded="false" />
+            <element signature="e#17303#22116#0" expanded="false" />
+            <element signature="e#17477#18253#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/movimentar-saldo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="133" selection-start-line="0" selection-start-column="133" selection-end-line="0" selection-end-column="133" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#ion-view#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/historico/historico.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="128" selection-start-line="0" selection-start-column="128" selection-end-line="0" selection-end-column="146" />
+          <folding>
+            <element signature="n#style#0;n#ion-content#0;n#ion-tab#0;n#ion-tabs#0;n#ion-view#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/ver-saldo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="149" selection-start-line="0" selection-start-column="149" selection-end-line="0" selection-end-column="149" />
+          <folding>
+            <element signature="n#style#0;n#ion-content#0;n#ion-tab#0;n#ion-tabs#0;n#ion-view#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="914" column="29" selection-start-line="914" selection-start-column="29" selection-end-line="914" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>

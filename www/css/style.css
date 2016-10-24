@@ -819,6 +819,7 @@ body > ion-nav-view > ion-side-menus > ion-side-menu-content > ion-nav-bar > div
 }
 .historico .tabs-dark > .tabs {
   top: 87px !important;
+  height: 30px;
 }
 .list.estendida {
   background-color: #6BB9BB !important;
@@ -906,4 +907,21 @@ body > ion-nav-view > ion-side-menus > ion-side-menu-content > ion-nav-bar > div
 .platform-android .popover {
 margin-top: 20px;
 
+}
+.historico > ion-tabs > ion-content ,
+.historico #tabsController-tabs1 {
+  overflow: hidden;
+}
+.platform-android .historico  {
+  overflow: inherit;
+
+}
+.platform-android .historico .tab-item.tab-item-active,
+.platform-android .historico .tab-item.active,
+.platform-android .historico .tab-item.activated {
+  border-bottom: 1px solid #fff !important;
+  margin-top: 9px;
+}
+.historico #tabsController-tabs1 > div {
+  top: 267px !important;
 }

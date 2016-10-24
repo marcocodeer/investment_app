@@ -419,6 +419,46 @@ angular.module('starter.controllers', [])
         'status': 1,
         'value': '0,36'
       },
+      {
+        'id': 7,
+        'label': 'R$ 4,64 Starbucks',
+        'date': '14/07/2016',
+        'signal': '+',
+        'status': 1,
+        'value': '0,36'
+      },
+      {
+        'id': 8,
+        'label': 'R$ 4,64 Starbucks',
+        'date': '14/07/2016',
+        'signal': '+',
+        'status': 1,
+        'value': '0,36'
+      },
+      {
+        'id': 9,
+        'label': 'R$ 4,64 Starbucks',
+        'date': '14/07/2016',
+        'signal': '+',
+        'status': 1,
+        'value': '0,36'
+      },
+      {
+        'id': 10,
+        'label': 'R$ 4,64 Starbucks',
+        'date': '14/07/2016',
+        'signal': '+',
+        'status': 1,
+        'value': '0,36'
+      },
+      {
+        'id': 11,
+        'label': 'R$ 4,64 Starbucks',
+        'date': '14/07/2016',
+        'signal': '+',
+        'status': 1,
+        'value': '0,36'
+      }
     ];
     $scope.aprovarInvestimento = function(id){
       console.log(id);
