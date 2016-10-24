@@ -52,6 +52,7 @@ Cleiton Schonardie UI/UX and front-end developer
 }
 .bar.bar-stable .title {
   color: #fff !important;
+  font-weight: 100;
 }
 .bar-stable .button.button-icon {
   color: #fff !important;
@@ -488,11 +489,31 @@ label, input, button, select, textarea {
   background:transparent;
   background-image: none;
 }
+.home .scroll {
+  height:100%;
+}
 .barchart.home{
   width: 100% !important;
   height: 100% !important;
   margin-left: 0px;
   margin-right: 0px;
+  position: absolute;
+  bottom: 0;
+}
+.barchart.performance{
+  width: 100% !important;
+  height:100% !important;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.barchart.bar{
+  width: 90% !important;
+  height: 100px !important;
+  margin-left: 20px;
+  margin-right: 20px;
+  bottom:40px;
+  background-image:none !important;
+  background: transparent;
 }
 #chartperformance2 {
   height: 70px !important;
@@ -500,7 +521,10 @@ label, input, button, select, textarea {
 
 .chartbox{
   padding: 0;
-  height: 289px;
+  height: 50%;
+  position: absolute;
+  bottom: 0;
+  top: 50%;
 }
 .chartbox p{
   font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
@@ -729,7 +753,7 @@ label, input, button, select, textarea {
   display:none !important;
 }
 .popover-style {
-  background-color: rgb(145, 190, 217);
+  background-color: rgb(145, 190, 217) !important;
   width:273px;
   height:400px;
   top:45px !important;
@@ -759,7 +783,7 @@ label, input, button, select, textarea {
 }
 .chartbox .periodo {
   padding: 0px;
-  bottom: 41px;
+  bottom: 55px;
   z-index: 99;
   position: absolute;
   margin: 0 10px;
@@ -784,6 +808,8 @@ label, input, button, select, textarea {
 }
 .performancepage .chartbox {
   height: 100% !important;
+  position: relative;
+  top:0;
 }
 body > ion-nav-view > ion-side-menus > ion-side-menu-content > ion-nav-bar > div:nth-child(3) > ion-header-bar {
   background: transparent;
@@ -876,4 +902,8 @@ body > ion-nav-view > ion-side-menus > ion-side-menu-content > ion-nav-bar > div
 }
 #formulario.has-header {
   top:265px !important;
+}
+.platform-android .popover {
+margin-top: 20px;
+
 }

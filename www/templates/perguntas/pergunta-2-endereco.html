@@ -44,36 +44,11 @@
 
 <ion-footer-bar class="footer-bar-custom" style="">
   <div class="col" style="padding:30px;">
-    <button ng-click="doQuestion3()" class="item-center button button-clear btn-cadastro">
+    <button ng-click="go('pergunta-3')" class="item-center button button-clear btn-cadastro">
       <i class="icon ion-ios-checkmark-empty" style="font-size:30px;"></i>
     &nbsp;
       CONTINUAR (Passo 2 de 14)
     </button>
   </div>
 </ion-footer-bar>
-
-<script id="popover.html" type="text/ng-template">
-  <ion-popover-view style="background-color: rgb(145, 190, 217);box-shadow: 4.95px 4.95px 4px 0px rgba(0, 0, 0, 0.21);width:273px;height:400px;">
-
-      <ion-slide-box id="slide-popover" style="height:350px;">
-        <ion-slide>
-          <div style="text-align:center;margin-top:-50px;">
-            <p class="seg-title">O seu saldo</p>
-            <img src="img/popover-pic1.png" class=""/>
-            <p class="seg-desc" style="margin-top:-80px;">A tela de saldo mostra todas as compras e arredondamentos das suas contas conectadas.</p>
-          </div>
-
-            <div class="col btn-home">
-              <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
-
-                ENTENDI
-              </button>
-            </div>
-
-       </ion-slide>
-       <ion-slide>
-       </ion-slide>
-
-  </ion-popover-view>
-</script>
 </ion-view>

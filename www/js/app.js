@@ -299,7 +299,7 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
       url: '/config/perfil',
       views: {
         'menuContent': {
-          templateUrl: 'templates/perfil.html',
+          templateUrl: 'templates/configuracoes/perfil/perfil.html',
           controller: 'perfilCtrl'
         }
       }
@@ -318,7 +318,7 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
       views: {
         'menuContent': {
           templateUrl: 'templates/home.html',
-          controller: 'AppCtrl'
+          controller: 'homeCtrl'
         }
       }
     })

@@ -1,83 +1,28 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, $state, $ionicSlideBoxDelegate, $ionicPopover) {
-
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
+  .controller('AppCtrl', function($scope, $ionicModal, $timeout, $state, $ionicSlideBoxDelegate, $ionicPopover) {
 
   $scope.slideHasChanged = function($index){
-  //alert('slideHasChanged $index=' + $index);
-  if($index === 6){
-    var myClasses = document.querySelectorAll('.slider-pager'),i = 0,l = myClasses.length;
+    //alert('slideHasChanged $index=' + $index);
+    if($index === 6){
+      var myClasses = document.querySelectorAll('.slider-pager'),i = 0,l = myClasses.length;
 
-    for (i; i < l; i++) {
-      myClasses[i].style.display = 'none';
-    }
-
-    document.getElementById('footer-apresentacao').style.display = 'none';
-  }
-  else {
-    var myClasses = document.querySelectorAll('.slider-pager'),i = 0,l = myClasses.length;
-
-    for (i; i < l; i++) {
-      myClasses[i].style.display = 'block';
-    }
-  }
-};
-
-  $scope.estado = $state.current.name;
-  $scope.homeGrafico = function () {
-    var databarSleep = {
-      labels: ['34', '36', '38', '40', '42', '44', '46', '48', '50'],
-      datasets: [
-        {
-          label: "My First dataset",
-          fill: true,
-          backgroundColor: "#60C750",
-          pointRadius: 0,
-          lineTension: 1,
-          borderColor: "#fff",
-          borderWidth: 2,
-          strokeColor: "#fff",
-          data: [0,4,3,5,4,6,5,9,10]
-        }
-      ]
-    };
-
-    var options = {
-      scaleOverride: true,
-      scaleSteps: 3,
-      scaleStepWidth: 10,
-      scaleStartValue: 0,
-      scales: {
-        yAxes: [{
-          display: false
-        }],
-        xAxes: [{
-          display: false
-        }]
+      for (i; i < l; i++) {
+        myClasses[i].style.display = 'none';
       }
 
-    };
+      document.getElementById('footer-apresentacao').style.display = 'none';
+    }
+    else {
+      var myClasses = document.querySelectorAll('.slider-pager'),i = 0,l = myClasses.length;
 
-    var chartsleep = document.getElementById("charthome").getContext("2d");
+      for (i; i < l; i++) {
+        myClasses[i].style.display = 'block';
+      }
+    }
+  };
 
-
-    var chartsleepObj = new Chart(chartsleep, {
-      type: 'line',
-      scaleFontColor: "#fff",
-      scaleLineColor: 'rgba(0, 0, 0, 0)',
-      scaleLabel : "<%= ' R$ ' + value + ' mil '  %>",
-      showTooltips : false,
-      data: databarSleep,
-      options: options
-    });
-  }
-
+  $scope.estado = $state.current.name;
 
   $ionicPopover.fromTemplateUrl('templates/popover.html', {
     scope: $scope,
@@ -141,106 +86,47 @@ angular.module('starter.controllers', [])
     $scope.slideIndex = index;
   };
 
-  $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
-    $scope.series = ['Series A', 'Series B'];
-    $scope.data = [
-        [65, 59, 80, 81, 56, 55, 40],
-        [28, 48, 40, 19, 86, 27, 90]
-    ];
+  $scope.go = function (destino){
 
-    $scope.doQuestion = function (){
+    $state.go(destino);
 
-      $state.go('pergunta-2');
-    };
-    $scope.doQuestion3 = function (){
+  };
+  $scope.doArredondamento = function (){
 
-      $state.go('pergunta-3');
-    };
-    $scope.doQuestion4 = function (){
+    $state.go('app.arredondamentos');
+  };
+  $scope.doPerfis = function (){
 
-      $state.go('pergunta-4');
-    };
-    $scope.doQuestion5 = function (){
+    $state.go('app.perfil');
+  };
+  $scope.doProgramados = function (){
 
-      $state.go('pergunta-5');
-    };
-    $scope.doQuestion6 = function (){
+    $state.go('app.investimento-programado');
+  };
+  $scope.adicionarConta = function (){
 
-      $state.go('pergunta-6');
-    };
-    $scope.doQuestion7 = function (){
+    $state.go('app.adicionar-conta');
+  };
+  $scope.adicionarPreferencia = function (){
 
-      $state.go('pergunta-7');
-    };
-    $scope.doQuestion8 = function (){
+    $state.go('app.preferencias');
+  };
+  $scope.adicionarContaBancaria = function (){
 
-      $state.go('pergunta-8');
-    };
-    $scope.doQuestion9 = function (){
+    $state.go('app.conta-bancaria');
+  };
+  $scope.adicionarNotificacoes = function (){
+    $state.go('app.notificacoes');
 
-      $state.go('pergunta-9');
-    };
-    $scope.doQuestion10 = function (){
+  };
+  $scope.adicionarDadosUsuario = function (){
 
-      $state.go('pergunta-10');
-    };
-    $scope.doQuestion11 = function (){
+    $state.go('app.dados-usuario');
+  };
+  $scope.segurancaConfig = function (){
 
-      $state.go('pergunta-11');
-    };
-    $scope.doQuestion12 = function (){
-
-      $state.go('pergunta-12');
-    };
-    $scope.doQuestion13 = function (){
-
-      $state.go('pergunta-13');
-    };
-    $scope.doFinalQuestion = function (){
-
-      $state.go('pergunta-final');
-    };
-    $scope.doWelcome = function (){
-
-      $state.go('bem-vindo');
-    };
-
-    $scope.doArredondamento = function (){
-
-      $state.go('app.arredondamentos');
-    };
-    $scope.doPerfis = function (){
-
-      $state.go('app.perfil');
-    };
-    $scope.doProgramados = function (){
-
-      $state.go('app.investimento-programado');
-    };
-    $scope.adicionarConta = function (){
-
-      $state.go('app.adicionar-conta');
-    };
-    $scope.adicionarPreferencia = function (){
-
-      $state.go('app.preferencias');
-    };
-    $scope.adicionarContaBancaria = function (){
-
-      $state.go('app.conta-bancaria');
-    };
-    $scope.adicionarNotificacoes = function (){
-      $state.go('app.notificacoes');
-
-    };
-    $scope.adicionarDadosUsuario = function (){
-
-      $state.go('app.dados-usuario');
-    };
-    $scope.segurancaConfig = function (){
-
-      $state.go('app.seguranca');
-    };
+    $state.go('app.seguranca');
+  };
 
 
   // Open the login modal
@@ -262,6 +148,127 @@ angular.module('starter.controllers', [])
     }, 1000);
   };
 })
+
+  .controller('homeCtrl', function($scope, $ionicModal, $timeout, $state, $ionicSlideBoxDelegate, $ionicPopover) {
+
+    $scope.homeGrafico = function () {
+
+      // GRAFICO DE LINHA
+
+      var databarSleep = {
+        labels: ['34', '36', '38', '40', '42', '44', '46', '48', '50'],
+        datasets: [
+          {
+            label: "My First dataset",
+            fill: true,
+            backgroundColor: "#60C750",
+            pointRadius: 0,
+            lineTension: 0.2,
+            borderColor: "#fff",
+            borderWidth: 2,
+            strokeColor: "#fff",
+            data: [1,3,2,3,5,7,6,8,9]
+          }
+
+        ]
+      };
+
+      var options = {
+        scaleOverride: true,
+        scaleSteps: 3,
+        scaleStepWidth: 10,
+        scaleStartValue: 0,
+        scales: {
+          yAxes: [{
+            display: false
+          }],
+          xAxes: [{
+            display: false
+          }]
+        }
+
+      };
+
+      var chartsleep = document.getElementById("charthome").getContext("2d");
+
+
+      var chartsleepObj = new Chart(chartsleep, {
+        type: 'line',
+        scaleFontColor: "#fff",
+        scaleLineColor: 'rgba(0, 0, 0, 0)',
+        scaleLabel : "<%= ' R$ ' + value + ' mil '  %>",
+        showTooltips : false,
+        data: databarSleep,
+        options: options
+      });
+
+      // GRAFICO DE BARRAS
+
+      var dataBar = {
+        labels: ['34', '36', '38', '40', '42', '44', '46', '48', '50'],
+        datasets: [
+          {
+            label: 'Line Component',
+            data: [1.2,1.5,2,1.5,2.4,3,2.6,3.4,3],
+            fill: true,
+            backgroundColor: 'rgba(255,255,255,0.3)',
+            borderColor: 'rgba(255,255,255,0)',
+            hoverBackgroundColor: '#71B37C',
+            hoverBorderColor: '#71B37C',
+            barThickness: 20,
+            scales: {
+              xAxes: [{ categorySpacing: 0.5 }]
+            }
+          }
+        ]
+      };
+
+      var optionsBar = {
+        scaleOverride: true,
+        barValueSpacing:20,
+        scales: {
+          yAxes: [{
+            display: false,
+            barPercentage: 1.0
+          }],
+          xAxes: [{
+            display: false
+          }]
+        }
+
+      };
+
+      var chartBar = document.getElementById("charthomebar").getContext("2d");
+
+      var chartBarObj = new Chart(chartBar, {
+        type: 'bar',
+        scaleFontColor: "#fff",
+        scaleLineColor: 'rgba(0, 0, 0, 0)',
+        scaleLabel : "<%= ' R$ ' + value + ' mil '  %>",
+        showTooltips : false,
+        data: dataBar,
+        options: optionsBar
+      });
+
+    };
+
+    $scope.openPopover = function($event, estado) {
+      $scope.estado = estado;
+      $scope.popover.show($event);
+      console.log($scope.estado);
+    };
+
+
+    $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
+
+    $scope.series = ['Series A', 'Series B'];
+
+    $scope.data = [
+      [65, 59, 80, 81, 56, 55, 40],
+      [28, 48, 40, 19, 86, 27, 90]
+    ];
+
+  })
 
   .controller('peformanceCtrl', function($scope, $ionicModal, $timeout, $state, $ionicSlideBoxDelegate, $ionicPopover) {
     $scope.Periodo = 1;
@@ -314,7 +321,7 @@ angular.module('starter.controllers', [])
             fill: true,
             backgroundColor: "#60C750",
             pointRadius: 0,
-            lineTension: 1,
+            lineTension: 0.1,
             borderColor: "#fff",
             borderWidth: 2,
             strokeColor: "#fff",
@@ -958,9 +965,9 @@ angular.module('starter.controllers', [])
 
     $scope.idade = 42;
 
-    $scope.valor = 3111;
+    $scope.valor = 'R$ 3.111,00';
 
-    $scope.mensal = 10;
+    $scope.mensal = 'R$ 10,00';
 
     $scope.proximoPerfil = function () {
 
@@ -1091,6 +1098,12 @@ angular.module('starter.controllers', [])
         data: data,
         options: options
       });
+
+    };
+
+    $scope.go = function (destino){
+
+      $state.go(destino);
 
     };
 

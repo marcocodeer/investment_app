@@ -1,6 +1,6 @@
 <ion-view view-title="OLÁ, MARCO" style="background: url(img/perfil-investimento-bg.png) no-repeat center;background-size:cover;">
 
-  <ion-content style="background: url(img/login-bg-acorn.png) no-repeat center;background-size:cover;height:100%;">
+  <ion-content style="background: url(img/login-bg-acorn.png) no-repeat center;background-size:cover;height:100%;" class="home">
     <div class="head-box home" >
 
       <div class="column" style="padding-right: 0;" >
@@ -28,6 +28,7 @@
     <div class="row chartbox">
 
       <canvas id="charthome" width="320" height="220" class="barchart home" ng-init="homeGrafico()"></canvas>
+      <canvas id="charthomebar" width="320" height="100" class="barchart bar" ></canvas>
 
       <p>Últimos 30 dias <span>3h atrás</span></p>
 

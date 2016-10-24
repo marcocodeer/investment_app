@@ -1,6 +1,6 @@
 <ion-view view-title="PERFORMANCE" style="background: url(img/perfil-investimento-bg.png) no-repeat center;background-size:cover;" class="performancepage">
 
-  <ion-content style="background: url(img/login-bg-acorn.png) no-repeat center;background-size:cover;height:100%;">
+  <ion-content style="background: url(img/login-bg-acorn.png) no-repeat center;background-size:cover;height:100%;"  class="home performance">
     <div class="head-box home" style="height: 244px;" >
 
       <div class="column" style="padding-right: 0;" >
@@ -54,8 +54,8 @@
       <ion-slide>
         <div class="column chartbox">
 
-          <canvas id="chartperformance2" width="320" height="70" style="height: 70px !important;" class="barchart home" ng-init="performanceGrafico('chartperformance2')"></canvas>
-          <div class="acoes">
+          <canvas id="chartperformance2" width="320" height="70" style="top:0;bottom:inherit;height: 70px !important;" class="barchart home" ng-init="performanceGrafico('chartperformance2')"></canvas>
+          <div class="acoes" style="padding-top: 80px;">
             <div ng-repeat="acao in acoes">
               <span> {{acao.value}}% </span>{{acao.label}}
             </div>
