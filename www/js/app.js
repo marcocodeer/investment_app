@@ -200,7 +200,7 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
     url: '/conf/notificacoes',
     views: {
       'menuContent': {
-        templateUrl: 'templates/configuracoes/notificações/notificacoes.html'
+        templateUrl: 'templates/configuracoes/notificacoes/notificacoes.html'
       }
     }
   })
@@ -218,7 +218,7 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
     url: '/conf/seguranca',
     views: {
       'menuContent': {
-        templateUrl: 'templates/configuracoes/segurança/seguranca.html',
+        templateUrl: 'templates/configuracoes/seguranca/seguranca.html',
         controller: 'dadosCtrl'
       }
     }
