@@ -271,50 +271,88 @@ angular.module('starter.controllers', [])
   })
 
   .controller('peformanceCtrl', function($scope, $ionicModal, $timeout, $state, $ionicSlideBoxDelegate, $ionicPopover) {
+
+    var dados = [0,4,3,5,4],
+        labels = ['34', '36', '38', '40', '42'] ;
+
     $scope.Periodo = 1;
+
     $scope.Unidade = 1;
+
     $scope.acoes =  [
           {
             'label': 'Ações de Grandes Companias',
             'cor': '#73FF73',
-            'value': 16
+            'acoes': '1.000',
+            'percent': '16%',
+            'value': 'R$2,00'
           },
           {
             'label': 'Ações de Pequenas Companias',
             'cor': '#A3D900',
-            'value': 19
+            'acoes': '2.000',
+            'percent': '19%',
+            'value': 'R$1,30'
           },
           {
             'label': 'Ações de Mercado Emergente',
             'cor': '#B973FF',
-            'value': 10
+            'acoes': '1.300',
+            'percent': '10%',
+            'value': 'R$1,44'
           },
           {
             'label': 'Ações de Mercado Imobiliário',
             'cor': '#26C9FF',
-            'value': 16
+            'acoes': '5.000',
+            'percent': '16%',
+            'value': 'R$3,00'
           },
           {
             'label': 'Dívidas Corporativas',
             'cor': '#FFBF00',
-            'value': 33
+            'acoes': '1.000',
+            'percent': '33%',
+            'value': 'R$2,20'
           },
           {
             'label': 'Dívidas Públicas',
             'cor': '#FF5C26',
-            'value': 6
+            'acoes': '500',
+            'percent': '6%',
+            'value': 'R$1,02'
           }
         ];
+
     $scope.selecionaPeriodo = function(value){
       $scope.Periodo = value;
+      if( value === 1 ){
+        dados = [0,4,3,5,4];
+        labels = ['34', '36', '38', '40', '42'] ;
+      } else if( value === 2 ){
+        dados = [0,4,3,5,4,6,5,4,3,5,4,6,5,9,10];
+        labels = ['1', '2', '3', '4', '5','6', '7', '8', '9', '10','11', '12', '13', '14', '15'] ;
+      } else if( value === 3 ){
+        dados = [0,4,3,5,4,6,5,4,3,5,4,6,5,9,4,3,5,4,6,5,4,3,5,4,6,5,6,5,9,10];
+        labels = ['1', '2', '3', '4', '5','6', '7', '8', '9', '10','11', '12', '13', '14', '15','1', '2', '3', '4', '5','6', '7', '8', '9', '10','11', '12', '13', '14', '15'] ;
+      } else if( value === 4 ){
+        dados = [0,4,3,5,4,6,5,4,3,5,4,6,5,3,4,3,5,4,6,5,4,3,5,4,6,5,6,5,6,7,5,4,3,5,4,6,5,4,3,5,4,6,5,6,4,3,5,4,6,5,4,3,5,4,6,5,6,5,9,10];
+        labels = ['1', '2', '3', '4', '5','6', '7', '8', '9', '10','11', '12', '13', '14', '15','1', '2', '3', '4', '5','6', '7', '8', '9', '10','11', '12', '13', '14', '15','1', '2', '3', '4', '5','6', '7', '8', '9', '10','11', '12', '13', '14', '15','1', '2', '3', '4', '5','6', '7', '8', '9', '10','11', '12', '13', '14', '15'] ;
+      } else if( value === 5 ){
+        dados = [0,4,3,5,4,6,5,4,3,5,4,6,5,3,4,3,5,4,6,5,4,3,5,4,6,5,6,5,6,7,5,4,3,5,4,6,5,4,3,5,4,6,5,6,4,3,5,4,6,5,4,3,5,4,6,5,6,5,4,5,6,4,3,5,4,6,5,4,3,5,4,6,5,3,4,3,5,4,6,5,4,3,5,4,6,5,6,5,6,7,5,4,3,5,4,6,5,4,3,5,4,6,5,6,4,3,5,4,6,5,4,3,5,4,6,5,6,5,9,10];
+        labels = ['1', '2', '3', '4', '5','6', '7', '8', '9', '10','11', '12', '13', '14', '15','1', '2', '3', '4', '5','6', '7', '8', '9', '10','11', '12', '13', '14', '15','1', '2', '3', '4', '5','6', '7', '8', '9', '10','11', '12', '13', '14', '15','1', '2', '3', '4', '5','6', '7', '8', '9', '10','11', '12', '13', '14', '15','1', '2', '3', '4', '5','6', '7', '8', '9', '10','11', '12', '13', '14', '15','1', '2', '3', '4', '5','6', '7', '8', '9', '10','11', '12', '13', '14', '15','1', '2', '3', '4', '5','6', '7', '8', '9', '10','11', '12', '13', '14', '15','1', '2', '3', '4', '5','6', '7', '8', '9', '10','11', '12', '13', '14', '15'] ;
+      }
+      $scope.performanceGrafico('chartperformance1');
+      $scope.performanceGrafico('chartperformance2');
     };
 
     $scope.selecionaUnidade = function(value){
       $scope.Unidade = value;
     };
+
     $scope.performanceGrafico = function (id) {
       var databarSleep = {
-        labels: ['34', '36', '38', '40', '42', '44', '46', '48', '50'],
+        labels: labels,
         datasets: [
           {
             label: "My First dataset",
@@ -325,7 +363,7 @@ angular.module('starter.controllers', [])
             borderColor: "#fff",
             borderWidth: 2,
             strokeColor: "#fff",
-            data: [0,4,3,5,4,6,5,9,10]
+            data: dados
           }
         ]
       };
@@ -358,12 +396,7 @@ angular.module('starter.controllers', [])
         options: options
       });
     };
-    $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
-    $scope.series = ['Series A', 'Series B'];
-    $scope.data = [
-      [65, 59, 80, 81, 56, 55, 40],
-      [28, 48, 40, 19, 86, 27, 90]
-    ];
+
 
   })
 
@@ -374,39 +407,39 @@ angular.module('starter.controllers', [])
       {
         'id': 1,
         'label': 'R$ 4,64 Starbucks',
-        'date': '14/07/2016',
+        'date': '2016-10-25T12:31:16.062Z',
         'signal': '+',
         'status': 0,
         'value': '0,36'
       },
       {
         'id': 2,
-        'label': 'R$ 4,64 Starbucks',
-        'date': '14/07/2016',
+        'label': 'R$ 4,64 Extra',
+        'date': '2016-10-25T12:31:16.062Z',
         'signal': '+',
         'status': 0,
         'value': '0,36'
       },
       {
         'id': 3,
-        'label': 'R$ 4,64 Starbucks',
-        'date': '14/07/2016',
+        'label': 'R$ 4,64 Padoca Gold',
+        'date': '2016-10-25T12:31:16.062Z',
         'signal': '-',
         'status': 0,
         'value': '0,36'
       },
       {
         'id': 4,
-        'label': 'R$ 4,64 Starbucks',
-        'date': '14/07/2016',
+        'label': 'R$ 4,64 Lojas Riachuelo',
+        'date': '2016-10-25T12:31:16.062Z',
         'signal': '+',
         'status': 1,
         'value': '0,36'
       },
       {
         'id': 5,
-        'label': 'R$ 4,64 Starbucks',
-        'date': '14/07/2016',
+        'label': 'R$ 4,64 Kabum Eletrônicos',
+        'date': '2016-10-25T12:31:16.062Z',
         'signal': '-',
         'status': 1,
         'value': '0,36'
@@ -414,7 +447,7 @@ angular.module('starter.controllers', [])
       {
         'id': 6,
         'label': 'R$ 4,64 Starbucks',
-        'date': '14/07/2016',
+        'date': '2016-10-25T12:31:16.062Z',
         'signal': '+',
         'status': 1,
         'value': '0,36'
@@ -422,7 +455,7 @@ angular.module('starter.controllers', [])
       {
         'id': 7,
         'label': 'R$ 4,64 Starbucks',
-        'date': '14/07/2016',
+        'date': '2016-10-25T12:31:16.062Z',
         'signal': '+',
         'status': 1,
         'value': '0,36'
@@ -430,7 +463,7 @@ angular.module('starter.controllers', [])
       {
         'id': 8,
         'label': 'R$ 4,64 Starbucks',
-        'date': '14/07/2016',
+        'date': '2016-10-25T12:31:16.062Z',
         'signal': '+',
         'status': 1,
         'value': '0,36'
@@ -438,7 +471,7 @@ angular.module('starter.controllers', [])
       {
         'id': 9,
         'label': 'R$ 4,64 Starbucks',
-        'date': '14/07/2016',
+        'date': '2016-09-25T12:31:16.062Z',
         'signal': '+',
         'status': 1,
         'value': '0,36'
@@ -446,7 +479,7 @@ angular.module('starter.controllers', [])
       {
         'id': 10,
         'label': 'R$ 4,64 Starbucks',
-        'date': '14/07/2016',
+        'date': '2016-09-25T12:31:16.062Z',
         'signal': '+',
         'status': 1,
         'value': '0,36'
@@ -454,12 +487,17 @@ angular.module('starter.controllers', [])
       {
         'id': 11,
         'label': 'R$ 4,64 Starbucks',
-        'date': '14/07/2016',
+        'date': '2016-09-25T12:31:16.062Z',
         'signal': '+',
         'status': 1,
         'value': '0,36'
       }
     ];
+
+    $scope.currentDate = new Date();
+
+    $scope.month = $scope.currentDate.getMonth() + 1;
+
     $scope.aprovarInvestimento = function(id){
       console.log(id);
       $scope.Saldo[id].status = 1;

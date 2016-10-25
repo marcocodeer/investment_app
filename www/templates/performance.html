@@ -16,17 +16,19 @@
         <p class="home-sub-lable"  >
           Mudança no Valor (1mês)
         </p>
+
         <p class="home-sub-value"  >
           <small>+ R$ </small>0,11<small>(+0.15%)</small>
         </p>
-
 
       </div>
 
     </div>
 
     <ion-slide-box>
+
       <ion-slide>
+
         <div class="column chartbox">
 
           <canvas id="chartperformance1" width="320" height="220" class="barchart home" ng-init="performanceGrafico('chartperformance1')"></canvas>
@@ -57,7 +59,10 @@
           <canvas id="chartperformance2" width="320" height="70" style="top:0;bottom:inherit;height: 70px !important;" class="barchart home" ng-init="performanceGrafico('chartperformance2')"></canvas>
           <div class="acoes" style="padding-top: 80px;">
             <div ng-repeat="acao in acoes">
-              <span> {{acao.value}}% </span>{{acao.label}}
+              <span ng-show="Unidade === 1">{{acao.value}} </span>
+              <span ng-show="Unidade === 2">{{acao.percent}} </span>
+              <span ng-show="Unidade === 3">{{acao.acoes}} </span>
+              {{acao.label}}
             </div>
           </div>
           <div class="row periodo unidade">
@@ -75,9 +80,6 @@
         </div>
       </ion-slide>
     </ion-slide-box>
-
-
-
 
   </ion-content>
 </ion-view>
