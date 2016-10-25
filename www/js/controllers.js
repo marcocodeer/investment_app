@@ -797,9 +797,9 @@ angular.module('starter.controllers', [])
       if (tipo === 1){ // SACAR
 
         var investido = $scope.Investido,
-          total = $scope.Valor,
-          unidade = 0,
-          invLen = 0;
+            total = $scope.Valor,
+            unidade = 0,
+            invLen = 0;
 
         total = total.replace(',','').replace('.','');
 
@@ -893,8 +893,7 @@ angular.module('starter.controllers', [])
 
       var vlr = $scope.Valor.toString();
 
-      vlr = vlr.replace(',','');
-      vlr = vlr.replace('.','');
+      vlr = vlr.replace(',','').replace('.','');
 
       if($scope.Cursor === 0){
 
@@ -925,9 +924,13 @@ angular.module('starter.controllers', [])
       }
 
       if($scope.Cursor < 7){
+
         $scope.Valor = vlr.substring(0, vlr.length - 2)+',' + vlr.substring(vlr.length - 2, vlr.length);
+
       } else {
+
         $scope.Valor = vlr.substring(0, vlr.length - 4)+'.' + vlr.substring(vlr.length - 4, vlr.length - 2)+',' + vlr.substring(vlr.length - 2, vlr.length);
+
       }
 
     };
@@ -997,6 +1000,34 @@ angular.module('starter.controllers', [])
   })
 
   .controller('dadosCtrl', function($scope, $ionicModal, $timeout, $state) {
+
+    $scope.user = {
+      pessoal : {
+        nome : 'Marco Carvalho',
+        fone : '(11)74857-9963',
+        email : 'marcos@gmail.com',
+        dob : '29-12-1983',
+        cpf : '80140025048',
+        sexo : 'M'
+      },
+      endereco : {
+        rua : 'Av. Brasil, 335',
+        cidade : 'São Paulo',
+        cep : '01220-000',
+        uf : 'SP',
+        complemento : 'ap 35'
+      },
+      financeiro : {
+        emprego : 'Estudante',
+        bens : 'Menos de R$10 mil',
+        tempo : 'Menos de 5 anos',
+        motivo : 'Geral',
+        ano : 'Menos de R$25 mil'
+      },
+      perfil : 1
+    };
+
+    console.log($scope.user);
 
     $scope.Valor = '';
 

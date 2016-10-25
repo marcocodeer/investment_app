@@ -209,7 +209,8 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
     url: '/conf/dados-perfil',
     views: {
       'menuContent': {
-        templateUrl: 'templates/configuracoes/dados-usuario/dados-usuario.html'
+        templateUrl: 'templates/configuracoes/dados-usuario/dados-usuario.html',
+        controller: 'dadosCtrl'
       }
     }
   })

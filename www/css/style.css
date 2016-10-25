@@ -160,7 +160,7 @@ Cleiton Schonardie UI/UX and front-end developer
   top:8% !important;
   width: 100% !important;
   height:30px !important;
-  background-color: #639ece !important;
+  /*background-color: #639ece !important;*/
 }
 #tabs-historico .tabs {
   top:20% !important;
@@ -981,4 +981,8 @@ margin-top: 20px;
   font-size:21px;
   padding:3px 0px;
   padding-left:10px;
+}
+.input-label {
+  color: #fff;
+  font-size: 11px;
 }

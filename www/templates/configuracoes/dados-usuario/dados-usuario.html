@@ -1,4 +1,6 @@
 <ion-view view-title="DADOS DO ÚSUARIO" style="background: url(img/login-bg-acorn.png) no-repeat center;background-size:cover;height:100%;">
+  <div class="head-bg" style="height: 74px;">
+    </div>
 <ion-content style="top: 44px !important;">
   <ion-tabs class="tabs-positive tabs-icon-top" id="tabs-usuario">
 
@@ -7,39 +9,48 @@
       <div style="margin-top:25px;">
 
           <div class="input-container" style="padding:10px;">
+            <label class="item item-input item-floating-label">
+              <span class="input-label">Nome</span>
+              <input type="text" class="input-style" placeholder="Nome"  ng-model="user.pessoal.nome">
+            </label>
+            <label class="item item-input item-floating-label">
+              <span class="input-label">Telefone</span>
+              <input type="text" class="input-style" placeholder="Telefone"  ng-model="user.pessoal.fone">
+            </label>
+            <label class="item item-input item-floating-label">
+              <span class="input-label">E-mail</span>
+              <input type="text" class="input-style" placeholder="E-mail"  ng-model="user.pessoal.email">
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">CPF</span>
+                <input type="text" class="input-style" placeholder="CPF"  ng-model="user.pessoal.cpf">
+            </label>
 
-            <label class="item">
-              <input type="text" class="input-style" placeholder="Nome" style="margin-top: -15px;">
-            </label>
-            <label class="item">
-              <input type="text" class="input-style" placeholder="Telefone" style="margin-top: -15px;">
-            </label>
-            <label class="item">
-              <input type="text" class="input-style" placeholder="E-mail" style="margin-top: -15px;">
-            </label>
-            <label class="item">
-              <input type="text" class="input-style" placeholder="CPF" style="margin-top: -15px;">
-            </label>
-            <div class="row" style="margin-left:-5px;margin-top: -15px;">
-              <label class="item">
-                <input type="text" class="input-style" placeholder="CEP" style="width:155px !important;">
+            <div class="row" style="margin-left:-5px;">
+              <label class="item item-input item-floating-label">
+                <span class="input-label">CEP</span>
+                <input type="text" class="input-style" placeholder="CEP"  ng-model="user.endereco.cep">
               </label>
-              <label class="item">
-                <input type="text" class="input-style" placeholder="UF" style="width:50px !important;">
+              <label class="item item-input item-floating-label">
+                <span class="input-label">UF</span>
+                <input type="text" class="input-style" placeholder="UF"  ng-model="user.endereco.uf" style="    width: 70% !important;">
               </label>
             </div>
-            <label class="item">
-              <input type="text" class="input-style" placeholder="Cidade" style="margin-top: -15px;">
+            <label class="item item-input item-floating-label">
+               <span class="input-label">Cidade</span>
+               <input type="text" class="input-style" placeholder="Cidade"  ng-model="user.endereco.cidade">
             </label>
-            <label class="item">
-              <input type="text" class="input-style" placeholder="Endereço" style="margin-top: -15px;">
+            <label class="item item-input item-floating-label">
+              <span class="input-label">Endereço</span>
+              <input type="text" class="input-style" placeholder="Endereço" ng-model="user.endereco.rua">
             </label>
-            <label class="item">
-              <input type="text" class="input-style" placeholder="Complemento" style="margin-top: -15px;">
+            <label class="item item-input item-floating-label">
+              <span class="input-label">Complemento</span>
+              <input type="text" class="input-style" placeholder="Complemento" ng-model="user.endereco.complemento">
             </label>
 
 
-              <button ng-click="doQuestion3()" class="item-center button button-clear btn-cadastro" style="margin-top:10px;">
+              <button ng-click="doQuestion3()" class="item-center button button-clear btn-cadastro" style="margin-top:30px;">
                 <i class="icon ion-ios-checkmark-empty" style="font-size:30px;"></i>
               &nbsp;
                 SALVAR
@@ -55,25 +66,25 @@
       <div style="margin-top:30px;">
 
           <div class="input-container" style="padding:10px;">
-            <span>Qual é seu estado empregaticio?</span>
-            <label class="item">
-              <input type="text" class="input-style" placeholder="Estudante" style="font-size:20px;margin-top:-15px;">
+            <label class="item item-input item-floating-label">
+              <span class="input-label">Qual é seu estado empregaticio? </span>
+              <input type="text" class="input-style" placeholder="Qual é seu estado empregaticio?" ng-model="user.financeiro.emprego">
             </label>
-            <span>Quanto vale os seus bens?</span>
-            <label class="item">
-              <input type="text" class="input-style" placeholder="Menos de R$10 mil" style="font-size:20px;margin-top:-15px;">
+            <label class="item item-input item-floating-label">
+              <span class="input-label">Quanto vale os seus bens?</span>
+              <input type="text" class="input-style" placeholder="Quanto vale os seus bens?"  ng-model="user.financeiro.bens">
             </label>
-            <span>Quanto tempo você pretende investir?</span>
-            <label class="item">
-              <input type="text" class="input-style" placeholder="Menos de 5 anos" style="font-size:20px;margin-top:-15px;">
+            <label class="item item-input item-floating-label">
+              <span class="input-label">Quanto tempo você pretende investir?</span>
+              <input type="text" class="input-style" placeholder="Quanto tempo você pretende investir?"  ng-model="user.financeiro.tempo" >
             </label>
-            <span>Qual é o seu principal motivo para investir?</span>
-            <label class="item">
-              <input type="text" class="input-style" placeholder="Geral" style="font-size:20px;margin-top:-15px;">
+            <label class="item item-input item-floating-label">
+              <span class="input-label">Qual é o seu principal motivo para investir?</span>
+              <input type="text" class="input-style" placeholder="Qual é o seu principal motivo para investir?"  ng-model="user.financeiro.motivo">
             </label>
-            <span>Quanto você ganha por ano?</span>
-            <label class="item">
-              <input type="text" class="input-style" placeholder="Menos de R$25 mil" style="font-size:20px;margin-top:-15px;">
+            <label class="item item-input item-floating-label">
+              <span class="input-label">Quanto você ganha por ano?</span>
+              <input type="text" class="input-style" placeholder="Quanto você ganha por ano?" ng-model="user.financeiro.ano" >
             </label>
 
 
