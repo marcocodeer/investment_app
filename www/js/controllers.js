@@ -401,8 +401,72 @@ angular.module('starter.controllers', [])
   })
 
   .controller('saldoCtrl', function($scope, $ionicModal, $timeout, $state, $ionicSlideBoxDelegate, $ionicPopover) {
-    $scope.Valor = 1;
+
+    $scope.Valor = '2,30';
+
     $scope.Meta = '5,00';
+
+    $scope.Deposito = '';
+
+    $scope.movimento = 0;
+
+    $scope.Percent = (parseFloat($scope.Valor) / parseFloat($scope.Meta)*100) + '%';
+
+    $scope.atualizaPercent = function(){
+
+      var meta  = $scope.Meta,
+          total = $scope.Valor;
+
+      meta = meta.replace(',','');
+
+      total = total.replace(',','');
+
+      $scope.Percent = (parseFloat(total) / parseFloat(meta)*90) + '%';
+
+    };
+
+    $scope.aprovarInvestimento = function(id){
+
+      $scope.Saldo[id].status = 1;
+
+      var vlr = $scope.Saldo[id].value,
+          total = $scope.Valor,
+          soma = 0;
+
+      vlr = vlr.replace(',','');
+
+      total = total.replace(',','');
+
+      soma = parseFloat(total) + parseFloat(vlr);
+
+      soma = soma.toString();
+
+      soma = soma.substring(0, soma.length - 2)+',' + soma.substring(soma.length - 2, soma.length);
+
+      $scope.Valor = soma;
+
+      $scope.atualizaPercent();
+
+    };
+
+    $scope.movimentar = function(tipo) {
+
+      if(tipo === 1 ){
+
+        $scope.movimento = 1;
+
+        $scope.Deposito = $scope.Valor;
+
+        $scope.Valor = '0';
+
+        $scope.atualizaPercent();
+
+      }
+
+      $scope.movimento = tipo;
+
+    };
+
     $scope.Saldo =  [
       {
         'id': 1,
@@ -414,26 +478,26 @@ angular.module('starter.controllers', [])
       },
       {
         'id': 2,
-        'label': 'R$ 4,64 Extra',
+        'label': 'R$ 5,03 Extra',
         'date': '2016-10-25T12:31:16.062Z',
         'signal': '+',
         'status': 0,
-        'value': '0,36'
+        'value': '0,97'
       },
       {
         'id': 3,
-        'label': 'R$ 4,64 Padoca Gold',
+        'label': 'R$ 4,13 Padoca Gold',
         'date': '2016-10-25T12:31:16.062Z',
         'signal': '-',
         'status': 0,
-        'value': '0,36'
+        'value': '0,87'
       },
       {
         'id': 4,
         'label': 'R$ 4,64 Lojas Riachuelo',
         'date': '2016-10-25T12:31:16.062Z',
         'signal': '+',
-        'status': 1,
+        'status': 0,
         'value': '0,36'
       },
       {
@@ -441,7 +505,7 @@ angular.module('starter.controllers', [])
         'label': 'R$ 4,64 Kabum Eletrônicos',
         'date': '2016-10-25T12:31:16.062Z',
         'signal': '-',
-        'status': 1,
+        'status': 0,
         'value': '0,36'
       },
       {
@@ -449,7 +513,7 @@ angular.module('starter.controllers', [])
         'label': 'R$ 4,64 Starbucks',
         'date': '2016-10-25T12:31:16.062Z',
         'signal': '+',
-        'status': 1,
+        'status': 0,
         'value': '0,36'
       },
       {
@@ -498,10 +562,7 @@ angular.module('starter.controllers', [])
 
     $scope.month = $scope.currentDate.getMonth() + 1;
 
-    $scope.aprovarInvestimento = function(id){
-      console.log(id);
-      $scope.Saldo[id].status = 1;
-    };
+
 
 
   })
@@ -693,13 +754,25 @@ angular.module('starter.controllers', [])
 
     $scope.Valor = '0,00';
 
+    $scope.Investido = '1.325,14';
+
     $scope.Cursor = 0;
+
+    $scope.movimento = 0;
+
+    $scope.movimentar = function(tipo) {
+
+      $scope.movimento = tipo;
+
+    };
+
 
     $scope.delTeclado = function(value){
 
       var vlr = $scope.Valor.toString();
 
       vlr = vlr.replace(',','');
+      vlr = vlr.replace('.','');
 
       if($scope.Cursor === 0){
 
@@ -729,7 +802,11 @@ angular.module('starter.controllers', [])
 
       }
 
-      $scope.Valor = vlr.substring(0, vlr.length - 2)+',' + vlr.substring(vlr.length - 2, vlr.length);
+      if($scope.Cursor < 7){
+        $scope.Valor = vlr.substring(0, vlr.length - 2)+',' + vlr.substring(vlr.length - 2, vlr.length);
+      } else {
+        $scope.Valor = vlr.substring(0, vlr.length - 4)+'.' + vlr.substring(vlr.length - 4, vlr.length - 2)+',' + vlr.substring(vlr.length - 2, vlr.length);
+      }
 
     };
 
@@ -737,13 +814,24 @@ angular.module('starter.controllers', [])
 
       var vlr = $scope.Valor.toString();
 
-      vlr = vlr.replace(',','');
+      if(vlr.length < $scope.Investido.length){
 
-      vlr = $scope.formataDecimal(value,vlr);
+        vlr = vlr.replace(',','');
+        vlr = vlr.replace('.','');
 
-      $scope.Cursor++;
+        vlr = $scope.formataDecimal(value,vlr);
 
-      $scope.Valor = vlr.substring(0, vlr.length - 2)+',' + vlr.substring(vlr.length - 2, vlr.length);
+        $scope.Cursor++;
+
+        if($scope.Cursor < 6){
+          $scope.Valor = vlr.substring(0, vlr.length - 2)+',' + vlr.substring(vlr.length - 2, vlr.length);
+        } else {
+          $scope.Valor = vlr.substring(0, vlr.length - 5)+'.' + vlr.substring(vlr.length - 5, vlr.length - 2)+',' + vlr.substring(vlr.length - 2, vlr.length);
+        }
+
+
+
+      }
 
     };
 

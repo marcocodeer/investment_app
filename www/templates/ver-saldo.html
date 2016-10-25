@@ -8,18 +8,31 @@
         <div class="row">
           <span style="font-size:16px;color:#79aad0;">CICLO ATUAL </span>
         </div>
-        <div style="margin-top:5px;background-color: #7aaed2;height:65px;">
-          <div class="row" style="background-color: rgba(250, 250, 250, 0.3);height:65px;position: absolute;width: 40%;"></div>
-          <h3 style="margin-top: -8px;font-weight:300;color:#fff;font-size:21px;padding:3px 0px;padding-left:10px;">R$ <span style="font-size:45px;"> 2</span>,98 / R$ 5,00</h3>
+        <div class="meta">
+          <div class="row percentual" ng-style="{ 'width' : Percent}"></div>
+          <h3>R$ <span style="font-size:45px;"> {{Valor}}</span> / R$ {{Meta}}</h3>
         </div>
-      <div style="text-align:center;">
-        <button ng-click="openPopover($event)" ion-button icon-left class="button btn-perfil button-block">
+
+      <div style="text-align:center;"  ng-show="movimento === 0 && Valor != '0' " >
+        <button ng-click="movimentar(1)" ion-button icon-left class="button btn-perfil button-block">
           <i class="icon ion-ios-plus-empty"></i>          &nbsp;          INVESTIR ESTE CRÉDITO AGORA
         </button>
       </div>
+
+      <div ng-show="movimento === 1" class="movimento" style="margin: 20px -15px -40px;">
+
+        <h3>Seu depósito de créditos foi realizado.</h3>
+        <p>Valor R$ <span>{{Deposito}}</span></p>
+
+        <button class="button button-positive btn-perfil" ng-click="movimentar(0)">
+          <i class="icon ion-ios-arrow-left" style="font-weight:300;"></i>
+          &nbsp;Voltar
+        </button>
+
+      </div>
     </div>
 
-      <ion-tabs class="tabs-dark tabs-icon-top" id="tabsController-tabs1">
+      <ion-tabs class="tabs-dark tabs-icon-top" id="tabsController-tabs1"  ng-show="movimento === 0">
 
         <ion-tab title="Tudo" icon="No Icon" id="tabsController-tab1">
 
@@ -43,7 +56,7 @@
 
                   <h2>
 
-                    <span style="color: #8cc5cc">{{item.date}}</span> {{item.label}}
+                    <span style="color: #8cc5cc">{{item.date | date: 'dd/MM/yyyy'}}</span> {{item.label}}
 
                   </h2>
 
@@ -96,7 +109,7 @@
 
                     <h2>
 
-                      <span style="color: #8cc5cc">{{item.date}}</span> {{item.label}}
+                      <span style="color: #8cc5cc">{{item.date | date: 'dd/MM/yyyy'}}</span> {{item.label}}
 
                     </h2>
 
@@ -148,7 +161,7 @@
 
                     <h2>
 
-                      <span style="color: #8cc5cc">{{item.date}}</span> {{item.label}}
+                      <span style="color: #8cc5cc">{{item.date | date: 'dd/MM/yyyy'}}</span> {{item.label}}
 
                     </h2>
 

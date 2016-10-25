@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="abf79467-d9c0-4e5e-babe-39a91215c999" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/style.css" afterPath="$PROJECT_DIR$/www/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers.js" afterPath="$PROJECT_DIR$/www/js/controllers.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/historico/historico.html" afterPath="$PROJECT_DIR$/www/templates/historico/historico.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/performance.html" afterPath="$PROJECT_DIR$/www/templates/performance.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/movimentar-saldo.html" afterPath="$PROJECT_DIR$/www/templates/movimentar-saldo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/ver-saldo.html" afterPath="$PROJECT_DIR$/www/templates/ver-saldo.html" />
     </list>
     <ignored path="investment_app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,46 +40,47 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="914" column="29" selection-start-line="914" selection-start-column="29" selection-end-line="914" selection-end-column="29" />
+            <state relative-caret-position="302">
+              <caret line="974" column="23" selection-start-line="974" selection-start-column="23" selection-end-line="974" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="movimentar-saldo.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/www/templates/movimentar-saldo.html">
+      <file leaf-file-name="ver-saldo.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/templates/ver-saldo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="133" selection-start-line="0" selection-start-column="133" selection-end-line="0" selection-end-column="133" />
+            <state relative-caret-position="272">
+              <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#ion-view#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#ion-view#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#h3#0;n#div#2;n#div#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#4;n#div#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#button#0;n#div#4;n#div#0;n#ion-view#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controllers.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="440" column="43" selection-start-line="440" selection-start-column="43" selection-end-line="440" selection-end-column="43" />
+            <state relative-caret-position="1087">
+              <caret line="515" column="19" selection-start-line="515" selection-start-column="19" selection-end-line="515" selection-end-column="19" />
               <folding>
                 <element signature="e#155#3403#0" expanded="false" />
                 <element signature="e#3519#6365#0" expanded="false" />
                 <element signature="e#6281#6359#0" expanded="false" />
                 <element signature="e#6487#11227#0" expanded="false" />
                 <element signature="e#6640#7810#0" expanded="false" />
-                <element signature="e#13790#15153#0" expanded="false" />
-                <element signature="e#15231#15475#0" expanded="false" />
-                <element signature="e#15558#17329#0" expanded="false" />
-                <element signature="e#17407#19065#0" expanded="false" />
-                <element signature="e#19143#19803#0" expanded="false" />
-                <element signature="e#19859#28179#0" expanded="false" />
-                <element signature="e#19882#24695#0" expanded="false" />
-                <element signature="e#20056#20832#0" expanded="false" />
+                <element signature="e#14840#16203#0" expanded="false" />
+                <element signature="e#14940#15750#0" expanded="false" />
+                <element signature="e#16281#16525#0" expanded="false" />
+                <element signature="e#16608#18379#0" expanded="false" />
+                <element signature="e#20905#21565#0" expanded="false" />
+                <element signature="e#21621#29941#0" expanded="false" />
+                <element signature="e#21644#26457#0" expanded="false" />
+                <element signature="e#21818#22594#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -129,12 +131,12 @@
         <option value="$PROJECT_DIR$/www/js/app.js" />
         <option value="$PROJECT_DIR$/www/templates/home.html" />
         <option value="$PROJECT_DIR$/www/templates/perguntas/pergunta-10-nascimento.html" />
-        <option value="$PROJECT_DIR$/www/templates/movimentar-saldo.html" />
-        <option value="$PROJECT_DIR$/www/templates/ver-saldo.html" />
-        <option value="$PROJECT_DIR$/www/css/style.css" />
         <option value="$PROJECT_DIR$/www/templates/performance.html" />
-        <option value="$PROJECT_DIR$/www/js/controllers.js" />
+        <option value="$PROJECT_DIR$/www/templates/movimentar-saldo.html" />
         <option value="$PROJECT_DIR$/www/templates/historico/historico.html" />
+        <option value="$PROJECT_DIR$/www/css/style.css" />
+        <option value="$PROJECT_DIR$/www/templates/ver-saldo.html" />
+        <option value="$PROJECT_DIR$/www/js/controllers.js" />
       </list>
     </option>
   </component>
@@ -181,78 +183,7 @@
     </navigator>
     <panes>
       <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="investment_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="investment_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="investment_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="investment_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="investment_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="investment_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="investment_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="investment_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="investment_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="historico" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
+        <subPane />
       </pane>
       <pane id="Scope" />
       <pane id="Scratches" />
@@ -350,19 +281,19 @@
       <workItem from="1477059314799" duration="657000" />
       <workItem from="1477308412654" duration="2821000" />
       <workItem from="1477320221573" duration="15972000" />
-      <workItem from="1477394430310" duration="4761000" />
+      <workItem from="1477394430310" duration="12176000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114970000" />
+    <option name="totallyTimeSpent" value="122385000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25074404" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25074404" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -560,13 +491,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/configuracoes/seguranca/seguranca.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="14" column="51" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/configuracoes/perfil/perfil.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="277">
@@ -734,68 +658,93 @@
         <state relative-caret-position="153">
           <caret line="33" column="116" selection-start-line="33" selection-start-column="116" selection-end-line="33" selection-end-column="135" />
           <folding>
-            <element signature="n#style#0;n#canvas#0;n#div#0;n#ion-slide#1;n#ion-slide-box#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#ion-slide#1;n#ion-slide-box#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="440" column="43" selection-start-line="440" selection-start-column="43" selection-end-line="440" selection-end-column="43" />
-          <folding>
-            <element signature="e#155#3403#0" expanded="false" />
-            <element signature="e#3519#6365#0" expanded="false" />
-            <element signature="e#6281#6359#0" expanded="false" />
-            <element signature="e#6487#11227#0" expanded="false" />
-            <element signature="e#6640#7810#0" expanded="false" />
-            <element signature="e#13790#15153#0" expanded="false" />
-            <element signature="e#15231#15475#0" expanded="false" />
-            <element signature="e#15558#17329#0" expanded="false" />
-            <element signature="e#17407#19065#0" expanded="false" />
-            <element signature="e#19143#19803#0" expanded="false" />
-            <element signature="e#19859#28179#0" expanded="false" />
-            <element signature="e#19882#24695#0" expanded="false" />
-            <element signature="e#20056#20832#0" expanded="false" />
+            <element signature="n#style#0;n#canvas#0;n#div#0;n#ion-slide#1;n#ion-slide-box#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#ion-slide#1;n#ion-slide-box#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/historico/historico.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="94" column="100" selection-start-line="94" selection-start-column="100" selection-end-line="94" selection-end-column="100" />
+        <state relative-caret-position="323">
+          <caret line="35" column="56" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="77" />
           <folding>
+            <element signature="n#style#0;n#div#0;n#ion-view#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#ion-content#0;n#ion-tab#0;n#ion-tabs#0;n#ion-view#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/ver-saldo.html">
+    <entry file="file://$PROJECT_DIR$/www/templates/movimentar-saldo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="149" selection-start-line="0" selection-start-column="149" selection-end-line="0" selection-end-column="149" />
+        <state relative-caret-position="408">
+          <caret line="69" column="8" selection-start-line="60" selection-start-column="2" selection-end-line="69" selection-end-column="8" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#span#1;n#div#0;n#div#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#div#1;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#4;n#div#1;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#button#0;n#div#0;n#div#4;n#div#1;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#1;n#div#4;n#div#1;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#button#0;n#div#1;n#div#4;n#div#1;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#button#0;n#div#2;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#button#0;n#div#3;n#ion-view#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/configuracoes/seguranca/seguranca.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="63" column="25" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="914" column="29" selection-start-line="914" selection-start-column="29" selection-end-line="914" selection-end-column="29" />
+        <state relative-caret-position="302">
+          <caret line="974" column="23" selection-start-line="974" selection-start-column="23" selection-end-line="974" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/movimentar-saldo.html">
+    <entry file="file://$PROJECT_DIR$/www/templates/ver-saldo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="133" selection-start-line="0" selection-start-column="133" selection-end-line="0" selection-end-column="133" />
+        <state relative-caret-position="272">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
           <folding>
             <element signature="n#style#0;n#div#0;n#ion-view#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#ion-view#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#h3#0;n#div#2;n#div#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#div#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#button#0;n#div#4;n#div#0;n#ion-view#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1087">
+          <caret line="515" column="19" selection-start-line="515" selection-start-column="19" selection-end-line="515" selection-end-column="19" />
+          <folding>
+            <element signature="e#155#3403#0" expanded="false" />
+            <element signature="e#3519#6365#0" expanded="false" />
+            <element signature="e#6281#6359#0" expanded="false" />
+            <element signature="e#6487#11227#0" expanded="false" />
+            <element signature="e#6640#7810#0" expanded="false" />
+            <element signature="e#14840#16203#0" expanded="false" />
+            <element signature="e#14940#15750#0" expanded="false" />
+            <element signature="e#16281#16525#0" expanded="false" />
+            <element signature="e#16608#18379#0" expanded="false" />
+            <element signature="e#20905#21565#0" expanded="false" />
+            <element signature="e#21621#29941#0" expanded="false" />
+            <element signature="e#21644#26457#0" expanded="false" />
+            <element signature="e#21818#22594#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -925,3 +925,60 @@ margin-top: 20px;
 .historico #tabsController-tabs1 > div {
   top: 267px !important;
 }
+.saldo .teclado .button.activated {
+  border-color: #ffffff;
+  background-color: #ffffff;
+  color: #0092c2 !important;
+}
+.movimento {
+  padding: 20px;
+  background: url('../img/tour-app-pic4.png') no-repeat
+}
+.movimento h3{
+   color: white;
+   font-size: 20px;
+   font-weight:100;
+   text-align: center;
+   margin: 120px 20px 0;
+ }
+.movimento p{
+  color: white;
+  font-size: 20px;
+  font-weight:100;
+  text-align: center;
+  margin-top: 23px;
+}
+.movimento p span{
+  font-size: 30px;
+}
+.movimento button,
+.teclado .baixo {
+  position: absolute;
+  bottom: 20px;
+  width: 40%;
+}
+
+.movimento button{
+  width: 87%;
+}
+.historico .meta .percentual {
+  background-color: rgba(250, 250, 250, 0.3);
+  height:65px;
+  position: absolute;
+  padding:0;
+  max-width: 91%;
+}
+.historico .meta  {
+  margin-top:5px;
+  background-color: #7aaed2;
+  height:65px;
+  animation-duration: 1s;
+}
+.historico .meta h3 {
+  margin-top: -8px;
+  font-weight:300;
+  color:#fff;
+  font-size:21px;
+  padding:3px 0px;
+  padding-left:10px;
+}
