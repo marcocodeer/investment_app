@@ -45,17 +45,17 @@
 
           <label class="item col-20">
             <span>Idade</span>
-            <input type="text" class="input-style" ng-model="idade">
+            <input type="text" class="input-style" ng-model="idadesimulada" ng-change="atualizarGrafico(idadesimulada)">
           </label>
 
           <label class="item col-50">
             <span>Valor Projetado</span>
-            <input type="text" class="input-style"  ng-model="valor">
+            <input type="text" class="input-style"  ng-model="valor" >
           </label>
 
           <label class="item col-30">
             <span>Mensal</span>
-            <input type="text" class="input-style"  ng-model="mensal">
+            <input type="text" class="input-style"  ng-model="mensal" ng-change="atualizarGrafico(idadesimulada)">
           </label>
 
         </div>

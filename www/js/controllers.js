@@ -1328,11 +1328,69 @@ angular.module('starter.controllers', [])
 
     $scope.perfilIndex = 0;
 
-    $scope.idade = 42;
+    $scope.idade = 37;
 
-    $scope.valor = 'R$ 3.111,00';
+    $scope.idadesimulada = $scope.idade + 10;
 
-    $scope.mensal = 'R$ 10,00';
+    $scope.valor = null;
+
+    $scope.mensal = '10,00';
+
+    $scope.eixoX = [];
+
+    $scope.graphData = [];
+
+    var i = $scope.idade,
+        mensal = null,
+        total = null,
+        unidade = null,
+        invLen = null;
+
+    $scope.gerarDados = function (idade) {
+
+      for ( i; i <= (idade + 13) ; i ++ ){
+
+        if(!( i % 2)){
+
+          $scope.eixoX.push(i);
+
+        }
+
+      }
+
+      for ( i = 0; i < 7 ; i ++ ){
+
+        mensal = $scope.mensal.replace(',','');
+
+        $scope.graphData.push(i * parseFloat(mensal) * 0.0012);
+
+      }
+
+      console.log($scope.graphData);
+
+      total = $scope.graphData.reduce(function(a, b){return a+b;}) * 10000;
+
+      total = total.toString();
+
+      unidade = total.substring(0, total.length - 2) || '0';
+
+      invLen = total.length;
+
+      if(unidade.length < 4){
+
+        total = unidade + ',' + total.substring(invLen - 2, invLen);
+
+      } else {
+
+        total = total.substring(0, invLen - 5)+'.' + total.substring(invLen - 5, invLen - 2) + ',' + total.substring(invLen - 2, invLen);
+
+      }
+
+      $scope.valor = total;
+
+    };
+
+    $scope.gerarDados($scope.idade);
 
     $scope.proximoPerfil = function () {
 
@@ -1360,9 +1418,17 @@ angular.module('starter.controllers', [])
 
     };
 
+    $scope.atualizarGrafico = function () {
+
+      $scope.gerarDados();
+
+      $scope.perfilGrafico();
+
+    };
+
     $scope.perfilGrafico = function () {
       var databarSleep = {
-        labels: ['34', '36', '38', '40', '42', '44', '46', '48', '50'],
+        labels: $scope.eixoX,
         datasets: [
           {
             label: "My First dataset",
@@ -1372,25 +1438,22 @@ angular.module('starter.controllers', [])
             borderColor: "#fff",
             borderWidth: 0.8,
             strokeColor: "#fff",
-            data: [0,0.8,1.5,2.3,3.3,4.5,6.3,9,12],
+            data: $scope.graphData
           }
         ]
       };
 
       var options = {
-        scaleOverride: true,
+        /*scaleOverride: true,
         scaleSteps: 3,
         scaleStepWidth: 10,
-        scaleStartValue: 0,
+        scaleStartValue: 0,*/
         scales: {
           yAxes: [{
             gridLines: {color:"#4EA5B4",zeroLineColor:"#4EA5B4"},
             ticks: {
-              max: 12,
-              min: 0,
               fontColor : "#9CCDD4",
               fontSize: 10,
-              stepSize:3,
               callback: function(value, index, values) {
                 if(parseInt(value) > 1000){
                   return 'R$ ' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "," + ' mil');
@@ -1403,9 +1466,6 @@ angular.module('starter.controllers', [])
           xAxes: [{
             gridLines: {color:"#4EA5B4",zeroLineColor:"#4EA5B4"},
             ticks: {
-              max: 50,
-              min: 34,
-              stepSize:2,
               fontColor : "#9CCDD4",
               fontSize: 10
 

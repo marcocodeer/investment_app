@@ -47,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="conta-bancaria.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/www/templates/configuracoes/conta-bancaria/conta-bancaria.html">
+      <file leaf-file-name="perfil.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/templates/configuracoes/perfil/perfil.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="23" column="69" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="69" />
+            <state relative-caret-position="336">
+              <caret line="57" column="106" selection-start-line="57" selection-start-column="106" selection-end-line="57" selection-end-column="106" />
               <folding />
             </state>
           </provider>
@@ -60,8 +60,8 @@
       <file leaf-file-name="controllers.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="1085" column="4" selection-start-line="1085" selection-start-column="4" selection-end-line="1085" selection-end-column="4" />
+            <state relative-caret-position="396">
+              <caret line="1392" column="34" selection-start-line="1392" selection-start-column="34" selection-end-line="1392" selection-end-column="34" />
               <folding>
                 <element signature="e#155#3403#0" expanded="false" />
                 <element signature="e#3519#6365#0" expanded="false" />
@@ -74,9 +74,8 @@
                 <element signature="e#15722#16532#0" expanded="false" />
                 <element signature="e#17063#17307#0" expanded="false" />
                 <element signature="e#17390#19161#0" expanded="false" />
-                <element signature="e#19239#23799#0" expanded="false" />
                 <element signature="e#23877#25177#0" expanded="false" />
-                <element signature="e#26030#34350#0" expanded="false" />
+                <element signature="e#25270#25974#0" expanded="false" />
                 <element signature="e#26053#30866#0" expanded="false" />
                 <element signature="e#26227#27003#0" expanded="false" />
               </folding>
@@ -102,7 +101,6 @@
         <option value="$PROJECT_DIR$/www/templates/ganhe-creditos.html" />
         <option value="$PROJECT_DIR$/www/templates/configuracoes/segurança/seguranca.html" />
         <option value="$PROJECT_DIR$/www/templates/configuracoes/configuracoes.html" />
-        <option value="$PROJECT_DIR$/www/templates/configuracoes/conta-bancaria/conta-bancaria.html" />
         <option value="$PROJECT_DIR$/www/templates/ajuda/faq/faq.html" />
         <option value="$PROJECT_DIR$/www/templates/login/login.html" />
         <option value="$PROJECT_DIR$/www/templates/ajuda/seguranca/ajuda-seguranca.html" />
@@ -130,12 +128,13 @@
         <option value="$PROJECT_DIR$/www/templates/configuracoes/seguranca/seguranca.html" />
         <option value="$PROJECT_DIR$/www/templates/configuracoes/dados-usuario/dados-usuario.html" />
         <option value="$PROJECT_DIR$/www/js/app.js" />
-        <option value="$PROJECT_DIR$/www/js/controllers.js" />
         <option value="$PROJECT_DIR$/www/templates/configuracoes/arredondamento-cartoes/adicionar-conta.html" />
         <option value="$PROJECT_DIR$/www/templates/configuracoes/arredondamento-cartoes/arredondamento.html" />
         <option value="$PROJECT_DIR$/www/css/style.css" />
-        <option value="$PROJECT_DIR$/www/templates/configuracoes/perfil/perfil.html" />
         <option value="$PROJECT_DIR$/www/templates/configuracoes/investimento-programado/investimento-programado.html" />
+        <option value="$PROJECT_DIR$/www/templates/configuracoes/conta-bancaria/conta-bancaria.html" />
+        <option value="$PROJECT_DIR$/www/js/controllers.js" />
+        <option value="$PROJECT_DIR$/www/templates/configuracoes/perfil/perfil.html" />
       </list>
     </option>
   </component>
@@ -250,6 +249,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="configuracoes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="investment_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="investment_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="configuracoes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="perfil" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -403,12 +428,12 @@
       <workItem from="1477059314799" duration="657000" />
       <workItem from="1477308412654" duration="2821000" />
       <workItem from="1477320221573" duration="15972000" />
-      <workItem from="1477394430310" duration="25994000" />
+      <workItem from="1477394430310" duration="29863000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136203000" />
+    <option name="totallyTimeSpent" value="140072000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -824,31 +849,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="1085" column="4" selection-start-line="1085" selection-start-column="4" selection-end-line="1085" selection-end-column="4" />
-          <folding>
-            <element signature="e#155#3403#0" expanded="false" />
-            <element signature="e#3519#6365#0" expanded="false" />
-            <element signature="e#6281#6359#0" expanded="false" />
-            <element signature="e#6487#11227#0" expanded="false" />
-            <element signature="e#6640#7810#0" expanded="false" />
-            <element signature="e#11344#15503#0" expanded="false" />
-            <element signature="e#13452#15496#0" expanded="false" />
-            <element signature="e#15622#16985#0" expanded="false" />
-            <element signature="e#15722#16532#0" expanded="false" />
-            <element signature="e#17063#17307#0" expanded="false" />
-            <element signature="e#17390#19161#0" expanded="false" />
-            <element signature="e#19239#23799#0" expanded="false" />
-            <element signature="e#23877#25177#0" expanded="false" />
-            <element signature="e#26030#34350#0" expanded="false" />
-            <element signature="e#26053#30866#0" expanded="false" />
-            <element signature="e#26227#27003#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/configuracoes/arredondamento-cartoes/adicionar-conta.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -870,14 +870,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/configuracoes/perfil/perfil.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="77" column="53" selection-start-line="77" selection-start-column="53" selection-end-line="77" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/configuracoes/investimento-programado/investimento-programado.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="901">
@@ -889,6 +881,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/configuracoes/conta-bancaria/conta-bancaria.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="18" column="23" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="429">
@@ -897,10 +897,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/configuracoes/conta-bancaria/conta-bancaria.html">
+    <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="23" column="69" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="69" />
+        <state relative-caret-position="396">
+          <caret line="1392" column="34" selection-start-line="1392" selection-start-column="34" selection-end-line="1392" selection-end-column="34" />
+          <folding>
+            <element signature="e#155#3403#0" expanded="false" />
+            <element signature="e#3519#6365#0" expanded="false" />
+            <element signature="e#6281#6359#0" expanded="false" />
+            <element signature="e#6487#11227#0" expanded="false" />
+            <element signature="e#6640#7810#0" expanded="false" />
+            <element signature="e#11344#15503#0" expanded="false" />
+            <element signature="e#13452#15496#0" expanded="false" />
+            <element signature="e#15622#16985#0" expanded="false" />
+            <element signature="e#15722#16532#0" expanded="false" />
+            <element signature="e#17063#17307#0" expanded="false" />
+            <element signature="e#17390#19161#0" expanded="false" />
+            <element signature="e#23877#25177#0" expanded="false" />
+            <element signature="e#25270#25974#0" expanded="false" />
+            <element signature="e#26053#30866#0" expanded="false" />
+            <element signature="e#26227#27003#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/configuracoes/perfil/perfil.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="57" column="106" selection-start-line="57" selection-start-column="106" selection-end-line="57" selection-end-column="106" />
           <folding />
         </state>
       </provider>
