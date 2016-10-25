@@ -986,3 +986,9 @@ margin-top: 20px;
   color: #fff;
   font-size: 11px;
 }
+.seguranca .col.footer-security button,
+.dadosuser .btn-cadastro,
+.arredondamento .btn-cadastro,
+.perfil-perfor .btn-cadastro{
+  border-radius: 0;
+}

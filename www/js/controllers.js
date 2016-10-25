@@ -1079,6 +1079,51 @@ angular.module('starter.controllers', [])
 
   })
 
+  .controller('contasCtrl', function($stateParams, $scope, $ionicModal, $timeout, $state) {
+
+    $scope.conta = $stateParams.id || null;
+
+    $scope.bandeiras = [
+      {
+        id : 0,
+        name : 'Visa',
+        number : '4455-5547-9968-2124'
+      },
+      {
+        id : 1,
+        name : 'Master',
+        number : '4455-5547-9968-2124'
+      },
+      {
+        id : 2,
+        name : 'PayPal',
+        number : '4455-5547-9968-2124'
+      },
+      {
+        id : 3,
+        name : 'Dinners',
+        number : '4455-5547-9968-2124'
+      }
+    ];
+
+    $scope.go = function (destino){
+
+      $state.go(destino);
+
+    };
+
+    $scope.editarConta = function (index){
+
+      console.log(index);
+
+      $scope.conta = index;
+
+      $state.go('app.adicionar-conta', {id: index});
+
+    };
+
+  })
+
   .controller('perfilCtrl', function($scope, $state) {
 
     $scope.perfis = [

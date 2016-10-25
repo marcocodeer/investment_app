@@ -166,15 +166,18 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
     url: '/conf/arredondamentos',
     views: {
       'menuContent': {
-        templateUrl: 'templates/configuracoes/arredondamento-cartoes/arredondamento.html'
+        templateUrl: 'templates/configuracoes/arredondamento-cartoes/arredondamento.html',
+        controller: 'contasCtrl'
       }
     }
   })
   .state('app.adicionar-conta', {
-    url: '/conf/adicionar-conta',
+    url: '/conf/adicionar-conta/:id',
+    //params: { 'id': null },
     views: {
       'menuContent': {
-        templateUrl: 'templates/configuracoes/arredondamento-cartoes/adicionar-conta.html'
+        templateUrl: 'templates/configuracoes/arredondamento-cartoes/adicionar-conta.html',
+        controller: 'contasCtrl'
       }
     }
   })
