@@ -406,6 +406,8 @@ angular.module('starter.controllers', [])
 
     $scope.Meta = '5,00';
 
+    $scope.Investido = '1.325,14';
+
     $scope.Deposito = '';
 
     $scope.movimento = 0;
@@ -431,7 +433,8 @@ angular.module('starter.controllers', [])
 
       var vlr = $scope.Saldo[id].value,
           total = $scope.Valor,
-          soma = 0;
+          soma = 0,
+          unidade = 0;
 
       vlr = vlr.replace(',','');
 
@@ -441,7 +444,9 @@ angular.module('starter.controllers', [])
 
       soma = soma.toString();
 
-      soma = soma.substring(0, soma.length - 2)+',' + soma.substring(soma.length - 2, soma.length);
+      unidade = soma.substring(0, soma.length - 2) || '0';
+
+      soma = unidade + ',' + soma.substring(soma.length - 2, soma.length);
 
       $scope.Valor = soma;
 
@@ -453,9 +458,38 @@ angular.module('starter.controllers', [])
 
       if(tipo === 1 ){
 
+        var investido = $scope.Investido,
+            total = $scope.Valor,
+            unidade = 0,
+            invLen = 0;
+
         $scope.movimento = 1;
 
         $scope.Deposito = $scope.Valor;
+
+        total = total.replace(',','');
+
+        investido = investido.replace(',','').replace('.','');
+
+        investido = parseFloat(total) + parseFloat(investido);
+
+        investido = investido.toString();
+
+        unidade = investido.substring(0, investido.length - 2) || '0';
+
+        invLen = investido.length;
+
+        if(unidade.length < 4){
+
+          investido = unidade + ',' + investido.substring(invLen - 2, invLen);
+
+        } else {
+
+          investido = investido.substring(0, invLen - 5)+'.' + investido.substring(invLen - 5, invLen - 2) + ',' + investido.substring(invLen - 2, invLen);
+
+        }
+
+        $scope.Investido = investido;
 
         $scope.Valor = '0';
 
@@ -557,12 +591,6 @@ angular.module('starter.controllers', [])
         'value': '0,36'
       }
     ];
-
-    $scope.currentDate = new Date();
-
-    $scope.month = $scope.currentDate.getMonth() + 1;
-
-
 
 
   })

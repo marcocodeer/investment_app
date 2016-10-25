@@ -50,8 +50,8 @@
       <file leaf-file-name="ver-saldo.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/templates/ver-saldo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+            <state relative-caret-position="85">
+              <caret line="5" column="191" selection-start-line="5" selection-start-column="182" selection-end-line="5" selection-end-column="191" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#ion-view#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#h3#0;n#div#2;n#div#0;n#ion-view#0;n#!!top" expanded="true" />
@@ -65,22 +65,23 @@
       <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1087">
-              <caret line="515" column="19" selection-start-line="515" selection-start-column="19" selection-end-line="515" selection-end-column="19" />
+            <state relative-caret-position="328">
+              <caret line="487" column="55" selection-start-line="487" selection-start-column="55" selection-end-line="487" selection-end-column="55" />
               <folding>
                 <element signature="e#155#3403#0" expanded="false" />
                 <element signature="e#3519#6365#0" expanded="false" />
                 <element signature="e#6281#6359#0" expanded="false" />
                 <element signature="e#6487#11227#0" expanded="false" />
                 <element signature="e#6640#7810#0" expanded="false" />
-                <element signature="e#14840#16203#0" expanded="false" />
-                <element signature="e#14940#15750#0" expanded="false" />
-                <element signature="e#16281#16525#0" expanded="false" />
-                <element signature="e#16608#18379#0" expanded="false" />
-                <element signature="e#20905#21565#0" expanded="false" />
-                <element signature="e#21621#29941#0" expanded="false" />
-                <element signature="e#21644#26457#0" expanded="false" />
-                <element signature="e#21818#22594#0" expanded="false" />
+                <element signature="e#13452#15496#0" expanded="false" />
+                <element signature="e#15622#16985#0" expanded="false" />
+                <element signature="e#15722#16532#0" expanded="false" />
+                <element signature="e#17063#17307#0" expanded="false" />
+                <element signature="e#17390#19161#0" expanded="false" />
+                <element signature="e#21687#22347#0" expanded="false" />
+                <element signature="e#22403#30723#0" expanded="false" />
+                <element signature="e#22426#27239#0" expanded="false" />
+                <element signature="e#22600#23376#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -281,12 +282,12 @@
       <workItem from="1477059314799" duration="657000" />
       <workItem from="1477308412654" duration="2821000" />
       <workItem from="1477320221573" duration="15972000" />
-      <workItem from="1477394430310" duration="12176000" />
+      <workItem from="1477394430310" duration="14666000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122385000" />
+    <option name="totallyTimeSpent" value="124875000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -716,8 +717,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/ver-saldo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+        <state relative-caret-position="85">
+          <caret line="5" column="191" selection-start-line="5" selection-start-column="182" selection-end-line="5" selection-end-column="191" />
           <folding>
             <element signature="n#style#0;n#div#0;n#ion-view#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#h3#0;n#div#2;n#div#0;n#ion-view#0;n#!!top" expanded="true" />
@@ -729,22 +730,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1087">
-          <caret line="515" column="19" selection-start-line="515" selection-start-column="19" selection-end-line="515" selection-end-column="19" />
+        <state relative-caret-position="328">
+          <caret line="487" column="55" selection-start-line="487" selection-start-column="55" selection-end-line="487" selection-end-column="55" />
           <folding>
             <element signature="e#155#3403#0" expanded="false" />
             <element signature="e#3519#6365#0" expanded="false" />
             <element signature="e#6281#6359#0" expanded="false" />
             <element signature="e#6487#11227#0" expanded="false" />
             <element signature="e#6640#7810#0" expanded="false" />
-            <element signature="e#14840#16203#0" expanded="false" />
-            <element signature="e#14940#15750#0" expanded="false" />
-            <element signature="e#16281#16525#0" expanded="false" />
-            <element signature="e#16608#18379#0" expanded="false" />
-            <element signature="e#20905#21565#0" expanded="false" />
-            <element signature="e#21621#29941#0" expanded="false" />
-            <element signature="e#21644#26457#0" expanded="false" />
-            <element signature="e#21818#22594#0" expanded="false" />
+            <element signature="e#13452#15496#0" expanded="false" />
+            <element signature="e#15622#16985#0" expanded="false" />
+            <element signature="e#15722#16532#0" expanded="false" />
+            <element signature="e#17063#17307#0" expanded="false" />
+            <element signature="e#17390#19161#0" expanded="false" />
+            <element signature="e#21687#22347#0" expanded="false" />
+            <element signature="e#22403#30723#0" expanded="false" />
+            <element signature="e#22426#27239#0" expanded="false" />
+            <element signature="e#22600#23376#0" expanded="false" />
           </folding>
         </state>
       </provider>
