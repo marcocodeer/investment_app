@@ -788,9 +788,103 @@ angular.module('starter.controllers', [])
 
     $scope.movimento = 0;
 
+    $scope.Autorizado = 0;
+
     $scope.movimentar = function(tipo) {
 
       $scope.movimento = tipo;
+
+      if (tipo === 1){ // SACAR
+
+        var investido = $scope.Investido,
+          total = $scope.Valor,
+          unidade = 0,
+          invLen = 0;
+
+        total = total.replace(',','').replace('.','');
+
+        investido = investido.replace(',','').replace('.','');
+
+        if(parseFloat(investido) > parseFloat(total)){ // TEM SALDO? SIM
+
+          investido = parseFloat(investido) - parseFloat(total);
+
+          investido = investido.toString();
+
+          unidade = investido.substring(0, investido.length - 2) || '0';
+
+          invLen = investido.length;
+
+          if(unidade.length < 4){
+
+            investido = unidade + ',' + investido.substring(invLen - 2, invLen);
+
+          } else {
+
+            investido = investido.substring(0, invLen - 5)+'.' + investido.substring(invLen - 5, invLen - 2) + ',' + investido.substring(invLen - 2, invLen);
+
+          }
+
+          $scope.Investido = investido;
+
+          $scope.Valor = '0,00';
+
+          $scope.Cursor = 0;
+
+          $scope.movimento = 1;
+
+          $scope.Deposito = $scope.Valor;
+
+          $scope.Autorizado = 1;
+
+        } else { //NAO TEM SALDO
+
+          console.log('no');
+
+          $scope.Autorizado = 0;
+
+        }
+
+      } else if(tipo === 2){ // DEPOSITAR
+
+        var investido = $scope.Investido,
+            total = $scope.Valor,
+            unidade = 0,
+            invLen = 0;
+
+        $scope.movimento = 2;
+
+        $scope.Deposito = $scope.Valor;
+
+        total = total.replace(',','').replace('.','');
+
+        investido = investido.replace(',','').replace('.','');
+
+        investido = parseFloat(total) + parseFloat(investido);
+
+        investido = investido.toString();
+
+        unidade = investido.substring(0, investido.length - 2) || '0';
+
+        invLen = investido.length;
+
+        if(unidade.length < 4){
+
+          investido = unidade + ',' + investido.substring(invLen - 2, invLen);
+
+        } else {
+
+          investido = investido.substring(0, invLen - 5)+'.' + investido.substring(invLen - 5, invLen - 2) + ',' + investido.substring(invLen - 2, invLen);
+
+        }
+
+        $scope.Investido = investido;
+
+        $scope.Valor = '0,00';
+
+        $scope.Cursor = 0;
+
+      }
 
     };
 
@@ -844,20 +938,21 @@ angular.module('starter.controllers', [])
 
       if(vlr.length < $scope.Investido.length){
 
-        vlr = vlr.replace(',','');
-        vlr = vlr.replace('.','');
+        vlr = vlr.replace(',','').replace('.','');
 
         vlr = $scope.formataDecimal(value,vlr);
 
         $scope.Cursor++;
 
         if($scope.Cursor < 6){
+
           $scope.Valor = vlr.substring(0, vlr.length - 2)+',' + vlr.substring(vlr.length - 2, vlr.length);
+
         } else {
+
           $scope.Valor = vlr.substring(0, vlr.length - 5)+'.' + vlr.substring(vlr.length - 5, vlr.length - 2)+',' + vlr.substring(vlr.length - 2, vlr.length);
+
         }
-
-
 
       }
 

@@ -1,7 +1,8 @@
 <ion-view view-title="SAQUE/DEPÓSITO" style="background: url(img/perfil-investimento-bg.png) no-repeat center;background-size:cover;" class="saldo">
 <div style="padding: 15px 15px 20px; margin-bottom: 20px;"  class="head-bg" >
  <div class="row" style="margin-top:30px;">
-  <span style="font-size:13px;color:#b0d4ed;padding-top:20px;">INVESTIDO &nbsp;R$ &nbsp;&nbsp;</span><span style=""><h3 style="font-weight: 300;color:#fff;font-size:37px;">{{Investido}}</h3></span>
+  <span style="font-size:13px;color:#b0d4ed;padding-top:20px;">INVESTIDO &nbsp;R$ &nbsp;&nbsp;</span>
+   <span style=""><h3 style="font-weight: 300;color:#fff;font-size:37px;">{{Investido}}</h3></span>
 </div>
 <div class="row" style="background-color: #7aaed2;padding:10px 10px 0;">
   <span style="font-size:13px;color: #fff;text-align: right;font-weight: 100;padding-top: 4px;padding-left: 4px;">VALOR A<br>MOVIMENTAR</span> <span style="font-size:18px;color:#fff;padding-left:10px;"><h3 style="font-weight: 300;color: #fff;"><span style="font-size:25px;">R$</span> <span style="font-size:40px;" >{{Valor}}</span></h3></span>
@@ -49,7 +50,8 @@
 
   <div ng-show="movimento === 1" class="movimento">
 
-    <h3>Saque programado. A venda das ações pode levar até 3 dias. Vcoê será avisado quando seu crédito for liberado para sua conta.</h3>
+    <h3 ng-show="Autorizado">Saque programado. A venda das ações pode levar até 3 dias. Vcoê será avisado quando seu crédito for liberado para sua conta.</h3>
+    <h3 ng-hide="Autorizado">Saldo insuficiente. Verifique seu saldo investido.</h3>
 
     <button class="button button-positive btn-perfil" ng-click="movimentar(0)">
       <i class="icon ion-ios-arrow-left" style="font-weight:300;"></i>
