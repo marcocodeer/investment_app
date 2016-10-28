@@ -9,7 +9,12 @@
         </button>
       </ion-nav-buttons>
       <ion-nav-buttons side="right">
-          <a ng-click="openPopover($event,estado)"> <img src="img/icon-ajuda-azul.png" alt="" style="margin: 7px;"/></a>
+        <a ng-click="openPopover($event,estado)" style="margin: 6px 0px 0 0px;">
+          <span style="background: #e6b500; border-radius: 33px; color: white; padding: 0px 8px 0px;  font-size: 8px;">2</span>
+        </a>
+
+        <a ng-click="openPopover($event,estado)"> <img src="img/icon-ajuda-azul.png" alt="" style="margin: 7px;"/></a>
+
       </ion-nav-buttons>
     </ion-nav-bar>
     <ion-nav-view name="menuContent"></ion-nav-view>
