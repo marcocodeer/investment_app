@@ -7,8 +7,32 @@
   <div style="z-index: 1;margin-top:-23px;">
       <img src="img/popover-arrow.png" alt="" style="position:absolute;left:91%;display:block;"/>
   </div>
+
+  <!-- NOTIFICACAO -->
+  <div ng-show="$root.user.app.notificacao" id="tour-notificacao">
+
+    <div ng-repeat="notificacao in $root.user.app.notificacoes" style="margin-top: 80px;">
+
+        <div style="text-align:center;">
+
+          <p class="seg-desc" style="margin-top:-80px;">{{notificacao.text}}</p>
+
+        </div>
+
+        <div class="col btn-home" style="margin-top: -23px;padding-bottom: 0;">
+
+          <button ng-click="goNotification(notificacao.link)" class="item-center button button-clear btn-popover">
+            {{notificacao.label}}
+          </button>
+
+        </div>
+
+    </div>
+
+  </div>
+
   <!-- TOUR SALDO -->
-  <div ng-show="$root.user.app.estado === 'app.ver-saldo'" id="tour-saldo">
+  <div ng-show="$root.user.app.estado === 'app.ver-saldo' && $root.user.app.notificacao === false" id="tour-saldo">
 
     <ion-slide-box id="slide-popover" class="popover-slide-box" style="">
 
@@ -22,10 +46,7 @@
         </div>
 
         <div class="col btn-home" style="margin-top:15px;">
-          <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
-
-            ENTENDI
-          </button>
+          <button ng-click="popover.hide()" class="item-center button button-clear btn-popover">ENTENDI</button>
         </div>
 
       </ion-slide>
@@ -37,10 +58,7 @@
         </div>
 
         <div class="col btn-home" style="margin-top:30px;">
-          <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
-
-            CONECTAR CONTA
-          </button>
+          <button ng-click="goNotification('app.conta-bancaria')" class="item-center button button-clear btn-popover">CONECTAR CONTA</button>
         </div>
 
       </ion-slide>
@@ -52,17 +70,15 @@
         </div>
 
         <div class="col btn-home" style="margin-top:5px;">
-          <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
-
-            VEJA COMO FUNCIONA
-          </button>
+          <button ng-click="goNotification('app.conta-bancaria')" class="item-center button button-clear btn-popover">VEJA COMO FUNCIONA</button>
         </div>
 
       </ion-slide>
     </ion-slide-box>
   </div>
+
   <!-- TOUR MOVIMENTAR SALDO -->
-  <div ng-show="$root.user.app.estado === 'app.movimentar-saldo'">
+  <div ng-show="$root.user.app.estado === 'app.movimentar-saldo' && $root.user.app.notificacao === false">
 
     <ion-slide-box id="slide-popover" class="popover-slide-box" style="">
 
@@ -76,10 +92,7 @@
         </div>
 
         <div class="col btn-home" style="margin-top:-15px;">
-          <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
-
-            VEJA COMO FUNCIONA
-          </button>
+          <button ng-click="goNotification('app.conta-bancaria')" class="item-center button button-clear btn-popover">VEJA COMO FUNCIONA</button>
         </div>
 
       </ion-slide>
@@ -91,261 +104,219 @@
         </div>
 
         <div class="col btn-home" style="margin-top:5px;">
-          <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
-
-            PROGRAME UM INVESTIMENTO
-          </button>
+          <button ng-click="goNotification('app.investimento-programado')" class="item-center button button-clear btn-popover">PROGRAME UM INVESTIMENTO</button>
         </div>
 
       </ion-slide>
     </div>
-    <!-- TOUR HISTORICO -->
-    <div ng-show="$root.user.app.estado === 'app.historico'">
 
-        <ion-slide-box id="slide-popover" class="popover-slide-box" style="">
+  <!-- TOUR HISTORICO -->
+  <div ng-show="$root.user.app.estado === 'app.historico' && $root.user.app.notificacao === false">
 
-          <ion-slide>
+      <ion-slide-box id="slide-popover" class="popover-slide-box" style="">
 
-            <div style="text-align:center;margin-top:-20px;">
+        <ion-slide>
 
-              <p class="seg-title">Seus investimentos</p>
-              <img src="img/popover-pic8.png" style="padding-top:10px;"/>
-              <p class="seg-desc" style="margin-top:-40px;line-height:">Esta é a quantia de dinheiro que você investiu, menos o valor sacado.</p>
+          <div style="text-align:center;margin-top:-20px;">
+
+            <p class="seg-title">Seus investimentos</p>
+            <img src="img/popover-pic8.png" style="padding-top:10px;"/>
+            <p class="seg-desc" style="margin-top:-40px;line-height:">Esta é a quantia de dinheiro que você investiu, menos o valor sacado.</p>
+          </div>
+
+            <div class="col btn-home" style="margin-top:10px;">
+              <button ng-click="popover.hide()" class="item-center button button-clear btn-popover">ENTENDI</button>
             </div>
 
-              <div class="col btn-home" style="margin-top:10px;">
-                <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
+       </ion-slide>
+        <ion-slide>
+          <div style="text-align:center;margin-top:-20px;">
+            <p class="seg-title">Dividendos</p>
+            <img src="img/popover-pic9.png" style="padding-top:10px;"/>
+            <p class="seg-desc">São uma porção dos lucros da empresa paga pra você que possue ações. Nós reinventamos automaticamente seus dividendos, para que continuem gerando ganhos para você.</p>
+          </div>
 
-                  ENTENDI
-                </button>
-              </div>
-
-         </ion-slide>
-          <ion-slide>
-            <div style="text-align:center;margin-top:-20px;">
-              <p class="seg-title">Dividendos</p>
-              <img src="img/popover-pic9.png" style="padding-top:10px;"/>
-              <p class="seg-desc">São uma porção dos lucros da empresa paga pra você que possue ações. Nós reinventamos automaticamente seus dividendos, para que continuem gerando ganhos para você.</p>
+            <div class="col btn-home" style="margin-top: 5px;">
+              <button ng-click="popover.hide()" class="item-center button button-clear btn-popover">ENTENDI</button>
             </div>
 
-              <div class="col btn-home" style="margin-top: 5px;">
-                <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
+       </ion-slide>
+        <ion-slide>
+          <div style="text-align:center;margin-top:-20px;">
+            <p class="seg-title">Lucro/perda</p>
+            <img src="img/popover-pic10.png" class="" style="padding-top:20px;"/>
+            <p class="seg-desc" style="padding:25px !important;">Você pode visualizar a performance de seus investimentos através dos sinais dos lucro e perda. O número que você vê é igual ao lucro(ou perda), menos dividendos, menos nossa pequena taxa.</p>
+          </div>
 
-                  ENTENDI
-                </button>
-              </div>
-
-         </ion-slide>
-          <ion-slide>
-            <div style="text-align:center;margin-top:-20px;">
-              <p class="seg-title">Lucro/perda</p>
-              <img src="img/popover-pic10.png" class="" style="padding-top:20px;"/>
-              <p class="seg-desc" style="padding:25px !important;">Você pode visualizar a performance de seus investimentos através dos sinais dos lucro e perda. O número que você vê é igual ao lucro(ou perda), menos dividendos, menos nossa pequena taxa.</p>
+            <div class="col btn-home" style="margin-top:5px;">
+              <button ng-click="goNotification('app.performance')" class="item-center button button-clear btn-popover">VER PERFORMANCE DETALHADA</button>
             </div>
 
-              <div class="col btn-home" style="margin-top:5px;">
-                <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
+       </ion-slide>
+        <ion-slide>
+          <div style="text-align:center;margin-top:-20px;">
+            <p class="seg-title">Transferindo crédito</p>
+            <img src="img/popover-pic3.png" class="" style="padding-top:20px;"/>
+            <p class="seg-desc" style="padding:20px !important;">Deposite ou saque dinheiro a qualquer momento. Investimentos são concluidos entre 1 e 3 dias úteis, como precisamos vender suas ações, retiradas levam de 5 a 7 dias úteis para serem realizadas.</p>
+          </div>
 
-                  VER PERFORMANCE DETALHADA
-                </button>
-              </div>
-
-         </ion-slide>
-          <ion-slide>
-            <div style="text-align:center;margin-top:-20px;">
-              <p class="seg-title">Transferindo crédito</p>
-              <img src="img/popover-pic3.png" class="" style="padding-top:20px;"/>
-              <p class="seg-desc" style="padding:20px !important;">Deposite ou saque dinheiro a qualquer momento. Investimentos são concluidos entre 1 e 3 dias úteis, como precisamos vender suas ações, retiradas levam de 5 a 7 dias úteis para serem realizadas.</p>
+            <div class="col btn-home" style="margin-top:15px;">
+              <button ng-click="goNotification('app.investimento-programado')" class="item-center button button-clear btn-popover">VEJA COMO FUNCIONA</button>
             </div>
 
-              <div class="col btn-home" style="margin-top:15px;">
-                <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
+       </ion-slide>
+        <ion-slide>
+          <div style="text-align:center;margin-top:-20px;">
+            <p class="seg-title">Cancelando um <br>investimento</p>
+            <img src="img/popover-slide11.png" class="" style="padding-top:40px;"/>
+            <p class="seg-desc" style="padding:20px !important;">Quando você vê uma transação pendente com este ícone, você pode deslizar o item para a esquerda com o dedo e clicar em cancelar.</p>
+          </div>
 
-                  VEJA COMO FUNCIONA
-                </button>
-              </div>
-
-         </ion-slide>
-          <ion-slide>
-            <div style="text-align:center;margin-top:-20px;">
-              <p class="seg-title">Cancelando um <br>investimento</p>
-              <img src="img/popover-slide11.png" class="" style="padding-top:40px;"/>
-              <p class="seg-desc" style="padding:20px !important;">Quando você vê uma transação pendente com este ícone, você pode deslizar o item para a esquerda com o dedo e clicar em cancelar.</p>
+            <div class="col btn-home" style="margin-top:15px;">
+              <button ng-click="popover.hide()" class="item-center button button-clear btn-popover">ENTENDI</button>
             </div>
 
-              <div class="col btn-home" style="margin-top:15px;">
-                <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
+       </ion-slide>
+        <ion-slide>
+          <div style="text-align:center;margin-top:-20px;">
+            <p class="seg-title">Declarações e <br>confirmações</p>
+            <img src="img/popover-pic12.png" class="" style="padding-top:20px;"/>
+            <p class="seg-desc" style="padding:20px !important;">Encontre declarações detalhadas de contas e confirmações de transições em logomarca.com.br/declaracoes.</p>
+          </div>
 
-                ENTENDI
-                </button>
-              </div>
-
-         </ion-slide>
-          <ion-slide>
-            <div style="text-align:center;margin-top:-20px;">
-              <p class="seg-title">Declarações e <br>confirmações</p>
-              <img src="img/popover-pic12.png" class="" style="padding-top:20px;"/>
-              <p class="seg-desc" style="padding:20px !important;">Encontre declarações detalhadas de contas e confirmações de transições em logomarca.com.br/declaracoes.</p>
+            <div class="col btn-home" style="margin-top:15px;">
+              <button ng-click="goNotification('app.investimento-programado')" class="item-center button button-clear btn-popover">VISITA AGORA</button>
             </div>
 
-              <div class="col btn-home" style="margin-top:15px;">
-                <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
+       </ion-slide>
 
-                VISITA AGORA
-                </button>
-              </div>
+  </div>
 
-         </ion-slide>
+  <!-- TOUR PERFIL  -->
+  <div ng-show="$root.user.app.estado === 'app.perfil' && $root.user.app.notificacao === false">
 
-    </div>
-    <!-- TOUR PERFIL SEM INFO -->
-    <div ng-show="$root.user.app.estado === 'app.perfil-sem-info'">
+      <ion-slide-box id="slide-popover" class="popover-slide-box" style="">
 
-        <ion-slide-box id="slide-popover" class="popover-slide-box" style="">
+        <ion-slide>
 
-          <ion-slide>
+          <div style="text-align:center;margin-top:-20px;">
 
-            <div style="text-align:center;margin-top:-20px;">
+            <p class="seg-title">Perfil Financeiro</p>
+            <p class="seg-desc" style="padding:20px !important;margin-top:10px;line-height:1">Seu perfil recomendado é <span style="font-weight:bold">Convervador/Moderado</span> e foi calculado com base no seu perfil.</p>
+            <p class="seg-desc" style="padding:20px !important;line-height:1;">Estes gráficos projetam seus investimentos ao longo do tempo, e não garantem futuros retornos e já estão inclusas as taxas.<br>Investimentos envolvem riscos, e os retornos para investimentos de curto prazo podem render prejuízos.</p>
+          </div>
 
-              <p class="seg-title">Perfil Financeiro</p>
-              <p class="seg-desc" style="padding:20px !important;margin-top:10px;line-height:1">Seu perfil recomendado é <span style="font-weight:bold">Convervador/Moderado</span> e foi calculado com base no seu perfil.</p>
-              <p class="seg-desc" style="padding:20px !important;line-height:1;">Estes gráficos projetam seus investimentos ao longo do tempo, e não garantem futuros retornos e já estão inclusas as taxas.<br>Investimentos envolvem riscos, e os retornos para investimentos de curto prazo podem render prejuízos.</p>
+            <div class="col btn-home">
+              <button ng-click="goNotification('app.dados-usuario')" class="item-center button button-clear btn-popover" style="margin-top:60px !important;">ATUALIZAR PERFIL FINANCEIRO</button>
             </div>
 
-              <div class="col btn-home">
-                <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover" style="margin-top:60px !important;">
+       </ion-slide>
+        <ion-slide>
 
-                  ATUALIZAR PERFIL FINANCEIRO
-                </button>
-              </div>
+          <div style="text-align:center;margin-top:-20px;">
 
-         </ion-slide>
-          <ion-slide>
+            <p class="seg-title">Projeção de investimentos</p>
+            <img src="img/popover-video.png" class="" style="padding-top:20px;"/>
 
-            <div style="text-align:center;margin-top:-20px;">
+          </div>
 
-              <p class="seg-title">Projeção de investimentos</p>
-              <img src="img/popover-video.png" class="" style="padding-top:20px;"/>
-
+            <div class="col btn-home">
+              <button ng-click="goNotification('app.dados-usuario')" class="item-center button button-clear btn-popover" style="margin-top:110px !important;">VER VIDEO</button>
             </div>
 
-              <div class="col btn-home">
-                <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover" style="margin-top:110px !important;">
+       </ion-slide>
+        <ion-slide>
 
-                VER VIDEO
-                </button>
-              </div>
+          <div style="text-align:center;margin-top:-20px;">
 
-         </ion-slide>
-          <ion-slide>
+            <p class="seg-title">Diversificação de investimentos</p>
+            <img src="img/popover-video.png" class="" style="padding-top:20px;"/>
 
-            <div style="text-align:center;margin-top:-20px;">
+          </div>
 
-              <p class="seg-title">Diversificação de investimentos</p>
-              <img src="img/popover-video.png" class="" style="padding-top:20px;"/>
-
+            <div class="col btn-home">
+              <button ng-click="goNotification('app.dados-usuario')" class="item-center button button-clear btn-popover" style="margin-top:90px !important;">VER VIDEO</button>
             </div>
 
-              <div class="col btn-home">
-                <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover" style="margin-top:90px !important;">
+       </ion-slide>
 
-                VER VIDEO
-                </button>
-              </div>
+       <ion-slide>
 
-         </ion-slide>
+         <div style="text-align:center;margin-top:-20px;">
 
-         <ion-slide>
+           <p class="seg-title">Explore os ETFs</p>
+           <img src="img/popover-video.png" class="" style="padding-top:20px;"/>
 
-           <div style="text-align:center;margin-top:-20px;">
+         </div>
 
-             <p class="seg-title">Explore os ETFs</p>
-             <img src="img/popover-video.png" class="" style="padding-top:20px;"/>
-
+           <div class="col btn-home">
+             <button ng-click="goNotification('app.dados-usuario')" class="item-center button button-clear btn-popover" style="margin-top:110px !important;">VER VIDEO</button>
            </div>
 
-             <div class="col btn-home">
-               <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover" style="margin-top:110px !important;">
+      </ion-slide>
+     </ion-slide-box>
+  </div>
 
-               VER VIDEO
-               </button>
-             </div>
+  <!-- TOUR PERFORMANCE -->
+  <div ng-show="$root.user.app.estado === 'app.performance' && $root.user.app.notificacao === false">
 
-        </ion-slide>
-       </ion-slide-box>
-    </div>
-    <!-- TOUR PERFORMANCE -->
-    <div ng-show="$root.user.app.estado === 'app.performance'">
+      <ion-slide-box id="slide-popover" class="popover-slide-box" style="">
 
-        <ion-slide-box id="slide-popover" class="popover-slide-box" style="">
+        <ion-slide>
 
-          <ion-slide>
+          <div style="text-align:center;margin-top:-20px;">
 
-            <div style="text-align:center;margin-top:-20px;">
+            <p class="seg-title">O Gráfico</p>
+            <img src="img/popover-pic13.png" class=""/>
+            <p class="seg-desc" style="padding:20px !important;line-height:1;margin-top: -10px;">Nesta tela você acompanha a performance do seu portfólio. <br>Na parte inferior você pode mudar a escala de tempo, e tocando sobre o gráfico você terá mais detalhes.</p>
 
-              <p class="seg-title">O Gráfico</p>
-              <img src="img/popover-pic13.png" class=""/>
-              <p class="seg-desc" style="padding:20px !important;line-height:1;margin-top: -10px;">Nesta tela você acompanha a performance do seu portfólio. <br>Na parte inferior você pode mudar a escala de tempo, e tocando sobre o gráfico você terá mais detalhes.</p>
+          </div>
 
+            <div class="col btn-home" style="margin-top: -25px;">
+              <button ng-click="popover.hide()" class="item-center button button-clear btn-popover" style="margin-top:30px;">ENTENDI</button>
             </div>
 
-              <div class="col btn-home">
-                <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover" style="margin-top:30px;">
+       </ion-slide>
 
-                  ENTENDI
-                </button>
-              </div>
+       <ion-slide>
+         <div style="text-align:center;margin-top:-20px;">
+           <p class="seg-title">Lucro/perda</p>
+           <img src="img/popover-pic10.png" class="" style="padding-top:20px;"/>
+           <p class="seg-desc" style="padding:25px !important;">Você pode visualizar a performance de seus investimentos através dos sinais dos lucro e perda. O número que você vê é igual ao lucro(ou perda), menos dividendos, menos nossa pequena taxa.</p>
+         </div>
 
-         </ion-slide>
-
-         <ion-slide>
-           <div style="text-align:center;margin-top:-20px;">
-             <p class="seg-title">Lucro/perda</p>
-             <img src="img/popover-pic10.png" class="" style="padding-top:20px;"/>
-             <p class="seg-desc" style="padding:25px !important;">Você pode visualizar a performance de seus investimentos através dos sinais dos lucro e perda. O número que você vê é igual ao lucro(ou perda), menos dividendos, menos nossa pequena taxa.</p>
+           <div class="col btn-home" style="margin-top:5px;">
+             <button ng-click="goNotification('app.performance')" class="item-center button button-clear btn-popover">VER PERFORMANCE DETALHADA</button>
            </div>
 
-             <div class="col btn-home" style="margin-top:5px;">
-               <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover">
+      </ion-slide>
+       <ion-slide>
+         <div style="text-align:center;margin-top:-20px;">
+           <p class="seg-title">O que é um portfólio</p>
+           <img src="img/popover-pic14.png" class="" style="padding-top:15px;"/>
+           <p class="seg-desc" style="padding:10px !important;margin-top: -20px;">É a combinação de ações e títulos.<br>Os 5 perfis de investimento que disponibilizamos buscam maximizar seu retorno para o seu nível de risco.</p>
+         </div>
 
-                 VER PERFORMANCE DETALHADA
-               </button>
-             </div>
-
-        </ion-slide>
-         <ion-slide>
-           <div style="text-align:center;margin-top:-20px;">
-             <p class="seg-title">O que é um portfólio</p>
-             <img src="img/popover-pic14.png" class="" style="padding-top:15px;"/>
-             <p class="seg-desc" style="padding:10px !important;margin-top: -20px;">É a combinação de ações e títulos.<br>Os 5 perfis de investimento que disponibilizamos buscam maximizar seu retorno para o seu nível de risco.</p>
+           <div class="col btn-home">
+             <button ng-click="popover.hide()" class="item-center button button-clear btn-popover" style="margin-top:30px;">ENTENDI</button>
            </div>
 
-             <div class="col btn-home">
-               <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover" style="margin-top:30px;">
+      </ion-slide>
+       <ion-slide>
+         <div style="text-align:center;margin-top:-20px;">
+           <p class="seg-title">Seu portfólio</p>
+           <img src="img/popover-pic15.png" class="" style="padding-top:35px;"/>
+           <p class="seg-desc" style="padding:20px !important;margin-top: -5px;">Acesse as suas configurações para saber mais sobre seu perfil e ajustar a combinação de seus investimentos.</p>
+         </div>
 
-                 ENTENDI
-               </button>
-             </div>
-
-        </ion-slide>
-         <ion-slide>
-           <div style="text-align:center;margin-top:-20px;">
-             <p class="seg-title">Seu portfólio</p>
-             <img src="img/popover-pic15.png" class="" style="padding-top:35px;"/>
-             <p class="seg-desc" style="padding:20px !important;margin-top: -5px;">Acesse as suas configurações para saber mais sobre seu perfil e ajustar a combinação de seus investimentos.</p>
+           <div class="col btn-home">
+             <button ng-click="goNotification('app.configuracoes')" class="item-center button button-clear btn-popover" style="margin-top:30px;">VER CONFIGURAÇÕES</button>
            </div>
 
-             <div class="col btn-home">
-               <button ng-click="doQuestion3()" class="item-center button button-clear btn-popover" style="margin-top:30px;">
-
-                 VER CONFIGURAÇÕES
-               </button>
-             </div>
-
-        </ion-slide>
+      </ion-slide>
 
 
-       </ion-slide-box>
-    </div>
+     </ion-slide-box>
+  </div>
 
   </ion-popover-view>

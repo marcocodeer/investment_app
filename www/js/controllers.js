@@ -67,8 +67,23 @@ angular.module('starter.controllers', [])
       },
       app : {
         estado : $state.current.name,
-        notificacao : true,
-        notificacoes : [],
+        notificacao : false,
+        notificacoes : [
+          {
+            id : 0,
+            text : 'Há um problema com a verificação da sua conta.',
+            link : 'app.dados-usuario',
+            label : 'CORRIGIR',
+            readed : false
+          },
+          {
+            id : 1,
+            text : 'O login com o seu banco não teve sucesso.',
+            link : 'app.conta-bancaria',
+            label : 'TENTAR NOVAMENTE',
+            readed : false
+          }
+        ],
         saldo : '1.325,14',
         ciclo : '',
         uf : 'UF',
@@ -100,9 +115,31 @@ angular.module('starter.controllers', [])
       perfil : 1
     };
 
-    $scope.openPopover = function($event) {
+    $scope.openPopover = function($event,tipo) {
+
+      if(tipo === 1){
+
+        $scope.$root.user.app.notificacao = true;
+
+      }
 
       $scope.popover.show($event);
+
+    };
+
+    $scope.$on('popover.hidden', function() {
+
+      $scope.$root.user.app.notificacao = false;
+
+    });
+
+    $scope.goNotification = function (destino){
+
+      $state.go(destino);
+
+      $scope.popover.hide();
+
+      $scope.$root.user.app.notificacao = false;
 
     };
 
@@ -115,13 +152,19 @@ angular.module('starter.controllers', [])
     };
 
     $scope.mudaBandeira = function(bandeira){
+
       $scope.$root.user.app.bandeiras = bandeira;
+
       $scope.popover.hide();
+
     };
 
     $scope.mudaConta = function(conta){
+
       $scope.$root.user.app.banco = conta;
+
       $scope.popover.hide();
+
     };
 
     // Form data for the login modal
@@ -132,9 +175,13 @@ angular.module('starter.controllers', [])
     // Create the login modal that we will use later
 
     $ionicModal.fromTemplateUrl('templates/login/login.html', {
+
       scope: $scope
+
     }).then(function(modal) {
+
       $scope.modal = modal;
+
     });
 
     // Triggered in the login modal to close it
@@ -476,11 +523,14 @@ angular.module('starter.controllers', [])
 
     $scope.movimento = 0;
 
+    $scope.currentDate = new Date();
+
     $scope.Percent = (parseFloat($scope.Valor) / parseFloat($scope.Meta)*100) + '%';
 
     $scope.atualizaPercent = function(){
 
       var meta  = $scope.Meta,
+
           total = $scope.Valor;
 
       meta = meta.replace(',','');
@@ -1154,6 +1204,14 @@ angular.module('starter.controllers', [])
 
     $scope.$root.user.app.estado = $state.current.name;
 
+    $scope.detalharAcao = function (perfil,id) {
+
+
+
+      console.log($scope.perfis[perfil].acoes[id]);
+
+    };
+
     $scope.perfis = [
       {
         'nome' : 'Conservador',
@@ -1564,16 +1622,54 @@ angular.module('starter.controllers', [])
 
   })
 
+  .controller('legalCtrl', function($scope, $state) {
+
+    $scope.$root.user.app.estado = $state.current.name;
+
+  })
+
+  .controller('ajudaSegurancaCtrl', function($scope, $state) {
+
+    $scope.$root.user.app.estado = $state.current.name;
+
+  })
+
+  .controller('suporteCtrl', function($scope, $state) {
+
+    $scope.$root.user.app.estado = $state.current.name;
+
+  })
+
+  .controller('faqCtrl', function($scope, $state) {
+
+    $scope.$root.user.app.estado = $state.current.name;
+
+  })
+
+  .controller('ajudaCtrl', function($scope, $state) {
+
+    $scope.$root.user.app.estado = $state.current.name;
+
+  })
+
+  .controller('segurancaCtrl', function($scope, $state) {
+
+    $scope.$root.user.app.estado = $state.current.name;
+
+  })
+
   .controller('configuracoesCtrl', function($scope, $state) {
 
     $scope.$root.user.app.estado = $state.current.name;
 
   })
+
   .controller('preferenciasCtrl', function($scope, $state) {
 
     $scope.$root.user.app.estado = $state.current.name;
 
   })
+
   .controller('conta-bancariaCtrl', function($scope, $state) {
 
     $scope.$root.user.app.estado = $state.current.name;

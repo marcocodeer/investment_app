@@ -993,10 +993,6 @@ margin-top: 20px;
 .perfil-perfor .btn-cadastro{
   border-radius: 0;
 }
-#help{
-
-}
-
-#help.icon-ativo{
-  display:inline !important;
+.ajuda #item-principal > a {
+  text-decoration: none;
 }

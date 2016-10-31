@@ -129,21 +129,16 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
     templateUrl: 'templates/perguntas/pergunta-13-banco.html',
     controller: 'AppCtrl'
   })
-
   .state('pergunta-final', {
     url: '/perguntas-perfil-final',
     templateUrl: 'templates/perguntas/login-banco.html',
     controller: 'AppCtrl'
   })
-
   .state('bem-vindo', {
     url: '/bem-vindo-acorns',
     templateUrl: 'templates/perguntas/bem-vindo.html',
     controller: 'AppCtrl'
   })
-
-
-
   .state('app.configuracoes', {
     url: '/conf',
     views: {
@@ -225,7 +220,7 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
     views: {
       'menuContent': {
         templateUrl: 'templates/configuracoes/seguranca/seguranca.html',
-        controller: 'dadosCtrl'
+        controller: 'segurancaCtrl'
       }
     }
   })
@@ -233,7 +228,8 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
     url: '/ajuda',
     views: {
       'menuContent': {
-        templateUrl: 'templates/ajuda/ajuda-main.html'
+        templateUrl: 'templates/ajuda/ajuda-main.html',
+        controller: 'ajudaCtrl'
       }
     }
   })
@@ -241,7 +237,8 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
     url: '/ajuda/faq',
     views: {
       'menuContent': {
-        templateUrl: 'templates/ajuda/faq/faq.html'
+        templateUrl: 'templates/ajuda/faq/faq.html',
+        controller: 'faqCtrl'
       }
     }
   })
@@ -249,7 +246,8 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
     url: '/ajuda/suporte',
     views: {
       'menuContent': {
-        templateUrl: 'templates/ajuda/suporte/suporte.html'
+        templateUrl: 'templates/ajuda/suporte/suporte.html',
+        controller: 'suporteCtrl'
       }
     }
   })
@@ -257,7 +255,8 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
     url: '/ajuda/seguranca',
     views: {
       'menuContent': {
-        templateUrl: 'templates/ajuda/seguranca/ajuda-seguranca.html'
+        templateUrl: 'templates/ajuda/seguranca/ajuda-seguranca.html',
+        controller: 'ajudaSegurancaCtrl'
       }
     }
   })
@@ -265,7 +264,8 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
     url: '/legal',
     views: {
       'menuContent': {
-        templateUrl: 'templates/legal/legal-main.html'
+        templateUrl: 'templates/legal/legal-main.html',
+        controller: 'legalCtrl'
       }
     }
   })
@@ -273,7 +273,8 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
     url: '/legal/contrato',
     views: {
       'menuContent': {
-        templateUrl: 'templates/legal/contrato/contrato.html'
+        templateUrl: 'templates/legal/contrato/contrato.html',
+        controller: 'legalCtrl'
       }
     }
   })
@@ -281,7 +282,8 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
     url: '/legal/divulgacao',
     views: {
       'menuContent': {
-        templateUrl: 'templates/legal/divulgacao/divulgacao.html'
+        templateUrl: 'templates/legal/divulgacao/divulgacao.html',
+        controller: 'legalCtrl'
       }
     }
   })
@@ -289,7 +291,8 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
     url: '/legal/politicas',
     views: {
       'menuContent': {
-        templateUrl: 'templates/legal/politicas/politicas.html'
+        templateUrl: 'templates/legal/politicas/politicas.html',
+        controller: 'legalCtrl'
       }
     }
   })
@@ -297,7 +300,8 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
     url: '/legal/termos',
     views: {
       'menuContent': {
-        templateUrl: 'templates/legal/termos/termos.html'
+        templateUrl: 'templates/legal/termos/termos.html',
+        controller: 'legalCtrl'
       }
     }
   })
@@ -333,7 +337,7 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
       views: {
         'menuContent': {
           templateUrl: 'templates/home-sem-investimento.html',
-          controller: 'AppCtrl'
+          controller: 'homeCtrl'
         }
       }
     })
