@@ -8,7 +8,7 @@
       <img src="img/popover-arrow.png" alt="" style="position:absolute;left:91%;display:block;"/>
   </div>
   <!-- TOUR SALDO -->
-  <div ng-show="estado == 'app.ver-saldo'" id="tour-saldo">
+  <div ng-show="$root.user.app.estado === 'app.ver-saldo'" id="tour-saldo">
 
     <ion-slide-box id="slide-popover" class="popover-slide-box" style="">
 
@@ -62,7 +62,7 @@
     </ion-slide-box>
   </div>
   <!-- TOUR MOVIMENTAR SALDO -->
-  <div ng-show="estado == 'app.movimentar-saldo'">
+  <div ng-show="$root.user.app.estado === 'app.movimentar-saldo'">
 
     <ion-slide-box id="slide-popover" class="popover-slide-box" style="">
 
@@ -100,7 +100,7 @@
       </ion-slide>
     </div>
     <!-- TOUR HISTORICO -->
-    <div ng-show="estado == 'app.historico'">
+    <div ng-show="$root.user.app.estado === 'app.historico'">
 
         <ion-slide-box id="slide-popover" class="popover-slide-box" style="">
 
@@ -199,7 +199,7 @@
 
     </div>
     <!-- TOUR PERFIL SEM INFO -->
-    <div ng-show="estado == 'app.perfil-sem-info'">
+    <div ng-show="$root.user.app.estado === 'app.perfil-sem-info'">
 
         <ion-slide-box id="slide-popover" class="popover-slide-box" style="">
 
@@ -275,7 +275,7 @@
        </ion-slide-box>
     </div>
     <!-- TOUR PERFORMANCE -->
-    <div ng-show="estado == 'app.performance'">
+    <div ng-show="$root.user.app.estado === 'app.performance'">
 
         <ion-slide-box id="slide-popover" class="popover-slide-box" style="">
 

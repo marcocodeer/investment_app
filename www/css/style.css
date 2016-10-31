@@ -53,6 +53,7 @@ Cleiton Schonardie UI/UX and front-end developer
 .bar.bar-stable .title {
   color: #fff !important;
   font-weight: 100;
+  text-transform: uppercase;
 }
 .bar-stable .button.button-icon {
   color: #fff !important;
@@ -991,4 +992,11 @@ margin-top: 20px;
 .arredondamento .btn-cadastro,
 .perfil-perfor .btn-cadastro{
   border-radius: 0;
+}
+#help{
+
+}
+
+#help.icon-ativo{
+  display:inline !important;
 }

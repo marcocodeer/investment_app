@@ -148,7 +148,8 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
     url: '/conf',
     views: {
       'menuContent': {
-        templateUrl: 'templates/configuracoes/configuracoes.html'
+        templateUrl: 'templates/configuracoes/configuracoes.html',
+        controller: 'configuracoesCtrl'
       }
     }
   })
@@ -173,7 +174,6 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
   })
   .state('app.adicionar-conta', {
     url: '/conf/adicionar-conta/:id',
-    //params: { 'id': null },
     views: {
       'menuContent': {
         templateUrl: 'templates/configuracoes/arredondamento-cartoes/adicionar-conta.html',
@@ -185,7 +185,8 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
     url: '/conf/preferencias-do-sistema',
     views: {
       'menuContent': {
-        templateUrl: 'templates/configuracoes/preferencias-do-sistema/preferencias.html'
+        templateUrl: 'templates/configuracoes/preferencias-do-sistema/preferencias.html',
+        controller: 'preferenciasCtrl'
       }
     }
   })
@@ -194,7 +195,8 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers' ])
     url: '/conf/conta-bancaria',
     views: {
       'menuContent': {
-        templateUrl: 'templates/configuracoes/conta-bancaria/conta-bancaria.html'
+        templateUrl: 'templates/configuracoes/conta-bancaria/conta-bancaria.html',
+        controller: 'conta-bancariaCtrl'
       }
     }
   })
