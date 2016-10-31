@@ -1,138 +1,145 @@
 <ion-view view-title="DADOS DO ÚSUARIO" style="background: url(img/login-bg-acorn.png) no-repeat center;background-size:cover;height:100%;" class="dadosuser">
   <div class="head-bg" style="height: 74px;">
     </div>
-<ion-content style="top: 44px !important;">
+<!--<ion-content style="top: 44px !important;">-->
   <ion-tabs class="tabs-positive tabs-icon-top" id="tabs-usuario">
 
     <ion-tab title="Pessoal" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline">
       <!-- Tab 1 content -->
-      <div style="margin-top:25px;">
+      <ion-content scroll="true" style="bottom: 0;top: 44px !important;overflow:scroll;">
 
-          <div class="input-container" style="padding:10px;">
-            <label class="item item-input item-floating-label">
-              <span class="input-label">Nome</span>
-              <input type="text" class="input-style" placeholder="Nome"  ng-model="$root.user.pessoal.nome">
-            </label>
-            <label class="item item-input item-floating-label">
-              <span class="input-label">Telefone</span>
-              <input type="text" class="input-style" placeholder="Telefone"  ng-model="$root.user.pessoal.fone">
-            </label>
-            <label class="item item-input item-floating-label">
-              <span class="input-label">E-mail</span>
-              <input type="text" class="input-style" placeholder="E-mail"  ng-model="$root.user.pessoal.email">
-            </label>
-            <label class="item item-input item-floating-label">
-                <span class="input-label">CPF</span>
-                <input type="text" class="input-style" placeholder="CPF"  ng-model="$root.user.pessoal.cpf">
-            </label>
+        <div style="margin-top:25px;">
 
-            <div class="row" style="margin-left:-5px;">
+            <div class="input-container" style="padding:10px;">
               <label class="item item-input item-floating-label">
-                <span class="input-label">CEP</span>
-                <input type="text" class="input-style" placeholder="CEP"  ng-model="$root.user.endereco.cep">
+                <span class="input-label">Nome</span>
+                <input type="text" class="input-style" placeholder="Nome"  ng-model="$root.user.pessoal.nome">
               </label>
               <label class="item item-input item-floating-label">
-                <span class="input-label">UF</span>
-                <input type="text" class="input-style" placeholder="UF"  ng-model="$root.user.endereco.uf" style="    width: 70% !important;">
+                <span class="input-label">Telefone</span>
+                <input type="text" class="input-style" placeholder="Telefone"  ng-model="$root.user.pessoal.fone">
               </label>
+              <label class="item item-input item-floating-label">
+                <span class="input-label">E-mail</span>
+                <input type="text" class="input-style" placeholder="E-mail"  ng-model="$root.user.pessoal.email">
+              </label>
+              <label class="item item-input item-floating-label">
+                  <span class="input-label">CPF</span>
+                  <input type="text" class="input-style" placeholder="CPF"  ng-model="$root.user.pessoal.cpf">
+              </label>
+
+              <div class="row" style="margin-left:-5px;">
+                <label class="item item-input item-floating-label">
+                  <span class="input-label">CEP</span>
+                  <input type="text" class="input-style" placeholder="CEP"  ng-model="$root.user.endereco.cep">
+                </label>
+                <label class="item item-input item-floating-label">
+                  <span class="input-label">UF</span>
+                  <input type="text" class="input-style" placeholder="UF"  ng-model="$root.user.endereco.uf" style="    width: 70% !important;">
+                </label>
+              </div>
+              <label class="item item-input item-floating-label">
+                 <span class="input-label">Cidade</span>
+                 <input type="text" class="input-style" placeholder="Cidade"  ng-model="$root.user.endereco.cidade">
+              </label>
+              <label class="item item-input item-floating-label">
+                <span class="input-label">Endereço</span>
+                <input type="text" class="input-style" placeholder="Endereço" ng-model="$root.user.endereco.rua">
+              </label>
+              <label class="item item-input item-floating-label">
+                <span class="input-label">Complemento</span>
+                <input type="text" class="input-style" placeholder="Complemento" ng-model="$root.user.endereco.complemento">
+              </label>
+
+
+                <button ng-click="doQuestion3()" class="item-center button button-clear btn-cadastro" style="margin-top:30px;position: static;">
+                  <i class="icon ion-ios-checkmark-empty" style="font-size:30px;"></i>
+                &nbsp;
+                  SALVAR
+                </button>
+
             </div>
-            <label class="item item-input item-floating-label">
-               <span class="input-label">Cidade</span>
-               <input type="text" class="input-style" placeholder="Cidade"  ng-model="$root.user.endereco.cidade">
-            </label>
-            <label class="item item-input item-floating-label">
-              <span class="input-label">Endereço</span>
-              <input type="text" class="input-style" placeholder="Endereço" ng-model="$root.user.endereco.rua">
-            </label>
-            <label class="item item-input item-floating-label">
-              <span class="input-label">Complemento</span>
-              <input type="text" class="input-style" placeholder="Complemento" ng-model="$root.user.endereco.complemento">
-            </label>
+        </div>
 
-
-              <button ng-click="doQuestion3()" class="item-center button button-clear btn-cadastro" style="margin-top:30px;">
-                <i class="icon ion-ios-checkmark-empty" style="font-size:30px;"></i>
-              &nbsp;
-                SALVAR
-              </button>
-
-          </div>
-      </div>
+      </ion-content>
 
     </ion-tab>
 
     <ion-tab title="Financeiro" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
       <!-- Tab 2 content -->
-      <div style="margin-top:30px;">
+      <ion-content scroll="true" style="bottom: 0;top: 44px !important;overflow:scroll;">
+          <div style="margin-top:30px;">
 
-          <div class="input-container" style="padding:10px;">
-            <label class="item item-input item-floating-label">
-              <span class="input-label">Qual é seu estado empregaticio? </span>
-              <input type="text" class="input-style" placeholder="Qual é seu estado empregaticio?" ng-model="$root.user.financeiro.emprego">
-            </label>
-            <label class="item item-input item-floating-label">
-              <span class="input-label">Quanto vale os seus bens?</span>
-              <input type="text" class="input-style" placeholder="Quanto vale os seus bens?"  ng-model="$root.user.financeiro.bens">
-            </label>
-            <label class="item item-input item-floating-label">
-              <span class="input-label">Quanto tempo você pretende investir?</span>
-              <input type="text" class="input-style" placeholder="Quanto tempo você pretende investir?"  ng-model="$root.user.financeiro.tempo" >
-            </label>
-            <label class="item item-input item-floating-label">
-              <span class="input-label">Qual é o seu principal motivo para investir?</span>
-              <input type="text" class="input-style" placeholder="Qual é o seu principal motivo para investir?"  ng-model="$root.user.financeiro.motivo">
-            </label>
-            <label class="item item-input item-floating-label">
-              <span class="input-label">Quanto você ganha por ano?</span>
-              <input type="text" class="input-style" placeholder="Quanto você ganha por ano?" ng-model="$root.user.financeiro.ano" >
-            </label>
+              <div class="input-container" style="padding:10px;">
+                <label class="item item-input item-floating-label">
+                  <span class="input-label">Qual é seu estado empregaticio? </span>
+                  <input type="text" class="input-style" placeholder="Qual é seu estado empregaticio?" ng-model="$root.user.financeiro.emprego">
+                </label>
+                <label class="item item-input item-floating-label">
+                  <span class="input-label">Quanto vale os seus bens?</span>
+                  <input type="text" class="input-style" placeholder="Quanto vale os seus bens?"  ng-model="$root.user.financeiro.bens">
+                </label>
+                <label class="item item-input item-floating-label">
+                  <span class="input-label">Quanto tempo você pretende investir?</span>
+                  <input type="text" class="input-style" placeholder="Quanto tempo você pretende investir?"  ng-model="$root.user.financeiro.tempo" >
+                </label>
+                <label class="item item-input item-floating-label">
+                  <span class="input-label">Qual é o seu principal motivo para investir?</span>
+                  <input type="text" class="input-style" placeholder="Qual é o seu principal motivo para investir?"  ng-model="$root.user.financeiro.motivo">
+                </label>
+                <label class="item item-input item-floating-label">
+                  <span class="input-label">Quanto você ganha por ano?</span>
+                  <input type="text" class="input-style" placeholder="Quanto você ganha por ano?" ng-model="$root.user.financeiro.ano" >
+                </label>
 
 
-              <button ng-click="doQuestion3()" class="item-center button button-clear btn-cadastro" style="margin-top:30px;">
-                <i class="icon ion-ios-checkmark-empty" style="font-size:30px;"></i>
-              &nbsp;
-                SALVAR
-              </button>
+                  <button ng-click="doQuestion3()" class="item-center button button-clear btn-cadastro" style="margin-top:30px;">
+                    <i class="icon ion-ios-checkmark-empty" style="font-size:30px;"></i>
+                  &nbsp;
+                    SALVAR
+                  </button>
 
+              </div>
           </div>
-      </div>
 
+        </ion-content>
 
     </ion-tab>
     <ion-tab title="Verificação" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
       <!-- Tab 2 content -->
-      <div style="margin-top:30px;">
-        <div class="head-box" style="background:none !important;">
-          <div class="row" >
-            <div class="col-20">
+      <ion-content scroll="true" style="bottom: 0;top: 44px !important;overflow:scroll;">
+
+          <div style="margin-top:30px;">
+            <div class="head-box" style="background:none !important;">
+              <div class="row" >
+                <div class="col-20">
+                </div>
+                <div class="col-80">
+                  <p>Identidade não verificada.</p>
+                  <p>Tire uma foto de sua carteira de identidade para verificarmos sua conta.</p>
+                </div>
+              </div>
             </div>
-            <div class="col-80">
-              <p>Identidade não verificada.</p>
-              <p>Tire uma foto de sua carteira de identidade para verificarmos sua conta.</p>
+            <div class="" style="center;margin:15px;background-color: #a2cbdc;height:183px;padding:15px;"></div>
+            <p style="text-align:center;color:#fff;font-size:12px;">
+              Toque para fotografar sua identidade
+            </p>
+
+            <div class="" style="padding:15px;">
+              <button ng-click="doQuestion3()" class="item-center button button-clear btn-cadastro">
+                <i class="icon ion-ios-checkmark-empty" style="font-size:30px;"></i>
+                &nbsp;
+                ENVIAR
+              </button>
             </div>
-          </div>
-        </div>
-        <div class="" style="center;margin:15px;background-color: #a2cbdc;height:183px;padding:15px;"></div>
-        <p style="text-align:center;color:#fff;font-size:12px;">
-          Toque para fotografar sua identidade
-        </p>
 
-        <div class="" style="padding:15px;">
-          <button ng-click="doQuestion3()" class="item-center button button-clear btn-cadastro">
-            <i class="icon ion-ios-checkmark-empty" style="font-size:30px;"></i>
-            &nbsp;
-            ENVIAR
-          </button>
-        </div>
+           </div>
 
-
-          </div>
-      </div>
-
+    </ion-content>
 
     </ion-tab>
 
 
   </ion-tabs>
-</ion-content>
+<!--</ion-content>-->
   </ion-view>

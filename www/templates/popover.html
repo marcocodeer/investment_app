@@ -5,7 +5,8 @@
 </style>
 <ion-popover-view  class="popover-style">
   <div style="z-index: 1;margin-top:-23px;">
-      <img src="img/popover-arrow.png" alt="" style="position:absolute;left:91%;display:block;"/>
+      <img ng-show="$root.user.app.notificacao && ['app.perfil','app.historico', 'app.ver-saldo', 'app.performance', 'app.movimentar-saldo'].indexOf($root.user.app.estado)!=-1"  src="img/popover-arrow.png" alt="" style="position:absolute;left:81%;display:block;"/>
+      <img ng-hide="$root.user.app.notificacao && ['app.perfil','app.historico', 'app.ver-saldo', 'app.performance', 'app.movimentar-saldo'].indexOf($root.user.app.estado)!=-1"  src="img/popover-arrow.png" alt="" style="position:absolute;left:91%;display:block;"/>
   </div>
 
   <!-- NOTIFICACAO -->

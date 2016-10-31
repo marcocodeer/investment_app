@@ -158,9 +158,10 @@ Cleiton Schonardie UI/UX and front-end developer
   overflow: inherit;
 }
 #tabs-usuario .tabs {
-  top:8% !important;
+  top:43px !important;
   width: 100% !important;
   height:30px !important;
+  background-color: #4880b4 !important;
   /*background-color: #639ece !important;*/
 }
 #tabs-historico .tabs {
@@ -310,7 +311,9 @@ label, input, button, select, textarea {
 
 .footer-bar-custom-last .item-right { right: 10px }
 .footer-security {
-  padding:30px;position:absolute;top:400px !important;
+  padding:30px;
+  position:absolute;
+  /*top:400px !important;*/
 }
 
 .box-grafico{
@@ -418,7 +421,7 @@ label, input, button, select, textarea {
 #item-circle-grey {
   width:28px;
   height:29px;
-  background-color: #5cb1b5;
+  background-color: rgba(255, 255, 255, 0.23);
   border-radius:50%;
 }
 #item-icon-grey {
@@ -426,7 +429,7 @@ label, input, button, select, textarea {
   color:#fff;
   position:relative;
   left:11px;
-  top:5px;
+  top:4px;
 }
 #item-color {
   font-size:15px;
@@ -923,6 +926,34 @@ margin-top: 20px;
   border-bottom: 1px solid #fff !important;
   margin-top: 9px;
 }
+.platform-android #notificacao span {
+  padding-top:1px !important;
+}
+.platform-android ion-view.saldo.pane div.teclado button span{
+  padding-top:4px !important;
+}
+.platform-android ion-view.saldo.pane > div.teclado > div:nth-child(4) > div:nth-child(3) > button span,
+.platform-android #tabs-usuario > ion-content:nth-child(3) > div.scroll > div:nth-child(5) > div:nth-child(3) > button span{
+  padding-top:8px !important;
+}
+.platform-android  ion-view.saldo.pane > div.teclado > div:nth-child(4) > div:nth-child(1) > button > span,
+.platform-android #tabs-usuario > ion-content:nth-child(3) > div.scroll > div:nth-child(5) > div:nth-child(1) > button span{
+  padding-top:9px !important;
+}
+.platform-android  #tabs-usuario .tab-item.tab-item-active{
+  margin-top:7px !important;
+  height:23px !important;
+}
+.platform-android  #tabs-usuario > ion-content{
+  bottom:40px !important;
+}
+.legal #item-principal > a span,
+.configuracoes #item-principal > a span,
+.ajuda #item-principal > a span{
+  margin-top: 2px;
+  display: block;
+}
+
 .historico #tabsController-tabs1 > div {
   top: 267px !important;
 }
@@ -993,6 +1024,7 @@ margin-top: 20px;
 .perfil-perfor .btn-cadastro{
   border-radius: 0;
 }
+.legal #item-principal > a,
 .ajuda #item-principal > a {
   text-decoration: none;
 }
