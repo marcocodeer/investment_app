@@ -947,6 +947,9 @@ margin-top: 20px;
 .platform-android  #tabs-usuario > ion-content{
   bottom:40px !important;
 }
+.platform-android  #tabs-usuario .scroll {
+  padding-bottom: 60px;
+}
 .legal #item-principal > a span,
 .configuracoes #item-principal > a span,
 .ajuda #item-principal > a span{
