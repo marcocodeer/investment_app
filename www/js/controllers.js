@@ -68,7 +68,7 @@ angular.module('starter.controllers', [])
         nome : 'Marco Carvalho',
         fone : '(11)74857-9963',
         email : 'marcos@gmail.com',
-        dob : '29-12-1983',
+        dob : new Date("December 29, 1983"),
         cpf : '80140025048',
         sexo : 'M'
       },
@@ -1590,7 +1590,7 @@ angular.module('starter.controllers', [])
 
     $scope.$root.user.app.estado = $state.current.name;
 
-    $scope.conta = parseInt($stateParams.id);
+    $scope.conta = parseInt($stateParams.id) || null;
 
     $scope.cancelar = $scope.$root.user.app.cartoes[$scope.conta];
 
@@ -1610,21 +1610,33 @@ angular.module('starter.controllers', [])
 
     $scope.perfilIndex = 0;
 
-    $scope.idade = 37;
+    $scope.calculaIdade = function(){
+
+      var birthday = $scope.$root.user.pessoal.dob;
+
+      var ageDifMs = Date.now() - birthday.getTime();
+
+      var ageDate = new Date(ageDifMs); // miliseconds from epoch
+
+      return Math.abs(ageDate.getUTCFullYear() - 1970);
+
+    };
+
+    $scope.idade = $scope.calculaIdade();
 
     $scope.idadesimulada = $scope.idade + 10;
 
     $scope.valor = null;
 
-    $scope.mensal = '10,00';
+    $scope.mensal = 10;
 
     $scope.eixoX = [];
 
     $scope.graphData = [];
 
     var i = $scope.idade,
-        mensal = null,
-        total = null,
+        mensal = $scope.mensal,
+        total = 0,
         unidade = null,
         invLen = null;
 
@@ -1634,7 +1646,9 @@ angular.module('starter.controllers', [])
 
     };
 
-    $scope.gerarDados = function (idade) {
+    $scope.gerarDados = function (idade,valor,mensal) {
+
+      total = 0;
 
       for ( i; i <= (idade + 13) ; i ++ ){
 
@@ -1648,27 +1662,25 @@ angular.module('starter.controllers', [])
 
       for ( i = 0; i < 7 ; i ++ ){
 
-        mensal = $scope.mensal.replace(',','');
+        $scope.graphData.push(i * $scope.mensal * 12);
 
-        $scope.graphData.push(i * parseFloat(mensal) * 0.0012);
+        total += i * $scope.mensal * 12;
 
       }
 
-      total = $scope.graphData.reduce(function(a, b){return a+b;}) * 10000;
-
       total = total.toString();
 
-      unidade = total.substring(0, total.length - 2) || '0';
+      unidade = total.substring(0, total.length - 3) || 0;
 
       invLen = total.length;
 
-      if(unidade.length < 4){
+      if(unidade === 0){
 
-        total = unidade + ',' + total.substring(invLen - 2, invLen);
+        total = unidade + ',' + total.substring(invLen - 3, invLen -2);
 
       } else {
 
-        total = total.substring(0, invLen - 5)+'.' + total.substring(invLen - 5, invLen - 2) + ',' + total.substring(invLen - 2, invLen);
+        total = unidade + ',' + total.substring(invLen - 3, invLen -2 ) ;
 
       }
 
@@ -1699,7 +1711,7 @@ angular.module('starter.controllers', [])
         $scope.perfilIndex++;
 
       }
-      
+
       $scope.perfil = $scope.$root.user.app.perfis[$scope.perfilIndex];
 
       $scope.perfilGraficoPie();
@@ -1719,7 +1731,14 @@ angular.module('starter.controllers', [])
 
     };
 
-    $scope.atualizarGrafico = function () {
+    $scope.atualizarGrafico = function (idade) {
+
+      if( idade === null ){
+
+        console.log(idade);
+
+      }
+
 
       $scope.gerarDados();
 

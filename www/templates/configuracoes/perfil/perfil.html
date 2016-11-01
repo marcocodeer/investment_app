@@ -50,10 +50,49 @@
 
       <div class="column box-grafico"  >
 
-        <div class="row">
+        <div class="list">
+
+          <div class="item range range-positive">
+
+            <div class="header">Idade {{idadesimulada}}</div>
+
+            <div class="max">{{idade}}</div>
+
+            <input type="range" min="{{idade}}" max="95" value="{{idadesimulada}}" step="1" ng-model="idadesimulada"  ng-change="atualizarGrafico(idadesimulada)">
+
+            <div class="max">95</div>
+
+          </div>
+
+          <div class="item range range-positive">
+
+            <div class="header">Mensal R$ {{mensal}},00 </div>
+
+            <div class="max">0</div>
+
+            <input type="range" min="0" max="100" value="{{mensal}}" step="1" ng-model="mensal"  ng-change="atualizarGrafico(idadesimulada)">
+
+            <div class="max">100</div>
+
+          </div>
+
+          <div class="item range range-positive">
+
+            <div class="header">Projetado R$ {{valor}} mil </div>
+
+            <div class="max">0</div>
+
+            <input type="range" min="0" max="95" value="{{valor}}" step="1" ng-model="valor"  ng-change="atualizarGrafico(idadesimulada)">
+
+            <div class="max">95</div>
+
+          </div>
+
+        </div>
+
+        <!--<div class="row">
 
           <label class="item col-20">
-            <span>Idade</span>
             <input type="text" class="input-style" ng-model="idadesimulada" ng-change="atualizarGrafico(idadesimulada)">
           </label>
 
@@ -67,7 +106,7 @@
             <input type="text" class="input-style"  ng-model="mensal" ng-change="atualizarGrafico(idadesimulada)">
           </label>
 
-        </div>
+        </div>-->
 
         <div class="row">
 

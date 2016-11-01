@@ -1113,3 +1113,18 @@ margin-top: 20px;
   width:40px;
   margin-right: 1px;
 }
+.perfil-perfor .item.range {
+  padding:0;
+  height: 40px;
+}
+.perfil-perfor  .item.range .header{
+  font-size: 13px;
+  font-weight:100;
+  color: #fff;
+  margin-right: 10px;
+}
+.perfil-perfor  .item.range .max{
+  font-size: 10px;
+  font-weight:100;
+  color: rgba(255, 255, 255, 0.42);
+}
