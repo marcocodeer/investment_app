@@ -17,7 +17,7 @@
 
         <div class="list estendida" >
 
-          <div class="row item"  ng-repeat="item in Saldo | filter:{ label: searchForce } as filtered" ng-class="item.status === 1 ? 'concluido' : '' " ng-if="(item.date | date: 'MM') == (currentDate | date: 'MM')">
+          <div class="row item"  ng-repeat="item in Saldo | filter:{ label: searchForce } as filtered" ng-class="item.status === 1 ? 'concluido' : '' " ng-if="(item.date | date: 'MM') === (currentDate | date: 'MM')">
 
             <div class="col-80">
 
@@ -108,7 +108,7 @@
 
               <h2>
 
-                <span style="color: #8cc5cc">{{item.date | date: 'dd/MM/yyyy'}}</span> {{item.label}}
+                <span style="color: #8cc5cc">{{item.date | date: 'dd/MM/yyyy'}}</span>  {{item.date | date: 'MM'}} {{currentDate | date: 'MM'}} {{item.label}}
 
               </h2>
 

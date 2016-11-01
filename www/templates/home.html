@@ -1,4 +1,4 @@
-<ion-view view-title="OLÁ, MARCO" style="background: url(img/perfil-investimento-bg.png) no-repeat center;background-size:cover;">
+<ion-view view-title="OLÁ, {{$root.user.pessoal.nome}}" style="background: url(img/perfil-investimento-bg.png) no-repeat center;background-size:cover;">
 
   <ion-content style="background: url(img/login-bg-acorn.png) no-repeat center;background-size:cover;height:100%;" class="home">
     <div class="head-box home" >
@@ -10,7 +10,7 @@
         </p>
 
         <p class="home-title"  >
-          <small>R$ </small>1.891<span>,98</span>
+          <small>R$ </small>{{$root.user.app.saldo}}<span></span>
         </p>
 
         <p class="home-sub-lable"  >

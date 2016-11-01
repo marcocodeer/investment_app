@@ -23,154 +23,270 @@ angular.module('starter.controllers', [])
             });
         }
 
-  $scope.slideHasChanged = function($index){
-    //alert('slideHasChanged $index=' + $index);
-    if($index === 6){
-      var myClasses = document.querySelectorAll('.slider-pager'),i = 0,l = myClasses.length;
+    $scope.slideHasChanged = function($index){
 
-      for (i; i < l; i++) {
-        myClasses[i].style.display = 'none';
+      if($index === 6){
+
+        var myClasses = document.querySelectorAll('.slider-pager'),i = 0,l = myClasses.length;
+
+        for (i; i < l; i++) {
+
+          myClasses[i].style.display = 'none';
+
+        }
+
+        document.getElementById('footer-apresentacao').style.display = 'none';
+
+      } else {
+
+        var myClasses = document.querySelectorAll('.slider-pager'),i = 0,l = myClasses.length;
+
+        for (i; i < l; i++) {
+
+          myClasses[i].style.display = 'block';
+
+        }
+
       }
 
-      document.getElementById('footer-apresentacao').style.display = 'none';
-    }
-    else {
-      var myClasses = document.querySelectorAll('.slider-pager'),i = 0,l = myClasses.length;
+    };
 
-      for (i; i < l; i++) {
-        myClasses[i].style.display = 'block';
+    $ionicPopover.fromTemplateUrl('templates/popover.html', {
+
+      scope: $scope
+
+    }).then(function(popover) {
+
+      $scope.popover = popover;
+
+    });
+
+    $scope.Tour = '';
+
+    $scope.$root.user = {
+      pessoal : {
+        nome : 'Marco Carvalho',
+        fone : '(11)74857-9963',
+        email : 'marcos@gmail.com',
+        dob : '29-12-1983',
+        cpf : '80140025048',
+        sexo : 'M'
+      },
+      endereco : {
+        rua : 'Av. Brasil, 335',
+        cidade : 'São Paulo',
+        cep : '01220-000',
+        uf : 'SP',
+        complemento : 'ap 35'
+      },
+      financeiro : {
+        emprego : 'Estudante',
+        bens : 'Menos de R$10 mil',
+        tempo : 'Menos de 5 anos',
+        motivo : 'Geral',
+        ano : 'Menos de R$25 mil'
+      },
+      app : {
+        estado : $state.current.name,
+        notificacao : false,
+        notificacoes : [
+          {
+            id : 0,
+            text : 'Há um problema com a verificação da sua conta.',
+            link : 'app.dados-usuario',
+            label : 'CORRIGIR',
+            readed : false
+          },
+          {
+            id : 1,
+            text : 'O login com o seu banco não teve sucesso.',
+            link : 'app.conta-bancaria',
+            label : 'TENTAR NOVAMENTE',
+            readed : false
+          }
+        ],
+        saldo : '1.325,14',
+        ciclo : '',
+        uf : 'UF',
+        bandeiras : 'Bandeiras',
+        banco : 'Banco',
+        cartoes : [
+                    {
+                      id : 0,
+                      name : 'Visa',
+                      number : '4455-5547-9968-2124'
+                    },
+                    {
+                      id : 1,
+                        name : 'Master',
+                      number : '4455-5547-9968-2124'
+                    },
+                    {
+                      id : 2,
+                        name : 'PayPal',
+                      number : '4455-5547-9968-2124'
+                    },
+                    {
+                      id : 3,
+                        name : 'Dinners',
+                      number : '4455-5547-9968-2124'
+                    }
+                  ]
+    },
+      perfil : 1
+    };
+
+    $scope.openPopover = function($event,tipo) {
+
+      if(tipo === 1){
+
+        $scope.$root.user.app.notificacao = true;
+
       }
-    }
-  };
 
-  $scope.estado = $state.current.name;
+      $scope.popover.show($event);
 
-  $ionicPopover.fromTemplateUrl('templates/popover.html', {
-    scope: $scope,
-  }).then(function(popover) {
-    $scope.popover = popover;
-  });
+    };
 
-  $scope.Tour = '';
+    $scope.$on('popover.hidden', function() {
 
-  $scope.openPopover = function($event, estado) {
-    $scope.estado = estado;
-    $scope.popover.show($event);
-    console.log($scope.estado);
-  };
+      $scope.$root.user.app.notificacao = false;
 
-  $scope.uf = 'UF';
-  $scope.bandeiras = 'Bandeiras';
-  $scope.banco = 'Banco';
+    });
 
-  $scope.mudaUF = function(uf){
+    $scope.goNotification = function (destino){
 
-    $scope.uf = uf;
+      $state.go(destino);
 
-    $scope.popover.hide();
+      $scope.popover.hide();
 
-  };
+      $scope.$root.user.app.notificacao = false;
 
-  $scope.mudaBandeira = function(bandeira){
-    $scope.bandeiras = bandeira;
-    $scope.popover.hide();
-  };
+    };
 
-  $scope.mudaConta = function(conta){
-    $scope.banco = conta;
-    $scope.popover.hide();
-  };
+    $scope.mudaUF = function(uf){
 
-  // Form data for the login modal
-  $scope.loginData = {};
-  console.log("Perfil ctrl");
-  // Create the login modal that we will use later
-  $ionicModal.fromTemplateUrl('templates/login/login.html', {
-    scope: $scope
-  }).then(function(modal) {
-    $scope.modal = modal;
-  });
+      $scope.$root.user.app.uf = uf;
 
-  // Triggered in the login modal to close it
-  $scope.closeLogin = function() {
-    $scope.modal.hide();
-  };
+      $scope.popover.hide();
 
-  $scope.nextSlide = function() {
-    $ionicSlideBoxDelegate.next();
-  };
-  $scope.previous = function() {
-    $ionicSlideBoxDelegate.previous();
-  };
+    };
 
-  $scope.slideChanged = function(index) {
-    $scope.slideIndex = index;
-  };
+    $scope.mudaBandeira = function(bandeira){
 
-  $scope.go = function (destino){
+      $scope.$root.user.app.bandeiras = bandeira;
 
-    $state.go(destino);
+      $scope.popover.hide();
 
-  };
-  $scope.doArredondamento = function (){
+    };
 
-    $state.go('app.arredondamentos');
-  };
-  $scope.doPerfis = function (){
+    $scope.mudaConta = function(conta){
 
-    $state.go('app.perfil');
-  };
-  $scope.doProgramados = function (){
+      $scope.$root.user.app.banco = conta;
 
-    $state.go('app.investimento-programado');
-  };
-  $scope.adicionarConta = function (){
+      $scope.popover.hide();
 
-    $state.go('app.adicionar-conta');
-  };
-  $scope.adicionarPreferencia = function (){
+    };
 
-    $state.go('app.preferencias');
-  };
-  $scope.adicionarContaBancaria = function (){
+    // Form data for the login modal
+    $scope.loginData = {};
 
-    $state.go('app.conta-bancaria');
-  };
-  $scope.adicionarNotificacoes = function (){
-    $state.go('app.notificacoes');
+    console.log("Perfil ctrl");
 
-  };
-  $scope.adicionarDadosUsuario = function (){
+    // Create the login modal that we will use later
 
-    $state.go('app.dados-usuario');
-  };
-  $scope.segurancaConfig = function (){
+    $ionicModal.fromTemplateUrl('templates/login/login.html', {
 
-    $state.go('app.seguranca');
-  };
+      scope: $scope
+
+    }).then(function(modal) {
+
+      $scope.modal = modal;
+
+    });
+
+    // Triggered in the login modal to close it
+    $scope.closeLogin = function() {
+      $scope.modal.hide();
+    };
+
+    $scope.nextSlide = function() {
+      $ionicSlideBoxDelegate.next();
+    };
+    $scope.previous = function() {
+      $ionicSlideBoxDelegate.previous();
+    };
+
+    $scope.slideChanged = function(index) {
+      $scope.slideIndex = index;
+    };
+
+    $scope.go = function (destino){
+
+      $state.go(destino);
+
+    };
+    $scope.doArredondamento = function (){
+
+      $state.go('app.arredondamentos');
+    };
+    $scope.doPerfis = function (){
+
+      $state.go('app.perfil');
+    };
+    $scope.doProgramados = function (){
+
+      $state.go('app.investimento-programado');
+    };
+    $scope.adicionarConta = function (){
+
+      $state.go('app.adicionar-conta');
+    };
+    $scope.adicionarPreferencia = function (){
+
+      $state.go('app.preferencias');
+    };
+    $scope.adicionarContaBancaria = function (){
+
+      $state.go('app.conta-bancaria');
+    };
+    $scope.adicionarNotificacoes = function (){
+      $state.go('app.notificacoes');
+
+    };
+    $scope.adicionarDadosUsuario = function (){
+
+      $state.go('app.dados-usuario');
+    };
+    $scope.segurancaConfig = function (){
+
+      $state.go('app.seguranca');
+    };
 
 
-  // Open the login modal
-  $scope.login = function() {
-    $state.go('login');
-  };
-  $scope.doInvest = function() {
-    $state.go('perfil-investimento');
-  };
+    // Open the login modal
+    $scope.login = function() {
+      $state.go('login');
+    };
+    $scope.doInvest = function() {
+      $state.go('perfil-investimento');
+    };
 
-  // Perform the login action when the user submits the login form
-  $scope.doLogin = function() {
-    console.log('Doing login', $scope.loginData);
+    // Perform the login action when the user submits the login form
+    $scope.doLogin = function() {
+      console.log('Doing login', $scope.loginData);
 
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
-    $timeout(function() {
-      $scope.closeLogin();
-    }, 1000);
-  };
-})
+      // Simulate a login delay. Remove this and replace with your login
+      // code if using a login system
+      $timeout(function() {
+        $scope.closeLogin();
+      }, 1000);
+    };
+  })
 
   .controller('homeCtrl', function($scope, $ionicModal, $timeout, $state, $ionicSlideBoxDelegate, $ionicPopover) {
+
+    $scope.$root.user.app.estado = $state.current.name;
 
     $scope.homeGrafico = function () {
 
@@ -273,13 +389,6 @@ angular.module('starter.controllers', [])
 
     };
 
-    $scope.openPopover = function($event, estado) {
-      $scope.estado = estado;
-      $scope.popover.show($event);
-      console.log($scope.estado);
-    };
-
-
     $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
 
     $scope.series = ['Series A', 'Series B'];
@@ -292,6 +401,8 @@ angular.module('starter.controllers', [])
   })
 
   .controller('peformanceCtrl', function($scope, $ionicModal, $timeout, $state, $ionicSlideBoxDelegate, $ionicPopover) {
+
+    $scope.$root.user.app.estado = $state.current.name;
 
     var dados = [0,4,3,5,4],
         labels = ['34', '36', '38', '40', '42'] ;
@@ -423,21 +534,24 @@ angular.module('starter.controllers', [])
 
   .controller('saldoCtrl', function($scope, $ionicModal, $timeout, $state, $ionicSlideBoxDelegate, $ionicPopover) {
 
+    $scope.$root.user.app.estado = $state.current.name;
+
     $scope.Valor = '2,30';
 
     $scope.Meta = '5,00';
 
-    $scope.Investido = '1.325,14';
-
     $scope.Deposito = '';
 
     $scope.movimento = 0;
+
+    $scope.currentDate = new Date();
 
     $scope.Percent = (parseFloat($scope.Valor) / parseFloat($scope.Meta)*100) + '%';
 
     $scope.atualizaPercent = function(){
 
       var meta  = $scope.Meta,
+
           total = $scope.Valor;
 
       meta = meta.replace(',','');
@@ -479,7 +593,7 @@ angular.module('starter.controllers', [])
 
       if(tipo === 1 ){
 
-        var investido = $scope.Investido,
+        var investido = $scope.$root.user.app.saldo,
             total = $scope.Valor,
             unidade = 0,
             invLen = 0;
@@ -510,7 +624,7 @@ angular.module('starter.controllers', [])
 
         }
 
-        $scope.Investido = investido;
+        $scope.$root.user.app.saldo = investido;
 
         $scope.Valor = '0';
 
@@ -617,9 +731,15 @@ angular.module('starter.controllers', [])
   })
 
   .controller('creditoCtrl', function($scope, $ionicModal, $timeout, $state, $ionicSlideBoxDelegate, $ionicPopover) {
+
+    $scope.$root.user.app.estado = $state.current.name;
+
     $scope.Valor = 1;
+
     $scope.Formulario = 0;
+
     $scope.Meta = '5,00';
+
     $scope.Contatos =  [
       {
         'id': 1,
@@ -683,7 +803,10 @@ angular.module('starter.controllers', [])
   })
 
   .controller('loginCtrl', function($scope, $ionicModal, $timeout, $state) {
-      $scope.resetPass = function(){
+
+    $scope.$root.user.app.estado = $state.current.name;
+
+    $scope.resetPass = function(){
         $state.go('resetar-senha');
       };
       $scope.SendSucessPass = function(){
@@ -695,6 +818,8 @@ angular.module('starter.controllers', [])
   })
 
   .controller('programadoCtrl', function($scope, $ionicModal, $timeout, $state) {
+
+    $scope.$root.user.app.estado = $state.current.name;
 
     $scope.Periodo = 1;
 
@@ -801,9 +926,9 @@ angular.module('starter.controllers', [])
 
   .controller('saqueCtrl', function($scope, $ionicModal, $timeout, $state) {
 
-    $scope.Valor = '0,00';
+    $scope.$root.user.app.estado = $state.current.name;
 
-    $scope.Investido = '1.325,14';
+    $scope.Valor = '0,00';
 
     $scope.Cursor = 0;
 
@@ -817,7 +942,7 @@ angular.module('starter.controllers', [])
 
       if (tipo === 1){ // SACAR
 
-        var investido = $scope.Investido,
+        var investido = $scope.$root.user.app.saldo,
             total = $scope.Valor,
             unidade = 0,
             invLen = 0;
@@ -846,7 +971,7 @@ angular.module('starter.controllers', [])
 
           }
 
-          $scope.Investido = investido;
+          $scope.$root.user.app.saldo = investido;
 
           $scope.Valor = '0,00';
 
@@ -868,7 +993,7 @@ angular.module('starter.controllers', [])
 
       } else if(tipo === 2){ // DEPOSITAR
 
-        var investido = $scope.Investido,
+        var investido = $scope.$root.user.app.saldo,
             total = $scope.Valor,
             unidade = 0,
             invLen = 0;
@@ -899,7 +1024,7 @@ angular.module('starter.controllers', [])
 
         }
 
-        $scope.Investido = investido;
+        $scope.$root.user.app.saldo = investido;
 
         $scope.Valor = '0,00';
 
@@ -960,7 +1085,7 @@ angular.module('starter.controllers', [])
 
       var vlr = $scope.Valor.toString();
 
-      if(vlr.length < $scope.Investido.length){
+      if(vlr.length < $scope.$root.user.app.saldo.length){
 
         vlr = vlr.replace(',','').replace('.','');
 
@@ -1022,33 +1147,7 @@ angular.module('starter.controllers', [])
 
   .controller('dadosCtrl', function($scope, $ionicModal, $timeout, $state) {
 
-    $scope.user = {
-      pessoal : {
-        nome : 'Marco Carvalho',
-        fone : '(11)74857-9963',
-        email : 'marcos@gmail.com',
-        dob : '29-12-1983',
-        cpf : '80140025048',
-        sexo : 'M'
-      },
-      endereco : {
-        rua : 'Av. Brasil, 335',
-        cidade : 'São Paulo',
-        cep : '01220-000',
-        uf : 'SP',
-        complemento : 'ap 35'
-      },
-      financeiro : {
-        emprego : 'Estudante',
-        bens : 'Menos de R$10 mil',
-        tempo : 'Menos de 5 anos',
-        motivo : 'Geral',
-        ano : 'Menos de R$25 mil'
-      },
-      perfil : 1
-    };
-
-    console.log($scope.user);
+    $scope.$root.user.app.estado = $state.current.name;
 
     $scope.Valor = '';
 
@@ -1102,30 +1201,9 @@ angular.module('starter.controllers', [])
 
   .controller('contasCtrl', function($stateParams, $scope, $ionicModal, $timeout, $state) {
 
-    $scope.conta = $stateParams.id || null;
+    $scope.$root.user.app.estado = $state.current.name;
 
-    $scope.bandeiras = [
-      {
-        id : 0,
-        name : 'Visa',
-        number : '4455-5547-9968-2124'
-      },
-      {
-        id : 1,
-        name : 'Master',
-        number : '4455-5547-9968-2124'
-      },
-      {
-        id : 2,
-        name : 'PayPal',
-        number : '4455-5547-9968-2124'
-      },
-      {
-        id : 3,
-        name : 'Dinners',
-        number : '4455-5547-9968-2124'
-      }
-    ];
+    $scope.conta = $stateParams.id || null;
 
     $scope.go = function (destino){
 
@@ -1134,8 +1212,6 @@ angular.module('starter.controllers', [])
     };
 
     $scope.editarConta = function (index){
-
-      console.log(index);
 
       $scope.conta = index;
 
@@ -1146,6 +1222,16 @@ angular.module('starter.controllers', [])
   })
 
   .controller('perfilCtrl', function($scope, $state) {
+
+    $scope.$root.user.app.estado = $state.current.name;
+
+    $scope.detalharAcao = function (perfil,id) {
+
+
+
+      console.log($scope.perfis[perfil].acoes[id]);
+
+    };
 
     $scope.perfis = [
       {
@@ -1554,5 +1640,59 @@ angular.module('starter.controllers', [])
     };
 
 
+
+  })
+
+  .controller('legalCtrl', function($scope, $state) {
+
+    $scope.$root.user.app.estado = $state.current.name;
+
+  })
+
+  .controller('ajudaSegurancaCtrl', function($scope, $state) {
+
+    $scope.$root.user.app.estado = $state.current.name;
+
+  })
+
+  .controller('suporteCtrl', function($scope, $state) {
+
+    $scope.$root.user.app.estado = $state.current.name;
+
+  })
+
+  .controller('faqCtrl', function($scope, $state) {
+
+    $scope.$root.user.app.estado = $state.current.name;
+
+  })
+
+  .controller('ajudaCtrl', function($scope, $state) {
+
+    $scope.$root.user.app.estado = $state.current.name;
+
+  })
+
+  .controller('segurancaCtrl', function($scope, $state) {
+
+    $scope.$root.user.app.estado = $state.current.name;
+
+  })
+
+  .controller('configuracoesCtrl', function($scope, $state) {
+
+    $scope.$root.user.app.estado = $state.current.name;
+
+  })
+
+  .controller('preferenciasCtrl', function($scope, $state) {
+
+    $scope.$root.user.app.estado = $state.current.name;
+
+  })
+
+  .controller('conta-bancariaCtrl', function($scope, $state) {
+
+    $scope.$root.user.app.estado = $state.current.name;
 
   });

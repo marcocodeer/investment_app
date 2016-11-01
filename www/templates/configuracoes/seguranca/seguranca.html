@@ -1,103 +1,113 @@
 <ion-view view-title="SEGURANÇA" style="background: url(img/login-bg-acorn.png) no-repeat center;background-size:cover;height:100%;" class="seguranca">
   <div class="head-bg" style="height: 74px;">
   </div>
-  <ion-content style="top: 44px !important;">
+
   <ion-tabs class="tabs-positive tabs-icon-top" id="tabs-usuario">
 
     <ion-tab title="Senha" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline">
       <!-- Tab 1 content -->
-      <div style="margin-top:50px;">
+      <ion-content scroll="true" style="bottom: 0;top: 44px !important;overflow:scroll;">
 
-          <div class="input-container" style="padding:10px;">
-            <label class="item item-input item-floating-label">
-              <span class="input-label">Senha atual</span>
-              <input type="password" class="input-style" placeholder="Senha atual">
-            </label>
-            <label class="item item-input item-floating-label">
-              <span class="input-label">Nova senha</span>
-              <input type="password" class="input-style"  placeholder="Nova senha">
-            </label>
+        <div style="margin-top:30px;">
+
+            <div class="input-container" style="padding:10px;">
               <label class="item item-input item-floating-label">
-                <span class="input-label">Repita a nova senha</span>
-              <input type="password" class="input-style"  placeholder="Repita a nova senha" >
-            </label>
+                <span class="input-label">Senha atual</span>
+                <input type="password" class="input-style" placeholder="Senha atual">
+              </label>
+              <label class="item item-input item-floating-label">
+                <span class="input-label">Nova senha</span>
+                <input type="password" class="input-style"  placeholder="Nova senha">
+              </label>
+                <label class="item item-input item-floating-label">
+                  <span class="input-label">Repita a nova senha</span>
+                <input type="password" class="input-style"  placeholder="Repita a nova senha" >
+              </label>
 
-          </div>
-      </div>
-
-        <div class="col footer-security">
-          <button ng-click="adicionarConta()" class="item-center button button-clear btn-cadastro">
-            <i class="icon ion-ios-checkmark-empty" style="font-size:30px;"></i>
-          &nbsp;
-            SALVAR
-          </button>
+            </div>
         </div>
 
+          <div class="col footer-security">
+            <button ng-click="adicionarConta()" class="item-center button button-clear btn-cadastro">
+              <i class="icon ion-ios-checkmark-empty" style="font-size:30px;"></i>
+            &nbsp;
+              SALVAR
+            </button>
+          </div>
+      </ion-content>
 
     </ion-tab>
 
     <ion-tab title="Frase" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
       <!-- Tab 2 content -->
-      <div style="margin-top:50px;">
+      <ion-content scroll="true" style="bottom: 0;top: 44px !important;overflow:scroll;">
 
-          <div class="input-container" style="padding:10px;">
-            <label class="item item-input item-floating-label">
-              <span class="input-label">Pergunta de segurança</span>
-              <input type="text" class="input-style" placeholder="Pergunta de segurança" >
-            </label>
-            <label class="item item-input item-floating-label">
-              <span class="input-label">Resposta de segurança</span>
-              <input type="text" class="input-style" placeholder="Resposta de segurança" >
-            </label>
+          <div style="margin-top:30px;">
+
+              <div class="input-container" style="padding:10px;">
+                <label class="item item-input item-floating-label">
+                  <span class="input-label">Pergunta de segurança</span>
+                  <input type="text" class="input-style" placeholder="Pergunta de segurança" >
+                </label>
+                <label class="item item-input item-floating-label">
+                  <span class="input-label">Resposta de segurança</span>
+                  <input type="text" class="input-style" placeholder="Resposta de segurança" >
+                </label>
 
 
+              </div>
           </div>
-      </div>
 
-        <div class="col footer-security">
-          <button ng-click="adicionarConta()" class="item-center button button-clear btn-cadastro">
-            <i class="icon ion-ios-checkmark-empty" style="font-size:30px;"></i>
-          &nbsp;
-            SALVAR
-          </button>
-        </div>
+            <div class="col footer-security">
+              <button ng-click="adicionarConta()" class="item-center button button-clear btn-cadastro">
+                <i class="icon ion-ios-checkmark-empty" style="font-size:30px;"></i>
+              &nbsp;
+                SALVAR
+              </button>
+            </div>
+
+      </ion-content>
 
     </ion-tab>
     <ion-tab title="Pin" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
 
-      <div id="pin" ><div ng-style="{ 'width' : Pin}"></div></div>
+      <ion-content scroll="true" style="bottom: 0;top: 44px !important;overflow:scroll;">
 
-      <div class = "row" style="text-align:center;">
-        <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(1)">1</button></div>
-        <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(2)">2</button></div>
-        <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(3)">3</button></div>
-      </div>
-      <div class = "row" style="text-align:center;">
-        <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(4)">4</button></div>
-        <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(5)">5</button></div>
-        <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(6)">6</button></div>
-      </div>
-      <div class = "row" style="text-align:center;">
-        <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(7)">7</button></div>
-        <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(8)">8</button></div>
-        <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(9)">9</button></div>
-      </div>
-      <div class = "row" style="text-align:center;">
-        <div class="col"><button class="button btn-ellipse" ng-click="limpaTeclado()"><span class="tecladospan">C</span></button></div>
-        <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(0)">0</button></div>
-        <div class="col"><button class="button btn-ellipse" ng-click="delTeclado()"><span class="tecladospan"><</span></button></div>
-      </div>
+          <div id="pin" ><div ng-style="{ 'width' : Pin}"></div></div>
 
-      <div class="col footer-security">
-        <button ng-click="adicionarConta()" class="item-center button button-clear btn-cadastro">
-          <i class="icon ion-ios-checkmark-empty" style="font-size:30px;"></i>
-        &nbsp;
-          SALVAR
-        </button>
-      </div>
+          <div class = "row" style="text-align:center;">
+            <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(1)">1</button></div>
+            <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(2)">2</button></div>
+            <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(3)">3</button></div>
+          </div>
+          <div class = "row" style="text-align:center;">
+            <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(4)">4</button></div>
+            <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(5)">5</button></div>
+            <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(6)">6</button></div>
+          </div>
+          <div class = "row" style="text-align:center;">
+            <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(7)">7</button></div>
+            <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(8)">8</button></div>
+            <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(9)">9</button></div>
+          </div>
+          <div class = "row" style="text-align:center;">
+            <div class="col"><button class="button btn-ellipse" ng-click="limpaTeclado()"><span class="tecladospan">C</span></button></div>
+            <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(0)">0</button></div>
+            <div class="col"><button class="button btn-ellipse" ng-click="delTeclado()"><span class="tecladospan"><</span></button></div>
+          </div>
+
+          <div class="col footer-security">
+            <button ng-click="adicionarConta()" class="item-center button button-clear btn-cadastro">
+              <i class="icon ion-ios-checkmark-empty" style="font-size:30px;"></i>
+            &nbsp;
+              SALVAR
+            </button>
+          </div>
+
+        </ion-content>
 
     </ion-tab>
 
   </ion-tabs>
-</ion-content>
+
   </ion-view>
