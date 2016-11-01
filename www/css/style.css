@@ -735,10 +735,10 @@ label, input, button, select, textarea {
   padding: 0px;
 }
 .head-box.programado > div:nth-child(1){
-  background-color: #7aaed2;
+  background-color: rgba(255, 255, 255, 0.19);
   background-image: none;
   padding: 10px 10px 2px;
-  margin-top: 45px;
+  margin-top: 30px;
   margin-bottom: 15px;
 }
 .head-box.programado {
@@ -1030,4 +1030,86 @@ margin-top: 20px;
 .legal #item-principal > a,
 .ajuda #item-principal > a {
   text-decoration: none;
+}
+.investimentos .dia{
+  color: white;
+  font-size: 12px;
+}
+.investimentos .dia > div:first-child{
+  padding: 17px 5px 0px 0px;
+}
+.investimentos .dia input{
+  margin-left: -13px;
+  background: transparent;
+  text-align: center;
+  font-size: 13px;
+  padding-bottom: 0px;
+  border-bottom: 0px solid white !important;
+  padding-left: 0;
+  margin-top: 6px;
+ }
+.platform-android .investimentos .dia input{
+  margin-top: 11px;
+}
+.list.invest .investimento {
+  margin-left:10px;
+
+}
+.list.invest #item-circle-grey{
+  margin-top:4px;
+}
+
+.list.invest .investimento .valor{
+
+}
+.list.invest .investimento .total{
+  font-size: 15px;
+ }
+.list.invest .investimento .desde{
+  font-size: 12px;
+  font-weight: 200;
+}
+.investimentos .cancelar{
+  padding: 17px 0px 0px 0px;
+  text-align: right;
+  width: 100%;
+  font-size: 10px;
+}
+.cancelar .investimento {
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  line-height: 150%;
+  font-weight: 100;
+}
+.cancelar .investimento .desde{
+  font-size: 18px;
+}
+.cancelar .investimento .total{
+  font-size: 22px;
+  font-weight:400;
+}
+.cancelar .investimento .valor span{
+  font-size: 30px;
+  font-weight:400;
+}
+.cancelar .picture {
+  text-align: center;
+  margin: 32px 5px 5px;
+}
+.add-conta .cancelar-conta {
+  text-align: center;
+  margin: 0px 5px 25px;
+  font-size: 12px;
+  font-weight:400;
+}
+.perfil-perfor .perfil .nivel{
+  position: absolute;
+  width: 100%;
+  padding-right: 30px;
+}
+.perfil-perfor .perfil .nivel > div > div{
+  height:29px;
+  width:40px;
+  margin-right: 1px;
 }

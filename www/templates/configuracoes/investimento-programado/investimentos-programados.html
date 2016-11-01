@@ -1,0 +1,54 @@
+<ion-view view-title="INVESTIMENTO PROGRAMADO" style="background: url(img/perfil-investimento-bg.png) no-repeat center;background-size:cover;" class="arredondamento">
+
+    <div class="head-box" style="padding-top: 48px;    padding-bottom: 40px;">
+      <div class="row" style="margin-bottom: 13px;" >
+        <div class="col-20">
+
+        </div>
+        <div class="col-80">
+          <p>Aumente seu rendimento.</p>
+          <p>Adicione investimentos regulares para sua conta render mais.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:-21px;border-bottom:1px solid #fff;">
+      <span style="font-size:11px;color:#fff;">Investimentos Programados</span>
+    </div>
+
+  <ion-content style="top:187px !important;" >
+      <div class="list invest" >
+
+        <div class="row item" ng-click="editarInvestimento($index,invest.type)" id="item-principal" ng-repeat="invest in $root.user.app.investimentos">
+          <a >
+            <div class="col-20">
+              <div id="item-circle-grey">
+                <i id="item-icon-grey" class="icon ion-ios-arrow-right"></i>
+              </div>
+            </div>
+          </a>
+          <div class="investimento">
+
+            <span class="valor">R$ {{invest.value }}</span>
+            <span class="tipo">{{invest.type === 1 ? 'Diários' : '' || invest.type === 2 ? 'Semanais' : '' || invest.type === 3 ? 'Mensais' : '' }} </span>
+            <div class="desde"> desde {{invest.day | date: 'dd/MM/yyyy'}} <span ng-show="invest.total">= R$ <span class="total">{{invest.total }}</span></span></div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+  </ion-content>
+
+  <ion-footer-bar class="footer-bar-custom" style="">
+    <div class="col" style="padding:30px;">
+      <button ng-click="go('app.adicionar-investimento')" class="item-center button button-clear btn-cadastro">
+        <i class="icon ion-ios-plus-empty" style="font-size:30px;"></i>
+      &nbsp;
+        ADICIONAR INVESTIMENTO
+      </button>
+    </div>
+  </ion-footer-bar>
+
+</ion-view>

@@ -110,9 +110,269 @@ angular.module('starter.controllers', [])
                         name : 'Dinners',
                       number : '4455-5547-9968-2124'
                     }
-                  ]
-    },
-      perfil : 1
+                  ],
+        investimentos : [
+          {
+            id : 0,
+            type : 1,
+            value : '10,00',
+            day :  new Date("October 13, 2016 11:13:00"),
+            total : '150,00'
+          },
+          {
+            id : 1,
+            type : 2,
+            value : '20,00',
+            day :  new Date("October 20, 2016 11:13:00"),
+            total : '60,00'
+          },
+          {
+            id : 2,
+            type : 3,
+            value : '10,00',
+            day :  new Date("November 13, 2016 11:13:00"),
+            total : '0,00'
+          }
+        ],
+        perfil : 1,
+        perfis : [
+          {
+            'nome' : 'Conservador',
+            'nivel' : 1,
+            'desc' : 'Para investidores com capital de investimento',
+            'select' : false,
+            'acoes' :  [
+              {
+                'label': 'Ações de Grandes Companhias',
+                'cor': '#73FF73',
+                'value': 16
+              },
+              {
+                'label': 'Ações de Pequenas Companhias',
+                'cor': '#A3D900',
+                'value': 19
+              },
+              {
+                'label': 'Ações de Mercado Emergente',
+                'cor': '#B973FF',
+                'value': 10
+              },
+              {
+                'label': 'Ações de Mercado Imobiliário',
+                'cor': '#26C9FF',
+                'value': 16
+              },
+              {
+                'label': 'Dívidas Corporativas',
+                'cor': '#FFBF00',
+                'value': 33
+              },
+              {
+                'label': 'Dívidas Públicas',
+                'cor': '#FF5C26',
+                'value': 6
+              }
+            ]
+
+          },
+          {
+            'nome' : 'Conservador/Moderado',
+            'nivel' : 2,
+            'desc' : 'Para investidores com capital de investimento',
+            'select' : false,
+            'acoes' :  [
+              {
+                'label': 'Ações de Grandes Companhias',
+                'cor': '#73FF73',
+                'value': 14
+              },
+              {
+                'label': 'Ações de Pequenas Companhias',
+                'cor': '#A3D900',
+                'value': 15
+              },
+              {
+                'label': 'Ações de Mercado Emergente',
+                'cor': '#B973FF',
+                'value': 8
+              },
+              {
+                'label': 'Ações de Mercado Imobiliário',
+                'cor': '#26C9FF',
+                'value': 14
+              },
+              {
+                'label': 'Dívidas Corporativas',
+                'cor': '#FFBF00',
+                'value': 23
+              },
+              {
+                'label': 'Dívidas Públicas',
+                'cor': '#FF5C26',
+                'value': 26
+              }
+            ]
+
+          },
+          {
+            'nome' : 'Moderado',
+            'nivel' : 3,
+            'desc' : 'Para investidores com capital de investimento',
+            'select' : false,
+            'acoes' :  [
+              {
+                'label': 'Ações de Grandes Companhias',
+                'cor': '#73FF73',
+                'value': 16
+              },
+              {
+                'label': 'Ações de Pequenas Companhias',
+                'cor': '#A3D900',
+                'value': 19
+              },
+              {
+                'label': 'Ações de Mercado Emergente',
+                'cor': '#B973FF',
+                'value': 10
+              },
+              {
+                'label': 'Ações de Mercado Imobiliário',
+                'cor': '#26C9FF',
+                'value': 16
+              },
+              {
+                'label': 'Dívidas Corporativas',
+                'cor': '#FFBF00',
+                'value': 20
+              },
+              {
+                'label': 'Dívidas Públicas',
+                'cor': '#FF5C26',
+                'value': 19
+              }
+            ]
+
+          },
+          {
+            'nome' : 'Moderado/Agressivo',
+            'nivel' : 4,
+            'desc' : 'Para investidores com capital de investimento',
+            'select' : false,
+            'acoes' :  [
+              {
+                'label': 'Ações de Grandes Companhias',
+                'cor': '#73FF73',
+                'value': 13
+              },
+              {
+                'label': 'Ações de Pequenas Companhias',
+                'cor': '#A3D900',
+                'value': 25
+              },
+              {
+                'label': 'Ações de Mercado Emergente',
+                'cor': '#B973FF',
+                'value': 14
+              },
+              {
+                'label': 'Ações de Mercado Imobiliário',
+                'cor': '#26C9FF',
+                'value': 22
+              },
+              {
+                'label': 'Dívidas Corporativas',
+                'cor': '#FFBF00',
+                'value': 13
+              },
+              {
+                'label': 'Dívidas Públicas',
+                'cor': '#FF5C26',
+                'value': 13
+              }
+            ]
+
+          },
+          {
+            'nome' : 'Agressivo',
+            'nivel' : 5,
+            'desc' : 'Para investidores com capital de investimento',
+            'select' : false,
+            'acoes' :  [
+              {
+                'label': 'Ações de Grandes Companhias',
+                'cor': '#73FF73',
+                'value': 14
+              },
+              {
+                'label': 'Ações de Pequenas Companhias',
+                'cor': '#A3D900',
+                'value': 25
+              },
+              {
+                'label': 'Ações de Mercado Emergente',
+                'cor': '#B973FF',
+                'value': 20
+              },
+              {
+                'label': 'Ações de Mercado Imobiliário',
+                'cor': '#26C9FF',
+                'value': 30
+              },
+              {
+                'label': 'Dívidas Corporativas',
+                'cor': '#FFBF00',
+                'value': 6
+              },
+              {
+                'label': 'Dívidas Públicas',
+                'cor': '#FF5C26',
+                'value': 5
+              }
+            ]
+
+          },
+          {
+            'nome' : 'Investir em StartUps',
+            'nivel' : 6,
+            'desc' : 'StartUps High Tech',
+            'select' : false,
+            'acoes' :  [
+              {
+                'label': 'Ações de Grandes Companhias',
+                'cor': '#73FF73',
+                'value': 16
+              },
+              {
+                'label': 'Ações de Pequenas Companhias',
+                'cor': '#A3D900',
+                'value': 19
+              },
+              {
+                'label': 'Ações de Mercado Emergente',
+                'cor': '#B973FF',
+                'value': 10
+              },
+              {
+                'label': 'Ações de Mercado Imobiliário',
+                'cor': '#26C9FF',
+                'value': 16
+              },
+              {
+                'label': 'Dívidas Corporativas',
+                'cor': '#FFBF00',
+                'value': 33
+              },
+              {
+                'label': 'Dívidas Públicas',
+                'cor': '#FF5C26',
+                'value': 6
+              }
+            ]
+
+          }
+        ]
+      }
+
     };
 
     $scope.openPopover = function($event,tipo) {
@@ -392,14 +652,14 @@ angular.module('starter.controllers', [])
 
     $scope.acoes =  [
           {
-            'label': 'Ações de Grandes Companias',
+            'label': 'Ações de Grandes Companhias',
             'cor': '#73FF73',
             'acoes': '1.000',
             'percent': '16%',
             'value': 'R$2,00'
           },
           {
-            'label': 'Ações de Pequenas Companias',
+            'label': 'Ações de Pequenas Companhias',
             'cor': '#A3D900',
             'acoes': '2.000',
             'percent': '19%',
@@ -619,7 +879,7 @@ angular.module('starter.controllers', [])
       {
         'id': 1,
         'label': 'R$ 4,64 Starbucks',
-        'date': '2016-10-25T12:31:16.062Z',
+        'date': '2016-11-25T12:31:16.062Z',
         'signal': '+',
         'status': 0,
         'value': '0,36'
@@ -627,7 +887,7 @@ angular.module('starter.controllers', [])
       {
         'id': 2,
         'label': 'R$ 5,03 Extra',
-        'date': '2016-10-25T12:31:16.062Z',
+        'date': '2016-11-25T12:31:16.062Z',
         'signal': '+',
         'status': 0,
         'value': '0,97'
@@ -635,7 +895,7 @@ angular.module('starter.controllers', [])
       {
         'id': 3,
         'label': 'R$ 4,13 Padoca Gold',
-        'date': '2016-10-25T12:31:16.062Z',
+        'date': '2016-11-25T12:31:16.062Z',
         'signal': '-',
         'status': 0,
         'value': '0,87'
@@ -643,7 +903,7 @@ angular.module('starter.controllers', [])
       {
         'id': 4,
         'label': 'R$ 4,64 Lojas Riachuelo',
-        'date': '2016-10-25T12:31:16.062Z',
+        'date': '2016-11-25T12:31:16.062Z',
         'signal': '+',
         'status': 0,
         'value': '0,36'
@@ -651,7 +911,7 @@ angular.module('starter.controllers', [])
       {
         'id': 5,
         'label': 'R$ 4,64 Kabum Eletrônicos',
-        'date': '2016-10-25T12:31:16.062Z',
+        'date': '2016-11-25T12:31:16.062Z',
         'signal': '-',
         'status': 0,
         'value': '0,36'
@@ -659,7 +919,7 @@ angular.module('starter.controllers', [])
       {
         'id': 6,
         'label': 'R$ 4,64 Starbucks',
-        'date': '2016-10-25T12:31:16.062Z',
+        'date': '2016-11-25T12:31:16.062Z',
         'signal': '+',
         'status': 0,
         'value': '0,36'
@@ -667,7 +927,7 @@ angular.module('starter.controllers', [])
       {
         'id': 7,
         'label': 'R$ 4,64 Starbucks',
-        'date': '2016-10-25T12:31:16.062Z',
+        'date': '2016-11-25T12:31:16.062Z',
         'signal': '+',
         'status': 1,
         'value': '0,36'
@@ -675,7 +935,7 @@ angular.module('starter.controllers', [])
       {
         'id': 8,
         'label': 'R$ 4,64 Starbucks',
-        'date': '2016-10-25T12:31:16.062Z',
+        'date': '2016-11-25T12:31:16.062Z',
         'signal': '+',
         'status': 1,
         'value': '0,36'
@@ -724,40 +984,42 @@ angular.module('starter.controllers', [])
         'id': 1,
         'nome': 'Antonio Cezar',
         'fone': '(11) 99855-6658',
-        'foto': 'img/avatar1.png'
+        'foto': '../img/avatar1.png'
       },
       {
         'id': 2,
         'nome': 'Debora Silva',
         'fone': '(11) 99855-6658',
-        'foto': 'img/avatar2.png'
+        'foto': '../img/avatar2.png'
       },
       {
         'id': 3,
         'nome': 'Lucia Ka',
         'fone': '(11) 99855-6658',
-        'foto': 'img/avatar3.png'
+        'foto': '../img/avatar3.png'
       },
       {
         'id': 4,
         'nome': 'Antonio Cezar',
         'fone': '(11) 99855-6658',
-        'foto': 'img/avatar1.png'
+        'foto': '../img/avatar1.png'
       },
       {
         'id': 5,
         'nome': 'Debora Silva',
         'fone': '(11) 99855-6658',
-        'foto': 'img/avatar2.png'
+        'foto': '../img/avatar2.png'
       },
       {
         'id': 6,
         'nome': 'Lucia Ka',
         'fone': '(11) 99855-6658',
-        'foto': 'img/avatar3.png'
+        'foto': '../img/avatar3.png'
       }
     ];
+
     $scope.Contato = {};
+
     $scope.recomendarAmigo = function(id){
 
       $scope.Formulario = 1;
@@ -796,23 +1058,77 @@ angular.module('starter.controllers', [])
       };
   })
 
-  .controller('programadoCtrl', function($scope, $ionicModal, $timeout, $state) {
+  .controller('programadoCtrl', function($scope, $ionicModal, $timeout, $state, $stateParams) {
 
     $scope.$root.user.app.estado = $state.current.name;
 
-    $scope.Periodo = 1;
+    $scope.Id = $stateParams.id || null;
 
-    $scope.Valor = '0,00';
+    $scope.dia = new Date();
+
+    if ( $scope.Id === null ){
+
+      $scope.investimento = {
+        id : $scope.$root.user.app.investimentos[$scope.$root.user.app.investimentos.length - 1].id +1 || 0,
+        type : 1,
+        value : '0,00',
+        day : new Date()
+      };
+
+    } else {
+
+      $scope.investimento = {
+        id    : $scope.$root.user.app.investimentos[$scope.Id].id,
+        type  : $scope.$root.user.app.investimentos[$scope.Id].type,
+        value : $scope.$root.user.app.investimentos[$scope.Id].value,
+        day   : $scope.$root.user.app.investimentos[$scope.Id].day
+      };
+
+    }
 
     $scope.Cursor = 0;
 
     $scope.selecionaPeriodo = function(value){
-      $scope.Periodo = value;
+
+      $scope.investimento.type = parseInt(value);
+
     };
+
+    $scope.salvarInvestimento = function (){
+
+      var obj = {
+        id    : $scope.investimento.id,
+        type  : $scope.investimento.type,
+        value : $scope.investimento.value,
+        day   : $scope.investimento.day
+      };
+
+      if ( $scope.Id === null ){
+
+        $scope.$root.user.app.investimentos.push(obj);
+
+      } else {
+
+        $scope.$root.user.app.investimentos[$scope.Id] = obj;
+
+      }
+
+      $state.go('app.investimento-programado');
+
+    };
+
+    $scope.cancelarInvestimento = function (index){
+
+        console.log(index);
+
+        $state.go('app.cancelar-investimento', {id: index});
+
+    };
+
 
     $scope.delTeclado = function(value){
 
-      var vlr = $scope.Valor.toString();
+      var vlr = $scope.investimento.value.toString();
 
       vlr = vlr.replace(',','');
 
@@ -844,16 +1160,13 @@ angular.module('starter.controllers', [])
 
       }
 
-      $scope.Valor = vlr.substring(0, vlr.length - 2)+',' + vlr.substring(vlr.length - 2, vlr.length);
-
-
-
+      $scope.investimento.value = vlr.substring(0, vlr.length - 2)+',' + vlr.substring(vlr.length - 2, vlr.length);
 
     };
 
     $scope.clicaTeclado = function(value){
 
-      var vlr = $scope.Valor.toString();
+      var vlr = $scope.investimento.value.toString();
 
       vlr = vlr.replace(',','');
 
@@ -861,7 +1174,7 @@ angular.module('starter.controllers', [])
 
       $scope.Cursor++;
 
-      $scope.Valor = vlr.substring(0, vlr.length - 2)+',' + vlr.substring(vlr.length - 2, vlr.length);
+      $scope.investimento.value = vlr.substring(0, vlr.length - 2)+',' + vlr.substring(vlr.length - 2, vlr.length);
 
     };
 
@@ -895,9 +1208,43 @@ angular.module('starter.controllers', [])
 
     $scope.limpaTeclado = function(){
 
-      $scope.Valor = '0,00';
+      $scope.investimento.value = '0,00';
 
       $scope.Cursor = 0;
+
+    };
+
+  })
+
+  .controller('investimentosCtrl', function($scope, $ionicModal, $timeout, $state) {
+
+    $scope.$root.user.app.estado = $state.current.name;
+
+    $scope.investimento = null;
+
+    $scope.editarInvestimento = function (index){
+
+      $scope.investimento = index;
+
+      $state.go('app.adicionar-investimento', {id: index});
+
+    };
+
+  })
+
+  .controller('cancelarInvestimentoCtrl', function($scope, $state, $stateParams) {
+
+    $scope.$root.user.app.estado = $state.current.name;
+
+    $scope.Id = parseInt($stateParams.id);
+
+    $scope.cancelar = $scope.$root.user.app.investimentos[$scope.Id];
+
+    $scope.cancelarInvestimento = function (){
+
+      $scope.$root.user.app.investimentos.splice($scope.Id,1);
+
+      $state.go('app.investimento-programado');
 
     };
 
@@ -1200,217 +1547,45 @@ angular.module('starter.controllers', [])
 
   })
 
+  .controller('cancelarContaCtrl', function($scope, $state, $stateParams) {
+
+    $scope.$root.user.app.estado = $state.current.name;
+
+    $scope.Id = parseInt($stateParams.id);
+
+    $scope.cancelar = $scope.$root.user.app.cartoes[$scope.Id];
+
+    $scope.cancelarConta = function (){
+
+      $scope.$root.user.app.cartoes.splice($scope.Id,1);
+
+      $state.go('app.arredondamentos');
+
+    };
+
+  })
+
+  .controller('adicionarContaCtrl', function($scope, $state, $stateParams) {
+
+    $scope.$root.user.app.estado = $state.current.name;
+
+    $scope.conta = parseInt($stateParams.id);
+
+    $scope.cancelar = $scope.$root.user.app.cartoes[$scope.conta];
+
+    $scope.cancelarConta = function (){
+
+      $state.go('app.cancelar-conta', {id: $scope.conta});
+
+    };
+
+  })
+
   .controller('perfilCtrl', function($scope, $state) {
 
     $scope.$root.user.app.estado = $state.current.name;
 
-    $scope.detalharAcao = function (perfil,id) {
-
-
-
-      console.log($scope.perfis[perfil].acoes[id]);
-
-    };
-
-    $scope.perfis = [
-      {
-        'nome' : 'Conservador',
-        'nivel' : 1,
-        'desc' : 'Para investidores com capital de investimento',
-        'select' : false,
-        'acoes' :  [
-          {
-            'label': 'Ações de Grandes Companias',
-            'cor': '#73FF73',
-            'value': 16
-          },
-          {
-            'label': 'Ações de Pequenas Companias',
-            'cor': '#A3D900',
-            'value': 19
-          },
-          {
-            'label': 'Ações de Mercado Emergente',
-            'cor': '#B973FF',
-            'value': 10
-          },
-          {
-            'label': 'Ações de Mercado Imobiliário',
-            'cor': '#26C9FF',
-            'value': 16
-          },
-          {
-            'label': 'Dívidas Corporativas',
-            'cor': '#FFBF00',
-            'value': 33
-          },
-          {
-            'label': 'Dívidas Públicas',
-            'cor': '#FF5C26',
-            'value': 6
-          }
-        ]
-
-      },
-      {
-        'nome' : 'Conservador/Moderado',
-        'nivel' : 2,
-        'desc' : 'Para investidores com capital de investimento',
-        'select' : false,
-        'acoes' :  [
-          {
-            'label': 'Ações de Grandes Companias',
-            'cor': '#73FF73',
-            'value': 14
-          },
-          {
-            'label': 'Ações de Pequenas Companias',
-            'cor': '#A3D900',
-            'value': 15
-          },
-          {
-            'label': 'Ações de Mercado Emergente',
-            'cor': '#B973FF',
-            'value': 8
-          },
-          {
-            'label': 'Ações de Mercado Imobiliário',
-            'cor': '#26C9FF',
-            'value': 14
-          },
-          {
-            'label': 'Dívidas Corporativas',
-            'cor': '#FFBF00',
-            'value': 23
-          },
-          {
-            'label': 'Dívidas Públicas',
-            'cor': '#FF5C26',
-            'value': 26
-          }
-        ]
-
-      },
-      {
-        'nome' : 'Moderado',
-        'nivel' : 3,
-        'desc' : 'Para investidores com capital de investimento',
-        'select' : false,
-        'acoes' :  [
-          {
-            'label': 'Ações de Grandes Companias',
-            'cor': '#73FF73',
-            'value': 16
-          },
-          {
-            'label': 'Ações de Pequenas Companias',
-            'cor': '#A3D900',
-            'value': 19
-          },
-          {
-            'label': 'Ações de Mercado Emergente',
-            'cor': '#B973FF',
-            'value': 10
-          },
-          {
-            'label': 'Ações de Mercado Imobiliário',
-            'cor': '#26C9FF',
-            'value': 16
-          },
-          {
-            'label': 'Dívidas Corporativas',
-            'cor': '#FFBF00',
-            'value': 20
-          },
-          {
-            'label': 'Dívidas Públicas',
-            'cor': '#FF5C26',
-            'value': 19
-          }
-        ]
-
-      },
-      {
-        'nome' : 'Moderado/Agressivo',
-        'nivel' : 4,
-        'desc' : 'Para investidores com capital de investimento',
-        'select' : false,
-        'acoes' :  [
-          {
-            'label': 'Ações de Grandes Companias',
-            'cor': '#73FF73',
-            'value': 13
-          },
-          {
-            'label': 'Ações de Pequenas Companias',
-            'cor': '#A3D900',
-            'value': 25
-          },
-          {
-            'label': 'Ações de Mercado Emergente',
-            'cor': '#B973FF',
-            'value': 14
-          },
-          {
-            'label': 'Ações de Mercado Imobiliário',
-            'cor': '#26C9FF',
-            'value': 22
-          },
-          {
-            'label': 'Dívidas Corporativas',
-            'cor': '#FFBF00',
-            'value': 13
-          },
-          {
-            'label': 'Dívidas Públicas',
-            'cor': '#FF5C26',
-            'value': 13
-          }
-        ]
-
-      },
-      {
-        'nome' : 'Agressivo',
-        'nivel' : 5,
-        'desc' : 'Para investidores com capital de investimento',
-        'select' : false,
-        'acoes' :  [
-          {
-            'label': 'Ações de Grandes Companias',
-            'cor': '#73FF73',
-            'value': 14
-          },
-          {
-            'label': 'Ações de Pequenas Companias',
-            'cor': '#A3D900',
-            'value': 25
-          },
-          {
-            'label': 'Ações de Mercado Emergente',
-            'cor': '#B973FF',
-            'value': 20
-          },
-          {
-            'label': 'Ações de Mercado Imobiliário',
-            'cor': '#26C9FF',
-            'value': 30
-          },
-          {
-            'label': 'Dívidas Corporativas',
-            'cor': '#FFBF00',
-            'value': 6
-          },
-          {
-            'label': 'Dívidas Públicas',
-            'cor': '#FF5C26',
-            'value': 5
-          }
-        ]
-
-      }
-    ];
-
-    $scope.perfil = $scope.perfis[0];
+    $scope.perfil = $scope.$root.user.app.perfis[$scope.$root.user.app.perfil];
 
     $scope.perfilIndex = 0;
 
@@ -1432,6 +1607,12 @@ angular.module('starter.controllers', [])
         unidade = null,
         invLen = null;
 
+    $scope.detalharAcao = function (perfil,id) {
+
+      console.log($scope.$root.user.app.perfis[perfil].acoes[id]);
+
+    };
+
     $scope.gerarDados = function (idade) {
 
       for ( i; i <= (idade + 13) ; i ++ ){
@@ -1451,8 +1632,6 @@ angular.module('starter.controllers', [])
         $scope.graphData.push(i * parseFloat(mensal) * 0.0012);
 
       }
-
-      console.log($scope.graphData);
 
       total = $scope.graphData.reduce(function(a, b){return a+b;}) * 10000;
 
@@ -1478,14 +1657,29 @@ angular.module('starter.controllers', [])
 
     $scope.gerarDados($scope.idade);
 
+    $scope.mudarPerfil = function (id) {
+
+      $scope.perfilIndex = id;
+
+      $scope.perfil = $scope.$root.user.app.perfis[$scope.perfilIndex];
+
+      $scope.perfilGraficoPie();
+
+    };
+
     $scope.proximoPerfil = function () {
 
-      if($scope.perfilIndex == $scope.perfis.length -1){
+      if($scope.perfilIndex == $scope.$root.user.app.perfis.length -1){
+
         $scope.perfilIndex = 0;
+
       }else {
+
         $scope.perfilIndex++;
+
       }
-      $scope.perfil = $scope.perfis[$scope.perfilIndex];
+      
+      $scope.perfil = $scope.$root.user.app.perfis[$scope.perfilIndex];
 
       $scope.perfilGraficoPie();
 
@@ -1494,11 +1688,11 @@ angular.module('starter.controllers', [])
     $scope.anteriorPerfil = function () {
 
       if($scope.perfilIndex == 0){
-        $scope.perfilIndex = $scope.perfis.length - 1;
+        $scope.perfilIndex = $scope.$root.user.app.perfis.length - 1;
       }else {
         $scope.perfilIndex--;
       }
-      $scope.perfil = $scope.perfis[$scope.perfilIndex];
+      $scope.perfil = $scope.$root.user.app.perfis[$scope.perfilIndex];
 
       $scope.perfilGraficoPie();
 
@@ -1612,13 +1806,30 @@ angular.module('starter.controllers', [])
 
     };
 
-    $scope.go = function (destino){
+    $scope.selecionarPerfil = function (){
 
-      $state.go(destino);
+      $state.go('app.selecionar-perfil', {id: $scope.perfilIndex});
 
     };
 
 
+  })
+
+  .controller('selecionarPerfilCtrl', function($scope, $state, $stateParams) {
+
+    $scope.$root.user.app.estado = $state.current.name;
+
+    $scope.Id = parseInt($stateParams.id);
+
+    $scope.perfil = $scope.$root.user.app.perfis[$scope.Id];
+
+    $scope.selecionarPerfil = function (){
+
+      $scope.$root.user.app.perfil = $scope.Id;
+
+      $state.go('app.perfil');
+
+    };
 
   })
 

@@ -1,26 +1,36 @@
-<ion-view view-title="INVESTIMENTO PROGRAMADO" style="background: url(img/perfil-investimento-bg.png) no-repeat center;background-size:cover;">
-<div class="head-box programado">
+<ion-view view-title="{{Id == null ? 'ADICIONAR' : 'EDITAR'}} INVESTIMENTO" style="background: url(img/perfil-investimento-bg.png) no-repeat center;background-size:cover;" class="investimentos">
+<div class="head-box programado" style="padding-bottom: 8px;">
 
   <div class="row">
-    <span style="font-size:16px;color:#dce8ef;text-align:right;width: 40%;padding-top: 5px;font-weight: 400;">VALOR A<br>
+    <span style="font-size:16px;color:#dce8ef;text-align:right;width: 30%;padding-top: 5px;font-weight: 400;">VALOR A<br>
       INVESTIR</span> <span style="font-size:18px;color:#fff;padding-left:10px;">
       <h3 style="font-weight: 300;color: #fff;"><span style="font-size:25px;">R$</span>
-        <span style="font-size:40px;" >{{Valor}}</span>
+        <span style="font-size:40px;" >{{investimento.value}} </span>
       </h3>
     </span>
   </div>
 
   <div class="row periodo">
-    <div ng-click="selecionaPeriodo(1)" ng-class="Periodo === 1 ? 'periodoactive' : '' ">
+    <div ng-click="selecionaPeriodo(1)" ng-class="investimento.type === 1 ? 'periodoactive' : '' "  >
       DIÁRIO
     </div>
-    <div ng-click="selecionaPeriodo(2)" ng-class="Periodo === 2 ? 'periodoactive' : ''">
+    <div ng-click="selecionaPeriodo(2)" ng-class="investimento.type === 2 ? 'periodoactive' : ''">
       SEMANAL
     </div>
-    <div ng-click="selecionaPeriodo(3)" ng-class="Periodo === 3 ? 'periodoactive' : ''">
+    <div ng-click="selecionaPeriodo(3)" ng-class="investimento.type === 3 ? 'periodoactive' : ''">
       MENSAL
     </div>
   </div>
+  <div class="row dia">
+    <div>Início</div>
+    <div>
+      <input type="date" ng-model="investimento.day" >
+    </div>
+    <div class="cancelar" ng-show="Id" ng-click="cancelarInvestimento(Id)">
+      {{Id == null ? '' : 'Cancelar investimento'}}
+    </div>
+  </div>
+
 
 </div>
 
@@ -51,7 +61,7 @@
 
 <div class="row" style="text-align:center;margin-top:20px;">
   <div class="col">
-    <button class="button button-positive btn-perfil"  style="position: absolute;bottom: 20px;left: 20px;width: 87%;">
+    <button class="button button-positive btn-perfil"  style="position: absolute;bottom: 20px;left: 20px;width: 87%;" ng-click="salvarInvestimento()">
       PROGRAMAR INVESTIMENTO
   </button>
 </div>

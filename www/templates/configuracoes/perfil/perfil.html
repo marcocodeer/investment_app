@@ -2,9 +2,19 @@
 
       <div class="head-box" >
 
-        <div class="column perfil"  >
+        <div class="column perfil" >
 
-          <img ng-src="{{'img/perfil-bg' + perfil.nivel + '.png'}}" alt="" />
+          <div class="nivel">
+
+            <div class="row" style="margin: 0 auto;width: 253px;">
+
+              <div ng-click="mudarPerfil(perfil.nivel - 1)" ng-repeat="perfil in $root.user.app.perfis"></div>
+
+            </div>
+
+          </div>
+
+          <img ng-src="{{'img/perfil-bg' + perfil.nivel + '.png'}}" alt=""  style="background: url(img/perfil-bg.png) no-repeat"/>
 
           <p class="perfil-tit"  >
             <img ng-src="img/bt-arrow-left.png" alt=""  ng-click="anteriorPerfil()"/>
@@ -74,7 +84,7 @@
   </ion-slide-box>
 
   <div style="text-align:center;margin:15px;">
-    <button  class="button button-block btn-cadastro">
+    <button  class="button button-block btn-cadastro" ng-click="selecionarPerfil()">
       <i class="icon ion-ios-checkmark-empty" style="font-size:30px;"></i>
     &nbsp;
     ESCOLHER ESTE PERFIL
