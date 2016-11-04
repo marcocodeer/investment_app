@@ -1102,26 +1102,7 @@ angular.module('starter.controllers', [])
 
   })
 
-<<<<<<< HEAD
-  .controller('programadoCtrl', function($scope, $ionicModal, $timeout, $state) {
-=======
-  .controller('loginCtrl', function($scope, $ionicModal, $timeout, $state) {
-
-    $scope.$root.user.app.estado = $state.current.name;
-
-    $scope.resetPass = function(){
-        $state.go('resetar-senha');
-      };
-      $scope.SendSucessPass = function(){
-        $state.go('sucesso-senha');
-      };
-      $scope.login = function(){
-        $state.go('login');
-      };
-  })
-
   .controller('programadoCtrl', function($scope, $ionicModal, $timeout, $state, $stateParams) {
->>>>>>> 3d6326e108d7bccb7825ec892df55aa117d052ff
 
     $scope.$root.user.app.estado = $state.current.name;
 
