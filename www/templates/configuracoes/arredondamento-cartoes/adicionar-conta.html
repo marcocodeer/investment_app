@@ -1,21 +1,23 @@
-<ion-view view-title="{{conta == null ? 'ADICIONAR' : 'EDITAR'}} CONTA" style="background: url(img/login-bg-acorn.png) no-repeat center;background-size:cover;height:100%;"  class="arredondamento">
+<ion-view view-title="{{conta == null ? 'ADICIONAR' : 'EDITAR'}} CONTA" style="background: url(img/login-bg-acorn.png) no-repeat center;background-size:cover;height:100%;"  class="arredondamento add-conta">
 
     <div class="col-100" style="margin-left:30px;margin-top:50px;">
         <label class="item item-input item-floating-label">
           <span class="input-label">Bandeira</span>
-          <input type="text" placeholder="Bandeira" class="input-style" ng-model="bandeiras[conta].name">
+          <input type="text" placeholder="Bandeira" class="input-style" ng-model="$root.user.app.cartoes[conta].name">
         </label>
         <label class="item item-input item-floating-label">
           <span class="input-label">Número do Cartão</span>
-          <input type="text" placeholder="Número do Cartão" class="input-style" ng-model="bandeiras[conta].number">
+          <input type="text" placeholder="Número do Cartão" class="input-style" ng-model="$root.user.app.cartoes[conta].number">
         </label>
         <label class="item item-input item-floating-label">
           <span class="input-label">Senha</span>
           <input type="password" placeholder="Senha" class="input-style">
         </label>
     </div>
-  <ion-footer-bar class="footer-bar-custom" style="">
+  <ion-footer-bar class="footer-bar-custom" style="height: 138px;">
     <div class="col" style="padding:30px;">
+      <div class="cancelar-conta" ng-click="cancelarConta()" ng-show="conta">Excluir Conta</div>
+
       <button ng-click="go('app.arredondamentos')" class="item-center button button-clear btn-cadastro">
         <i class="icon ion-ios-checkmark-empty" style="font-size:30px;"></i>
       &nbsp;

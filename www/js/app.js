@@ -172,7 +172,16 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers', 'ngCordov
     views: {
       'menuContent': {
         templateUrl: 'templates/configuracoes/arredondamento-cartoes/adicionar-conta.html',
-        controller: 'contasCtrl'
+        controller: 'adicionarContaCtrl'
+      }
+    }
+  })
+  .state('app.cancelar-conta', {
+    url: '/conf/cancelar-conta/:id',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/configuracoes/arredondamento-cartoes/cancelar-conta.html',
+        controller: 'cancelarContaCtrl'
       }
     }
   })
@@ -185,7 +194,6 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers', 'ngCordov
       }
     }
   })
-
   .state('app.conta-bancaria', {
     url: '/conf/conta-bancaria',
     views: {
@@ -195,7 +203,6 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers', 'ngCordov
       }
     }
   })
-
   .state('app.notificacoes', {
     url: '/conf/notificacoes',
     views: {
@@ -204,7 +211,6 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers', 'ngCordov
       }
     }
   })
-
   .state('app.dados-usuario', {
     url: '/conf/dados-perfil',
     views: {
@@ -214,7 +220,6 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers', 'ngCordov
       }
     }
   })
-
   .state('app.seguranca', {
     url: '/conf/seguranca',
     views: {
@@ -314,6 +319,15 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers', 'ngCordov
         }
       }
     })
+    .state('app.selecionar-perfil', {
+      url: '/config/selecionar-perfil/:id',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/configuracoes/perfil/selecionar-perfil.html',
+          controller: 'selecionarPerfilCtrl'
+        }
+      }
+    })
     .state('app.perfil-sem-info', {
       url: '/config/perfil-vazio',
       views: {
@@ -381,11 +395,29 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers', 'ngCordov
       url: '/conf/investimento-programado',
       views: {
         'menuContent': {
-          templateUrl: 'templates/configuracoes/investimento-programado/investimento-programado.html',
+          templateUrl: 'templates/configuracoes/investimento-programado/investimentos-programados.html',
+          controller: 'investimentosCtrl'
+        }
+      }
+    })
+    .state('app.adicionar-investimento', {
+      url: '/conf/adicionar-investimento/:id',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/configuracoes/investimento-programado/adicionar-investimento.html',
           controller: 'programadoCtrl'
         }
       }
-    });
+    })
+    .state('app.cancelar-investimento', {
+    url: '/conf/cancelar-investimento/:id',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/configuracoes/investimento-programado/cancelar-investimento.html',
+        controller: 'cancelarInvestimentoCtrl'
+      }
+    }
+  });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');
 });

@@ -1,0 +1,39 @@
+<ion-view view-title="CANCELAR CONTA" style="background: url(img/perfil-investimento-bg.png) no-repeat center;background-size:cover;" class="arredondamento cancelar">
+
+    <div class="head-box" style="padding-top: 48px;    padding-bottom: 6px;">
+      <div class="row" style="margin-bottom: 13px;" >
+        <div class="col-20">
+
+        </div>
+        <div class="col-80">
+          <p>Confirmar cancelamento.</p>
+          <p>Tem certeza que deseja cancelar esta conta de arredondamento?</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="picture">
+
+      <img src="img/popover-pic8.png"/>
+
+    </div>
+
+    <div class="investimento">
+
+      <div>Bandeira <span class="valor" style="font-weight: 400;">{{cancelar.name }}</span></div>
+
+      <div># <span class="valor" style="font-weight: 400;">{{cancelar.number }}</span></div>
+
+    </div>
+
+  <ion-footer-bar class="footer-bar-custom" style="">
+    <div class="col" style="padding:30px;">
+      <button ng-click="cancelarConta()" class="item-center button button-clear btn-cadastro">
+        <i class="icon ion-ios-close-empty" style="font-size:30px;"></i>
+      &nbsp;
+        CANCELAR CONTA
+      </button>
+    </div>
+  </ion-footer-bar>
+
+</ion-view>
