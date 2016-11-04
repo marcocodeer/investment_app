@@ -4,11 +4,74 @@
   }
 </style>
 <ion-popover-view  class="popover-style">
-  <div style="z-index: 1;margin-top:-23px;">
-      <img ng-show="$root.user.app.notificacao && ['app.perfil','app.historico', 'app.ver-saldo', 'app.performance', 'app.movimentar-saldo'].indexOf($root.user.app.estado)!=-1"  src="img/popover-arrow.png" alt="" style="position:absolute;left:81%;display:block;"/>
-      <img ng-hide="$root.user.app.notificacao && ['app.perfil','app.historico', 'app.ver-saldo', 'app.performance', 'app.movimentar-saldo'].indexOf($root.user.app.estado)!=-1"  src="img/popover-arrow.png" alt="" style="position:absolute;left:91%;display:block;"/>
-  </div>
 
+  <!-- DADOS USUARIO -->
+  <div ng-show="$root.user.app.estado === 'app.dados-usuario' && $root.user.app.notificacao === false" id="tour-dados">
+    <div ng-if="perguntaPopover == 1" class="list row popoverquestion2" style="overflow:scroll;">
+      <div class="col-25 selecionarUF">
+        <p ng-click="mudaUF('AC')">AC</p>
+        <p ng-click="mudaUF('AL')">AL</p>
+        <p ng-click="mudaUF('AP')">AP</p>
+        <p ng-click="mudaUF('AM')">AM</p>
+        <p ng-click="mudaUF('BA')">BA</p>
+        <p ng-click="mudaUF('CE')">CE</p>
+        <p ng-click="mudaUF('DF')">DF</p>
+      </div>
+      <div class="col-25 selecionarUF">
+        <p ng-click="mudaUF('ES')">ES</p>
+        <p ng-click="mudaUF('GO')">GO</p>
+        <p ng-click="mudaUF('MA')">MA</p>
+        <p ng-click="mudaUF('MA')">MA</p>
+        <p ng-click="mudaUF('MT')">MT</p>
+        <p ng-click="mudaUF('MS')">MS</p>
+        <p ng-click="mudaUF('MG')">MG</p>
+
+      </div>
+      <div class="col-25 selecionarUF">
+        <p ng-click="mudaUF('PA')">PA</p>
+        <p ng-click="mudaUF('PB')">PB</p>
+        <p ng-click="mudaUF('PR')">PR</p>
+        <p ng-click="mudaUF('PE')">PE</p>
+        <p ng-click="mudaUF('PI')">PI</p>
+        <p ng-click="mudaUF('RJ')">RJ</p>
+        <p ng-click="mudaUF('RN')">RN</p>
+      </div>
+      <div class="col-25 selecionarUF">
+        <p ng-click="mudaUF('RS')">RS</p>
+        <p ng-click="mudaUF('RO')">RO</p>
+        <p ng-click="mudaUF('RR')">RR</p>
+        <p ng-click="mudaUF('SC')">SC</p>
+        <p ng-click="mudaUF('SP')">SP</p>
+        <p ng-click="mudaUF('SE')">SE</p>
+        <p ng-click="mudaUF('TO')">TO</p>
+      </div>
+    </div>
+    <div ng-if="perguntaPopover == 2" class="list popoverquestion2">
+        <p ng-click="mudaEmprego('Estudante')">Estudante</p>
+        <p ng-click="mudaEmprego('Empregado')">Empregado</p>
+        <p ng-click="mudaEmprego('Desempregado')">Desempregado</p>
+    </div>
+    <div ng-if="perguntaPopover == 3" class="list popoverquestion2">
+        <p ng-click="mudaBens('Menos de R$10 mil')">Menos de R$10 mil</p>
+        <p ng-click="mudaBens('Até de R$30 mil')">Até de R$30 mil</p>
+        <p ng-click="mudaBens('Mais de R$30 mil')">Mais de R$30 mil</p>
+        <p ng-click="mudaBens('Menos de R$50 mil')">Menos de R$50 mil</p>
+        <p ng-click="mudaBens('Mais de R$50 mil')">Mais de R$50 mil</p>
+    </div>
+    <div ng-if="perguntaPopover == 4" class="list popoverquestion2">
+        <p ng-click="mudaTempo('Menos de 5 anos')">Menos de 5 anos</p>
+        <p ng-click="mudaTempo('Até 10 anos')">Até 10 anos</p>
+        <p ng-click="mudaTempo('Mais de 10 anos')">Mais de 10 anos</p>
+    </div>
+    <div ng-if="perguntaPopover == 5" class="list popoverquestion2">
+        <p ng-click="mudaInvestir('Geral')">Geral</p>
+    </div>
+    <div ng-if="perguntaPopover == 6" class="list popoverquestion2">
+        <p ng-click="mudaSaldo('Menos de R$25 mil')">Menos de R$25 mil</p>
+        <p ng-click="mudaSaldo('Até de R$50 mil')">Até de R$50 mil</p>
+        <p ng-click="mudaSaldo('Mais que R$50 mil')">Mais que R$50 mil</p>
+    </div>
+  </div>
   <!-- NOTIFICACAO -->
   <div ng-show="$root.user.app.notificacao" id="tour-notificacao">
 

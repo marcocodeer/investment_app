@@ -35,7 +35,7 @@
                 </label>
                 <label class="item item-input item-floating-label">
                   <span class="input-label">UF</span>
-                  <input type="text" class="input-style" placeholder="UF"  ng-model="$root.user.endereco.uf" style="    width: 70% !important;">
+                  <input type="text" class="input-style" placeholder="UF"  ng-model="$root.user.app.uf" style="width: 70% !important;" ng-click="openPopover($event,0,1)">
                 </label>
               </div>
               <label class="item item-input item-floating-label">
@@ -73,23 +73,23 @@
               <div class="input-container" style="padding:10px;">
                 <label class="item item-input item-floating-label">
                   <span class="input-label">Qual é seu estado empregaticio? </span>
-                  <input type="text" class="input-style" placeholder="Qual é seu estado empregaticio?" ng-model="$root.user.financeiro.emprego">
+                  <input type="text" class="input-style" placeholder="Qual é seu estado empregaticio?" ng-model="$root.user.financeiro.emprego" ng-click="openPopover($event,0,2)">
                 </label>
                 <label class="item item-input item-floating-label">
                   <span class="input-label">Quanto vale os seus bens?</span>
-                  <input type="text" class="input-style" placeholder="Quanto vale os seus bens?"  ng-model="$root.user.financeiro.bens">
+                  <input type="text" class="input-style" placeholder="Quanto vale os seus bens?"  ng-model="$root.user.financeiro.bens" ng-click="openPopover($event,0,3)">
                 </label>
                 <label class="item item-input item-floating-label">
                   <span class="input-label">Quanto tempo você pretende investir?</span>
-                  <input type="text" class="input-style" placeholder="Quanto tempo você pretende investir?"  ng-model="$root.user.financeiro.tempo" >
+                  <input type="text" class="input-style" placeholder="Quanto tempo você pretende investir?"  ng-model="$root.user.financeiro.tempo" ng-click="openPopover($event,0,4)">
                 </label>
                 <label class="item item-input item-floating-label">
                   <span class="input-label">Qual é o seu principal motivo para investir?</span>
-                  <input type="text" class="input-style" placeholder="Qual é o seu principal motivo para investir?"  ng-model="$root.user.financeiro.motivo">
+                  <input type="text" class="input-style" placeholder="Qual é o seu principal motivo para investir?"  ng-model="$root.user.financeiro.motivo" ng-click="openPopover($event,0,5)">
                 </label>
                 <label class="item item-input item-floating-label">
                   <span class="input-label">Quanto você ganha por ano?</span>
-                  <input type="text" class="input-style" placeholder="Quanto você ganha por ano?" ng-model="$root.user.financeiro.ano" >
+                  <input type="text" class="input-style" placeholder="Quanto você ganha por ano?" ng-model="$root.user.financeiro.ano" ng-click="openPopover($event,0,6)">
                 </label>
 
 

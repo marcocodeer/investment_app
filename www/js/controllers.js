@@ -136,13 +136,15 @@ angular.module('starter.controllers', [])
       perfil : 1
     };
 
-    $scope.openPopover = function($event,tipo) {
+
+    $scope.openPopover = function($event,tipo, pergunta) {
 
       if(tipo === 1){
 
         $scope.$root.user.app.notificacao = true;
 
       }
+      $scope.perguntaPopover = pergunta;
 
       $scope.popover.show($event);
 
@@ -167,6 +169,42 @@ angular.module('starter.controllers', [])
     $scope.mudaUF = function(uf){
 
       $scope.$root.user.app.uf = uf;
+      $scope.$root.user.financeiro.emprego = uf;
+
+      $scope.popover.hide();
+
+    };
+    $scope.mudaEmprego = function(emprego){
+
+      $scope.$root.user.financeiro.emprego = emprego;
+
+      $scope.popover.hide();
+
+    };
+    $scope.mudaBens = function(bens){
+
+      $scope.$root.user.financeiro.bens = bens;
+
+      $scope.popover.hide();
+
+    };
+    $scope.mudaTempo = function(tempo){
+
+      $scope.$root.user.financeiro.tempo = tempo;
+
+      $scope.popover.hide();
+
+    };
+    $scope.mudaInvestir = function(invest){
+
+      $scope.$root.user.financeiro.motivo = invest;
+
+      $scope.popover.hide();
+
+    };
+    $scope.mudaSaldo = function(saldo){
+
+      $scope.$root.user.financeiro.ano = saldo;
 
       $scope.popover.hide();
 
@@ -802,21 +840,6 @@ angular.module('starter.controllers', [])
 
   })
 
-  .controller('loginCtrl', function($scope, $ionicModal, $timeout, $state) {
-
-    $scope.$root.user.app.estado = $state.current.name;
-
-    $scope.resetPass = function(){
-        $state.go('resetar-senha');
-      };
-      $scope.SendSucessPass = function(){
-        $state.go('sucesso-senha');
-      };
-      $scope.login = function(){
-        $state.go('login');
-      };
-  })
-
   .controller('programadoCtrl', function($scope, $ionicModal, $timeout, $state) {
 
     $scope.$root.user.app.estado = $state.current.name;
@@ -1148,6 +1171,8 @@ angular.module('starter.controllers', [])
   .controller('dadosCtrl', function($scope, $ionicModal, $timeout, $state) {
 
     $scope.$root.user.app.estado = $state.current.name;
+    console.log($scope.$root.user.app.estado);
+
 
     $scope.Valor = '';
 
@@ -1196,6 +1221,8 @@ angular.module('starter.controllers', [])
       $scope.atualizaPin();
 
     };
+
+
 
   })
 
