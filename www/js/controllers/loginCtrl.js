@@ -36,7 +36,7 @@ angular.module('starter').controller('loginCtrl', function($scope, $ionicModal, 
     }
   };
 
-  $scope.doLogin = function () {
+  $scope.doLogin = function (email, pass) {
     try {
 
       var tokenObject = {
@@ -64,10 +64,11 @@ angular.module('starter').controller('loginCtrl', function($scope, $ionicModal, 
                 LocalStorage.set('AuthorizationToken', AuthorizationTokenObject);
             }
 
+
             //Create Object
             var userInformationParametersObject = {
-                'email': "guest@codeer.com.br",
-                'password': "123456",
+                'email': email,
+                'password': pass,
                 'rememberMe': true
             };
 
