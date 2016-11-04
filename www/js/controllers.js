@@ -581,7 +581,7 @@ angular.module('starter.controllers', [])
         }, 1000);
       };
     } catch (e) {
-      console.log(e);
+      alert(e);
     }
 
   })
@@ -701,7 +701,7 @@ angular.module('starter.controllers', [])
         [28, 48, 40, 19, 86, 27, 90]
       ];
     } catch (e) {
-      console.log(e);
+      alert(e);
     }
 
 
@@ -839,7 +839,7 @@ angular.module('starter.controllers', [])
 
 
     } catch (e) {
-        console.log(e);
+        alert(e);
     }
 
   })
@@ -1040,7 +1040,7 @@ angular.module('starter.controllers', [])
         }
       ];
     } catch (e) {
-      console.log(e);
+      alert(e);
     }
 
 
