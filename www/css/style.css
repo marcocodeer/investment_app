@@ -754,16 +754,13 @@ label, input, button, select, textarea {
   box-shadow: 4.95px 4.95px 4px 0px rgba(0, 0, 0, 0.21);
 }*/
 .popover-arrow {
-  display:none !important;
+  display:block !important;
 }
 .popover-style {
   background-color: rgb(145, 190, 217) !important;
   width:273px;
-  height:400px;
-  top:45px !important;
-  margin-left:-20px !important;
+  height:auto;
   box-shadow: 4.95px 4.95px 4px 0px rgba(0, 0, 0, 0.21) !important;
-  z-index: 0 !important;
 }
 .popover-slide-box {
   height:385px;
@@ -1030,6 +1027,19 @@ margin-top: 20px;
 .legal #item-principal > a,
 .ajuda #item-principal > a {
   text-decoration: none;
+}
+.selecionarUF > p {
+  margin:0 0 8px !important;
+
+}
+.popoverquestion2 {
+  font-size:20px;
+  color:#fff;
+  padding-top:5px;
+  padding-left:25px;
+}
+.popoverquestion2 > p {
+  margin:10px 0 15px !important;
 }
 .investimentos .dia{
   color: white;
