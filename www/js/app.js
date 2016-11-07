@@ -56,25 +56,25 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers', 'ngCordov
   .state('pergunta-1', {
     url: '/perguntas-perfil-1',
     templateUrl: 'templates/perguntas/pergunta-1-dados.html',
-    controller: 'AppCtrl'
+    controller: 'novoUsuarioPerguntasCtrl'
   })
 
   .state('pergunta-2', {
     url: '/perguntas-perfil-2',
     templateUrl: 'templates/perguntas/pergunta-2-endereco.html',
-    controller: 'AppCtrl'
+    controller: 'novoUsuarioPerguntasCtrl'
   })
 
   .state('pergunta-3', {
     url: '/perguntas-perfil-3',
     templateUrl: 'templates/perguntas/pergunta-3-acesso.html',
-    controller: 'AppCtrl'
+    controller: 'novoUsuarioPerguntasCtrl'
   })
 
   .state('pergunta-4', {
     url: '/perguntas-perfil-4',
     templateUrl: 'templates/perguntas/pergunta-4-preferencias.html',
-    controller: 'AppCtrl'
+    controller: 'novoUsuarioPerguntasCtrl'
   })
 
   .state('pergunta-5', {

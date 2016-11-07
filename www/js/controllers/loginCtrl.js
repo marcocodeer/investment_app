@@ -57,6 +57,8 @@ angular.module('starter').controller('loginCtrl', function($scope, $ionicModal, 
                 //'authorization_token_expires_time': result.data.expires_in,
                 //'authorization_token_type': result.data.token_type
             };
+            console.log("Token API");
+            console.log(AuthorizationTokenObject);
 
             if(LocalStorage.get('AuthorizationToken') != null) {
                 LocalStorage.update('AuthorizationToken', AuthorizationTokenObject);
@@ -76,10 +78,7 @@ angular.module('starter').controller('loginCtrl', function($scope, $ionicModal, 
             console.log(userInformationParametersObject);
 
             var userLoginInformation = LoginService.postUserLoginInformation(userInformationParametersObject, AuthorizationTokenObject);
-              userLoginInformation.then(function(result){
-                console.log(result);
-                  console.log("Logado.");
-              });
+            console.log(userLoginInformation);
 
 
           }else{

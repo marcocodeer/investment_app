@@ -1,7 +1,6 @@
 angular.module('starter.controllers', [])
 
   .controller('AppCtrl', function($scope, $ionicModal, $timeout, $state, $ionicSlideBoxDelegate, $ionicPopover, $cordovaCamera) {
-
     try {
       $scope.takeImage = function() {
               var options = {
@@ -489,7 +488,7 @@ angular.module('starter.controllers', [])
       // Form data for the login modal
       $scope.loginData = {};
 
-      console.log("Perfil ctrl");
+      console.log("Você está em App Ctrl");
 
       // Create the login modal that we will use later
 

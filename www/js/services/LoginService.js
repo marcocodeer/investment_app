@@ -16,7 +16,7 @@
      $http.defaults.useXDomain = 'true';
 
      var service = {
-
+       //post - Token
         postToken: function (object) {
             var getTokenApiUrl = CONSTANTS.APP_API_URL + '/token';
 
@@ -30,6 +30,7 @@
                 return data;
             });
         },
+        //post - Login
         postUserLoginInformation: function (object, AuthorizationTokenObject) {
             var getUserLoginInformationUrl = CONSTANTS.APP_API_URL + '/api/Account/Login';
 
@@ -43,6 +44,7 @@
                 return data;
             });
         },
+        //post - Reset Password
         postResetPassword: function (object, AuthorizationTokenObject) {
             var getUserLoginInformationUrl = CONSTANTS.APP_API_URL + '/api/Account/RequestResetPassword?email=' + object;
 
@@ -56,6 +58,21 @@
                 return data;
             });
         },
+        //post - Create accout
+        postNewUser: function (object, AuthorizationTokenObject) {
+            var getUserLoginInformationUrl = CONSTANTS.APP_API_URL + '/api/Account/NewUser';
+
+            return $http({
+                method: 'POST',
+                url: getUserLoginInformationUrl,
+                //useXDomain: true,
+                headers: { 'Content-Type' : 'application/x-www-form-urlencoded', 'Authorization': AuthorizationTokenObject.authorization_token},
+                data: $httpParamSerializerJQLike(object)
+            }).success(function(data, status) {
+                return data;
+            });
+        },
+
      };
 
      return service;
