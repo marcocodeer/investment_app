@@ -69,7 +69,7 @@
 
               <div class="max">{{idade}}</div>
 
-              <input type="range" min="{{idade}}" max="95" value="{{idadesimulada}}" step="1" ng-model="idadesimulada"  ng-change="atualizarGrafico(idadesimulada)">
+              <input type="range" min="{{idade}}" max="95" value="{{idadesimulada}}" step="1" ng-model="idadesimulada"  ng-change="atualizarGrafico(idadesimulada,'idade')">
 
               <div class="max">95</div>
 
@@ -77,11 +77,11 @@
 
             <div class="item range range-positive">
 
-              <div class="header">Mensal R$ {{mensal}},00 </div>
+              <div class="header">Mensal R$ {{mensal}} </div>
 
               <div class="max">0</div>
 
-              <input type="range" min="0" max="100" value="{{mensal}}" step="1" ng-model="mensal"  ng-change="atualizarGrafico(idadesimulada)">
+              <input type="range" min="0" max="100" value="{{mensal}}" step="1" ng-model="mensal"  ng-change="atualizarGrafico(mensal, 'mensal')">
 
               <div class="max">100</div>
 
@@ -89,13 +89,13 @@
 
             <div class="item range range-positive">
 
-              <div class="header">Projetado R$ {{valor}} mil </div>
+              <div class="header">Projetado R$ {{valor}}  </div>
 
               <div class="max">0</div>
 
-              <input type="range" min="0" max="95" value="{{valor}}" step="1" ng-model="valor"  ng-change="atualizarGrafico(idadesimulada)">
+              <input type="range" min="0" max="15000" value="{{valor}}" step="144" ng-model="valor"  ng-change="atualizarGrafico(valor,'valor')">
 
-              <div class="max">95</div>
+              <div class="max"></div>
 
             </div>
 
