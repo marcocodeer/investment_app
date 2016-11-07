@@ -1,0 +1,40 @@
+<ion-view view-title="CANCELAR INVESTIMENTO" style="background: url(img/perfil-investimento-bg.png) no-repeat center;background-size:cover;" class="arredondamento cancelar">
+
+    <div class="head-box" style="padding-top: 48px;    padding-bottom: 6px;">
+      <div class="row" style="margin-bottom: 13px;" >
+        <div class="col-20">
+
+        </div>
+        <div class="col-80">
+          <p>Confirmar cancelamento.</p>
+          <p>Tem certeza que deseja cancelar este investimento programado?</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="picture">
+
+      <img src="img/popover-slide-pic7.png"/>
+
+    </div>
+
+    <div class="investimento">
+
+      <span class="valor">R$ <span>{{cancelar.value }}</span></span>
+      <span class="tipo">{{cancelar.type === 1 ? 'Diários' : '' || cancelar.type === 2 ? 'Semanais' : '' || cancelar.type === 3 ? 'Mensais' : '' }} </span>
+      <div class="desde"> desde {{cancelar.day | date: 'dd/MM/yyyy'}} </div>
+      <div ng-show="cancelar.total">Total Acumulado R$ <span class="total">{{cancelar.total }}</span></div>
+
+    </div>
+
+  <ion-footer-bar class="footer-bar-custom" style="">
+    <div class="col" style="padding:30px;">
+      <button ng-click="cancelarInvestimento()" class="item-center button button-clear btn-cadastro">
+        <i class="icon ion-ios-close-empty" style="font-size:30px;"></i>
+      &nbsp;
+        CANCELAR INVESTIMENTO
+      </button>
+    </div>
+  </ion-footer-bar>
+
+</ion-view>
