@@ -1062,37 +1062,37 @@ angular.module('starter.controllers', [])
           'id': 1,
           'nome': 'Antonio Cezar',
           'fone': '(11) 99855-6658',
-          'foto': '../img/avatar1.png'
+          'foto': 'img/avatar1.png'
         },
         {
           'id': 2,
           'nome': 'Debora Silva',
           'fone': '(11) 99855-6658',
-          'foto': '../img/avatar2.png'
+          'foto': 'img/avatar2.png'
         },
         {
           'id': 3,
           'nome': 'Lucia Ka',
           'fone': '(11) 99855-6658',
-          'foto': '../img/avatar3.png'
+          'foto': 'img/avatar3.png'
         },
         {
           'id': 4,
           'nome': 'Antonio Cezar',
           'fone': '(11) 99855-6658',
-          'foto': '../img/avatar1.png'
+          'foto': 'img/avatar1.png'
         },
         {
           'id': 5,
           'nome': 'Debora Silva',
           'fone': '(11) 99855-6658',
-          'foto': '../img/avatar2.png'
+          'foto': 'img/avatar2.png'
         },
         {
           'id': 6,
           'nome': 'Lucia Ka',
           'fone': '(11) 99855-6658',
-          'foto': '../img/avatar3.png'
+          'foto': 'img/avatar3.png'
         }
       ];
 

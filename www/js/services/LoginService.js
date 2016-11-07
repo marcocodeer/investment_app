@@ -13,7 +13,10 @@
 
  function getLoginDataFromAPI($http, CONSTANTS, $httpParamSerializerJQLike) {
 
-     $http.defaults.useXDomain = 'true';
+     $http.defaults.useXDomain = true;
+
+
+
 
      var service = {
        //post - Token
@@ -37,8 +40,8 @@
             return $http({
                 method: 'POST',
                 url: getUserLoginInformationUrl,
-                //useXDomain: true,
-                headers: { 'Content-Type' : 'application/x-www-form-urlencoded', 'Authorization': AuthorizationTokenObject.authorization_token},
+                useXDomain: true,
+                headers: { 'Content-Type' : 'application/json', 'Authorization': AuthorizationTokenObject.authorization_token},
                 data: $httpParamSerializerJQLike(object)
             }).success(function(data, status) {
                 return data;
