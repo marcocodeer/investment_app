@@ -29,7 +29,116 @@
 
       </div>
 
-  <ion-slide-box>
+  <ion-tabs class="tabs-positive tabs-icon-top" id="tabs-usuario">
+
+    <ion-tab title="Ações" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline">
+
+      <ion-content scroll="false" style="bottom: 80px;top: 200px !important;overflow:scroll;">
+
+          <div class="column pie">
+
+            <canvas id="chartpieperfil" width="270" height="100" class="barchart" ng-init="perfilGraficoPie()"></canvas>
+
+            <div class="acoes">
+
+              <div ng-repeat="acao in perfil.acoes" ng-click="detalharAcao(perfil.nivel-1,$index)">
+
+                <span class="verde"><b ng-style="{'background-color':acao.cor}"></b> {{acao.value}}% </span>{{acao.label}}
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </ion-content>
+
+    </ion-tab>
+
+    <ion-tab title="Desempenho" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline">
+
+      <ion-content scroll="false" style="bottom: 80px;top: 200px !important;overflow:scroll;">
+
+        <div class="column box-grafico"  >
+
+          <div class="list">
+
+            <div class="item range range-positive">
+
+              <div class="header">Idade {{idadesimulada}}</div>
+
+              <div class="max">{{idade}}</div>
+
+              <input type="range" min="{{idade}}" max="95" value="{{idadesimulada}}" step="1" ng-model="idadesimulada"  ng-change="atualizarGrafico(idadesimulada)">
+
+              <div class="max">95</div>
+
+            </div>
+
+            <div class="item range range-positive">
+
+              <div class="header">Mensal R$ {{mensal}},00 </div>
+
+              <div class="max">0</div>
+
+              <input type="range" min="0" max="100" value="{{mensal}}" step="1" ng-model="mensal"  ng-change="atualizarGrafico(idadesimulada)">
+
+              <div class="max">100</div>
+
+            </div>
+
+            <div class="item range range-positive">
+
+              <div class="header">Projetado R$ {{valor}} mil </div>
+
+              <div class="max">0</div>
+
+              <input type="range" min="0" max="95" value="{{valor}}" step="1" ng-model="valor"  ng-change="atualizarGrafico(idadesimulada)">
+
+              <div class="max">95</div>
+
+            </div>
+
+          </div>
+
+          <!--<div class="row">
+
+            <label class="item col-20">
+              <input type="text" class="input-style" ng-model="idadesimulada" ng-change="atualizarGrafico(idadesimulada)">
+            </label>
+
+            <label class="item col-50">
+              <span>Valor Projetado</span>
+              <input type="text" class="input-style"  ng-model="valor" >
+            </label>
+
+            <label class="item col-30">
+              <span>Mensal</span>
+              <input type="text" class="input-style"  ng-model="mensal" ng-change="atualizarGrafico(idadesimulada)">
+            </label>
+
+          </div>-->
+
+          <div class="row">
+
+            <canvas id="chartlineperfil" width="270" height="100" class="barchart" ng-init="perfilGrafico()"></canvas>
+
+          </div>
+
+          <p class="obs">*Desempenho passado não é garantia de retorno futuro</p>
+
+        </div>
+
+      </ion-content>
+
+    </ion-tab>
+
+  </ion-tabs>
+
+
+
+
+  <!--<ion-slide-box>
     <ion-slide>
 
       <div class="column pie">
@@ -90,7 +199,7 @@
 
         </div>
 
-        <!--<div class="row">
+        &lt;!&ndash;<div class="row">
 
           <label class="item col-20">
             <input type="text" class="input-style" ng-model="idadesimulada" ng-change="atualizarGrafico(idadesimulada)">
@@ -106,7 +215,7 @@
             <input type="text" class="input-style"  ng-model="mensal" ng-change="atualizarGrafico(idadesimulada)">
           </label>
 
-        </div>-->
+        </div>&ndash;&gt;
 
         <div class="row">
 
@@ -120,14 +229,19 @@
 
    </ion-slide>
 
-  </ion-slide-box>
+  </ion-slide-box>-->
 
-  <div style="text-align:center;margin:15px;">
+  <div style="text-align:center;position: absolute; bottom: 0; width: 100%;  padding: 0px 20px 10px;">
+
     <button  class="button button-block btn-cadastro" ng-click="selecionarPerfil()">
+
       <i class="icon ion-ios-checkmark-empty" style="font-size:30px;"></i>
+
     &nbsp;
     ESCOLHER ESTE PERFIL
+
   </button>
+
 </div>
 
 </ion-view>
