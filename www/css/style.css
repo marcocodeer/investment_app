@@ -546,7 +546,7 @@ label, input, button, select, textarea {
   font-size: 10px;
   color: #fff;
   text-align: center;
-  margin-top: 23px;
+  margin-top: 2px;
 }
 .column.pie{
   margin-top: 20px;
@@ -1127,7 +1127,7 @@ margin-top: 20px;
 }
 .perfil-perfor .item.range {
   padding:0;
-  height: 40px;
+  height: 36px;
 }
 .perfil-perfor  .item.range .header{
   font-size: 13px;
@@ -1139,4 +1139,8 @@ margin-top: 20px;
   font-size: 10px;
   font-weight:100;
   color: rgba(255, 255, 255, 0.42);
+}
+.perfil-perfor #tabs-usuario .tabs {
+  top: 170px !important;
+  background-color: #1f99c6 !important;
 }

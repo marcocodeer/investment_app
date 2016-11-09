@@ -1061,37 +1061,37 @@ angular.module('starter.controllers', [])
           'id': 1,
           'nome': 'Antonio Cezar',
           'fone': '(11) 99855-6658',
-          'foto': '../img/avatar1.png'
+          'foto': 'img/avatar1.png'
         },
         {
           'id': 2,
           'nome': 'Debora Silva',
           'fone': '(11) 99855-6658',
-          'foto': '../img/avatar2.png'
+          'foto': 'img/avatar2.png'
         },
         {
           'id': 3,
           'nome': 'Lucia Ka',
           'fone': '(11) 99855-6658',
-          'foto': '../img/avatar3.png'
+          'foto': 'img/avatar3.png'
         },
         {
           'id': 4,
           'nome': 'Antonio Cezar',
           'fone': '(11) 99855-6658',
-          'foto': '../img/avatar1.png'
+          'foto': 'img/avatar1.png'
         },
         {
           'id': 5,
           'nome': 'Debora Silva',
           'fone': '(11) 99855-6658',
-          'foto': '../img/avatar2.png'
+          'foto': 'img/avatar2.png'
         },
         {
           'id': 6,
           'nome': 'Lucia Ka',
           'fone': '(11) 99855-6658',
-          'foto': '../img/avatar3.png'
+          'foto': 'img/avatar3.png'
         }
       ];
 
@@ -1731,6 +1731,7 @@ angular.module('starter.controllers', [])
       $scope.graphData = [];
 
       var i = $scope.idade,
+          idade = i,
           mensal = $scope.mensal,
           total = 0,
           unidade = null,
@@ -1742,11 +1743,13 @@ angular.module('starter.controllers', [])
 
       };
 
-      $scope.gerarDados = function (idade,valor,mensal) {
+      $scope.gerarDados = function () {
 
-        total = 0;
+        idade = $scope.idadesimulada;
 
-        for ( i; i <= (idade + 13) ; i ++ ){
+        $scope.eixoX = [];
+
+        for ( i = idade; i <= (idade + 13) ; i ++ ){
 
           if(!( i % 2)){
 
@@ -1758,13 +1761,13 @@ angular.module('starter.controllers', [])
 
         for ( i = 0; i < 7 ; i ++ ){
 
-          $scope.graphData.push(i * $scope.mensal * 12);
-
-          total += i * $scope.mensal * 12;
+          $scope.graphData.push(i * $scope.mensal * 24);
 
         }
 
-        total = total.toString();
+        total = 6 * $scope.mensal * 24;
+
+        /*total = total.toString();
 
         unidade = total.substring(0, total.length - 3) || 0;
 
@@ -1778,7 +1781,7 @@ angular.module('starter.controllers', [])
 
           total = unidade + ',' + total.substring(invLen - 3, invLen -2 ) ;
 
-        }
+        }*/
 
         $scope.valor = total;
 
@@ -1827,16 +1830,66 @@ angular.module('starter.controllers', [])
 
       };
 
-      $scope.atualizarGrafico = function (idade) {
+      $scope.atualizarGrafico = function (valor,tipo) {
 
-        if( idade === null ){
+        console.log('antes');
 
-          console.log(idade);
+        if (tipo === 'idade' ){
+
+          i = idade = parseInt(valor);
+
+          $scope.eixoX = [];
+
+          for ( i; i <= (idade + 13) ; i ++ ){
+
+            if(!( i % 2)){
+
+              $scope.eixoX.push(i);
+
+            }
+
+          }
+
+        } else if (tipo === 'mensal' ){
+
+          mensal = parseInt(valor);
+
+          total = 0;
+
+          $scope.graphData = [];
+
+          for ( i = 0; i < 7 ; i ++ ){
+
+            $scope.graphData.push(i *  mensal * 24);
+
+          }
+
+          total = 6 *  mensal * 24;
+
+          $scope.valor = total;
+
+          $scope.mensal = mensal;
+
+
+        } else if (tipo === 'valor' ){
+
+          mensal =  valor /144;
+
+          $scope.valor = parseInt(valor);
+
+          $scope.mensal = mensal.toFixed(0);
+
+          $scope.graphData = [];
+
+          for ( i = 0; i < 7 ; i ++ ){
+
+            $scope.graphData.push(i *  $scope.mensal * 24);
+
+          }
+
+          console.log($scope.graphData);
 
         }
-
-
-        $scope.gerarDados();
 
         $scope.perfilGrafico();
 
@@ -1871,10 +1924,10 @@ angular.module('starter.controllers', [])
                 fontColor : "#9CCDD4",
                 fontSize: 10,
                 callback: function(value, index, values) {
-                  if(parseInt(value) > 1000){
-                    return 'R$ ' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "," + ' mil');
+                  if(parseInt(value) > 999){
+                    return 'R$ ' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "," + '');
                   } else {
-                    return 'R$ ' + value + ' mil';
+                    return 'R$ ' + value + ' ';
                   }
                 }
               }

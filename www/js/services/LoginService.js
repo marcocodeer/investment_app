@@ -15,7 +15,10 @@
 
  function getLoginDataFromAPI($http, CONSTANTS, $httpParamSerializerJQLike) {
 
-     $http.defaults.useXDomain = 'true';
+     $http.defaults.useXDomain = true;
+
+
+
 
      var service = {
        //post - Token
