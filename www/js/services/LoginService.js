@@ -11,6 +11,8 @@
 
  getLoginDataFromAPI.$inject = ['$http', 'CONSTANTS', '$httpParamSerializerJQLike'];
 
+
+
  function getLoginDataFromAPI($http, CONSTANTS, $httpParamSerializerJQLike) {
 
      $http.defaults.useXDomain = 'true';
@@ -37,7 +39,7 @@
             return $http({
                 method: 'POST',
                 url: getUserLoginInformationUrl,
-                //useXDomain: true,
+                useXDomain: true,
                 headers: { 'Content-Type' : 'application/x-www-form-urlencoded', 'Authorization': AuthorizationTokenObject.authorization_token},
                 data: $httpParamSerializerJQLike(object)
             }).success(function(data, status) {

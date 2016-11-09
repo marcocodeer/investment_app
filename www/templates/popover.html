@@ -25,7 +25,6 @@
         <p ng-click="mudaUF('MT')">MT</p>
         <p ng-click="mudaUF('MS')">MS</p>
         <p ng-click="mudaUF('MG')">MG</p>
-
       </div>
       <div class="col-25 selecionarUF">
         <p ng-click="mudaUF('PA')">PA</p>
@@ -75,7 +74,7 @@
   <!-- NOTIFICACAO -->
   <div ng-show="$root.user.app.notificacao" id="tour-notificacao">
 
-    <div ng-repeat="notificacao in $root.user.app.notificacoes" style="margin-top: 80px;">
+    <div ng-repeat="notificacao in $root.user.app.notificacoes" style="margin-top: 80px;margin-bottom:20px;">
 
         <div style="text-align:center;">
 
@@ -121,8 +120,8 @@
           <p class="seg-desc">Para acumular trocados para investimentos, conecte seus cartões de crédito e débito.</p>
         </div>
 
-        <div class="col btn-home" style="margin-top:30px;">
-          <button ng-click="goNotification('app.conta-bancaria')" class="item-center button button-clear btn-popover">CONECTAR CONTA</button>
+        <div class="col btn-home">
+          <button ng-click="goNotification('app.conta-bancaria')" class="item-center button button-clear btn-popover" style="margin-top:40px;">CONECTAR CONTA</button>
         </div>
 
       </ion-slide>
@@ -133,8 +132,8 @@
           <p class="seg-desc">Quando você faz uma compra usando uma conta conectada, o troco do arredondamento é investido automaticamente.</p>
         </div>
 
-        <div class="col btn-home" style="margin-top:5px;">
-          <button ng-click="goNotification('app.conta-bancaria')" class="item-center button button-clear btn-popover">VEJA COMO FUNCIONA</button>
+        <div class="col btn-home">
+          <button ng-click="goNotification('app.conta-bancaria')" class="item-center button button-clear btn-popover" style="margin-top:20px;">VEJA COMO FUNCIONA</button>
         </div>
 
       </ion-slide>
@@ -155,8 +154,8 @@
           <p class="seg-desc" style="margin-top:-40px;">Deposite ou saque dinheiro a qualquer momento. Investimentos são concluidos entre 1 e 3 dias úteis, como precisamos vender suas ações, retiradas levam de 5 a 7 dias úteis para serem realizadas.</p>
         </div>
 
-        <div class="col btn-home" style="margin-top:-15px;">
-          <button ng-click="goNotification('app.conta-bancaria')" class="item-center button button-clear btn-popover">VEJA COMO FUNCIONA</button>
+        <div class="col btn-home" style="">
+          <button ng-click="goNotification('app.conta-bancaria')" class="item-center button button-clear btn-popover" style="margin-top:20px;">VEJA COMO FUNCIONA</button>
         </div>
 
       </ion-slide>
@@ -167,8 +166,8 @@
           <p class="seg-desc">Programar investimentos recorrentes é uma ótima forma de acelerar o crescimento de sua renda.</p>
         </div>
 
-        <div class="col btn-home" style="margin-top:5px;">
-          <button ng-click="goNotification('app.investimento-programado')" class="item-center button button-clear btn-popover">PROGRAME UM INVESTIMENTO</button>
+        <div class="col btn-home">
+          <button ng-click="goNotification('app.investimento-programado')" class="item-center button button-clear btn-popover" style="margin-top:10px;">PROGRAME UM INVESTIMENTO</button>
         </div>
 
       </ion-slide>
@@ -271,7 +270,7 @@
           </div>
 
             <div class="col btn-home">
-              <button ng-click="goNotification('app.dados-usuario')" class="item-center button button-clear btn-popover" style="margin-top:71px !important;">ATUALIZAR PERFIL FINANCEIRO</button>
+              <button ng-click="goNotification('app.dados-usuario')" class="item-center button button-clear btn-popover" style="margin-top:61px !important;">ATUALIZAR PERFIL FINANCEIRO</button>
             </div>
 
        </ion-slide>
@@ -336,8 +335,8 @@
 
           </div>
 
-            <div class="col btn-home" style="margin-top: -25px;">
-              <button ng-click="popover.hide()" class="item-center button button-clear btn-popover" style="margin-top:30px;">ENTENDI</button>
+            <div class="col btn-home" style="">
+              <button ng-click="popover.hide()" class="item-center button button-clear btn-popover" style="margin-top:40px;">ENTENDI</button>
             </div>
 
        </ion-slide>
@@ -349,7 +348,7 @@
            <p class="seg-desc" style="padding:25px !important;">Você pode visualizar a performance de seus investimentos através dos sinais dos lucro e perda. O número que você vê é igual ao lucro(ou perda), menos dividendos, menos nossa pequena taxa.</p>
          </div>
 
-           <div class="col btn-home" style="margin-top:5px;">
+           <div class="col btn-home" style="margin-top:15px;">
              <button ng-click="goNotification('app.performance')" class="item-center button button-clear btn-popover">VER PERFORMANCE DETALHADA</button>
            </div>
 
@@ -362,7 +361,7 @@
          </div>
 
            <div class="col btn-home">
-             <button ng-click="popover.hide()" class="item-center button button-clear btn-popover" style="margin-top:30px;">ENTENDI</button>
+             <button ng-click="popover.hide()" class="item-center button button-clear btn-popover" style="margin-top:25px;">ENTENDI</button>
            </div>
 
       </ion-slide>
@@ -374,7 +373,7 @@
          </div>
 
            <div class="col btn-home">
-             <button ng-click="goNotification('app.configuracoes')" class="item-center button button-clear btn-popover" style="margin-top:55px;">VER CONFIGURAÇÕES</button>
+             <button ng-click="goNotification('app.configuracoes')" class="item-center button button-clear btn-popover" style="margin-top:45px;">VER CONFIGURAÇÕES</button>
            </div>
 
       </ion-slide>

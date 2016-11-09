@@ -80,7 +80,7 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers', 'ngCordov
   .state('pergunta-5', {
     url: '/perguntas-perfil-5',
     templateUrl: 'templates/perguntas/pergunta-5-receita.html',
-    controller: 'AppCtrl'
+    controller: 'novoUsuarioPerguntasCtrl'
   })
 
   .state('pergunta-6', {

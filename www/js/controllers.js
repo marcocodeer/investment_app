@@ -518,11 +518,6 @@ angular.module('starter.controllers', [])
         $scope.slideIndex = index;
       };
 
-      $scope.go = function (destino){
-
-        $state.go(destino);
-
-      };
       $scope.doArredondamento = function (){
 
         $state.go('app.arredondamentos');
@@ -585,9 +580,13 @@ angular.module('starter.controllers', [])
 
   })
 
-  .controller('homeCtrl', function($scope, $ionicModal, $timeout, $state, $ionicSlideBoxDelegate, $ionicPopover) {
-
+  .controller('homeCtrl', function($scope, $ionicModal, $timeout, $state, $ionicSlideBoxDelegate, $ionicPopover, LocalStorage) {
+    $scope.userInfo = LocalStorage.get('UserProfile');
+    console.log($scope.userInfo);
     try {
+
+
+
       $scope.$root.user.app.estado = $state.current.name;
 
       $scope.homeGrafico = function () {

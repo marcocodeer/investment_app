@@ -4,35 +4,35 @@ angular.module('starter').factory('UserRegistrationServiceStore', registerUserIn
 
 function registerUserInfo() {
      var newUser = {
+       'planId': 1,
        'fullName': '',
        'dob': '',
-       'ssn': '',
+       'securityQuestion': '',
+       'securityAnswer': '',
        'gender': '',
        'avatar': '',
        'address': '',
        'city': '',
        'state': '',
-       'countryId': '',
+       'countryId': 55,
        'zipcode': '',
        'phone1': '',
        'phone2': '',
        'cellphone': '',
-       'jawboneToken': '',
-       'fitbitToken': '',
-       'secretToken': '',
-       'status': '',
-       'userType': '',
+       'status': 1,
+       'userType': 1,
        'acceptContract': true,
-       'ethnicity': '',
-       'language': '',
        'email': '',
        'password': '',
        'smsNotification': true,
        'emailNotification': true,
-       'kitId': ''
+       'rememberToken': true,
+       'cpf': '',
+       'rg': '',
+       'investorProfile': '',
      };
 
-    var newUser = {};
+    //var newUser = {};
 
     return {
         getNewUser: function () {

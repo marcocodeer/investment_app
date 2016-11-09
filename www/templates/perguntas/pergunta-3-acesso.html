@@ -16,16 +16,16 @@
   <div class="input-container" style="margin-left:20px;">
 
     <label class="item">
-      <input type="text" class="input-style" placeholder="Senha">
+      <input type="text" class="input-style" placeholder="Senha" ng-model="newAccount.password">
     </label>
     <label class="item">
-      <input type="text" class="input-style" placeholder="Repita a senha">
+      <input type="text" class="input-style" placeholder="Repita a senha" ng-model="newAccount.password">
     </label>
     <label class="item">
-      <input type="text" class="input-style" placeholder="Pergunta de segurança">
+      <input type="text" class="input-style" placeholder="Pergunta de segurança" ng-model="newAccount.securityQuestion">
     </label>
     <label class="item">
-      <input type="text" class="input-style" placeholder="Sua resposta">
+      <input type="text" class="input-style" placeholder="Sua resposta" ng-model="newAccount.securityAnswer">
     </label>
   </div>
 
@@ -33,7 +33,7 @@
 
 <ion-footer-bar class="footer-bar-custom" style="">
   <div class="col" style="padding:30px;">
-    <button ng-click="go('pergunta-4')" class="item-center button button-clear btn-cadastro">
+    <button ng-click="do4()" class="item-center button button-clear btn-cadastro">
       <i class="icon ion-ios-checkmark-empty" style="font-size:30px;"></i>
     &nbsp;
       CONTINUAR (Passo 3 de 14)

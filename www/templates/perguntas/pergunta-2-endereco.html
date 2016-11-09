@@ -17,7 +17,7 @@
     <div class="row">
       <div class="col-60">
         <label class="item" style="background-color:transparent;border:none;">
-          <input type="text" class="input-style" placeholder="CEP">
+          <input type="text" class="input-style" placeholder="CEP" ng-model="newAccount.zipCode">
         </label>
       </div>
       <div class="col-40" style="margin-left:30px;">
@@ -30,10 +30,10 @@
     </div>
 
     <label class="item">
-      <input type="text" class="input-style" placeholder="Cidade">
+      <input type="text" class="input-style" placeholder="Cidade" ng-model="newAccount.city">
     </label>
     <label class="item">
-      <input type="text" class="input-style" placeholder="Endereço">
+      <input type="text" class="input-style" placeholder="Endereço" ng-model="newAccount.address">
     </label>
     <label class="item">
       <input type="text" class="input-style" placeholder="Complemento">
@@ -44,7 +44,7 @@
 
 <ion-footer-bar class="footer-bar-custom" style="">
   <div class="col" style="padding:30px;">
-    <button ng-click="go('pergunta-3')" class="item-center button button-clear btn-cadastro">
+    <button ng-click="do3()" class="item-center button button-clear btn-cadastro">
       <i class="icon ion-ios-checkmark-empty" style="font-size:30px;"></i>
     &nbsp;
       CONTINUAR (Passo 2 de 14)

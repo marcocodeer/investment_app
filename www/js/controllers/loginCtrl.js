@@ -8,6 +8,10 @@ angular.module('starter').controller('loginCtrl', function($scope, $ionicModal, 
   $scope.rememberMe = '';
   $scope.email = '';
 
+  
+
+  $scope.deslogado = false;
+
   $scope.resetPassword = function (){
     try {
       var resetObject = {
@@ -48,12 +52,10 @@ angular.module('starter').controller('loginCtrl', function($scope, $ionicModal, 
       var getToken = LoginService.postToken(tokenObject);
         getToken.then(function(result){
           if(result.statusText == 'OK'){
-            console.log('doLogin');
-            console.log(result);
 
             //Store the API Access Token
             var AuthorizationTokenObject = {
-                'authorization_token': 'Bearer' + result.data.access_token
+                'authorization_token': 'Bearer ' + result.data.access_token
                 //'authorization_token_expires_time': result.data.expires_in,
                 //'authorization_token_type': result.data.token_type
             };
@@ -68,25 +70,37 @@ angular.module('starter').controller('loginCtrl', function($scope, $ionicModal, 
 
 
             //Create Object
-            var userInformationParametersObject = {
+            var userInfoObject = {
                 'email': email,
                 'password': pass,
                 'rememberMe': true
             };
 
             console.log("User detail");
-            console.log(userInformationParametersObject);
+            console.log(userInfoObject);
 
-            var userLoginInformation = LoginService.postUserLoginInformation(userInformationParametersObject, AuthorizationTokenObject);
+            var userLoginInformation = LoginService.postUserLoginInformation(userInfoObject, AuthorizationTokenObject);
             console.log(userLoginInformation);
+              userLoginInformation.then(function(result){
+                if(result.data.statusapp == 'OK'){
+                  $scope.logado = result.data.data;
+                  $scope.deslogado = false;
+                  $state.go('app.home');
 
+                  LocalStorage.remove('UserProfile');
+                  LocalStorage.set('UserProfile', result.data.data);
+
+                }else if (result.data.statusapp == 'NOK'){
+                  $scope.naoLogado = "Usuário ou Senha inválidos.";
+                  $scope.deslogado = true;
+                }
+              });
 
           }else{
-
+            console.log("error in login");
           }
         });
-      console.log("getToken");
-      console.log(getToken);
+
 
     } catch (e) {
         console.log(e);

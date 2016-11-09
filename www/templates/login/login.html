@@ -31,6 +31,10 @@
           <input type="text" placeholder="Senha" ng-model="password" name="password" class="input-style">
         </label>
 
+        <p ng-show="deslogado == true" ng-hide="deslogado == false" style="text-align:center;color:red;">
+          {{ naoLogado }}
+        </p>
+
         <div style="margin-top: 10px;float:right;">
           <a ng-click="doLogin(username, password)" style="padding-right:60px;font-size:18px;color: rgb(255, 255, 255);text-decoration: none">Entrar</a>
         </div>

@@ -158,7 +158,7 @@ Cleiton Schonardie UI/UX and front-end developer
   overflow: inherit;
 }
 #tabs-usuario .tabs {
-  top:43px !important;
+  top:53px !important;
   width: 100% !important;
   height:30px !important;
   background-color: #4880b4 !important;
@@ -555,7 +555,7 @@ label, input, button, select, textarea {
 }
 .acoes {
   color: white;
-  font-size: 11px;
+  font-size: 10px;
   margin: 13px auto 0;
   width: 210px;
 }
@@ -619,6 +619,7 @@ label, input, button, select, textarea {
 }
 .contrato-content {
   padding:30px;
+  padding-top: 60px;
 }
 .contrato-content > p {
   color: rgba(255, 255, 255, 0.541);
@@ -964,14 +965,15 @@ margin-top: 20px;
 }
 .movimento {
   padding: 20px;
-  background: url('../img/tour-app-pic4.png') no-repeat
+  background: url('../img/tour-app-pic4.png') no-repeat;
+
 }
-.movimento h3{
+.movimentos h3{
    color: white;
    font-size: 20px;
    font-weight:100;
    text-align: center;
-   margin: 120px 20px 0;
+   margin: 10px 20px 0;
  }
 .movimento p{
   color: white;
