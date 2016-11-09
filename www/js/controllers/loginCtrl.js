@@ -1,4 +1,4 @@
-angular.module('starter').controller('loginCtrl', function($scope, $ionicModal, $timeout, $state, CONSTANTS, LoginService, LocalStorage) {
+angular.module('starter').controller('loginCtrl', function($scope, $ionicModal, $timeout, $state, CONSTANTS, LoginService, LocalStorage, $ionicPopup) {
 
   //$scope.$root.user.app.estado = $state.current.name;
   console.log("Você está dentro de login page.");
@@ -8,7 +8,18 @@ angular.module('starter').controller('loginCtrl', function($scope, $ionicModal, 
   $scope.rememberMe = '';
   $scope.email = '';
 
-  
+  $scope.showPopLogin = function() {
+  var alertPopup = $ionicPopup.alert({
+    title: 'Desculpe!',
+    template: 'Usuario ou senha estão inválidos.'
+  });
+
+  alertPopup.then(function(res) {
+    console.log('Thank you for not eating my delicious ice cream cone');
+  });
+};
+
+
 
   $scope.deslogado = false;
 
@@ -92,6 +103,7 @@ angular.module('starter').controller('loginCtrl', function($scope, $ionicModal, 
 
                 }else if (result.data.statusapp == 'NOK'){
                   $scope.naoLogado = "Usuário ou Senha inválidos.";
+                  $scope.showPopLogin();
                   $scope.deslogado = true;
                 }
               });
