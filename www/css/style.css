@@ -1144,3 +1144,12 @@ margin-top: 20px;
   top: 170px !important;
   background-color: #1f99c6 !important;
 }
+.popup-container .popup {
+  width: 300px !important;
+}
+.button-default {
+  background-color: #f7a591 !important;
+}
+.button-positive {
+  background-color: #1f99c6 !important;
+}

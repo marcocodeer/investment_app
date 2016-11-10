@@ -15,7 +15,7 @@ function registerUserInfo() {
        'city': '',
        'state': '',
        'countryId': 55,
-       'zipcode': '',
+       'zipCode': '',
        'phone1': '',
        'phone2': '',
        'cellphone': '',

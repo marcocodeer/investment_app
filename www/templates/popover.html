@@ -4,7 +4,47 @@
   }
 </style>
 <ion-popover-view  class="popover-style">
-
+  <!-- PERGUNTA 2-->
+  <div ng-show="estadoPage === 'pergunta-2'" id="tour-dados">
+    <div ng-if="perguntaPopover == 1" class="list row popoverquestion2" style="overflow:scroll;">
+      <div class="col-25 selecionarUF">
+        <p ng-click="mudaUF('AC')">AC</p>
+        <p ng-click="mudaUF('AL')">AL</p>
+        <p ng-click="mudaUF('AP')">AP</p>
+        <p ng-click="mudaUF('AM')">AM</p>
+        <p ng-click="mudaUF('BA')">BA</p>
+        <p ng-click="mudaUF('CE')">CE</p>
+        <p ng-click="mudaUF('DF')">DF</p>
+      </div>
+      <div class="col-25 selecionarUF">
+        <p ng-click="mudaUF('ES')">ES</p>
+        <p ng-click="mudaUF('GO')">GO</p>
+        <p ng-click="mudaUF('MA')">MA</p>
+        <p ng-click="mudaUF('MA')">MA</p>
+        <p ng-click="mudaUF('MT')">MT</p>
+        <p ng-click="mudaUF('MS')">MS</p>
+        <p ng-click="mudaUF('MG')">MG</p>
+      </div>
+      <div class="col-25 selecionarUF">
+        <p ng-click="mudaUF('PA')">PA</p>
+        <p ng-click="mudaUF('PB')">PB</p>
+        <p ng-click="mudaUF('PR')">PR</p>
+        <p ng-click="mudaUF('PE')">PE</p>
+        <p ng-click="mudaUF('PI')">PI</p>
+        <p ng-click="mudaUF('RJ')">RJ</p>
+        <p ng-click="mudaUF('RN')">RN</p>
+      </div>
+      <div class="col-25 selecionarUF">
+        <p ng-click="mudaUF('RS')">RS</p>
+        <p ng-click="mudaUF('RO')">RO</p>
+        <p ng-click="mudaUF('RR')">RR</p>
+        <p ng-click="mudaUF('SC')">SC</p>
+        <p ng-click="mudaUF('SP')">SP</p>
+        <p ng-click="mudaUF('SE')">SE</p>
+        <p ng-click="mudaUF('TO')">TO</p>
+      </div>
+    </div>
+  </div>
   <!-- DADOS USUARIO -->
   <div ng-show="$root.user.app.estado === 'app.dados-usuario' && $root.user.app.notificacao === false" id="tour-dados">
     <div ng-if="perguntaPopover == 1" class="list row popoverquestion2" style="overflow:scroll;">

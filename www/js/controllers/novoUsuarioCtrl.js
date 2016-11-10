@@ -1,4 +1,4 @@
-angular.module('starter').controller('novoUsuarioPerguntasCtrl', function($scope, $ionicModal, $timeout, $state, CONSTANTS, LoginService, LocalStorage, $rootScope, UserRegistrationServiceStore) {
+angular.module('starter').controller('novoUsuarioPerguntasCtrl', function($scope, $ionicModal, $timeout, $state, CONSTANTS, LoginService, LocalStorage, $rootScope, UserRegistrationServiceStore, $ionicPopover, $ionicPopup) {
 
   //$scope.$root.user.app.estado = $state.current.name;
   console.log("Você está dentro novoUsuarioPerguntasCtrl.");
@@ -9,6 +9,94 @@ angular.module('starter').controller('novoUsuarioPerguntasCtrl', function($scope
 
   };
 
+  $ionicPopover.fromTemplateUrl('templates/popover.html', {
+
+    scope: $scope
+
+  }).then(function(popover) {
+
+    $scope.popover = popover;
+
+  });
+
+  $scope.mudaUF = function(uf){
+
+    $scope.newAccount.state = uf;
+
+    $scope.popover.hide();
+
+  };
+
+
+  $scope.openPopover = function($event,tipo, pergunta) {
+
+    if(tipo === 1){
+
+      $scope.$root.user.app.notificacao = true;
+
+    }
+    $scope.perguntaPopover = pergunta;
+
+    $scope.popover.show($event);
+
+  };
+
+  $scope.$on('popover.hidden', function() {
+
+  //  $scope.$root.user.app.notificacao = false;
+
+  });
+
+  // A confirm dialog to redirect user after created.
+  // An elaborate, custom popup
+
+$scope.showConfirm = function() {
+  var myPopup = $ionicPopup.show({
+    template: 'Seu cadastro foi realizado com sucesso, volte para a página de login para acessar sua conta!',
+    title: 'Cadastro',
+    scope: $scope,
+    buttons: [
+      { text: '<b>Sair</b>',
+      type: 'button-default',
+      onTap: function(e) {
+        $state.go('login');
+        }
+      },
+      {
+        text: '<b>Login</b>',
+        type: 'button-positive',
+        onTap: function(e) {
+          $state.go('login');
+        }
+      }
+    ]
+  });
+};
+$scope.errorPopup = function() {
+  var myPopup = $ionicPopup.show({
+    template: 'Um erro aconteceu, o e-mail digitado já existe em nossa base de dados.',
+    title: 'Ops',
+    scope: $scope,
+    buttons: [
+      { text: '<b>Sair</b>',
+      type: 'button-default',
+      onTap: function(e) {
+        $state.go('login');
+        }
+      },
+      {
+        text: '<b>Voltar</b>',
+        type: 'button-positive',
+        onTap: function(e) {
+          $state.go('pergunta-1');
+        }
+      }
+    ]
+  });
+};
+
+ $scope.estadoPage = $state.current.name;
+ console.log($scope.estadoPage);
   //Variaveis para criação do usuario.
   $scope.newAccount = {};
   $scope.newAccount.planId = '';
@@ -49,6 +137,7 @@ angular.module('starter').controller('novoUsuarioPerguntasCtrl', function($scope
         newAccountStored.password = $scope.newAccount.password;
         newAccountStored.phone1 = $scope.newAccount.phone1;
         newAccountStored.cpf = $scope.newAccount.cpf;
+        newAccountStored.dob = $scope.newAccount.dob;
         UserRegistrationServiceStore.setNewUser(newAccountStored);
 
         //Redirect to the next page..
@@ -98,28 +187,56 @@ angular.module('starter').controller('novoUsuarioPerguntasCtrl', function($scope
   };
   $scope.do5 = function () {
     try {
-        //Validations
 
         //Retrieve and Store New Account Object
         var newAccountStored = UserRegistrationServiceStore.getNewUser();
-        newAccountStored.investorProfile = '';
+        newAccountStored.investorProfile = $scope.newAccount.investorProfile;
         UserRegistrationServiceStore.setNewUser(newAccountStored);
         console.log(newAccountStored);
 
-        var tokenObject = '';
+        //Validations
+        var tokenObject = {
+            'username': CONSTANTS.APP_USERNAME,
+            'password': CONSTANTS.APP_PASSWORD,
+            'grant_type': 'password'
+        };
 
-        //Get Token
-        if(LocalStorage.get('AuthorizationToken') != null) {
-          tokenObject = LocalStorage.get('AuthorizationToken');
-        }
+        var getToken = LoginService.postToken(tokenObject);
+          getToken.then(function(result){
+            if(result.statusText == 'OK'){
 
+              //Store the API Access Token
+              var AuthorizationTokenObject = {
+                  'authorization_token': 'Bearer ' + result.data.access_token
+                  //'authorization_token_expires_time': result.data.expires_in,
+                  //'authorization_token_type': result.data.token_type
+              };
+              console.log("Token API");
+              console.log(AuthorizationTokenObject);
 
-        var userRegistrationRequest = LoginService.postNewUser(newAccountStored, tokenObject);
-          userRegistrationRequest.then(function(result){
-            console.log("result");
-            console.log(result);
+              if(LocalStorage.get('AuthorizationToken') != null) {
+                  LocalStorage.update('AuthorizationToken', AuthorizationTokenObject);
+              }else {
+                  LocalStorage.set('AuthorizationToken', AuthorizationTokenObject);
+              }
+              console.log("Novo usuario JSON");
+              console.log(JSON.stringify(newAccountStored));
+              var userRegistrationRequest = LoginService.postNewUser(newAccountStored, AuthorizationTokenObject);
+                userRegistrationRequest.then(function(result){
+                  if(result.data.statusapp == 'OK'){
+                    $scope.showConfirm();
+                  }
+                  else {
+                    $scope.errorPopup();
+                  }
+                });
+              console.log(userRegistrationRequest);
+            }else{
+              console.log("error cadastrando");
+            }
           });
-        console.log(userRegistrationRequest);
+
+
 
         //Redirect to the login page..
 
