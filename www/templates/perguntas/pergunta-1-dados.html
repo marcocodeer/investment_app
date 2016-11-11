@@ -1,6 +1,6 @@
 <ion-content style="background: url(img/login-bg-acorn.png) no-repeat center;background-size:cover;height:100%;">
-  <div class="head-box" >
-    <div class="row" >
+  <div class="head-box">
+    <div class="row">
       <div class="col-20">
       </div>
       <div class="col-80">
@@ -12,32 +12,40 @@
       Informe seus dados
     </h1>
   </div>
+  <form name="formOne" novalidate>
   <div class="input-container" style="margin-left:20px;">
-    <label class="item">
-      <input type="text" class="input-style" placeholder="Nome" ng-model="newAccount.fullName">
+    <label class="item item-input item-floating-label">
+      <span class="input-label">Nome</span>
+      <input type="text" class="input-style" placeholder="Nome" ng-model="newAccount.fullName" required>
     </label>
-    <label class="item">
-      <input type="text" class="input-style" placeholder="Telefone" ng-model="newAccount.phone1">
+    <label class="item item-input item-floating-label">
+      <span class="input-label">Telefone</span>
+      <input type="text" class="input-style" placeholder="Telefone" ng-model="newAccount.phone1" required>
     </label>
-    <label class="item">
-      <input type="text" class="input-style" placeholder="E-mail" ng-model="newAccount.email">
+    <label class="item item-input item-floating-label">
+      <span class="input-label">Email</span>
+      <input type="text" class="input-style" placeholder="Email" ng-model="newAccount.email" required>
     </label>
-    <label class="item">
-      <input type="text" class="input-style" placeholder="CPF" ng-model="newAccount.cpf">
+    <label class="item item-input item-floating-label">
+      <span class="input-label">CPF</span>
+      <input type="text" class="input-style" placeholder="CPF" ng-model="newAccount.cpf" required>
     </label>
-    <label class="item">
-      <input type="date" ng-model="newAccount.dob" class="input-style">
+    <label class="item item-input item-floating-label">
+      <span class="input-label">Data de nascimento</span>
+      <input type="date" ng-model="newAccount.dob" class="input-style" required>
     </label>
   </div>
+
 
 </ion-content>
 
-<ion-footer-bar class="footer-bar-custom" style="">
-  <div class="col" style="padding:30px;">
-    <button ng-click="do2()" class="item-center button button-clear btn-cadastro">
+<ion-footer-bar class="footer-bar-custom" style="height: 0px !important;">
+  <div class="col" style="padding:60px;">
+    <button ng-disabled="!formOne.$valid" ng-click="do2()" class="item-center button button-clear btn-cadastro">
       <i class="icon ion-ios-checkmark-empty" style="font-size:30px;"></i>
     &nbsp;
-      CONTINUAR (Passo 1 de 14)
+      CONTINUAR (Passo 1 de 4)
     </button>
   </div>
 </ion-footer-bar>
+</form>

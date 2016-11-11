@@ -1148,8 +1148,18 @@ margin-top: 20px;
   width: 300px !important;
 }
 .button-default {
-  background-color: #f7a591 !important;
+  background-color: #26a4c7 !important;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
 }
 .button-positive {
-  background-color: #1f99c6 !important;
+  background-color: #57b046 !important;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+}
+button[disabled], html input[disabled] {
+  background-color: #26a4c7 !important;
+  color:#fff !important;
 }

@@ -20,13 +20,12 @@ angular.module('starter').controller('loginCtrl', function($scope, $ionicModal, 
 };
 
 
-
   $scope.deslogado = false;
 
-  $scope.resetPassword = function (){
+  $scope.resetPassword = function (email){
     try {
       var resetObject = {
-        'email': "guest@codeer.com.br",
+        'email': email,
       };
       console.log("Email para solicitacao de senha.");
       console.log(resetObject);
@@ -39,13 +38,30 @@ angular.module('starter').controller('loginCtrl', function($scope, $ionicModal, 
       }
 
 
-      var postReset = LoginService.postResetPassword(resetObject, tokenObject);
+      var postReset = LoginService.postResetPassword(email, tokenObject);
         postReset.then(function(result){
+          console.log("Resultado post senha");
+          console.log(result);
+          if(result.data.statusapp == 'OK'){
             $state.go('sucesso-senha');
-            console.log("Senha alterada");
-            console.log(result);
+          }else {
+            var myPopup = $ionicPopup.show({
+              template: 'Email não encontrado, volte e tente denovo!',
+              title: 'Ops',
+              scope: $scope,
+              buttons: [
+                { text: '<b>Ok</b>',
+                type: 'button-positive',
+                onTap: function(e) {
+                  $state.go('resetar-senha');
+                  }
+                }
+              ]
+            });
+          }
+
         });
-      console.log(postReset);
+
     } catch (e) {
       console.log(e);
     }

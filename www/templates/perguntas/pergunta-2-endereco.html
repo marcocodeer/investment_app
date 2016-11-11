@@ -13,43 +13,47 @@
       Qual é seu endereço?
     </h1>
   </div>
+  <form name="formOne" novalidate>
   <div class="input-container" style="margin-left:20px;">
     <div class="row">
       <div class="col-60">
-        <label class="item" style="background-color:transparent;border:none;">
-          <input type="text" class="input-style" placeholder="CEP" ng-model="newAccount.zipCode">
+        <label class="item item-input item-floating-label" style="background-color:transparent;border:none;">
+          <span class="input-label">CEP</span>
+          <input type="text" class="input-style" placeholder="CEP" ng-model="newAccount.zipCode" required>
         </label>
       </div>
       <div class="col-40" >
         <label class="item item-input item-floating-label">
           <span class="input-label">UF</span>
-          <input type="text" class="input-style" placeholder="UF"  ng-model="newAccount.state" style="width: 70% !important;margin-top:-9px;" ng-click="openPopover($event,0,1)">
+          <input type="text" class="input-style" placeholder="UF"  ng-model="newAccount.state" style="width: 70% !important;margin-top:-9px;" ng-click="openPopover($event,0,1)" required>
         </label>
 
       </div>
 
     </div>
 
-    <label class="item">
-      <input type="text" class="input-style" placeholder="Cidade" ng-model="newAccount.city">
+    <label class="item item-input item-floating-label">
+      <span class="input-label">Cidade</span>
+      <input type="text" class="input-style" placeholder="Cidade" ng-model="newAccount.city" required>
     </label>
-    <label class="item">
-      <input type="text" class="input-style" placeholder="Endereço" ng-model="newAccount.address">
+    <label class="item item-input item-floating-label">
+      <span class="input-label">Endereço</span>
+      <input type="text" class="input-style" placeholder="Endereço" ng-model="newAccount.address" required>
     </label>
-    <label class="item">
-      <input type="text" class="input-style" placeholder="Complemento">
+    <label class="item item-input item-floating-label">
+      <span class="input-label">Complemento</span>
+      <input type="text" class="input-style" placeholder="Complemento" required>
     </label>
   </div>
 
-</ion-content>
-
-<ion-footer-bar class="footer-bar-custom" style="">
+<ion-footer-bar class="footer-bar-custom">
   <div class="col" style="padding:30px;">
-    <button ng-click="do3()" class="item-center button button-clear btn-cadastro">
+    <button ng-disabled="!formOne.$valid" ng-click="do3()" class="item-center button button-clear btn-cadastro">
       <i class="icon ion-ios-checkmark-empty" style="font-size:30px;"></i>
     &nbsp;
-      CONTINUAR (Passo 2 de 14)
+      CONTINUAR (Passo 2 de 4)
     </button>
   </div>
 </ion-footer-bar>
+</form>
 </ion-view>

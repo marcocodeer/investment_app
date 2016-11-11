@@ -58,7 +58,7 @@
                 url: getUserLoginInformationUrl,
                 //useXDomain: true,
                 headers: { 'Content-Type' : 'application/x-www-form-urlencoded', 'Authorization': AuthorizationTokenObject.authorization_token},
-                data: $httpParamSerializerJQLike(object)
+                //data: $httpParamSerializerJQLike(object)
             }).success(function(data, status) {
                 return data;
             });

@@ -1,4 +1,4 @@
-<ion-content style="background: url(img/login-bg-acorn.png) no-repeat center;background-size:cover;height:100%;">
+<ion-view style="background: url(img/login-bg-acorn.png) no-repeat center;background-size:cover;height:100%;">
   <div  class="head-box" >
     <div class="row" >
       <div class="col-20">
@@ -13,19 +13,24 @@
       Ao continuar, você estará aceitando os <span>Termos de Serviço</span>,e confirmando que é um cidadão brasileiro.
     </h1>
   </div>
+  <form name="formOne" novalidate>
   <div class="input-container" style="margin-left:20px;">
 
-    <label class="item">
-      <input type="text" class="input-style" placeholder="Senha" ng-model="newAccount.password">
+    <label class="item item-input item-floating-label">
+      <span class="input-label">Senha</span>
+      <input type="password" class="input-style" placeholder="Senha" ng-model="newAccount.password" required>
     </label>
-    <label class="item">
-      <input type="text" class="input-style" placeholder="Repita a senha" ng-model="newAccount.password">
+    <label class="item item-input item-floating-label">
+      <span class="input-label">Confirmar Senha</span>
+      <input type="password" class="input-style" placeholder="Repita a senha" ng-model="newAccount.password" required>
     </label>
-    <label class="item">
-      <input type="text" class="input-style" placeholder="Pergunta de segurança" ng-model="newAccount.securityQuestion">
+    <label class="item item-input item-floating-label">
+      <span class="input-label">Pergunta de segurança</span>
+      <input type="text" class="input-style" placeholder="Pergunta de segurança" ng-model="newAccount.securityQuestion" required>
     </label>
-    <label class="item">
-      <input type="text" class="input-style" placeholder="Sua resposta" ng-model="newAccount.securityAnswer">
+    <label class="item item-input item-floating-label">
+      <span class="input-label">Resposta</span>
+      <input type="text" class="input-style" placeholder="Sua resposta" ng-model="newAccount.securityAnswer" required>
     </label>
   </div>
 
@@ -33,10 +38,11 @@
 
 <ion-footer-bar class="footer-bar-custom" style="">
   <div class="col" style="padding:30px;">
-    <button ng-click="do4()" class="item-center button button-clear btn-cadastro">
+    <button ng-disabled="!formOne.$valid" ng-click="do4()" class="item-center button button-clear btn-cadastro">
       <i class="icon ion-ios-checkmark-empty" style="font-size:30px;"></i>
     &nbsp;
-      CONTINUAR (Passo 3 de 14)
+      CONTINUAR (Passo 3 de 4)
     </button>
   </div>
-</ion-footer-bar>
+</form>
+</ion-view>
