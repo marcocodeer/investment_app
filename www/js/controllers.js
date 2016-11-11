@@ -1561,11 +1561,30 @@ angular.module('starter.controllers', [])
 
   })
 
-  .controller('dadosCtrl', function($scope, $ionicModal, $timeout, $state) {
+  .controller('dadosCtrl', function($scope, $ionicModal, $timeout, $state, Camera) {
 
     try {
+      console.log("oi");
       $scope.$root.user.app.estado = $state.current.name;
       console.log($scope.$root.user.app.estado);
+
+      $scope.takePicture = function (options) {
+
+        var options = {
+          quality : 75,
+          targetWidth: 200,
+          targetHeight: 200,
+          sourceType: 1
+        };
+
+        Camera.getPicture(options).then(function(imageData) {
+          $scope.picture = imageData;
+        }, function(err) {
+          console.log(err);
+        });
+
+      };
+
 
 
       $scope.Valor = '';
