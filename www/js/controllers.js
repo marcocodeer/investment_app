@@ -1561,12 +1561,14 @@ angular.module('starter.controllers', [])
 
   })
 
-  .controller('dadosCtrl', function($scope, $ionicModal, $timeout, $state, Camera) {
+  .controller('dadosCtrl', function($scope, $ionicModal, $timeout, $state, Camera, LocalStorage) {
 
-    try {
-      console.log("oi");
-      $scope.$root.user.app.estado = $state.current.name;
-      console.log($scope.$root.user.app.estado);
+    $scope.userInfo = LocalStorage.get('UserProfile');
+    console.log($scope.userInfo);
+
+    $scope.$root.user.app.estado = $state.current.name;
+    console.log($scope.$root.user.app.estado);
+    console.log($scope.userInfo.userId);
 
       $scope.takePicture = function (options) {
 
@@ -1637,9 +1639,6 @@ angular.module('starter.controllers', [])
 
 
 
-    } catch (e) {
-      alert(e);
-    }
 
 
   })
