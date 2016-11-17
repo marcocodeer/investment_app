@@ -117,6 +117,8 @@ angular.module('starter').controller('loginCtrl', function($scope, $ionicModal, 
                   LocalStorage.remove('UserProfile');
                   LocalStorage.set('UserProfile', result.data.data);
 
+                  
+
                 }else if (result.data.statusapp == 'NOK'){
                   $scope.naoLogado = "Usuário ou Senha inválidos.";
                   $scope.showPopLogin();

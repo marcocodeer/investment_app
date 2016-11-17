@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-  .controller('AppCtrl', function($scope, $ionicModal, $timeout, $state, $ionicSlideBoxDelegate, $ionicPopover, $cordovaCamera) {
+  .controller('AppCtrl', function($scope, $ionicModal, $timeout, $state, $ionicSlideBoxDelegate, $ionicPopover, $cordovaCamera, LocalStorage) {
     try {
       $scope.takeImage = function() {
               var options = {
@@ -62,21 +62,24 @@ angular.module('starter.controllers', [])
 
       $scope.Tour = '';
 
+      var user = LocalStorage.get('UserProfile');
+
       $scope.$root.user = {
         pessoal : {
-          nome : 'Marco Carvalho',
-          fone : '(11)74857-9963',
-          email : 'marcos@gmail.com',
-          dob : new Date("December 29, 1983"),
-          cpf : '80140025048',
-          sexo : 'M'
+          userId :      user.userId,
+          nome :        user.fullName,
+          fone :        user.phone1,
+          email :       user.email,
+          dob :         user.dob,
+          cpf :         user.cpf,
+          sexo :        user.gender
         },
         endereco : {
-          rua : 'Av. Brasil, 335',
-          cidade : 'São Paulo',
-          cep : '01220-000',
-          uf : 'SP',
-          complemento : 'ap 35'
+          rua :         user.address,
+          cidade :      user.city,
+          cep :         user.zipCode,
+          uf :          user.state,
+          complemento : user.gender
         },
         financeiro : {
           emprego : 'Estudante',
@@ -110,27 +113,27 @@ angular.module('starter.controllers', [])
           bandeiras : 'Bandeiras',
           banco : 'Banco',
           cartoes : [
-                      {
-                        id : 0,
-                        name : 'Visa',
-                        number : '4455-5547-9968-2124'
-                      },
-                      {
-                        id : 1,
-                          name : 'Master',
-                        number : '4455-5547-9968-2124'
-                      },
-                      {
-                        id : 2,
-                          name : 'PayPal',
-                        number : '4455-5547-9968-2124'
-                      },
-                      {
-                        id : 3,
-                          name : 'Dinners',
-                        number : '4455-5547-9968-2124'
-                      }
-                    ],
+            {
+              id : 0,
+              name : 'Visa',
+              number : '4455-5547-9968-2124'
+            },
+            {
+              id : 1,
+              name : 'Master',
+              number : '4455-5547-9968-2124'
+            },
+            {
+              id : 2,
+              name : 'PayPal',
+              number : '4455-5547-9968-2124'
+            },
+            {
+              id : 3,
+              name : 'Dinners',
+              number : '4455-5547-9968-2124'
+            }
+          ],
           investimentos : [
             {
               id : 0,
@@ -842,7 +845,7 @@ angular.module('starter.controllers', [])
 
   })
 
-  .controller('saldoCtrl', function($scope, $ionicModal, $timeout, $state, $ionicSlideBoxDelegate, $ionicPopover) {
+  .controller('saldoCtrl', function($scope, $ionicModal, $timeout, $state, LocalStorage, $ionicSlideBoxDelegate, $ionicPopover, TransactionsService) {
 
     try {
       $scope.$root.user.app.estado = $state.current.name;
@@ -859,11 +862,124 @@ angular.module('starter.controllers', [])
 
       $scope.Percent = (parseFloat($scope.Valor) / parseFloat($scope.Meta)*100) + '%';
 
+      var tokenObject = '';
+
+      //Get Token
+      if(LocalStorage.get('AuthorizationToken') != null) {
+
+        tokenObject = LocalStorage.get('AuthorizationToken');
+
+      }
+
+      $scope.GetInvestments = function(){
+
+        var GetAllNotInvestedByUserId = TransactionsService.GetAllNotInvestedByUserId($scope.$root.user.pessoal.userId, tokenObject);
+
+        var GetAllInvestedByUserId = TransactionsService.GetAllInvestedByUserId($scope.$root.user.pessoal.userId, tokenObject);
+
+        GetAllNotInvestedByUserId.then(function(result){
+
+          console.log("Resultado GetAllNotInvestedByUserId");
+          console.log(result);
+
+          if(result.data.statusapp == 'OK'){
+
+
+
+          }else {
+
+
+          }
+
+        });
+
+        GetAllInvestedByUserId.then(function(result){
+
+          console.log("Resultado GetAllInvestedByUserId");
+          console.log(result);
+
+          if(result.data.statusapp == 'OK'){
+
+
+
+          }else {
+
+
+          }
+
+        });
+
+      };
+
+      $scope.GetHistory = function(){
+
+        var GetAllTransactionsByUserId = TransactionsService.GetAllTransactionsByUserId($scope.$root.user.pessoal.userId, tokenObject);
+
+        var GetAllTransactionsByUserIdByMonth = TransactionsService.GetAllTransactionsByUserIdByMonth($scope.$root.user.pessoal.userId, '10', tokenObject);
+
+        GetAllTransactionsByUserId.then(function(result){
+
+          console.log("Resultado GetAllTransactionsByUserId");
+          console.log(result);
+
+          if(result.data.statusapp == 'OK'){
+
+
+
+          }else {
+
+
+          }
+
+        });
+
+        GetAllTransactionsByUserIdByMonth.then(function(result){
+
+          console.log("Resultado GetAllTransactionsByUserIdByMonth");
+          console.log(result);
+
+          if(result.data.statusapp == 'OK'){
+
+
+
+          }else {
+
+
+          }
+
+        });
+
+      };
+
+      
+
+      $scope.doInvestment = function(investmentId){
+
+        var DoInvestment = TransactionsService.DoInvestment(investmentId, tokenObject);
+
+        DoInvestment.then(function(result){
+
+          console.log("Resultado DoInvestment");
+          console.log(result);
+
+          if(result.data.statusapp == 'OK'){
+
+            $scope.GetInvestments();
+
+          }else {
+
+
+          }
+
+        });
+
+      };
+
       $scope.atualizaPercent = function(){
 
         var meta  = $scope.Meta,
 
-            total = $scope.Valor;
+          total = $scope.Valor;
 
         meta = meta.replace(',','');
 
