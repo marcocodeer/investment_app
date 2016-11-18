@@ -19,7 +19,7 @@ getTransactionDataFromAPI.$inject = ['$http', 'CONSTANTS', '$httpParamSerializer
      var service = {
 
         DoInvestment: function (investmentId, AuthorizationTokenObject) {
-            var getDoInvestmentApiUrl = CONSTANTS.APP_API_URL + 'api/Transactions/DoInvestment?UserFinancialTransactionId=' + investmentId;
+            var getDoInvestmentApiUrl = CONSTANTS.APP_API_URL + '/api/Transactions/DoInvestment?UserFinancialTransactionId=' + investmentId;
 
             return $http({
                 method: 'POST',

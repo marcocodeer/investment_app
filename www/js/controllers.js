@@ -860,6 +860,12 @@ angular.module('starter.controllers', [])
 
       $scope.currentDate = new Date();
 
+      $scope.Saldo = [];
+
+      $scope.Invested = [];
+
+      $scope.NotInvested = [];
+
       $scope.Percent = (parseFloat($scope.Valor) / parseFloat($scope.Meta)*100) + '%';
 
       var tokenObject = '';
@@ -873,21 +879,33 @@ angular.module('starter.controllers', [])
 
       $scope.GetInvestments = function(){
 
+        $scope.Saldo = [];
+
+        $scope.NotInvested = [];
+
+        $scope.Invested = [];
+
         var GetAllNotInvestedByUserId = TransactionsService.GetAllNotInvestedByUserId($scope.$root.user.pessoal.userId, tokenObject);
 
         var GetAllInvestedByUserId = TransactionsService.GetAllInvestedByUserId($scope.$root.user.pessoal.userId, tokenObject);
 
         GetAllNotInvestedByUserId.then(function(result){
 
-          console.log("Resultado GetAllNotInvestedByUserId");
-          console.log(result);
+
 
           if(result.data.statusapp == 'OK'){
 
+            angular.forEach(result.data.data, function(item) {
 
+              this.push(item);
+
+            }, $scope.Saldo);
+
+            $scope.NotInvested = result.data.data;
 
           }else {
 
+            console.log('GetAllNotInvestedByUserId error');
 
           }
 
@@ -895,15 +913,19 @@ angular.module('starter.controllers', [])
 
         GetAllInvestedByUserId.then(function(result){
 
-          console.log("Resultado GetAllInvestedByUserId");
-          console.log(result);
+         if(result.data.statusapp == 'OK'){
 
-          if(result.data.statusapp == 'OK'){
+            angular.forEach(result.data.data, function(item) {
 
+              this.push(item);
 
+            }, $scope.Saldo);
+
+            $scope.Invested = result.data.data;
 
           }else {
 
+            console.log('GetAllInvestedByUserId error');
 
           }
 
@@ -912,6 +934,12 @@ angular.module('starter.controllers', [])
       };
 
       $scope.GetHistory = function(){
+
+        $scope.Mensal = [];
+
+        $scope.Anual = [];
+
+        $scope.Tudo = [];
 
         var GetAllTransactionsByUserId = TransactionsService.GetAllTransactionsByUserId($scope.$root.user.pessoal.userId, tokenObject);
 
@@ -924,10 +952,11 @@ angular.module('starter.controllers', [])
 
           if(result.data.statusapp == 'OK'){
 
-
+            $scope.Tudo = result.data.data;
 
           }else {
 
+            console.log('GetAllTransactionsByUserId error');
 
           }
 
@@ -944,6 +973,7 @@ angular.module('starter.controllers', [])
 
           }else {
 
+            console.log('GetAllTransactionsByUserIdByMonth error');
 
           }
 
@@ -951,7 +981,7 @@ angular.module('starter.controllers', [])
 
       };
 
-      
+
 
       $scope.doInvestment = function(investmentId){
 
@@ -959,15 +989,13 @@ angular.module('starter.controllers', [])
 
         DoInvestment.then(function(result){
 
-          console.log("Resultado DoInvestment");
-          console.log(result);
-
           if(result.data.statusapp == 'OK'){
 
             $scope.GetInvestments();
 
           }else {
 
+            console.log("Error no DoInvestment");
 
           }
 
@@ -1063,7 +1091,7 @@ angular.module('starter.controllers', [])
 
       };
 
-      $scope.Saldo =  [
+      /*$scope.Saldo =  [
         {
           'id': 1,
           'label': 'R$ 4,64 Starbucks',
@@ -1152,7 +1180,7 @@ angular.module('starter.controllers', [])
           'status': 1,
           'value': '0,36'
         }
-      ];
+      ];*/
     } catch (e) {
       alert(e);
     }

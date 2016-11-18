@@ -17,9 +17,9 @@
 
         <div class="list estendida" >
 
-          <div class="row item"  ng-repeat="item in Saldo | filter:{ label: searchForce } as filtered" ng-class="item.status === 1 ? 'concluido' : '' " ng-if="(item.date | date: 'MM') === (currentDate | date: 'MM')">
+          <div class="row item"  ng-repeat="item in Tudo | filter:{ financialTransactionDescription: searchForce } as filtered" ng-class="item.vested === true ? 'concluido' : '' " ng-if="(item.transactionDate | date: 'MM') === (currentDate | date: 'MM')">
 
-            <div class="col-80">
+            <div class="col-90">
 
               <h3>
 
@@ -27,13 +27,13 @@
 
                 &nbsp; <span>R$</span>
 
-                &nbsp; <span>{{item.value}}</span>
+                &nbsp; <span>{{item.roundValueInvestment}}</span>
 
               </h3>
 
               <h2>
 
-                <span style="color: #8cc5cc">{{item.date | date: 'dd/MM/yyyy'}}</span> {{item.label}}
+                <span style="color: #8cc5cc">{{item.transactionDate | date: 'dd/MM/yyyy'}}</span> R$ {{item.transactionValue}} {{item.financialTransactionDescription}}
 
               </h2>
 
@@ -56,9 +56,9 @@
 
         <div class="list estendida" >
 
-          <div class="row item"  ng-repeat="item in Saldo | filter:{ label: searchForce} as filtered" ng-class="item.status === 1 ? 'concluido' : '' " ng-if="(item.date | date: 'yyyy') == (currentDate | date: 'yyyy')">
+          <div class="row item"  ng-repeat="item in Tudo | filter:{ financialTransactionDescription: searchForce} as filtered" ng-class="item.vested === true ? 'concluido' : '' " ng-if="(item.transactionDate | date: 'yyyy') == (currentDate | date: 'yyyy')">
 
-            <div class="col-80">
+            <div class="col-90">
 
               <h3>
 
@@ -66,13 +66,13 @@
 
                 &nbsp; <span>R$</span>
 
-                &nbsp; <span>{{item.value}}</span>
+                &nbsp; <span>{{item.roundValueInvestment}}</span>
 
               </h3>
 
               <h2>
 
-                <span style="color: #8cc5cc">{{item.date | date: 'dd/MM/yyyy'}}</span> {{item.label}}
+                <span style="color: #8cc5cc">{{item.transactionDate | date: 'dd/MM/yyyy'}}</span> R$ {{item.transactionValue}} {{item.financialTransactionDescription}}
 
               </h2>
 
@@ -92,9 +92,9 @@
 
         <div class="list estendida" >
 
-          <div class="row item"  ng-repeat="item in Saldo | filter:{ label: searchForce} as filtered"  ng-class="item.status === 1 ? 'concluido' : '' ">
+          <div class="row item"  ng-repeat="item in Tudo | filter:{ financialTransactionDescription: searchForce} as filtered"  ng-class="item.vested === true ? 'concluido' : '' ">
 
-            <div class="col-80">
+            <div class="col-90">
 
               <h3>
 
@@ -102,13 +102,13 @@
 
                 &nbsp; <span>R$</span>
 
-                &nbsp; <span>{{item.value}}</span>
+                &nbsp; <span>{{item.roundValueInvestment}}</span>
 
               </h3>
 
               <h2>
 
-                <span style="color: #8cc5cc">{{item.date | date: 'dd/MM/yyyy'}}</span>   {{item.label}}
+                <span style="color: #8cc5cc">{{item.transactionDate | date: 'dd/MM/yyyy'}}</span> R$ {{item.transactionValue}} {{item.financialTransactionDescription}}
 
               </h2>
 

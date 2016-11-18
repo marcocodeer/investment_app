@@ -40,7 +40,7 @@
 
             <div class="list estendida" >
 
-              <div class="row item"  ng-repeat="item in Saldo" ng-class="item.status === 1 ? 'concluido' : '' ">
+              <div class="row item"  ng-repeat="item in Saldo" ng-class="item.vested === true ? 'concluido' : '' ">
 
                 <div class="col-80">
 
@@ -50,13 +50,13 @@
 
                     &nbsp; <span>R$</span>
 
-                    &nbsp; <span>{{item.value}}</span>
+                    &nbsp; <span>{{item.roundValueInvestment}}</span>
 
                   </h3>
 
                   <h2>
 
-                    <span style="color: #8cc5cc">{{item.date | date: 'dd/MM/yyyy'}}</span> {{item.label}}
+                    <span style="color: #8cc5cc">{{item.transactionDate | date: 'dd/MM/yyyy'}}</span> R$ {{item.transactionValue}} {{item.financialTransactionDescription}}
 
                   </h2>
 
@@ -64,13 +64,13 @@
 
                 <div class="col-20">
 
-                  <div ng-hide="item.status === 1" ng-click="aprovarInvestimento($index)">
+                  <div ng-hide="item.vested === true" ng-click="doInvestment(item.userFinancialTransactionId)">
 
                     <img src="img/bt-plus.png" alt="">
 
                   </div>
 
-                  <div ng-show="item.status === 1">
+                  <div ng-show="item.vested === true">
 
                     <img src="img/bt-check.png" alt="">
 
@@ -93,7 +93,7 @@
 
               <div class="list estendida" >
 
-                <div class="row item"  ng-repeat="item in Saldo" ng-if="item.status === 1" ng-class="item.status === 1 ? 'concluido' : '' ">
+                <div class="row item"  ng-repeat="item in Invested" ng-class="item.vested === true ? 'concluido' : '' ">
 
                   <div class="col-80">
 
@@ -103,13 +103,13 @@
 
                       &nbsp; <span>R$</span>
 
-                      &nbsp; <span>{{item.value}}</span>
+                      &nbsp; <span>{{item.roundValueInvestment}}</span>
 
                     </h3>
 
                     <h2>
 
-                      <span style="color: #8cc5cc">{{item.date | date: 'dd/MM/yyyy'}}</span> {{item.label}}
+                      <span style="color: #8cc5cc">{{item.transactionDate | date: 'dd/MM/yyyy'}}</span> R$ {{item.transactionValue}} {{item.financialTransactionDescription}}
 
                     </h2>
 
@@ -117,13 +117,13 @@
 
                   <div class="col-20">
 
-                    <div ng-hide="item.status === 1" ng-click="aprovarInvestimento($index)">
+                    <div ng-hide="item.vested === true" ng-click="aprovarInvestimento($index)">
 
                       <img src="img/bt-plus.png" alt="">
 
                     </div>
 
-                    <div ng-show="item.status === 1">
+                    <div ng-show="item.vested === true">
 
                       <img src="img/bt-check.png" alt="">
 
@@ -145,7 +145,7 @@
 
               <div class="list estendida" >
 
-                <div class="row item"  ng-repeat="item in Saldo" ng-if="item.status === 0" ng-class="item.status === 1 ? 'concluido' : '' ">
+                <div class="row item"  ng-repeat="item in NotInvested" ng-class="item.vested === true ? 'concluido' : '' ">
 
                   <div class="col-80">
 
@@ -155,13 +155,13 @@
 
                       &nbsp; <span>R$</span>
 
-                      &nbsp; <span>{{item.value}}</span>
+                      &nbsp; <span>{{item.roundValueInvestment}}</span>
 
                     </h3>
 
                     <h2>
 
-                      <span style="color: #8cc5cc">{{item.date | date: 'dd/MM/yyyy'}}</span> {{item.label}}
+                      <span style="color: #8cc5cc">{{item.transactionDate | date: 'dd/MM/yyyy'}}</span> R$ {{item.transactionValue}} {{item.financialTransactionDescription}}
 
                     </h2>
 
@@ -169,13 +169,13 @@
 
                   <div class="col-20">
 
-                    <div ng-hide="item.status === 1" ng-click="aprovarInvestimento($index)">
+                    <div ng-hide="item.vested === true" ng-click="doInvestment(item.userFinancialTransactionId)">
 
                       <img src="img/bt-plus.png" alt="">
 
                     </div>
 
-                    <div ng-show="item.status === 1">
+                    <div ng-show="item.vested === true">
 
                       <img src="img/bt-check.png" alt="">
 
