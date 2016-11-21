@@ -3,9 +3,11 @@
 
     <div class="head-bg" style="padding:15px 15px 40px;">
        <div class="row" style="margin-top:30px;">
-          <span style="font-size:16px;color:#79aad0;padding-top:20px;">INVESTIDO &nbsp;R$ &nbsp;&nbsp;</span><span style=""><h3 style="font-weight: 300;color:#fff;font-size:37px;">{{$root.user.app.saldo}}</h3></span>
+          <span style="font-size:16px;color:#a9ceea;padding-top:20px;">INVESTIDO &nbsp;
+            <span style="font-size:19px;">R$</span>&nbsp;</span>
+          <span style=""><h3 style="font-weight: 200;color:#fff;font-size:37px;">{{$root.user.app.saldo}}</h3></span>
         </div>
-        <div class="row">
+        <!--<div class="row">
           <span style="font-size:16px;color:#79aad0;">CICLO ATUAL </span>
         </div>
         <div class="meta">
@@ -17,26 +19,15 @@
         <button ng-click="movimentar(1)" ion-button icon-left class="button btn-perfil button-block">
           <i class="icon ion-ios-plus-empty"></i>          &nbsp;          INVESTIR ESTE CRÉDITO AGORA
         </button>
-      </div>
+      </div>-->
 
-      <div ng-show="movimento === 1" class="movimento" style="margin: 20px -15px -40px;">
-
-        <h3>Seu depósito de créditos foi realizado.</h3>
-        <p>Valor R$ <span>{{Deposito}}</span></p>
-
-        <button class="button button-positive btn-perfil" ng-click="movimentar(0)">
-          <i class="icon ion-ios-arrow-left" style="font-weight:300;"></i>
-          &nbsp;Voltar
-        </button>
-
-      </div>
     </div>
 
-      <ion-tabs class="tabs-dark tabs-icon-top" id="tabsController-tabs1"  ng-show="movimento === 0">
+      <ion-tabs class="tabs-dark tabs-icon-top" id="tabsController-tabs1" >
 
         <ion-tab title="Tudo" icon="No Icon" id="tabsController-tab1">
 
-          <ion-content scroll="true" style="bottom: 0;top: 297px !important;">
+          <ion-content scroll="true" style="bottom: 0;top: 148px !important;">
 
             <div class="list estendida" >
 
@@ -89,7 +80,7 @@
 
         <ion-tab title="Aprovados" icon="No Icon" id="tabsController-tab5">
 
-          <ion-content scroll="true" style="bottom: 0;top: 297px !important;overflow: hidden;">
+          <ion-content scroll="true" style="bottom: 0;top: 148px !important;overflow: hidden;">
 
               <div class="list estendida" >
 
@@ -141,7 +132,7 @@
 
         <ion-tab title="Pendentes" icon="No Icon" id="tabsController-tab2">
 
-          <ion-content scroll="true" style="bottom: 0;top: 297px !important;overflow: hidden;">
+          <ion-content scroll="true" style="bottom: 0;top: 148px !important;overflow: hidden;">
 
               <div class="list estendida" >
 

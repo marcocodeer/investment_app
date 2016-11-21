@@ -11,9 +11,7 @@
 
  getLoginDataFromAPI.$inject = ['$http', 'CONSTANTS', '$httpParamSerializerJQLike'];
 
-
-
- function getLoginDataFromAPI($http, CONSTANTS, $httpParamSerializerJQLike) {
+ function getLoginDataFromAPI($http, CONSTANTS) {
 
      $http.defaults.useXDomain = true;
 
@@ -21,14 +19,13 @@
      var service = {
         //get - Profile
         getProfile: function (userId, AuthorizationTokenObject) {
-            var getUserLoginInformationUrl = CONSTANTS.APP_API_URL + 'GetProfile?UserId=' + userId;
+            var getUserLoginInformationUrl = CONSTANTS.APP_API_URL + '/api/Account/GetProfile?UserId=' + userId;
 
             return $http({
               method: 'GET',
-              url: getFamilyApiUrl,
+              url: getUserLoginInformationUrl,
               useXDomain: true,
-              headers: {'Content-Type' : 'application/x-www-form-urlencoded', 'Authorization': AuthorizationTokenObject.authorization_token},
-              data: $httpParamSerializerJQLike(FamilyObject)
+              headers: {'Content-Type' : 'application/x-www-form-urlencoded', 'Authorization': AuthorizationTokenObject.authorization_token}
             }).success(function(data, status) {
               return data;
             });

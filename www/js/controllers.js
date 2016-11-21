@@ -64,6 +64,8 @@ angular.module('starter.controllers', [])
 
       var user = LocalStorage.get('UserProfile');
 
+      console.log(user);
+
       $scope.$root.user = {
         pessoal : {
           userId :      user.userId,
@@ -107,7 +109,7 @@ angular.module('starter.controllers', [])
               readed : false
             }
           ],
-          saldo : '1.325,14',
+          saldo : user.investmentBalance,
           ciclo : '',
           uf : 'UF',
           bandeiras : 'Bandeiras',
@@ -583,21 +585,91 @@ angular.module('starter.controllers', [])
 
   })
 
-  .controller('homeCtrl', function($scope, $ionicModal, $timeout, $state, $ionicSlideBoxDelegate, $ionicPopover, LocalStorage) {
-    $scope.userInfo = LocalStorage.get('UserProfile');
-    console.log($scope.userInfo);
+  .controller('homeCtrl', function($scope, $ionicModal, $timeout, $state, $filter, $ionicSlideBoxDelegate, $ionicPopover, TransactionsService, LocalStorage) {
+
     try {
 
-
-
       $scope.$root.user.app.estado = $state.current.name;
+
+      $scope.currentDate = new Date();
+
+      $scope.pastMonth = new Date().setDate($scope.currentDate.getDate()-30);
+
+      $scope.UltimoInvestimento = null;
+
+      $scope.Invested = [];
+
+      $scope.GraficoData = [];
+
+      $scope.GraficoLabel = [];
+
+      $scope.MesTotal = 0;
+
+      var tokenObject = '';
+
+      //Get Token
+      if(LocalStorage.get('AuthorizationToken') != null) {
+
+        tokenObject = LocalStorage.get('AuthorizationToken');
+
+      }
+
+      $scope.GetAllInvested = function(){
+
+        var GetAllInvestedByUserId = TransactionsService.GetAllInvestedByUserId($scope.$root.user.pessoal.userId, tokenObject);
+
+        GetAllInvestedByUserId.then(function(result){
+
+          if(result.data.statusapp == 'OK'){
+
+            $scope.Invested = result.data.data;
+
+            $scope.Investeds = $filter('orderBy')($scope.Invested, 'transactionDate');
+
+            angular.forEach($scope.Investeds, function(invest){
+
+              var dia = new Date(invest.transactionDate);
+
+              if ( dia > $scope.pastMonth ){
+
+                $scope.MesTotal += invest.roundValueInvestment;
+
+                $scope.GraficoData.push(invest.roundValueInvestment);
+
+                $scope.GraficoLabel.push(dia.getDate());
+
+                $scope.UltimoInvestimento = dia;
+
+              }
+
+            });
+
+            $scope.UltimoInvestimento = ( $scope.currentDate - $scope.UltimoInvestimento ) / (1000 * 3600 * 24);
+
+            $scope.UltimoInvestimento = $scope.UltimoInvestimento.toFixed(0);
+
+            console.log($scope.UltimoInvestimento);
+
+            $scope.homeGrafico();
+
+          }else {
+
+            console.log('GetAllInvestedByUserId error');
+
+          }
+
+        });
+
+      };
+
+      $scope.GetAllInvested();
 
       $scope.homeGrafico = function () {
 
         // GRAFICO DE LINHA
 
         var databarSleep = {
-          labels: ['34', '36', '38', '40', '42', '44', '46', '48', '50'],
+          labels: $scope.GraficoLabel,
           datasets: [
             {
               label: "My First dataset",
@@ -608,7 +680,7 @@ angular.module('starter.controllers', [])
               borderColor: "#fff",
               borderWidth: 2,
               strokeColor: "#fff",
-              data: [1,3,2,3,5,7,6,8,9]
+              data: $scope.GraficoData
             }
 
           ]
@@ -646,11 +718,11 @@ angular.module('starter.controllers', [])
         // GRAFICO DE BARRAS
 
         var dataBar = {
-          labels: ['34', '36', '38', '40', '42', '44', '46', '48', '50'],
+          labels: $scope.GraficoLabel,
           datasets: [
             {
               label: 'Line Component',
-              data: [1.2,1.5,2,1.5,2.4,3,2.6,3.4,3],
+              data: $scope.GraficoData,
               fill: true,
               backgroundColor: 'rgba(255,255,255,0.3)',
               borderColor: 'rgba(255,255,255,0)',
@@ -693,14 +765,7 @@ angular.module('starter.controllers', [])
 
       };
 
-      $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
 
-      $scope.series = ['Series A', 'Series B'];
-
-      $scope.data = [
-        [65, 59, 80, 81, 56, 55, 40],
-        [28, 48, 40, 19, 86, 27, 90]
-      ];
     } catch (e) {
       alert(e);
     }
@@ -845,18 +910,11 @@ angular.module('starter.controllers', [])
 
   })
 
-  .controller('saldoCtrl', function($scope, $ionicModal, $timeout, $state, LocalStorage, $ionicSlideBoxDelegate, $ionicPopover, TransactionsService) {
+  .controller('saldoCtrl', function($scope, $ionicModal, $timeout, $state, LocalStorage, $ionicSlideBoxDelegate, $ionicPopover, TransactionsService, UserService, $ionicLoading) {
 
     try {
+
       $scope.$root.user.app.estado = $state.current.name;
-
-      $scope.Valor = '2,30';
-
-      $scope.Meta = '5,00';
-
-      $scope.Deposito = '';
-
-      $scope.movimento = 0;
 
       $scope.currentDate = new Date();
 
@@ -865,8 +923,6 @@ angular.module('starter.controllers', [])
       $scope.Invested = [];
 
       $scope.NotInvested = [];
-
-      $scope.Percent = (parseFloat($scope.Valor) / parseFloat($scope.Meta)*100) + '%';
 
       var tokenObject = '';
 
@@ -887,11 +943,7 @@ angular.module('starter.controllers', [])
 
         var GetAllNotInvestedByUserId = TransactionsService.GetAllNotInvestedByUserId($scope.$root.user.pessoal.userId, tokenObject);
 
-        var GetAllInvestedByUserId = TransactionsService.GetAllInvestedByUserId($scope.$root.user.pessoal.userId, tokenObject);
-
         GetAllNotInvestedByUserId.then(function(result){
-
-
 
           if(result.data.statusapp == 'OK'){
 
@@ -903,6 +955,8 @@ angular.module('starter.controllers', [])
 
             $scope.NotInvested = result.data.data;
 
+            $scope.GetAllInvested();
+
           }else {
 
             console.log('GetAllNotInvestedByUserId error');
@@ -911,9 +965,15 @@ angular.module('starter.controllers', [])
 
         });
 
+      };
+
+      $scope.GetAllInvested = function(){
+
+        var GetAllInvestedByUserId = TransactionsService.GetAllInvestedByUserId($scope.$root.user.pessoal.userId, tokenObject);
+
         GetAllInvestedByUserId.then(function(result){
 
-         if(result.data.statusapp == 'OK'){
+          if(result.data.statusapp == 'OK'){
 
             angular.forEach(result.data.data, function(item) {
 
@@ -922,6 +982,8 @@ angular.module('starter.controllers', [])
             }, $scope.Saldo);
 
             $scope.Invested = result.data.data;
+
+            $ionicLoading.hide();
 
           }else {
 
@@ -943,8 +1005,6 @@ angular.module('starter.controllers', [])
 
         var GetAllTransactionsByUserId = TransactionsService.GetAllTransactionsByUserId($scope.$root.user.pessoal.userId, tokenObject);
 
-        var GetAllTransactionsByUserIdByMonth = TransactionsService.GetAllTransactionsByUserIdByMonth($scope.$root.user.pessoal.userId, '10', tokenObject);
-
         GetAllTransactionsByUserId.then(function(result){
 
           console.log("Resultado GetAllTransactionsByUserId");
@@ -962,36 +1022,28 @@ angular.module('starter.controllers', [])
 
         });
 
-        GetAllTransactionsByUserIdByMonth.then(function(result){
-
-          console.log("Resultado GetAllTransactionsByUserIdByMonth");
-          console.log(result);
-
-          if(result.data.statusapp == 'OK'){
-
-
-
-          }else {
-
-            console.log('GetAllTransactionsByUserIdByMonth error');
-
-          }
-
-        });
-
       };
 
-
-
       $scope.doInvestment = function(investmentId){
+
+        $ionicLoading.show({
+          template: '<div class="custom-spinner-container">'+
+                       '<ion-spinner name="circles"></ion-spinner><span style="margin-top: -29px;display: block;margin-bottom: 5px;">Investindo...</span> '+
+                    '</div>',
+          duration: 3000
+        }).then(function(){
+          console.log("The loading indicator is now displayed");
+        });
 
         var DoInvestment = TransactionsService.DoInvestment(investmentId, tokenObject);
 
         DoInvestment.then(function(result){
 
-          if(result.data.statusapp == 'OK'){
+          if(result.data.statusapp === 'OK'){
 
             $scope.GetInvestments();
+
+            $scope.atualizaSaldo();
 
           }else {
 
@@ -1003,184 +1055,31 @@ angular.module('starter.controllers', [])
 
       };
 
-      $scope.atualizaPercent = function(){
+      $scope.atualizaSaldo = function(){
 
-        var meta  = $scope.Meta,
+        var GetProfile = UserService.getProfile($scope.$root.user.pessoal.userId, tokenObject);
 
-          total = $scope.Valor;
+        GetProfile.then(function(result){
 
-        meta = meta.replace(',','');
+          if(result.data.statusapp == 'OK'){
 
-        total = total.replace(',','');
+            $scope.$root.user.app.saldo = result.data.data.investmentBalance;
 
-        $scope.Percent = (parseFloat(total) / parseFloat(meta)*90) + '%';
+            console.log($scope.$root.user.app.saldo);
 
-      };
+          }else {
 
-      $scope.aprovarInvestimento = function(id){
-
-        $scope.Saldo[id].status = 1;
-
-        var vlr = $scope.Saldo[id].value,
-            total = $scope.Valor,
-            soma = 0,
-            unidade = 0;
-
-        vlr = vlr.replace(',','');
-
-        total = total.replace(',','');
-
-        soma = parseFloat(total) + parseFloat(vlr);
-
-        soma = soma.toString();
-
-        unidade = soma.substring(0, soma.length - 2) || '0';
-
-        soma = unidade + ',' + soma.substring(soma.length - 2, soma.length);
-
-        $scope.Valor = soma;
-
-        $scope.atualizaPercent();
-
-      };
-
-      $scope.movimentar = function(tipo) {
-
-        if(tipo === 1 ){
-
-          var investido = $scope.$root.user.app.saldo,
-              total = $scope.Valor,
-              unidade = 0,
-              invLen = 0;
-
-          $scope.movimento = 1;
-
-          $scope.Deposito = $scope.Valor;
-
-          total = total.replace(',','');
-
-          investido = investido.replace(',','').replace('.','');
-
-          investido = parseFloat(total) + parseFloat(investido);
-
-          investido = investido.toString();
-
-          unidade = investido.substring(0, investido.length - 2) || '0';
-
-          invLen = investido.length;
-
-          if(unidade.length < 4){
-
-            investido = unidade + ',' + investido.substring(invLen - 2, invLen);
-
-          } else {
-
-            investido = investido.substring(0, invLen - 5)+'.' + investido.substring(invLen - 5, invLen - 2) + ',' + investido.substring(invLen - 2, invLen);
+            console.log('atualizaSaldo error');
 
           }
 
-          $scope.$root.user.app.saldo = investido;
-
-          $scope.Valor = '0';
-
-          $scope.atualizaPercent();
-
-        }
-
-        $scope.movimento = tipo;
+        });
 
       };
 
-      /*$scope.Saldo =  [
-        {
-          'id': 1,
-          'label': 'R$ 4,64 Starbucks',
-          'date': '2016-11-25T12:31:16.062Z',
-          'signal': '+',
-          'status': 0,
-          'value': '0,36'
-        },
-        {
-          'id': 2,
-          'label': 'R$ 5,03 Extra',
-          'date': '2016-11-25T12:31:16.062Z',
-          'signal': '+',
-          'status': 0,
-          'value': '0,97'
-        },
-        {
-          'id': 3,
-          'label': 'R$ 4,13 Padoca Gold',
-          'date': '2016-11-25T12:31:16.062Z',
-          'signal': '-',
-          'status': 0,
-          'value': '0,87'
-        },
-        {
-          'id': 4,
-          'label': 'R$ 4,64 Lojas Riachuelo',
-          'date': '2016-11-25T12:31:16.062Z',
-          'signal': '+',
-          'status': 0,
-          'value': '0,36'
-        },
-        {
-          'id': 5,
-          'label': 'R$ 4,64 Kabum Eletrônicos',
-          'date': '2016-11-25T12:31:16.062Z',
-          'signal': '-',
-          'status': 0,
-          'value': '0,36'
-        },
-        {
-          'id': 6,
-          'label': 'R$ 4,64 Starbucks',
-          'date': '2016-11-25T12:31:16.062Z',
-          'signal': '+',
-          'status': 0,
-          'value': '0,36'
-        },
-        {
-          'id': 7,
-          'label': 'R$ 4,64 Starbucks',
-          'date': '2016-11-25T12:31:16.062Z',
-          'signal': '+',
-          'status': 1,
-          'value': '0,36'
-        },
-        {
-          'id': 8,
-          'label': 'R$ 4,64 Starbucks',
-          'date': '2016-11-25T12:31:16.062Z',
-          'signal': '+',
-          'status': 1,
-          'value': '0,36'
-        },
-        {
-          'id': 9,
-          'label': 'R$ 4,64 Starbucks',
-          'date': '2016-09-25T12:31:16.062Z',
-          'signal': '+',
-          'status': 1,
-          'value': '0,36'
-        },
-        {
-          'id': 10,
-          'label': 'R$ 4,64 Starbucks',
-          'date': '2016-09-25T12:31:16.062Z',
-          'signal': '+',
-          'status': 1,
-          'value': '0,36'
-        },
-        {
-          'id': 11,
-          'label': 'R$ 4,64 Starbucks',
-          'date': '2016-09-25T12:31:16.062Z',
-          'signal': '+',
-          'status': 1,
-          'value': '0,36'
-        }
-      ];*/
+
+
+
     } catch (e) {
       alert(e);
     }

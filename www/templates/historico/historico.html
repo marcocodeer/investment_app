@@ -4,7 +4,7 @@
     <label class="item item-input" style="border-radius: 14px;background-color: #71adcc;border:none;width: 288px;
   height: 28px;">
 
-      <input type="text" placeholder="Pesquise aqui..." data-ng-model="searchForce" style="padding-top: 0px; margin-bottom: 3px;">
+      <input type="text" placeholder="Pesquise aqui..." data-ng-model="searchForce" style="padding-top: 3px; margin-bottom: 3px;">
         <i class="icon ion-ios-search" style="color:#fff;margin-right: 11px;    margin-bottom: 2px;"></i>
     </label>
   </div>
@@ -13,21 +13,21 @@
 
     <ion-tab title="Este Mês" icon="No Icon" id="tabsController-tab1">
 
-      <ion-content scroll="true" style="bottom: 0;top: 116px !important;">
+      <ion-content scroll="true" style="bottom: 0;top: 127px !important;">
 
         <div class="list estendida" >
 
-          <div class="row item"  ng-repeat="item in Tudo | filter:{ financialTransactionDescription: searchForce } as filtered" ng-class="item.vested === true ? 'concluido' : '' " ng-if="(item.transactionDate | date: 'MM') === (currentDate | date: 'MM')">
+          <div class="row item"  ng-repeat="item in Tudo | filter:{ financialTransactionDescription: searchForce } as filtered"  ng-if="(item.transactionDate | date: 'MM') === (currentDate | date: 'MM')">
 
             <div class="col-90">
 
               <h3>
 
-                <span ng-class="item.signal === '-' ? 'negativo' : '' ">{{item.signal}}</span>
+                <span>+</span>
 
                 &nbsp; <span>R$</span>
 
-                &nbsp; <span>{{item.roundValueInvestment}}</span>
+                <span>{{item.roundValueInvestment}}</span>
 
               </h3>
 
@@ -52,21 +52,21 @@
 
     <ion-tab title="Este Ano" icon="No Icon" id="tabsController-tab5">
 
-      <ion-content scroll="true" style="bottom: 0;top: 116px !important;overflow: hidden;">
+      <ion-content scroll="true" style="bottom: 0;top: 127px !important;overflow: hidden;">
 
         <div class="list estendida" >
 
-          <div class="row item"  ng-repeat="item in Tudo | filter:{ financialTransactionDescription: searchForce} as filtered" ng-class="item.vested === true ? 'concluido' : '' " ng-if="(item.transactionDate | date: 'yyyy') == (currentDate | date: 'yyyy')">
+          <div class="row item"  ng-repeat="item in Tudo | filter:{ financialTransactionDescription: searchForce} as filtered"  ng-if="(item.transactionDate | date: 'yyyy') == (currentDate | date: 'yyyy')">
 
             <div class="col-90">
 
               <h3>
 
-                <span ng-class="item.signal === '-' ? 'negativo' : '' ">{{item.signal}}</span>
+                <span>+</span>
 
                 &nbsp; <span>R$</span>
 
-                &nbsp; <span>{{item.roundValueInvestment}}</span>
+               <span>{{item.roundValueInvestment}}</span>
 
               </h3>
 
@@ -88,21 +88,21 @@
 
     <ion-tab title="Tudo" icon="No Icon" id="tabsController-tab2">
 
-      <ion-content scroll="true" style="bottom: 0;top: 116px !important;overflow: hidden;">
+      <ion-content scroll="true" style="bottom: 0;top: 127px !important;overflow: hidden;">
 
         <div class="list estendida" >
 
-          <div class="row item"  ng-repeat="item in Tudo | filter:{ financialTransactionDescription: searchForce} as filtered"  ng-class="item.vested === true ? 'concluido' : '' ">
+          <div class="row item"  ng-repeat="item in Tudo | filter:{ financialTransactionDescription: searchForce} as filtered"  >
 
             <div class="col-90">
 
               <h3>
 
-                <span ng-class="item.signal === '-' ? 'negativo' : '' ">{{item.signal}}</span>
+                <span>+</span>
 
                 &nbsp; <span>R$</span>
 
-                &nbsp; <span>{{item.roundValueInvestment}}</span>
+                <span>{{item.roundValueInvestment}}</span>
 
               </h3>
 

@@ -820,7 +820,7 @@ body > ion-nav-view > ion-side-menus > ion-side-menu-content > ion-nav-bar > div
   top: 267px !important;
 }
 .historico .tabs-dark > .tabs {
-  top: 87px !important;
+  top: 97px !important;
   height: 30px;
 }
 .list.estendida {
@@ -828,7 +828,7 @@ body > ion-nav-view > ion-side-menus > ion-side-menu-content > ion-nav-bar > div
 }
 .list.estendida .row.item{
   margin-bottom: 6px;
-  background-color: #3e99b1 !important;
+  background-color: #0277b3 !important;
   color: #fff;
   height:auto;
   border:none;
@@ -838,7 +838,7 @@ body > ion-nav-view > ion-side-menus > ion-side-menu-content > ion-nav-bar > div
   margin-bottom: 0px;
 }
 .list.estendida .row.item h3{
-  font-weight:300;
+  font-weight:200;
   color:#fff;
 }
 .list.estendida .row.item h3:first-child > span:nth-child(1){
@@ -849,7 +849,7 @@ body > ion-nav-view > ion-side-menus > ion-side-menu-content > ion-nav-bar > div
   color: #f7a591;
 }
 .list.estendida .row.item h3:first-child > span:nth-child(2){
-  color: #8cc5cc;
+  color: #bbd9e9;
 }
 .list.estendida .row.item h3:first-child > span:nth-child(3){
   font-size:30px;
@@ -860,20 +860,20 @@ body > ion-nav-view > ion-side-menus > ion-side-menu-content > ion-nav-bar > div
   font-size:12px;
 }
 .list.estendida .row.item.concluido{
-  background-color: #5CB0B6 !important;
+  background-color: rgba(27, 148, 196, 0.51) !important;
 }
 .list.estendida .row.item .col-20 > div {
   margin-top: 7px;
   width:46px;
   height:46px;
-  background-color: #5cb1b5;
+  background-color: #33cd5f;
   border-radius:50%;
   float: right;
 }
 .list.estendida .row.item .col-20 > div img {
   position:relative;
   left:16px;
-  top:14px
+  top:16px
 }
 .saldo textarea {
   background: transparent;
@@ -927,6 +927,13 @@ margin-top: 20px;
 .platform-android #notificacao span {
   padding-top:1px !important;
 }
+.platform-android .popover-slide-box {
+  height: 406px;
+}
+.platform-android #slide-popover .slider-pager {
+  margin-bottom: 73px;
+}
+
 .platform-android ion-view.saldo.pane div.teclado button span{
   padding-top:4px !important;
 }
@@ -956,7 +963,7 @@ margin-top: 20px;
 }
 
 .historico #tabsController-tabs1 > div {
-  top: 267px !important;
+  top: 118px !important;
 }
 .saldo .teclado .button.activated {
   border-color: #ffffff;
