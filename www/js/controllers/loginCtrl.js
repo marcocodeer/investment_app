@@ -1,23 +1,24 @@
-angular.module('starter').controller('loginCtrl', function($scope, $ionicModal, $timeout, $state, CONSTANTS, LoginService, LocalStorage, $ionicPopup) {
+angular.module('starter').controller('loginCtrl', function($scope, $ionicModal, $timeout, $state, CONSTANTS, LoginService, LocalStorage, $ionicPopup, $ionicLoading) {
 
   //$scope.$root.user.app.estado = $state.current.name;
   console.log("Você está dentro de login page.");
 
-  $scope.username = '';
-  $scope.password = '';
+  $scope.username = 'drikows@drikows.com';
+  $scope.password = '123';
   $scope.rememberMe = '';
   $scope.email = '';
 
   $scope.showPopLogin = function() {
-  var alertPopup = $ionicPopup.alert({
-    title: 'Desculpe!',
-    template: 'Usuario ou senha estão inválidos.'
-  });
 
-  alertPopup.then(function(res) {
-    console.log('Thank you for not eating my delicious ice cream cone');
-  });
-};
+    var alertPopup = $ionicPopup.alert({
+      title: 'Desculpe!',
+      template: 'Usuario ou senha estão inválidos.'
+    });
+
+    alertPopup.then(function(res) {
+      console.log('Thank you for not eating my delicious ice cream cone');
+    });
+  };
 
 
   $scope.deslogado = false;
@@ -68,7 +69,17 @@ angular.module('starter').controller('loginCtrl', function($scope, $ionicModal, 
   };
 
   $scope.doLogin = function (email, pass) {
+
     try {
+
+      $ionicLoading.show({
+        template: '<img src="img/seguranca-slide-pic2.png" alt="" style="width: 100%;margin-top: 53px;margin-bottom: 19px;"><div class="custom-spinner-container">'+
+        '<ion-spinner name="circles"></ion-spinner><span style="margin-top: -29px;display: block;margin-bottom: 5px;">Entrando...</span> '+
+        '</div>',
+        duration: 3000
+      }).then(function(){
+
+      });
 
       var tokenObject = {
           'username': CONSTANTS.APP_USERNAME,
@@ -77,7 +88,9 @@ angular.module('starter').controller('loginCtrl', function($scope, $ionicModal, 
       };
 
       var getToken = LoginService.postToken(tokenObject);
-        getToken.then(function(result){
+
+      getToken.then(function(result){
+
           if(result.statusText == 'OK'){
 
             //Store the API Access Token
@@ -117,7 +130,7 @@ angular.module('starter').controller('loginCtrl', function($scope, $ionicModal, 
                   LocalStorage.remove('UserProfile');
                   LocalStorage.set('UserProfile', result.data.data);
 
-                  
+                  $ionicLoading.hide();
 
                 }else if (result.data.statusapp == 'NOK'){
                   $scope.naoLogado = "Usuário ou Senha inválidos.";

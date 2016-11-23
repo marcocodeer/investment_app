@@ -15,36 +15,36 @@
   <ion-content style="background: url(img/login-bg-acorn.png) no-repeat center;background-size:cover;">
     <div style="background-color: #629cce;height:100px;"></div>
     <div class="column">
-      <div class="" style="text-align:center;margin-top:-33px;">
+      <div class="" style="text-align:center;margin-top:-60px;">
         <img src="img/logo-bg.png" alt="">
         <h2 style="color: #fff;font-weight:300;margin-top: 0;">SAVE<span style="font-weight:400;">CENTS</span></h2>
       </div>
 
 
       <section class="login-container">
-        <label class="item item-input item-floating-label">
-          <span class="input-label"></span>
-          <input type="text" placeholder="E-mail" ng-model="username" name="username" class="input-style">
-        </label>
-        <label class="item item-input item-floating-label" style="margin-top:40px;">
-          <span class="input-label"></span>
-          <input type="password" placeholder="Senha" ng-model="password" name="password" class="input-style">
-        </label>
 
-      <!--  <p ng-show="deslogado == true" ng-hide="deslogado == false" style="text-align:center;color:red;">
-          {{ naoLogado }}
-        </p> -->
+          <label class="item item-input item-floating-label" style="padding-right: 16px;">
+            <span class="input-label">E-mail</span>
+            <input type="text" placeholder="E-mail" ng-model="username" name="username" class="input-style" style="width: 100% !important">
+          </label>
+          <label class="item item-input item-floating-label"  style="padding-right: 16px;">
+            <span class="input-label">Senha</span>
+            <input type="password" placeholder="Senha" ng-model="password" name="password" class="input-style" style="width: 100% !important">
+          </label>
 
-        <div style="margin-top: 10px;float:right;">
-          <!--<a ng-click="doLogin(username, password)" style="padding-right:60px;font-size:18px;color: rgb(255, 255, 255);text-decoration: none">Entrar</a>-->
-          <a ng-click="doLogin(username, password)"  style="padding-right:60px;font-size:18px;color: rgb(255, 255, 255);text-decoration: none">Entrar</a>
-        </div>
+          <div style="margin-top: 10px;margin: 10px 20px;text-align: right;" >
+            <a ng-click="doLogin(username, password)"  style="font-size:18px;color: rgb(255, 255, 255);text-decoration: none">Entrar</a>
+          </div>
 
-      <div class="col" style="margin-top: 50px;margin-left:10px;">
-        <a href="#/login/resetar-senha" style="font-size:13px;color: rgb(255, 255, 255);text-decoration: none">Esqueceu sua senha?</a><br>
-        <a href="#/perguntas-perfil-1" style="font-size:13px;color: rgb(255, 255, 255);text-decoration: none">Cadastre-se</a>
-      </div>
-        </section>
+          <div class="col" style="margin-top: 30px;margin-left:10px;">
+            <a href="#/login/resetar-senha" style="margin-bottom:20px;font-size:13px;color: rgb(255, 255, 255);text-decoration: none">Esqueceu sua senha?</a>
+          </div>
+
+          <div class="col" style="margin-top: 10px;margin-left:10px;">
+           <a href="#/perguntas-perfil-1" style="font-size:13px;color: rgb(255, 255, 255);text-decoration: none">Cadastre-se</a>
+          </div>
+
+      </section>
 
     </div>
   </ion-content>

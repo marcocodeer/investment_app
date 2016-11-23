@@ -26,7 +26,7 @@
                 <div class="col-60" style="padding-left: 10px;">
 
 
-                  <h3><span style="color: #fff;font-size: 20px">{{Contato.nome}}</span></h3>
+                  <h3><span style="color: #fff;font-size: 20px">{{Contato.name.formatted}}</span></h3>
 
                   <h2>
 
@@ -72,22 +72,24 @@
 
           </ion-content>
 
-          <ion-content scroll="true" style="bottom: 0;top: 265px !important;overflow: hidden;" ng-show="Formulario === 0">
+          <ion-content scroll="true" style="bottom: 0;top: 265px !important;overflow: hidden;" ng-show="Formulario === 0" class="contatos">
 
             <div class="list estendida" >
 
-              <div class="row item"  ng-repeat="contato in Contatos" style="padding: 13px 20px 14px 12px;">
+              <div class="row item"  ng-repeat="contato in phoneContacts" style="padding: 13px 20px 14px 12px;">
 
-                <img ng-src="{{contato.foto}}" style="width: 45px;height: 45px;"/>
+                <img ng-src="{{contato.foto}}" style="width: 45px;height: 45px;" ng-show="contato.foto"/>
+
+                <img src="img/icon-contato.png" style="width: 45px;height: 45px;" ng-hide="contato.foto"/>
 
                 <div class="col-60" style="padding-left: 10px;">
 
 
-                  <h3><span style="color: #fff;font-size: 20px">{{contato.nome}}</span></h3>
+                  <h3><span style="color: #fff;font-size: 20px">{{contato.displayName}}</span></h3>
 
                   <h2>
 
-                    <span style="color: #8cc5cc">{{contato.fone}}</span>
+                    <span style="color: #8cc5cc">{{contato.phoneNumbers[0].value}}</span>
 
                   </h2>
 
