@@ -243,6 +243,7 @@ label, input, button, select, textarea {
   position:relative;
   margin-top:10vh;
   margin-left:20px;
+  margin-right:20px;
 }
 
 /**
@@ -1169,4 +1170,12 @@ margin-top: 20px;
 button[disabled], html input[disabled] {
   background-color: #26a4c7 !important;
   color:#fff !important;
+}
+.loading-container .loading {
+  height: 50%;
+  width:80%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.saldo .contatos .scroll {
+  overflow: scroll;
 }

@@ -1027,7 +1027,7 @@ angular.module('starter.controllers', [])
       $scope.doInvestment = function(investmentId){
 
         $ionicLoading.show({
-          template: '<div class="custom-spinner-container">'+
+          template: '<img src="img/popover-pic1.png" alt="" style="width: 100%;margin-top: 30px;margin-bottom: -22px;"><div class="custom-spinner-container">'+
                        '<ion-spinner name="circles"></ion-spinner><span style="margin-top: -29px;display: block;margin-bottom: 5px;">Investindo...</span> '+
                     '</div>',
           duration: 3000
@@ -1065,7 +1065,7 @@ angular.module('starter.controllers', [])
 
             $scope.$root.user.app.saldo = result.data.data.investmentBalance;
 
-            console.log($scope.$root.user.app.saldo);
+            //console.log($scope.$root.user.app.saldo);
 
           }else {
 
@@ -1088,7 +1088,7 @@ angular.module('starter.controllers', [])
 
   })
 
-  .controller('creditoCtrl', function($scope, $ionicModal, $timeout, $state, $ionicSlideBoxDelegate, $ionicPopover) {
+  .controller('creditoCtrl', function($scope, $ionicModal, $timeout, $state, $cordovaContacts, $ionicPlatform ,$ionicSlideBoxDelegate, $ionicPopover, $ionicLoading) {
 
     try {
       $scope.$root.user.app.estado = $state.current.name;
@@ -1097,46 +1097,52 @@ angular.module('starter.controllers', [])
 
       $scope.Formulario = 0;
 
-      $scope.Meta = '5,00';
+      $scope.phoneContacts = [];
 
-      $scope.Contatos =  [
-        {
-          'id': 1,
-          'nome': 'Antonio Cezar',
-          'fone': '(11) 99855-6658',
-          'foto': 'img/avatar1.png'
-        },
-        {
-          'id': 2,
-          'nome': 'Debora Silva',
-          'fone': '(11) 99855-6658',
-          'foto': 'img/avatar2.png'
-        },
-        {
-          'id': 3,
-          'nome': 'Lucia Ka',
-          'fone': '(11) 99855-6658',
-          'foto': 'img/avatar3.png'
-        },
-        {
-          'id': 4,
-          'nome': 'Antonio Cezar',
-          'fone': '(11) 99855-6658',
-          'foto': 'img/avatar1.png'
-        },
-        {
-          'id': 5,
-          'nome': 'Debora Silva',
-          'fone': '(11) 99855-6658',
-          'foto': 'img/avatar2.png'
-        },
-        {
-          'id': 6,
-          'nome': 'Lucia Ka',
-          'fone': '(11) 99855-6658',
-          'foto': 'img/avatar3.png'
-        }
-      ];
+      $ionicPlatform.ready(function(){
+
+        $ionicLoading.show({
+          template: '<img src="img/popover-pic12.png" alt="" style="width: 60%;margin-top: 40px;margin-bottom: 10px;"><div class="custom-spinner-container">'+
+          '<ion-spinner name="circles"></ion-spinner><span style="margin-top: -29px;display: block;margin-bottom: 5px;">Carregando...</span> '+
+          '</div>',
+          duration: 3000
+        });
+
+        var options = {};
+
+        options.multiple = true;
+
+        $cordovaContacts.find(options).then(function(result) {
+
+          $scope.phoneContacts = [];
+
+          for (var i = 0; i < result.length; i++) {
+
+            var contact = result[i];
+
+            if(contact.phoneNumbers != null){
+
+              $scope.phoneContacts.push(contact);
+
+            }
+
+          }
+
+          console.log(JSON.stringify($scope.phoneContacts[1]));
+
+          $ionicLoading.hide();
+
+        }, function(error) {
+
+          console.log("ERROR: " + error);
+
+        });
+
+
+
+      });
+
+
 
       $scope.Contato = {};
 
