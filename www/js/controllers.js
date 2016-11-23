@@ -1105,7 +1105,7 @@ angular.module('starter.controllers', [])
           template: '<img src="img/popover-pic12.png" alt="" style="width: 60%;margin-top: 40px;margin-bottom: 10px;"><div class="custom-spinner-container">'+
           '<ion-spinner name="circles"></ion-spinner><span style="margin-top: -29px;display: block;margin-bottom: 5px;">Carregando...</span> '+
           '</div>',
-          duration: 3000
+          duration: 10000
         });
 
         var options = {};
@@ -1138,11 +1138,7 @@ angular.module('starter.controllers', [])
 
         });
 
-
-
       });
-
-
 
       $scope.Contato = {};
 
@@ -1150,7 +1146,7 @@ angular.module('starter.controllers', [])
 
         $scope.Formulario = 1;
 
-        $scope.Contato = $scope.Contatos[id];
+        $scope.Contato = $scope.phoneContacts[id];
 
       };
       $scope.recomendarEnviado = function(id){
