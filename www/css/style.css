@@ -551,7 +551,7 @@ label, input, button, select, textarea {
 }
 .column.pie{
   margin-top: 20px;
-  background: url(../img/bg-pie.png) no-repeat center 103px;
+  background: url(../img/bg-pie.png) no-repeat center 120px;
   height: 250px;
 }
 .acoes {

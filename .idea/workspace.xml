@@ -5,8 +5,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/style.css" afterPath="$PROJECT_DIR$/www/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers.js" afterPath="$PROJECT_DIR$/www/js/controllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/configuracoes/seguranca/seguranca.html" afterPath="$PROJECT_DIR$/www/templates/configuracoes/seguranca/seguranca.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/historico/historico.html" afterPath="$PROJECT_DIR$/www/templates/historico/historico.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/ajuda/faq/faq.html" afterPath="$PROJECT_DIR$/www/templates/ajuda/faq/faq.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/configuracoes/perfil/perfil.html" afterPath="$PROJECT_DIR$/www/templates/configuracoes/perfil/perfil.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/popover.html" afterPath="$PROJECT_DIR$/www/templates/popover.html" />
     </list>
     <ignored path="investment_app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,18 +31,18 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="214" column="19" selection-start-line="214" selection-start-column="14" selection-end-line="214" selection-end-column="19" />
+            <state relative-caret-position="184">
+              <caret line="313" column="22" selection-start-line="313" selection-start-column="16" selection-end-line="313" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="controllers.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="2254" column="22" selection-start-line="2254" selection-start-column="22" selection-end-line="2254" selection-end-column="22" />
+            <state relative-caret-position="243">
+              <caret line="2016" column="0" selection-start-line="2016" selection-start-column="0" selection-end-line="2016" selection-end-column="0" />
               <folding>
                 <element signature="e#198#18033#0" expanded="false" />
                 <element signature="e#18193#22590#0" expanded="false" />
@@ -55,28 +56,38 @@
                 <element signature="e#44218#44602#0" expanded="false" />
                 <element signature="e#44679#45066#0" expanded="false" />
                 <element signature="e#45144#45505#0" expanded="false" />
-                <element signature="e#45561#52113#0" expanded="false" />
-                <element signature="e#52193#52563#0" expanded="false" />
-                <element signature="e#52618#52736#0" expanded="false" />
-                <element signature="e#52800#52914#0" expanded="false" />
-                <element signature="e#52971#53087#0" expanded="false" />
-                <element signature="e#53140#53256#0" expanded="false" />
-                <marker date="1479920598665" expanded="true" signature="30429:30479" ph="..." />
-                <marker date="1479920598665" expanded="true" signature="30601:30653" ph="..." />
-                <marker date="1479920598665" expanded="true" signature="32186:32234" ph="..." />
-                <marker date="1479920598665" expanded="true" signature="32343:32395" ph="..." />
+                <element signature="e#45795#46055#0" expanded="false" />
+                <element signature="e#46468#46548#0" expanded="false" />
+                <element signature="e#46589#46984#0" expanded="false" />
+                <element signature="e#47068#47223#0" expanded="false" />
+                <element signature="e#47267#47559#0" expanded="false" />
+                <element signature="e#47604#47892#0" expanded="false" />
+                <element signature="e#51972#52342#0" expanded="false" />
+                <element signature="e#52397#52515#0" expanded="false" />
+                <element signature="e#52579#52693#0" expanded="false" />
+                <element signature="e#52750#52866#0" expanded="false" />
+                <element signature="e#52919#53035#0" expanded="false" />
+                <element signature="e#53090#53208#0" expanded="false" />
+                <element signature="e#53267#54245#0" expanded="false" />
+                <element signature="e#54308#54424#0" expanded="false" />
+                <element signature="e#54693#55214#0" expanded="false" />
+                <marker date="1479926207263" expanded="true" signature="30429:30479" ph="..." />
+                <marker date="1479926207263" expanded="true" signature="30601:30653" ph="..." />
+                <marker date="1479926207263" expanded="true" signature="32186:32234" ph="..." />
+                <marker date="1479926207263" expanded="true" signature="32343:32395" ph="..." />
+                <marker date="1479926207263" expanded="false" signature="54486:54602" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ganhe-creditos.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/templates/ganhe-creditos.html">
+      <file leaf-file-name="faq.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/templates/ajuda/faq/faq.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="34" column="66" selection-start-line="34" selection-start-column="66" selection-end-line="34" selection-end-column="66" />
+            <state relative-caret-position="34">
+              <caret line="2" column="50" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
               <folding>
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ion-view#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -85,25 +96,10 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
-              <caret line="1179" column="39" selection-start-line="1179" selection-start-column="39" selection-end-line="1179" selection-end-column="39" />
+            <state relative-caret-position="251">
+              <caret line="558" column="18" selection-start-line="558" selection-start-column="18" selection-end-line="558" selection-end-column="18" />
               <folding>
-                <marker date="1479910610951" expanded="true" signature="22997:23011" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="seguranca.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/templates/configuracoes/seguranca/seguranca.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="73" column="32" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="32" />
-              <folding>
-                <element signature="n#style#0;n#ion-view#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#ion-content#0;n#ion-tab#0;n#ion-tabs#0;n#ion-view#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#ion-content#0;n#ion-tab#2;n#ion-tabs#0;n#ion-view#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#ion-content#0;n#ion-tab#2;n#ion-tabs#0;n#ion-view#0;n#!!top" expanded="true" />
+                <marker date="1479922490090" expanded="true" signature="22997:23011" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -117,7 +113,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/www/templates/perguntas/pergunta-4-preferencias.html" />
         <option value="$PROJECT_DIR$/www/templates/perguntas/pergunta-6-patrimonio.html" />
         <option value="$PROJECT_DIR$/www/templates/perguntas/pergunta-5-receita.html" />
         <option value="$PROJECT_DIR$/www/templates/perguntas/pergunta-7-emprego.html" />
@@ -139,7 +134,6 @@
         <option value="$PROJECT_DIR$/www/templates/ajuda/ajuda-main.html" />
         <option value="$PROJECT_DIR$/www/templates/configuracoes/configuracoes.html" />
         <option value="$PROJECT_DIR$/www/templates/legal/legal-main.html" />
-        <option value="$PROJECT_DIR$/www/templates/popover.html" />
         <option value="$PROJECT_DIR$/www/templates/configuracoes/investimento-programado/adicionar-investimento.html" />
         <option value="$PROJECT_DIR$/www/templates/configuracoes/investimento-programado/investimentos-programados.html" />
         <option value="$PROJECT_DIR$/www/templates/configuracoes/investimento-programado/cancelar-investimento.html" />
@@ -151,7 +145,6 @@
         <option value="$PROJECT_DIR$/www/js/services/LoginService.js" />
         <option value="$PROJECT_DIR$/www/config.js" />
         <option value="$PROJECT_DIR$/www/templates/menu.html" />
-        <option value="$PROJECT_DIR$/www/templates/configuracoes/perfil/perfil.html" />
         <option value="$PROJECT_DIR$/www/templates/app-tour.html" />
         <option value="$PROJECT_DIR$/www/templates/login/resetar-senha.html" />
         <option value="$PROJECT_DIR$/www/js/services/TransactionsService.js" />
@@ -165,9 +158,12 @@
         <option value="$PROJECT_DIR$/www/templates/ganhe-creditos.html" />
         <option value="$PROJECT_DIR$/www/templates/configuracoes/dados-usuario/dados-usuario.html" />
         <option value="$PROJECT_DIR$/www/templates/historico/historico.html" />
-        <option value="$PROJECT_DIR$/www/css/style.css" />
         <option value="$PROJECT_DIR$/www/templates/configuracoes/seguranca/seguranca.html" />
+        <option value="$PROJECT_DIR$/www/css/style.css" />
+        <option value="$PROJECT_DIR$/www/templates/configuracoes/perfil/perfil.html" />
         <option value="$PROJECT_DIR$/www/js/controllers.js" />
+        <option value="$PROJECT_DIR$/www/templates/popover.html" />
+        <option value="$PROJECT_DIR$/www/templates/ajuda/faq/faq.html" />
       </list>
     </option>
   </component>
@@ -215,7 +211,104 @@
     <panes>
       <pane id="Scope" />
       <pane id="ProjectPane">
-        <subPane />
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="investment_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="investment_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="investment_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="investment_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="investment_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="investment_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="investment_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="investment_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="investment_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ajuda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="investment_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="investment_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ajuda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="faq" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
       </pane>
       <pane id="Scratches" />
     </panes>
@@ -328,12 +421,12 @@
       <workItem from="1479385552496" duration="10145000" />
       <workItem from="1479728250785" duration="19928000" />
       <workItem from="1479900973019" duration="53000" />
-      <workItem from="1479901996843" duration="9787000" />
+      <workItem from="1479901996843" duration="15574000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="250148000" />
+    <option name="totallyTimeSpent" value="255935000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
@@ -393,13 +486,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/templates/perguntas/pergunta-7-emprego.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="59" column="36" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/perguntas/pergunta-8-investidor.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -547,13 +633,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/popover.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="56" column="24" selection-start-line="56" selection-start-column="24" selection-end-line="56" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/configuracoes/investimento-programado/adicionar-investimento.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -607,13 +686,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/configuracoes/perfil/perfil.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="79" column="54" selection-start-line="79" selection-start-column="54" selection-end-line="79" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -721,26 +793,8 @@
         <state relative-caret-position="285">
           <caret line="34" column="66" selection-start-line="34" selection-start-column="66" selection-end-line="34" selection-end-column="66" />
           <folding>
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="1179" column="39" selection-start-line="1179" selection-start-column="39" selection-end-line="1179" selection-end-column="39" />
-          <folding>
-            <marker date="1479910610951" expanded="true" signature="22997:23011" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="214" column="19" selection-start-line="214" selection-start-column="14" selection-end-line="214" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -749,13 +803,13 @@
         <state relative-caret-position="306">
           <caret line="54" column="45" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="45" />
           <folding>
-            <element signature="n#style#0;n#ion-view#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-content#0;n#ion-tab#0;n#ion-tabs#0;n#ion-view#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#label#1;n#div#0;n#div#0;n#div#0;n#ion-content#0;n#ion-tab#0;n#ion-tabs#0;n#ion-view#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#ion-content#0;n#ion-tab#0;n#ion-tabs#0;n#ion-view#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-content#0;n#ion-tab#1;n#ion-tabs#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ion-view#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#ion-content#0;n#ion-tab#0;n#ion-tabs#0;n#ion-view#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#input#0;n#label#1;n#div#0;n#div#0;n#div#0;n#ion-content#0;n#ion-tab#0;n#ion-tabs#0;n#ion-view#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#ion-content#0;n#ion-tab#0;n#ion-tabs#0;n#ion-view#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#ion-content#0;n#ion-tab#1;n#ion-tabs#0;n#ion-view#0;n#!!top" expanded="false" />
             <element signature="n#ion-content#0;n#ion-tab#1;n#ion-tabs#0;n#ion-view#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#ion-content#0;n#ion-tab#2;n#ion-tabs#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ion-content#0;n#ion-tab#2;n#ion-tabs#0;n#ion-view#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -765,11 +819,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="144" selection-start-line="0" selection-start-column="144" selection-end-line="0" selection-end-column="144" />
           <folding>
-            <element signature="n#style#0;n#ion-view#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-content#0;n#ion-tab#0;n#ion-tabs#0;n#ion-view#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-content#0;n#ion-tab#1;n#ion-tabs#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ion-view#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#ion-content#0;n#ion-tab#0;n#ion-tabs#0;n#ion-view#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#ion-content#0;n#ion-tab#1;n#ion-tabs#0;n#ion-view#0;n#!!top" expanded="false" />
             <element signature="n#ion-content#0;n#ion-tab#1;n#ion-tabs#0;n#ion-view#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#ion-content#0;n#ion-tab#2;n#ion-tabs#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ion-content#0;n#ion-tab#2;n#ion-tabs#0;n#ion-view#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -779,18 +833,59 @@
         <state relative-caret-position="132">
           <caret line="73" column="32" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="32" />
           <folding>
+            <element signature="n#style#0;n#ion-view#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#ion-content#0;n#ion-tab#0;n#ion-tabs#0;n#ion-view#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#ion-content#0;n#ion-tab#2;n#ion-tabs#0;n#ion-view#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#ion-content#0;n#ion-tab#2;n#ion-tabs#0;n#ion-view#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="313" column="22" selection-start-line="313" selection-start-column="16" selection-end-line="313" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="558" column="18" selection-start-line="558" selection-start-column="18" selection-end-line="558" selection-end-column="18" />
+          <folding>
+            <marker date="1479922490090" expanded="true" signature="22997:23011" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/configuracoes/perfil/perfil.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+          <folding>
             <element signature="n#style#0;n#ion-view#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#ion-content#0;n#ion-tab#0;n#ion-tabs#0;n#ion-view#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ion-content#0;n#ion-tab#2;n#ion-tabs#0;n#ion-view#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#ion-content#0;n#ion-tab#2;n#ion-tabs#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ion-content#0;n#ion-tab#1;n#ion-tabs#0;n#ion-view#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/popover.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="430" column="76" selection-start-line="430" selection-start-column="76" selection-end-line="430" selection-end-column="76" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#ion-slide#2;n#ion-slide-box#0;n#div#9;n#ion-popover-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#ion-slide#3;n#ion-slide-box#0;n#div#9;n#ion-popover-view#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="2254" column="22" selection-start-line="2254" selection-start-column="22" selection-end-line="2254" selection-end-column="22" />
+        <state relative-caret-position="243">
+          <caret line="2016" column="0" selection-start-line="2016" selection-start-column="0" selection-end-line="2016" selection-end-column="0" />
           <folding>
             <element signature="e#198#18033#0" expanded="false" />
             <element signature="e#18193#22590#0" expanded="false" />
@@ -804,16 +899,36 @@
             <element signature="e#44218#44602#0" expanded="false" />
             <element signature="e#44679#45066#0" expanded="false" />
             <element signature="e#45144#45505#0" expanded="false" />
-            <element signature="e#45561#52113#0" expanded="false" />
-            <element signature="e#52193#52563#0" expanded="false" />
-            <element signature="e#52618#52736#0" expanded="false" />
-            <element signature="e#52800#52914#0" expanded="false" />
-            <element signature="e#52971#53087#0" expanded="false" />
-            <element signature="e#53140#53256#0" expanded="false" />
-            <marker date="1479920598665" expanded="true" signature="30429:30479" ph="..." />
-            <marker date="1479920598665" expanded="true" signature="30601:30653" ph="..." />
-            <marker date="1479920598665" expanded="true" signature="32186:32234" ph="..." />
-            <marker date="1479920598665" expanded="true" signature="32343:32395" ph="..." />
+            <element signature="e#45795#46055#0" expanded="false" />
+            <element signature="e#46468#46548#0" expanded="false" />
+            <element signature="e#46589#46984#0" expanded="false" />
+            <element signature="e#47068#47223#0" expanded="false" />
+            <element signature="e#47267#47559#0" expanded="false" />
+            <element signature="e#47604#47892#0" expanded="false" />
+            <element signature="e#51972#52342#0" expanded="false" />
+            <element signature="e#52397#52515#0" expanded="false" />
+            <element signature="e#52579#52693#0" expanded="false" />
+            <element signature="e#52750#52866#0" expanded="false" />
+            <element signature="e#52919#53035#0" expanded="false" />
+            <element signature="e#53090#53208#0" expanded="false" />
+            <element signature="e#53267#54245#0" expanded="false" />
+            <element signature="e#54308#54424#0" expanded="false" />
+            <element signature="e#54693#55214#0" expanded="false" />
+            <marker date="1479926207263" expanded="true" signature="30429:30479" ph="..." />
+            <marker date="1479926207263" expanded="true" signature="30601:30653" ph="..." />
+            <marker date="1479926207263" expanded="true" signature="32186:32234" ph="..." />
+            <marker date="1479926207263" expanded="true" signature="32343:32395" ph="..." />
+            <marker date="1479926207263" expanded="false" signature="54486:54602" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/ajuda/faq/faq.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="50" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
+          <folding>
+            <element signature="n#style#0;n#ion-view#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

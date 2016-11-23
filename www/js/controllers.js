@@ -1840,7 +1840,7 @@ angular.module('starter.controllers', [])
 
   })
 
-  .controller('perfilCtrl', function($scope, $state) {
+  .controller('perfilCtrl', function($scope, $state, $timeout) {
 
     try {
       $scope.$root.user.app.estado = $state.current.name;
@@ -1851,7 +1851,7 @@ angular.module('starter.controllers', [])
 
       $scope.calculaIdade = function(){
 
-        var birthday = $scope.$root.user.pessoal.dob;
+        var birthday = new Date($scope.$root.user.pessoal.dob);
 
         var ageDifMs = Date.now() - birthday.getTime();
 
@@ -1909,22 +1909,6 @@ angular.module('starter.controllers', [])
         }
 
         total = 6 * $scope.mensal * 24;
-
-        /*total = total.toString();
-
-        unidade = total.substring(0, total.length - 3) || 0;
-
-        invLen = total.length;
-
-        if(unidade === 0){
-
-          total = unidade + ',' + total.substring(invLen - 3, invLen -2);
-
-        } else {
-
-          total = unidade + ',' + total.substring(invLen - 3, invLen -2 ) ;
-
-        }*/
 
         $scope.valor = total;
 
@@ -1993,48 +1977,53 @@ angular.module('starter.controllers', [])
 
           }
 
-        } else if (tipo === 'mensal' ){
+        } else {
 
-          mensal = parseInt(valor);
+          if (tipo === 'mensal') {
 
-          total = 0;
+            mensal = parseInt(valor);
 
-          $scope.graphData = [];
+            valor = mensal * 144;
 
-          for ( i = 0; i < 7 ; i ++ ){
+          } else if (tipo === 'valor') {
 
-            $scope.graphData.push(i *  mensal * 24);
+            mensal = parseInt(valor / 144);
 
-          }
-
-          total = 6 *  mensal * 24;
-
-          $scope.valor = total;
-
-          $scope.mensal = mensal;
-
-
-        } else if (tipo === 'valor' ){
-
-          mensal =  valor /144;
-
-          $scope.valor = parseInt(valor);
-
-          $scope.mensal = mensal.toFixed(0);
-
-          $scope.graphData = [];
-
-          for ( i = 0; i < 7 ; i ++ ){
-
-            $scope.graphData.push(i *  $scope.mensal * 24);
+            valor = parseInt(valor);
 
           }
 
-          console.log($scope.graphData);
+          $scope.graphData = [];
+
+          for (i = 0; i < 7; i++) {
+
+            $scope.graphData.push(i * $scope.mensal * 24);
+
+          }
+
+          $scope.atualizaSliders(valor, mensal);
 
         }
 
         $scope.perfilGrafico();
+
+      };
+
+      $scope.atualizaSliders = function (val, mes) {
+
+        $scope.valor = val;
+
+        $scope.mensal = mes;
+
+        /*$timeout(function () {
+          $scope.$apply(function () {
+
+            $scope.valor = val;
+
+            $scope.mensal = mes;
+            console.log("Timeout called!");
+          });
+        }, 1000);*/
 
       };
 
