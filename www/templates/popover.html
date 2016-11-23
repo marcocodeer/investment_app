@@ -4,6 +4,25 @@
   }
 </style>
 <ion-popover-view  class="popover-style">
+
+  <!-- CONTA BANCÁRIA GET -->
+  <div ng-show="$root.user.app.estado === 'app.conta-bancaria' && $root.user.app.notificacao === false" id="tour-dados" style="overflow:scroll;">
+    <div class="" ng-repeat="item in todosBancos" style="padding:5px;color:#fff;">
+      <p ng-click="mudaBanco('{{ item.bankName }}', {{ item.bankId }})">
+          {{ item.bankName }}
+      </p>
+    </div>
+
+  </div>
+
+  <div ng-show="$root.user.app.estado === 'app.adicionar-conta' && $root.user.app.notificacao === false" id="tour-dados" style="overflow:scroll;">
+    <div class="" ng-repeat="item in todosBancos" style="padding:5px;color:#fff;">
+      <p ng-click="mudaBanco('{{ item.bankName }}', {{ item.bankId }})">
+          {{ item.bankName }}
+      </p>
+    </div>
+
+  </div>
   <!-- PERGUNTA 2-->
   <div ng-show="estadoPage === 'pergunta-2'" id="tour-dados">
     <div ng-if="perguntaPopover == 1" class="list row popoverquestion2" style="overflow:scroll;">

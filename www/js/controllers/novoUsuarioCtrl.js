@@ -125,6 +125,7 @@ $scope.errorPopup = function() {
   $scope.newAccount.securityAnswer = '';
   $scope.newAccount.investorProfile = '';
   $scope.newAccount.rememberToken = true;
+  $scope.newAccount.investmentBalance = 0;
 
   $scope.do2 = function () {
     try {
@@ -224,7 +225,8 @@ $scope.errorPopup = function() {
               var userRegistrationRequest = LoginService.postNewUser(newAccountStored, AuthorizationTokenObject);
                 userRegistrationRequest.then(function(result){
                   if(result.data.statusapp == 'OK'){
-                    $scope.showConfirm();
+                    //$scope.showConfirm();
+                    $state.go('bem-vindo');
                   }
                   else {
                     $scope.errorPopup();
