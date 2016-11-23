@@ -12,8 +12,6 @@ angular.module('starter.controllers', [])
 
       }
 
-
-
       $scope.takeImage = function() {
               var options = {
                   quality: 80,
@@ -1176,6 +1174,7 @@ angular.module('starter.controllers', [])
   .controller('creditoCtrl', function($scope, $ionicModal, $timeout, $state, $cordovaContacts, $ionicPlatform ,$ionicSlideBoxDelegate, $ionicPopover, $ionicLoading) {
 
     try {
+
       $scope.$root.user.app.estado = $state.current.name;
 
       $scope.Valor = 1;
@@ -1213,8 +1212,6 @@ angular.module('starter.controllers', [])
 
           }
 
-          console.log(JSON.stringify($scope.phoneContacts[1]));
-
           $ionicLoading.hide();
 
         }, function(error) {
@@ -1234,16 +1231,16 @@ angular.module('starter.controllers', [])
         $scope.Contato = $scope.phoneContacts[id];
 
       };
+
       $scope.recomendarEnviado = function(id){
+
         $scope.Formulario = 0;
-        //$state.reload();
-       // $state.go('app.ganhe-creditos');
 
       };
+
       $scope.recomendarEnviar = function(id){
+
         $scope.Formulario = 2;
-        //$state.reload();
-       // $state.go('app.ganhe-creditos');
 
       };
 

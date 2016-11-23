@@ -113,7 +113,7 @@ Cleiton Schonardie UI/UX and front-end developer
 }
 .btn-popover {
   color:#fff;
-  background-color: #9dc5dd !important;
+  background-color: #b9d5e5 !important;
   font-size:11px;
   height: 45px;
   width: 100%;
@@ -158,7 +158,7 @@ Cleiton Schonardie UI/UX and front-end developer
   overflow: inherit;
 }
 #tabs-usuario .tabs {
-  top:53px !important;
+  top:43px !important;
   width: 100% !important;
   height:30px !important;
   background-color: #4880b4 !important;
@@ -595,7 +595,7 @@ label, input, button, select, textarea {
   color:#FFF;
   padding:30px;
   margin-top:-30px;
-  font-weight: 100;
+  font-weight: 300;
 }
 .home-desc {
   font-size:15px;
@@ -1045,8 +1045,9 @@ margin-top: 20px;
 .popoverquestion2 {
   font-size:20px;
   color:#fff;
-  padding-top:5px;
-  padding-left:25px;
+  padding-top: 22px;
+  padding-left: 33px;
+  padding-bottom: 22px;
 }
 .popoverquestion2 > p {
   margin:10px 0 15px !important;
