@@ -1718,8 +1718,6 @@ angular.module('starter.controllers', [])
 
       $scope.Valor = '';
 
-      $scope.Pin = '0%';
-
       $scope.Cursor = 0;
 
       $scope.delTeclado = function(value){
@@ -2215,6 +2213,8 @@ angular.module('starter.controllers', [])
   .controller('ajudaCtrl', function($scope, $state) {
     try {
       $scope.$root.user.app.estado = $state.current.name;
+
+
     } catch (e) {
         alert(e);
     }
@@ -2223,7 +2223,68 @@ angular.module('starter.controllers', [])
 
   .controller('segurancaCtrl', function($scope, $state) {
     try {
+
+      $scope.pin = '/img/pin-vazio.png';
+
       $scope.$root.user.app.estado = $state.current.name;
+
+      $scope.Cursor = 0;
+
+      $scope.Valor = '';
+
+        $scope.delTeclado = function(value){
+
+        var vlr = $scope.Valor;
+
+        if(vlr.length > 0){
+
+          vlr = vlr.substring(0, vlr.length - 1);
+
+        }
+
+        $scope.Valor = vlr;
+
+        $scope.atualizaPin();
+
+      };
+
+      $scope.atualizaPin = function(){
+
+        var valor = $scope.Valor.length;
+
+        if(valor === 0){
+
+          valor = 'vazio';
+
+        }
+
+        $scope.pin = '/img/pin-' + valor + '.png';
+
+      };
+
+      $scope.clicaTeclado = function(value){
+
+        if($scope.Valor.length < 4){
+
+          $scope.Valor += value;
+
+        }
+
+        console.log($scope.Valor);
+
+        $scope.atualizaPin();
+
+      };
+
+      $scope.limpaTeclado = function(){
+
+        $scope.Valor = '';
+
+        $scope.atualizaPin();
+
+      };
+
+
     } catch (e) {
         alert(e);
     }
