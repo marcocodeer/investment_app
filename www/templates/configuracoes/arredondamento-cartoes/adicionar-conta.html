@@ -3,15 +3,23 @@
     <div class="col-100" style="margin-left:30px;margin-top:70px;">
         <label class="item item-input item-floating-label">
           <span class="input-label">Bandeira</span>
-          <input type="text" placeholder="Bandeira" class="input-style" ng-model="$root.user.app.cartoes[conta].name">
+          <input type="text" placeholder="Bandeira" ng-model="bancos" class="input-style" ng-click="popover.show($event,0,null)">
         </label>
         <label class="item item-input item-floating-label">
-          <span class="input-label">Número do Cartão</span>
+          <span class="input-label">Número do Conta</span>
           <input type="text" placeholder="Número do Cartão" class="input-style" ng-model="$root.user.app.cartoes[conta].number">
         </label>
         <label class="item item-input item-floating-label">
-          <span class="input-label">Senha</span>
-          <input type="password" placeholder="Senha" class="input-style">
+          <span class="input-label">Dígito do Conta</span>
+          <input type="text" placeholder="Dígito do Cartão" class="input-style" ng-model="$root.user.app.cartoes[conta].number">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Agência</span>
+          <input type="password" placeholder="Agência" class="input-style">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Dígito da Agência</span>
+          <input type="password" placeholder="Dígito da Agência" class="input-style">
         </label>
     </div>
   <ion-footer-bar class="footer-bar-custom" style="height: 138px;">

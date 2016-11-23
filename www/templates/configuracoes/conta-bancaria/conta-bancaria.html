@@ -12,24 +12,29 @@
       </div>
     </div>
 
-    <div class="col-100" style="margin-left:30px;margin-top:20px;">
+    <div class="col-100" style="margin-left:30px;margin-top:-10px;">
         <label class="item item-input item-floating-label">
           <span class="input-label">Banco</span>
-          <button class="button button-icon" ng-click="popover.show($event)" id="popover-style-add-conta">
-            {{ $root.user.app.banco }}
-          </button>
+        <!--  <ion-select ngModel="bankInfo.bankId">
+            <ion-option ng-repeat="item in todosBancos" value="item.bankId">{{ item.bankName }}</ion-option>
+          </ion-select> -->
+         <input type="text" placeholder="Banco" ng-model="bancos" value="bancosId" ng-click="popover.show($event,0,null)" class="input-style">
         </label>
         <label class="item item-input item-floating-label">
           <span class="input-label">Conta</span>
-          <input type="text" placeholder="Conta" class="input-style">
+          <input type="text" placeholder="Conta" ng-model="bankInfo.accountNumber" class="input-style">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Conta Digito</span>
+          <input type="text" placeholder="Digito da conta" ng-model="bankInfo.accountDigit" class="input-style" style="width:50px;">
         </label>
         <label class="item item-input item-floating-label">
           <span class="input-label">Agência</span>
-          <input type="text" placeholder="Agência" class="input-style">
+          <input type="text" placeholder="Agência" ng-model="bankInfo.agency" class="input-style">
         </label>
         <label class="item item-input item-floating-label">
-          <span class="input-label">Senha</span>
-          <input type="password" placeholder="Senha" class="input-style">
+          <span class="input-label">Agência Digito</span>
+          <input type="text" placeholder="Digito da Agência" ng-model="bankInfo.agencyDigit" class="input-style">
         </label>
 
 
@@ -38,24 +43,14 @@
 
   <ion-footer-bar class="footer-bar-custom">
     <div class="col" style="padding:30px;">
-      <button ng-click="adicionarConta()" class="item-center button button-clear btn-cadastro">
+      <button ng-click="postConta()" class="item-center button button-clear btn-cadastro">
         <i class="icon ion-ios-plus-empty" style="font-size:30px;"></i>
       &nbsp;
         SALVAR
       </button>
     </div>
   </ion-footer-bar>
-  <script id="templates/popover.html" type="text/ng-template">
-    <ion-popover-view>
-      <ion-content>
-        <div class="list" style="padding:20px;">
-          <p ng-click="mudaConta('Bradesco')">Bradesco</p>
-          <p ng-click="mudaConta('Santander')">Santander</p>
-          <p ng-click="mudaConta('Itaú')">Itaú</p>
-          <p ng-click="mudaConta('Caixa Federal')">Caixa Federal</p>
-          <p ng-click="mudaConta('Banco do Brasil')">Banco do Brasil</p>
-        </div>
-      </ion-content>
+
     </ion-popover-view>
 
 

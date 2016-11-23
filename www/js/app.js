@@ -136,7 +136,7 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers', 'ngCordov
     controller: 'AppCtrl'
   })
   .state('bem-vindo', {
-    url: '/bem-vindo-acorns',
+    url: '/bem-vindo-savecents',
     templateUrl: 'templates/perguntas/bem-vindo.html',
     controller: 'AppCtrl'
   })
@@ -173,7 +173,7 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers', 'ngCordov
     views: {
       'menuContent': {
         templateUrl: 'templates/configuracoes/arredondamento-cartoes/adicionar-conta.html',
-        controller: 'adicionarContaCtrl'
+        controller: 'AppCtrl'
       }
     }
   })

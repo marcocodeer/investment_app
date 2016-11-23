@@ -30,6 +30,7 @@ function registerUserInfo() {
        'cpf': '',
        'rg': '',
        'investorProfile': '',
+       'investmentBalance': 0,
      };
 
     //var newUser = {};

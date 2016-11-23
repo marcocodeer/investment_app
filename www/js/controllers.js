@@ -1,7 +1,19 @@
 angular.module('starter.controllers', [])
 
-  .controller('AppCtrl', function($scope, $ionicModal, $timeout, $state, $ionicSlideBoxDelegate, $ionicPopover, $cordovaCamera, LocalStorage) {
+  .controller('AppCtrl', function($scope, $ionicModal, $timeout, $state, $ionicSlideBoxDelegate, $ionicPopover, $cordovaCamera, LocalStorage, BankService) {
     try {
+
+      var tokenObject = '';
+
+      //Get Token
+      if(LocalStorage.get('AuthorizationToken') != null) {
+
+        tokenObject = LocalStorage.get('AuthorizationToken');
+
+      }
+
+
+
       $scope.takeImage = function() {
               var options = {
                   quality: 80,
@@ -438,6 +450,16 @@ angular.module('starter.controllers', [])
         $scope.popover.hide();
 
       };
+      $scope.mudaBanco = function(uf, Id){
+
+        $scope.bancos = uf;
+        $scope.bancosId = Id;
+        console.log($scope.bancos);
+        console.log($scope.bancosId);
+
+        $scope.popover.hide();
+
+      };
       $scope.mudaEmprego = function(emprego){
 
         $scope.$root.user.financeiro.emprego = emprego;
@@ -578,6 +600,69 @@ angular.module('starter.controllers', [])
         $timeout(function() {
           $scope.closeLogin();
         }, 1000);
+      };
+
+      $scope.todosBancos = [];
+
+      var getAllBank = BankService.getAllBanks(tokenObject);
+        getAllBank.then(function(result){
+          $scope.todosBancos = result.data.data;
+          console.log("Bancos get");
+          console.log($scope.todosBancos);
+        });
+
+      $scope.bankInfo = [];
+      $scope.bankInfo.agency = '';
+      $scope.bankInfo.agencyDigit = '';
+      $scope.bankInfo.accountNumber = '';
+      $scope.bankInfo.accountNumber = '';
+      $scope.bankInfo.accountDigit = '';
+      $scope.bankInfo.defaultBankAccount = true;
+
+
+      //POST CONTA BANCÁRIA
+      $scope.postConta = function (){
+        try {
+          var contaObj = {
+            'bankAccountId': 0,
+            'bankId': $scope.bancosId,
+            'agency': $scope.bankInfo.agency,
+            'agencyDigit': $scope.bankInfo.agencyDigit,
+            'accountNumber': $scope.bankInfo.accountNumber,
+            'accountDigit': $scope.bankInfo.accountDigit,
+            'defaultBankAccount': true,
+          };
+
+          console.log("contaObj");
+          console.log(contaObj);
+              var postConta = BankService.addUserBank(contaObj,tokenObject);
+              postConta.then(function(result){
+                console.log(result);
+                    /**  if(result.data.statusapp == 'OK'){
+
+                      console.log(result);
+
+                      var myPopup = $ionicPopup.show({
+                        template: 'Sua conta bancária foi cadastrada com sucesso!',
+                        title: 'Conta Bancária',
+                        scope: $scope,
+                        buttons: [
+                          { text: '<b>Ok</b>',
+                          type: 'button-positive',
+                          onTap: function(e) {
+                            $state.go('conta-bancaria');
+                            }
+                          },
+                        ]
+                      });
+
+                    }else{
+                      console.log("error ao postar");
+                    } **/
+                });
+        } catch (e) {
+            console.log(e);
+        }
       };
     } catch (e) {
       alert(e);
@@ -2166,11 +2251,26 @@ angular.module('starter.controllers', [])
 
   })
 
-  .controller('conta-bancariaCtrl', function($scope, $state) {
-    try {
+  .controller('conta-bancariaCtrl', function($scope, $state, BankService, LocalStorage) {
+
       $scope.$root.user.app.estado = $state.current.name;
-    } catch (e) {
-        alert(e);
-    }
+
+      var tokenObject = '';
+
+      //Get Token
+      if(LocalStorage.get('AuthorizationToken') != null) {
+
+        tokenObject = LocalStorage.get('AuthorizationToken');
+
+      }
+
+      $scope.todosBancos = [];
+
+      var getAllBank = BankService.getAllBanks(tokenObject);
+        getAllBank.then(function(result){
+          $scope.todosBancos = result.data.data;
+          console.log("Bancos get");
+          console.log($scope.todosBancos);
+        });
 
   });
