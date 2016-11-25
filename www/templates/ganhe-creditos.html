@@ -21,16 +21,18 @@
 
               <div class="row item"  style="padding: 13px 20px 14px 12px;margin-bottom: 0px;">
 
-                <img ng-src="{{Contato.foto}}" style="width: 45px;height: 45px;"/>
+                <img ng-src="{{contato.photos[0].value}}" style="width: 45px;height: 45px;" ng-show="contato.photos[0].value"/>
+
+                <img src="img/icon-contato.png" style="width: 45px;height: 45px;" ng-hide="contato.photos[0].value"/>
 
                 <div class="col-60" style="padding-left: 10px;">
 
 
-                  <h3><span style="color: #fff;font-size: 20px">{{Contato.name.formatted}}</span></h3>
+                  <h3><span style="color: #fff;font-size: 20px">{{Contato.displayName}}</span></h3>
 
                   <h2>
 
-                    <span style="color: #8cc5cc">{{Contato.fone}}</span>
+                    <span style="color: #8cc5cc">{{Contato.phoneNumbers[0].value}}</span>
 
                   </h2>
 
@@ -78,9 +80,9 @@
 
               <div class="row item"  ng-repeat="contato in phoneContacts" style="padding: 13px 20px 14px 12px;">
 
-                <img ng-src="{{contato.foto}}" style="width: 45px;height: 45px;" ng-show="contato.foto"/>
+                <img ng-src="{{contato.photos[0].value}}" style="width: 45px;height: 45px;" ng-show="contato.photos[0].value"/>
 
-                <img src="img/icon-contato.png" style="width: 45px;height: 45px;" ng-hide="contato.foto"/>
+                <img src="img/icon-contato.png" style="width: 45px;height: 45px;" ng-hide="contato.photos[0].value"/>
 
                 <div class="col-60" style="padding-left: 10px;">
 

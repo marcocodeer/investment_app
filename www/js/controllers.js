@@ -12,8 +12,6 @@ angular.module('starter.controllers', [])
 
       }
 
-
-
       $scope.takeImage = function() {
               var options = {
                   quality: 80,
@@ -1300,6 +1298,7 @@ angular.module('starter.controllers', [])
   .controller('creditoCtrl', function($scope, $ionicModal, $timeout, $state, $cordovaContacts, $ionicPlatform ,$ionicSlideBoxDelegate, $ionicPopover, $ionicLoading) {
 
     try {
+
       $scope.$root.user.app.estado = $state.current.name;
 
       $scope.Valor = 1;
@@ -1314,7 +1313,7 @@ angular.module('starter.controllers', [])
           template: '<img src="img/popover-pic12.png" alt="" style="width: 60%;margin-top: 40px;margin-bottom: 10px;"><div class="custom-spinner-container">'+
           '<ion-spinner name="circles"></ion-spinner><span style="margin-top: -29px;display: block;margin-bottom: 5px;">Carregando...</span> '+
           '</div>',
-          duration: 3000
+          duration: 10000
         });
 
         var options = {};
@@ -1337,8 +1336,6 @@ angular.module('starter.controllers', [])
 
           }
 
-          console.log(JSON.stringify($scope.phoneContacts[1]));
-
           $ionicLoading.hide();
 
         }, function(error) {
@@ -1347,11 +1344,7 @@ angular.module('starter.controllers', [])
 
         });
 
-
-
       });
-
-
 
       $scope.Contato = {};
 
@@ -1359,19 +1352,19 @@ angular.module('starter.controllers', [])
 
         $scope.Formulario = 1;
 
-        $scope.Contato = $scope.Contatos[id];
+        $scope.Contato = $scope.phoneContacts[id];
 
       };
+
       $scope.recomendarEnviado = function(id){
+
         $scope.Formulario = 0;
-        //$state.reload();
-       // $state.go('app.ganhe-creditos');
 
       };
+
       $scope.recomendarEnviar = function(id){
+
         $scope.Formulario = 2;
-        //$state.reload();
-       // $state.go('app.ganhe-creditos');
 
       };
 
@@ -1849,8 +1842,6 @@ angular.module('starter.controllers', [])
 
       $scope.Valor = '';
 
-      $scope.Pin = '0%';
-
       $scope.Cursor = 0;
 
       $scope.delTeclado = function(value){
@@ -1973,7 +1964,7 @@ angular.module('starter.controllers', [])
 
   })
 
-  .controller('perfilCtrl', function($scope, $state) {
+  .controller('perfilCtrl', function($scope, $state, $timeout) {
 
     try {
       $scope.$root.user.app.estado = $state.current.name;
@@ -1984,7 +1975,7 @@ angular.module('starter.controllers', [])
 
       $scope.calculaIdade = function(){
 
-        var birthday = $scope.$root.user.pessoal.dob;
+        var birthday = new Date($scope.$root.user.pessoal.dob);
 
         var ageDifMs = Date.now() - birthday.getTime();
 
@@ -2042,22 +2033,6 @@ angular.module('starter.controllers', [])
         }
 
         total = 6 * $scope.mensal * 24;
-
-        /*total = total.toString();
-
-        unidade = total.substring(0, total.length - 3) || 0;
-
-        invLen = total.length;
-
-        if(unidade === 0){
-
-          total = unidade + ',' + total.substring(invLen - 3, invLen -2);
-
-        } else {
-
-          total = unidade + ',' + total.substring(invLen - 3, invLen -2 ) ;
-
-        }*/
 
         $scope.valor = total;
 
@@ -2126,48 +2101,53 @@ angular.module('starter.controllers', [])
 
           }
 
-        } else if (tipo === 'mensal' ){
+        } else {
 
-          mensal = parseInt(valor);
+          if (tipo === 'mensal') {
 
-          total = 0;
+            mensal = parseInt(valor);
 
-          $scope.graphData = [];
+            valor = mensal * 144;
 
-          for ( i = 0; i < 7 ; i ++ ){
+          } else if (tipo === 'valor') {
 
-            $scope.graphData.push(i *  mensal * 24);
+            mensal = parseInt(valor / 144);
 
-          }
-
-          total = 6 *  mensal * 24;
-
-          $scope.valor = total;
-
-          $scope.mensal = mensal;
-
-
-        } else if (tipo === 'valor' ){
-
-          mensal =  valor /144;
-
-          $scope.valor = parseInt(valor);
-
-          $scope.mensal = mensal.toFixed(0);
-
-          $scope.graphData = [];
-
-          for ( i = 0; i < 7 ; i ++ ){
-
-            $scope.graphData.push(i *  $scope.mensal * 24);
+            valor = parseInt(valor);
 
           }
 
-          console.log($scope.graphData);
+          $scope.graphData = [];
+
+          for (i = 0; i < 7; i++) {
+
+            $scope.graphData.push(i * $scope.mensal * 24);
+
+          }
+
+          $scope.atualizaSliders(valor, mensal);
 
         }
 
         $scope.perfilGrafico();
+
+      };
+
+      $scope.atualizaSliders = function (val, mes) {
+
+        $scope.valor = val;
+
+        $scope.mensal = mes;
+
+        /*$timeout(function () {
+          $scope.$apply(function () {
+
+            $scope.valor = val;
+
+            $scope.mensal = mes;
+            console.log("Timeout called!");
+          });
+        }, 1000);*/
 
       };
 
@@ -2346,6 +2326,8 @@ angular.module('starter.controllers', [])
   .controller('ajudaCtrl', function($scope, $state) {
     try {
       $scope.$root.user.app.estado = $state.current.name;
+
+
     } catch (e) {
         alert(e);
     }
@@ -2354,7 +2336,68 @@ angular.module('starter.controllers', [])
 
   .controller('segurancaCtrl', function($scope, $state) {
     try {
+
+      $scope.pin = '/img/pin-vazio.png';
+
       $scope.$root.user.app.estado = $state.current.name;
+
+      $scope.Cursor = 0;
+
+      $scope.Valor = '';
+
+        $scope.delTeclado = function(value){
+
+        var vlr = $scope.Valor;
+
+        if(vlr.length > 0){
+
+          vlr = vlr.substring(0, vlr.length - 1);
+
+        }
+
+        $scope.Valor = vlr;
+
+        $scope.atualizaPin();
+
+      };
+
+      $scope.atualizaPin = function(){
+
+        var valor = $scope.Valor.length;
+
+        if(valor === 0){
+
+          valor = 'vazio';
+
+        }
+
+        $scope.pin = '/img/pin-' + valor + '.png';
+
+      };
+
+      $scope.clicaTeclado = function(value){
+
+        if($scope.Valor.length < 4){
+
+          $scope.Valor += value;
+
+        }
+
+        console.log($scope.Valor);
+
+        $scope.atualizaPin();
+
+      };
+
+      $scope.limpaTeclado = function(){
+
+        $scope.Valor = '';
+
+        $scope.atualizaPin();
+
+      };
+
+
     } catch (e) {
         alert(e);
     }

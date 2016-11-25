@@ -1,4 +1,4 @@
-<ion-view view-title="SEGURANÇA" style="background: url(img/login-bg-acorn.png) no-repeat center;background-size:cover;height:100%;" class="seguranca">
+<ion-view view-title="SEGURANÇA" style="background: url(img/login-bg-acorn.png) no-repeat center;background-size:cover;height:100%;" class="seguranca" scroll="false">
   <div class="head-bg" style="height: 74px;">
   </div>
 
@@ -71,9 +71,9 @@
     </ion-tab>
     <ion-tab title="Pin" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
 
-      <ion-content scroll="true" style="bottom: 0;top: 44px !important;overflow:scroll;">
+      <ion-content scroll="false" style="bottom: 0;top: 44px !important;">
 
-          <div id="pin" ><div ng-style="{ 'width' : Pin}"></div></div>
+          <img ng-src="{{pin}}" alt="" style="margin: 80px 38% 20px;"/>
 
           <div class = "row" style="text-align:center;">
             <div class="col"><button class="button btn-ellipse" ng-click="clicaTeclado(1)">1</button></div>
