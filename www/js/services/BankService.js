@@ -42,6 +42,18 @@ getBankDataFromAPI.$inject = ['$http', 'CONSTANTS', '$httpParamSerializerJQLike'
            return data;
          });
        },
+       getAllUserSingleBanks: function (userId, AuthorizationTokenObject) {
+         var getTransactionsApiUrl = CONSTANTS.APP_API_URL + '/api/Bank/GetUserSingleBankAccount?BankAccountId=' + userId;
+
+         return $http({
+           method: 'GET',
+           url: getTransactionsApiUrl,
+           useXDomain: true,
+           headers: {'Content-Type' : 'application/x-www-form-urlencoded', 'Authorization': AuthorizationTokenObject.authorization_token}
+         }).success(function(data, status) {
+           return data;
+         });
+       },
        addUserBank: function (obj, AuthorizationTokenObject) {
          var getTransactionsApiUrl = CONSTANTS.APP_API_URL + '/api/Bank/AddOrUpdateUserBankAccount';
 

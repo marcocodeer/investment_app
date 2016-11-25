@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-  .controller('AppCtrl', function($scope, $ionicModal, $timeout, $state, $ionicSlideBoxDelegate, $ionicPopover, $cordovaCamera, LocalStorage, BankService) {
+  .controller('AppCtrl', function($stateParams, $scope, $ionicModal, $timeout, $state, $ionicSlideBoxDelegate, $ionicPopover, $cordovaCamera, LocalStorage, BankService, $ionicPopup, $ionicLoading) {
     try {
 
       var tokenObject = '';
@@ -602,14 +602,21 @@ angular.module('starter.controllers', [])
         }, 1000);
       };
 
-      $scope.todosBancos = [];
+      $scope.conta = $stateParams.id || null;
 
-      var getAllBank = BankService.getAllBanks(tokenObject);
-        getAllBank.then(function(result){
-          $scope.todosBancos = result.data.data;
-          console.log("Bancos get");
-          console.log($scope.todosBancos);
-        });
+      $scope.go = function (destino){
+
+        $state.go(destino);
+
+      };
+
+
+
+      $scope.todosBancos = [];
+      $scope.listUserBank = [];
+
+      $scope.userInfo = LocalStorage.get('UserProfile');
+
 
       $scope.bankInfo = [];
       $scope.bankInfo.agency = '';
@@ -619,12 +626,119 @@ angular.module('starter.controllers', [])
       $scope.bankInfo.accountDigit = '';
       $scope.bankInfo.defaultBankAccount = true;
 
+      var getAllBank = BankService.getAllBanks(tokenObject);
+        getAllBank.then(function(result){
+          $scope.todosBancos = result.data.data;
+        });
 
+      var getAllUserBank = BankService.getAllUserBanks($scope.userInfo.userId, tokenObject);
+        getAllUserBank.then(function(result){
+          if(result.data.statusapp == 'OK'){
+            $scope.listUserBank = result.data.data;
+            angular.forEach(result.data.data, function(obj){
+                $scope.bankInfo = obj;
+            });
+          }else{
+            console.log("error get all user ganks");
+          }
+        });
+
+
+      $scope.editarConta = function (index){
+        $scope.conta = index.bankAccountId;
+        $state.go('app.adicionar-conta', {id: index.bankAccountId});
+      };
+      var params = $stateParams.id || null;
+
+      if($state.current.name == 'app.adicionar-conta'){
+        var getAllUserSingBank = BankService.getAllUserSingleBanks(params, tokenObject);
+          getAllUserSingBank.then(function(result){
+            if(result.data.statusapp == 'OK'){
+              $scope.listUserBank = result.data.data;
+              console.log("$scope.listUserBank");
+              console.log($scope.listUserBank);
+            }else{
+              console.log("error get all user single ganks");
+            }
+          });
+      }else{
+        console.log("fora do state");
+      }
+      $scope.novaConta = function(bankAccountId) {
+        try {
+          if(bankAccountId != ''){
+            var ct = {
+              'bankAccountId': bankAccountId,
+              'userId': $scope.userInfo.userId,
+              'bankId': $scope.bancosId,
+              'agency': $scope.listUserBank.agency,
+              'agencyDigit': $scope.listUserBank.agencyDigit,
+              'accountNumber': $scope.listUserBank.accountNumber,
+              'accountDigit': $scope.listUserBank.accountDigit,
+              'defaultBankAccount': false,
+            };
+          }else{
+            var ct = {
+              'bankAccountId': 0,
+              'userId': $scope.userInfo.userId,
+              'bankId': $scope.bancosId,
+              'agency': $scope.listUserBank.agency,
+              'agencyDigit': $scope.listUserBank.agencyDigit,
+              'accountNumber': $scope.listUserBank.accountNumber,
+              'accountDigit': $scope.listUserBank.accountDigit,
+              'defaultBankAccount': false,
+            };
+          }
+
+
+          console.log("ct");
+          console.log(ct);
+          var postConta = BankService.addUserBank(ct,tokenObject);
+          postConta.then(function(result){
+                  if(result.data.statusapp == 'OK'){
+
+                  console.log(result);
+
+                  $ionicLoading.show({
+                    template: '<img src="img/popover-pic12.png" alt="" style="width: 100%;margin-top: 30px;margin-bottom: -22px;"><div class="custom-spinner-container">'+
+                    '<ion-spinner name="circles"></ion-spinner><span style="margin-top: -29px;display: block;margin-bottom: 5px;">Cadastrando/Editando...</span> '+
+                    '</div>',
+                    duration: 3000
+                  }).then(function(){
+
+                    setTimeout(function(){
+                      var myPopup = $ionicPopup.show({
+                      template: 'Sua conta bancária foi cadastrada com sucesso! Lembre-se: Está não é sua conta principal.',
+                      title: 'Conta Bancária',
+                      scope: $scope,
+                      buttons: [
+                        { text: '<b>Ok</b>',
+                        type: 'button-positive',
+                        onTap: function(e) {
+                          $state.go('app.conta-bancaria');
+                        }
+                      },
+                    ]
+                  }); }, 4000);
+
+                });
+
+
+
+                }else{
+                  console.log("error ao postar");
+                }
+            });
+        } catch (e) {
+            console.log(e);
+        }
+      };
       //POST CONTA BANCÁRIA
       $scope.postConta = function (){
         try {
           var contaObj = {
             'bankAccountId': 0,
+            'userId': $scope.userInfo.userId,
             'bankId': $scope.bancosId,
             'agency': $scope.bankInfo.agency,
             'agencyDigit': $scope.bankInfo.agencyDigit,
@@ -633,37 +747,47 @@ angular.module('starter.controllers', [])
             'defaultBankAccount': true,
           };
 
-          console.log("contaObj");
-          console.log(contaObj);
               var postConta = BankService.addUserBank(contaObj,tokenObject);
               postConta.then(function(result){
-                console.log(result);
-                    /**  if(result.data.statusapp == 'OK'){
+                      if(result.data.statusapp == 'OK'){
 
                       console.log(result);
 
-                      var myPopup = $ionicPopup.show({
-                        template: 'Sua conta bancária foi cadastrada com sucesso!',
-                        title: 'Conta Bancária',
-                        scope: $scope,
-                        buttons: [
-                          { text: '<b>Ok</b>',
-                          type: 'button-positive',
-                          onTap: function(e) {
-                            $state.go('conta-bancaria');
+                      $ionicLoading.show({
+                        template: '<img src="img/popover-pic12.png" alt="" style="width: 100%;margin-top: 30px;margin-bottom: -22px;"><div class="custom-spinner-container">'+
+                        '<ion-spinner name="circles"></ion-spinner><span style="margin-top: -29px;display: block;margin-bottom: 5px;">Cadastrando...</span> '+
+                        '</div>',
+                        duration: 3000
+                      }).then(function(){
+
+                        setTimeout(function(){
+                          var myPopup = $ionicPopup.show({
+                          template: 'Sua conta bancária foi cadastrada com sucesso!',
+                          title: 'Conta Bancária',
+                          scope: $scope,
+                          buttons: [
+                            { text: '<b>Ok</b>',
+                            type: 'button-positive',
+                            onTap: function(e) {
+                              $state.go('app.conta-bancaria');
                             }
                           },
                         ]
-                      });
+                      }); }, 4000);
+
+                    });
+
+
 
                     }else{
                       console.log("error ao postar");
-                    } **/
+                    }
                 });
         } catch (e) {
             console.log(e);
         }
       };
+
     } catch (e) {
       alert(e);
     }

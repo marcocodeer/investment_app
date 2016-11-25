@@ -164,7 +164,7 @@ angular.module('starter', ['ionic','chart.js' , 'starter.controllers', 'ngCordov
     views: {
       'menuContent': {
         templateUrl: 'templates/configuracoes/arredondamento-cartoes/arredondamento.html',
-        controller: 'contasCtrl'
+        controller: 'AppCtrl'
       }
     }
   })

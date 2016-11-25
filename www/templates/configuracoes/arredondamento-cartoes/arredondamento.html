@@ -1,5 +1,5 @@
 <ion-view view-title="ARREDONDAMENTOS" style="background: url(img/perfil-investimento-bg.png) no-repeat center;background-size:cover;" class="arredondamento">
-  <ion-content >
+
     <div class="head-box" style="padding-top: 68px;    padding-bottom: 40px;">
       <div class="row" style="margin-bottom: 13px;" >
         <div class="col-20">
@@ -24,10 +24,10 @@
       <span style="font-size:11px;color:#fff;">Contas monitoradas para arredondamentos</span>
     </div>
 
+      <ion-content scroll="true" style="bottom: 0;top: 260px !important;">
+      <div class="list" style="margin-top:10px;">
 
-      <div class="list" style="margin-top:20px;">
-
-        <div class="row item" ng-click="editarConta($index)" id="item-principal" ng-repeat="bandeira in $root.user.app.cartoes">
+        <div class="row item" ng-click="editarConta(bandeira)" id="item-principal" ng-repeat="bandeira in listUserBank">
           <a >
             <div class="col-20">
               <div id="item-circle-grey">
@@ -35,21 +35,21 @@
               </div>
             </div>
           </a>
-          <span id="item-color">{{bandeira.name}}</span>
+          <span id="item-color">{{bandeira.bankAccountId}}</span>
         </div>
+      </div>
 
-
+      <div class="col" style="padding:20px;">
+        <button ng-click="adicionarConta()" class="item-center button button-clear btn-cadastro">
+          <i class="icon ion-ios-plus-empty" style="font-size:30px;"></i>
+        &nbsp;
+          ADICIONAR CONTA
+        </button>
       </div>
   </ion-content>
 
-  <ion-footer-bar class="footer-bar-custom" style="">
-    <div class="col" style="padding:30px;">
-      <button ng-click="adicionarConta()" class="item-center button button-clear btn-cadastro">
-        <i class="icon ion-ios-plus-empty" style="font-size:30px;"></i>
-      &nbsp;
-        ADICIONAR CONTA
-      </button>
-    </div>
-  </ion-footer-bar>
+
+
+
 
 </ion-view>
