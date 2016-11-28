@@ -30,6 +30,19 @@
               return data;
             });
           },
+        //get - Profile
+        updateProfile: function (userId, AuthorizationTokenObject) {
+            var getUserLoginInformationUrl = CONSTANTS.APP_API_URL + '/api/Account/Update';
+
+            return $http({
+              method: 'POST',
+              url: getUserLoginInformationUrl,
+              useXDomain: true,
+              headers: {'Content-Type' : 'application/x-www-form-urlencoded', 'Authorization': AuthorizationTokenObject.authorization_token}
+            }).success(function(data, status) {
+              return data;
+            });
+          },
      };
 
      return service;

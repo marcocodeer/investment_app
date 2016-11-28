@@ -156,6 +156,7 @@ $scope.errorPopup = function() {
         var newAccountStored = UserRegistrationServiceStore.getNewUser();
         newAccountStored.zipCode = $scope.newAccount.zipCode;
         newAccountStored.city = $scope.newAccount.city;
+        newAccountStored.state = $scope.newAccount.state;
         newAccountStored.address = $scope.newAccount.address;
         UserRegistrationServiceStore.setNewUser(newAccountStored);
         console.log(UserRegistrationServiceStore);

@@ -3,6 +3,8 @@ angular.module('starter.controllers', [])
   .controller('AppCtrl', function($stateParams, $scope, $ionicModal, $timeout, $state, $ionicSlideBoxDelegate, $ionicPopover, $cordovaCamera, LocalStorage, BankService, $ionicPopup, $ionicLoading) {
     try {
 
+      $scope.userInfo = LocalStorage.get('UserProfile');
+
       var tokenObject = '';
 
       //Get Token
@@ -444,20 +446,13 @@ angular.module('starter.controllers', [])
 
         $scope.$root.user.app.uf = uf;
         $scope.$root.user.financeiro.emprego = uf;
+        $scope.userInfo.state = uf;
+        console.log($scope.userInfo.state);
 
         $scope.popover.hide();
 
       };
-      $scope.mudaBanco = function(uf, Id){
 
-        $scope.bancos = uf;
-        $scope.bancosId = Id;
-        console.log($scope.bancos);
-        console.log($scope.bancosId);
-
-        $scope.popover.hide();
-
-      };
       $scope.mudaEmprego = function(emprego){
 
         $scope.$root.user.financeiro.emprego = emprego;
@@ -613,16 +608,31 @@ angular.module('starter.controllers', [])
       $scope.todosBancos = [];
       $scope.listUserBank = [];
 
-      $scope.userInfo = LocalStorage.get('UserProfile');
+
 
 
       $scope.bankInfo = [];
       $scope.bankInfo.agency = '';
+      $scope.bankInfo.bancos = '';
+      $scope.bankInfo.bankId = '';
       $scope.bankInfo.agencyDigit = '';
       $scope.bankInfo.accountNumber = '';
       $scope.bankInfo.accountNumber = '';
       $scope.bankInfo.accountDigit = '';
       $scope.bankInfo.defaultBankAccount = true;
+
+      $scope.mudaBanco = function(uf, Id){
+
+        $scope.bankInfo.bancos = uf;
+        $scope.bankInfo.bankId = Id;
+        //console.log($scope.bankInfo.bancos);
+        $scope.listUserBank.bancosId = Id;
+        $scope.listUserBank.bancos = uf;
+        console.log($scope.listUserBank.bancos);
+        console.log($scope.listUserBank.bancosId);
+        $scope.popover.hide();
+
+      };
 
       var getAllBank = BankService.getAllBanks(tokenObject);
         getAllBank.then(function(result){
@@ -635,6 +645,7 @@ angular.module('starter.controllers', [])
             $scope.listUserBank = result.data.data;
             angular.forEach(result.data.data, function(obj){
                 $scope.bankInfo = obj;
+                $scope.bankInfo.bancos = obj.bank;
             });
           }else{
             console.log("error get all user ganks");
@@ -653,8 +664,10 @@ angular.module('starter.controllers', [])
           getAllUserSingBank.then(function(result){
             if(result.data.statusapp == 'OK'){
               $scope.listUserBank = result.data.data;
+              $scope.listUserBank.bancosId = result.data.data.bankId;
               console.log("$scope.listUserBank");
               console.log($scope.listUserBank);
+              console.log($scope.listUserBank.bancosId);
             }else{
               console.log("error get all user single ganks");
             }
@@ -668,7 +681,7 @@ angular.module('starter.controllers', [])
             var ct = {
               'bankAccountId': bankAccountId,
               'userId': $scope.userInfo.userId,
-              'bankId': $scope.bancosId,
+              'bankId': $scope.listUserBank.bancosId,
               'agency': $scope.listUserBank.agency,
               'agencyDigit': $scope.listUserBank.agencyDigit,
               'accountNumber': $scope.listUserBank.accountNumber,
@@ -679,7 +692,7 @@ angular.module('starter.controllers', [])
             var ct = {
               'bankAccountId': 0,
               'userId': $scope.userInfo.userId,
-              'bankId': $scope.bancosId,
+              'bankId': $scope.listUserBank.bancosId,
               'agency': $scope.listUserBank.agency,
               'agencyDigit': $scope.listUserBank.agencyDigit,
               'accountNumber': $scope.listUserBank.accountNumber,
@@ -1812,14 +1825,79 @@ angular.module('starter.controllers', [])
 
   })
 
-  .controller('dadosCtrl', function($scope, $ionicModal, $timeout, $state, Camera, LocalStorage) {
+  .controller('dadosCtrl', function($scope, $ionicModal, $timeout, $state, Camera, LocalStorage, UserService) {
 
     $scope.userInfo = LocalStorage.get('UserProfile');
     console.log($scope.userInfo);
 
+    $scope.mudaUF = function(uf){
+
+      $scope.$root.user.app.uf = uf;
+      $scope.$root.user.financeiro.emprego = uf;
+      $scope.userInfo.state = uf;
+      console.log($scope.userInfo.state);
+
+      $scope.popover.hide();
+
+    };
+
+    var tokenObject = '';
+
+    //Get Token
+    if(LocalStorage.get('AuthorizationToken') != null) {
+
+      tokenObject = LocalStorage.get('AuthorizationToken');
+
+    }
+
     $scope.$root.user.app.estado = $state.current.name;
     console.log($scope.$root.user.app.estado);
     console.log($scope.userInfo.userId);
+
+    $scope.updateUser = function () {
+        try {
+          var up = {
+            'userId': $scope.userInfo.userId,
+            'planId': 1,
+            'fullName': $scope.userInfo.fullName,
+            'dob': $scope.userInfo.dob,
+            'securityQuestion': $scope.userInfo.securityQuestion,
+            'securityAnswer': $scope.userInfo.securityAnswer,
+            'gender': 'undefined',
+            'avatar': '',
+            'address': $scope.userInfo.address,
+            'city': $scope.userInfo.city,
+            'state': $scope.userInfo.state,
+            'countryId': 55,
+            'zipCode': $scope.userInfo.zipCode,
+            'phone1': $scope.userInfo.phone1,
+            'phone2': '',
+            'cellphone': '',
+            'status': 1,
+            'userType': 1,
+            'acceptContract': true,
+            'email': $scope.userInfo.email,
+            'password': $scope.userInfo.password,
+            'smsNotification': true,
+            'emailNotification': true,
+            'rememberToken': true,
+            'cpf': $scope.userInfo.cpf,
+            'rg': $scope.userInfo.rg,
+            'investorProfile': '',
+            'investmentBalance': 0,
+          };
+
+          console.log(JSON.stringify(up));
+
+              var updateAcc = UserService.updateProfile(up ,tokenObject);
+                updateAcc.then(function(result){
+                  console.log("Promisse");
+                  console.log(result);
+                });
+        } catch (e) {
+          console.log(e);
+        }
+    };
 
       $scope.takePicture = function (options) {
 

@@ -25,7 +25,7 @@
               </label>
               <label class="item item-input item-floating-label">
                   <span class="input-label">CPF</span>
-                  <input type="text" class="input-style" placeholder="CPF"  ng-model="userInfo.rg">
+                  <input type="text" class="input-style" placeholder="CPF"  ng-model="userInfo.cpf">
               </label>
 
               <div class="row" style="margin-left:-5px;">
@@ -33,10 +33,10 @@
                   <span class="input-label">CEP</span>
                   <input type="text" class="input-style" placeholder="CEP"  ng-model="userInfo.zipCode">
                 </label>
-                <label class="item item-input item-floating-label">
+            <!--    <label class="item item-input item-floating-label">
                   <span class="input-label">UF</span>
-                  <input type="text" class="input-style" placeholder="UF"  ng-model="userInfo.state" style="width: 70% !important;" ng-click="openPopover($event,0,1)">
-                </label>
+                  <input type="text" class="input-style" placeholder="UF" ng-model="userInfo.state" style="width: 70% !important;" ng-click="openPopover($event,0,20)">
+                </label> -->
               </div>
               <label class="item item-input item-floating-label">
                  <span class="input-label">Cidade</span>
@@ -46,13 +46,8 @@
                 <span class="input-label">Endereço</span>
                 <input type="text" class="input-style" placeholder="Endereço" ng-model="userInfo.address">
               </label>
-              <label class="item item-input item-floating-label">
-                <span class="input-label">Complemento</span>
-                <input type="text" class="input-style" placeholder="Complemento" ng-model="$root.user.endereco.complemento">
-              </label>
 
-
-                <button ng-click="doQuestion3()" class="item-center button button-clear btn-cadastro" style="margin-bottom:30px;display: block;margin-top:30px;position: static;">
+                <button ng-click="updateUser()" class="item-center button button-clear btn-cadastro" style="margin-bottom:30px;display: block;margin-top:30px;position: static;">
                   <i class="icon ion-ios-checkmark-empty" style="font-size:30px;"></i>
                 &nbsp;
                   SALVAR
